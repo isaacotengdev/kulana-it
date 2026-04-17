@@ -25,9 +25,17 @@ const about = [
   { name: "Kulana", href: "/kulana" },
 ];
 
+const projects = [
+  { name: "DBG Middleware Project",      href: "/projects/dbg-middleware" },
+  { name: "DBG Core Banking Project",    href: "/projects/dbg-core-banking" },
+  { name: "CBG Middleware Project",      href: "/projects/cbg-middleware" },
+  { name: "DBG Dynamics 365 Project",    href: "/projects/dbg-dynamics-365" },
+];
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Our Services", href: "/our-services", dropdown: services },
+  { name: "Projects", href: "/projects", dropdown: projects },
   { name: "Kulana Academy", href: "/kulana-academy", dropdown: academy },
   { name: "About us", href: "/about-us", dropdown: about },
   { name: "Contact us", href: "/#contact" },
