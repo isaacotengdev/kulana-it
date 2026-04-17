@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,7 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        <Script
+          id="hs-script-loader"
+          src="//js.hs-scripts.com/9031498.js"
+          strategy="lazyOnload"
+        />
+      </body>
     </html>
   );
 }
