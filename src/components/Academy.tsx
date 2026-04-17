@@ -1,47 +1,63 @@
 "use client";
 
-import { Cloud, Shield, BarChart2, Layers, ArrowRight, GraduationCap } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, GraduationCap, Monitor, Users, Building2, Video } from "lucide-react";
 
 const courses = [
   {
-    icon: Cloud,
-    title: "Cloud & Infrastructure",
+    title: "AI & Cloud AI",
+    href: "/ai-cloud-ai",
+    type: "Professional Program",
     description:
-      "AWS, Azure, and Google Cloud fundamentals through to advanced architecture and DevOps practices.",
-    level: "Beginner → Advanced",
-    duration: "4–8 weeks",
-    color: "bg-blue-500",
-    light: "bg-blue-50 text-blue-700",
+      "Learn how to integrate AI and cloud technologies into your business processes to improve efficiency, reduce costs, and stay ahead in a competitive market.",
+    color: "bg-blue-600",
   },
   {
-    icon: Shield,
-    title: "Cybersecurity Training",
+    title: "Digital Transformation",
+    href: "/digital-transformation",
+    type: "Professional Program",
     description:
-      "Ethical hacking, SOC operations, incident response, and security frameworks including ISO 27001.",
-    level: "Intermediate",
-    duration: "6 weeks",
-    color: "bg-red-500",
-    light: "bg-red-50 text-red-700",
+      "Support your organisation's growth by developing the operational skills needed to implement effective digital change across teams and systems.",
+    color: "bg-cyan-600",
   },
   {
-    icon: BarChart2,
-    title: "Data & Analytics",
+    title: "Next-Gen Data Science",
+    href: "/next-gen-data-science",
+    type: "Professional Program",
     description:
-      "Business intelligence, Power BI, data engineering, and machine learning fundamentals for enterprise teams.",
-    level: "Beginner → Intermediate",
-    duration: "4–6 weeks",
-    color: "bg-emerald-500",
-    light: "bg-emerald-50 text-emerald-700",
+      "Discover how data can drive smarter business decisions with practical training designed to help your team turn information into strategic insight.",
+    color: "bg-violet-600",
   },
   {
-    icon: Layers,
-    title: "Enterprise Software",
+    title: "Cloud Computing",
+    href: "/cloud-computing",
+    type: "Professional Program",
     description:
-      "Hands-on training for Dynamics 365, HubSpot, Temenos, and WSO2 integration platforms.",
-    level: "Intermediate",
-    duration: "3–5 weeks",
-    color: "bg-violet-500",
-    light: "bg-violet-50 text-violet-700",
+      "Understand how cloud solutions can enhance business scalability, resilience, and security through structured learning and certification-backed expertise.",
+    color: "bg-emerald-600",
+  },
+];
+
+const deliveryModes = [
+  {
+    icon: Users,
+    title: "Workshops",
+    desc: "Hands-on in-person sessions combining expert presentations with collaborative discussion.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Professional Classes",
+    desc: "Instructor-guided learning for structured skill development and certification preparation.",
+  },
+  {
+    icon: Building2,
+    title: "Onsite",
+    desc: "On-premise training conducted by certified trainers at your organisation's location.",
+  },
+  {
+    icon: Video,
+    title: "Virtual / Online",
+    desc: "Remote learning via video conferencing with live or recorded content access for flexibility.",
   },
 ];
 
@@ -57,81 +73,87 @@ export default function Academy() {
               Kulana Academy
             </div>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-              Upskill your team with{" "}
-              <span className="text-gradient">expert-led training</span>
+              Grow your business with{" "}
+              <span className="text-gradient">Kulana Academy</span>
             </h2>
           </div>
           <div>
             <p className="text-gray-500 leading-relaxed mb-6">
-              Our Academy provides structured, hands-on technology training
-              programmes designed for professionals and enterprises. We combine
-              theoretical foundations with real-world practicals delivered by
-              certified industry practitioners.
+              Kulana Academy, partnering with Arcitura, delivers professional IT training
+              programmes that assist businesses in upskilling employees through
+              professionally-designed programs. Keep your workforce aligned with the
+              latest advancements in technology.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
             >
-              Enquire About Training
+              Request a Quote
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Course cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {courses.map((course) => {
-            const Icon = course.icon;
-            return (
-              <div
-                key={course.title}
-                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover shadow-sm"
-              >
-                <div className={`h-1.5 ${course.color}`} />
-                <div className="p-6">
-                  <div
-                    className={`w-11 h-11 rounded-xl ${course.color} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}
-                  >
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    {course.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                    {course.description}
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-400">Level</span>
-                      <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${course.light}`}>
-                        {course.level}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-400">Duration</span>
-                      <span className="text-xs font-medium text-gray-700">{course.duration}</span>
-                    </div>
-                  </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {courses.map((course) => (
+            <Link
+              key={course.title}
+              href={course.href}
+              className="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover shadow-sm hover:shadow-lg transition-all"
+            >
+              <div className={`h-1.5 ${course.color}`} />
+              <div className="p-6">
+                <div className={`w-11 h-11 rounded-xl ${course.color} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
+                  <Monitor className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">{course.type}</div>
+                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {course.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {course.description}
+                </p>
+                <span className="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-blue-600">
+                  Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Training typology */}
+        <div className="bg-white rounded-2xl border border-gray-100 p-8 mb-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-6">Training Delivery Options</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {deliveryModes.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-3">
+                <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4 h-4 text-blue-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900 text-sm mb-1">{title}</div>
+                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
         {/* Bottom banner */}
-        <div className="mt-10 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-cyan-600 to-blue-700 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-white">
             <div className="font-bold text-xl mb-1">Corporate Training Packages</div>
             <div className="text-blue-100 text-sm">
               Custom programmes for teams of any size — onsite, remote, or hybrid.
             </div>
           </div>
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="flex-shrink-0 px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-md"
           >
             Get a Custom Quote
-          </a>
+          </Link>
         </div>
       </div>
     </section>

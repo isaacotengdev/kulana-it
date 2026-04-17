@@ -299,9 +299,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-blue-100/80 max-w-xl mb-10 leading-relaxed">
-              We empower organisations to harness digital transformation,
-              streamline operations, and gain competitive advantage through
-              enterprise-grade IT solutions and expert consultancy.
+              Your company&apos;s technology is your competitive edge. Kulana takes a
+              holistic approach to your organisation&apos;s digital transformation. We are
+              the technology experts you need to drive your business forward.
             </p>
 
             <div className="flex flex-wrap gap-4">

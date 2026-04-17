@@ -6,14 +6,16 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 const offices = [
   {
     city: "Accra, Ghana",
-    address: "The Rhombus, Kanda, Accra",
+    address: "The Rhombus, HRJ5+J6Q, Kanda, Accra",
+    poBox: "P.O. Box CT 1856, Cantonments Accra, Ghana",
     phone: "+233 540 127 400",
     flag: "🇬🇭",
   },
   {
     city: "Ebene, Mauritius",
-    address: "Cybercity Ebene, Mauritius",
-    phone: "+230 000 0000",
+    address: "Ground Floor Nexsky Building, Hotel Avenue",
+    poBox: "Cybercity Ebene, Mauritius",
+    phone: "+230 46 32 519",
     flag: "🇲🇺",
   },
 ];
@@ -21,16 +23,14 @@ const offices = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    company: "",
-    service: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder submit handler
     setSubmitted(true);
   };
 
@@ -43,18 +43,18 @@ export default function Contact() {
             Get In Touch
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
-            Ready to{" "}
-            <span className="text-gradient">transform</span> your business?
+            We&apos;re here to{" "}
+            <span className="text-gradient">help you</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Tell us about your project and we will get back to you within 24 hours
-            with a tailored approach.
+            If you&apos;re interested in learning more about our services, please fill out the
+            form and we&apos;ll be happy to send you more information.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left — info */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             {/* Office cards */}
             {offices.map((office) => (
               <div
@@ -62,12 +62,15 @@ export default function Contact() {
                 className="bg-slate-50 rounded-2xl p-6 border border-gray-100"
               >
                 <div className="text-2xl mb-3">{office.flag}</div>
-                <div className="font-bold text-gray-900 mb-1">{office.city}</div>
-                <div className="flex items-start gap-2 text-sm text-gray-500 mb-2">
+                <div className="font-bold text-gray-900 mb-2">{office.city}</div>
+                <div className="flex items-start gap-2 text-sm text-gray-500 mb-1">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-400" />
-                  {office.address}
+                  <div>
+                    <div>{office.address}</div>
+                    <div>{office.poBox}</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
                   <Phone className="w-4 h-4 flex-shrink-0 text-blue-400" />
                   {office.phone}
                 </div>
@@ -82,10 +85,10 @@ export default function Contact() {
               <div>
                 <div className="text-xs text-gray-500 mb-0.5">Email us</div>
                 <a
-                  href="mailto:info@kulana.net"
+                  href="mailto:contact@kulana.net"
                   className="text-blue-600 font-semibold text-sm hover:text-blue-700"
                 >
-                  info@kulana.net
+                  contact@kulana.net
                 </a>
               </div>
             </div>
@@ -117,64 +120,44 @@ export default function Contact() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Full Name <span className="text-red-400">*</span>
+                      First Name <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
                       required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="John Mensah"
+                      value={form.firstName}
+                      onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                      placeholder="John"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Email Address <span className="text-red-400">*</span>
+                      Last Name <span className="text-red-400">*</span>
                     </label>
                     <input
-                      type="email"
+                      type="text"
                       required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="john@company.com"
+                      value={form.lastName}
+                      onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                      placeholder="Mensah"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      value={form.company}
-                      onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      placeholder="Your company name"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Service of Interest
-                    </label>
-                    <select
-                      value={form.service}
-                      onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all bg-white text-gray-700"
-                    >
-                      <option value="">Select a service</option>
-                      <option>Core Banking Solutions</option>
-                      <option>Data Center &amp; SOC</option>
-                      <option>ERP &amp; CRM Solutions</option>
-                      <option>Project Management Consulting</option>
-                      <option>Predictive Analytics</option>
-                      <option>Digital Integrations &amp; API</option>
-                      <option>Academy Training</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Email Address <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="john@company.com"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
+                  />
                 </div>
 
                 <div>
@@ -183,7 +166,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     required
-                    rows={5}
+                    rows={6}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell us about your project, challenges, or requirements..."
@@ -195,7 +178,7 @@ export default function Contact() {
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5"
                 >
-                  Send Message
+                  Send
                   <Send className="w-4 h-4" />
                 </button>
               </form>
