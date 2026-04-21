@@ -63,8 +63,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
+  if (!process.env.DATABASE_URL) {
+    console.error("DATABASE_URL is not set");
+    return NextResponse.json({ error: "Server misconfiguration: DATABASE_URL missing" }, { status: 500 });
+  }
+
   // ── 1. Save to Neon Postgres ──────────────────────────────────────────────
-  const sql = neon(process.env.DATABASE_URL!);
+  const sql = neon(process.env.DATABASE_URL);
   await ensureTable(sql);
 
   const [row] = await sql`
