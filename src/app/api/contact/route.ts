@@ -60,9 +60,6 @@ export async function POST(request: NextRequest) {
 
   if (process.env.HUBSPOT_ACCESS_TOKEN) {
     try {
-      // Build the full message including service and source for HubSpot
-      const hsMessage = `Service of Inquiry: ${service}\nSource: ${resolvedSource}\n\n${message}`;
-
       const hsRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
         method: "POST",
         headers: {
@@ -75,8 +72,8 @@ export async function POST(request: NextRequest) {
             lastname: lastName,
             email,
             phone: phone ?? "",
-            message: hsMessage,
-            jobtitle: service,
+            message: message,
+            service_of_inquiry: service,
             lifecyclestage: "lead",
           },
         }),
@@ -110,8 +107,8 @@ export async function POST(request: NextRequest) {
               body: JSON.stringify({
                 properties: {
                   phone: phone ?? "",
-                  message: hsMessage,
-                  jobtitle: service,
+                  message: message,
+                  service_of_inquiry: service,
                   lifecyclestage: "lead",
                 },
               }),
