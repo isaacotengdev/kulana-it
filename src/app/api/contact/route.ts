@@ -18,10 +18,33 @@ async function ensureTable(sql: NeonQueryFunction<false, false>) {
       created_at    TIMESTAMPTZ   NOT NULL DEFAULT NOW()
     )
   `;
-  // Add phone column to existing tables that were created before it was added
+  // Add phone column to existing tables created before it was added
   await sql`
     ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS phone VARCHAR(50)
   `;
+}
+
+async function createHubSpotNote(contactId: string, service: string, message: string, source: string) {
+  const noteBody = `Service of Inquiry: ${service}\nSource: ${source}\n\n${message}`;
+  await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}`,
+    },
+    body: JSON.stringify({
+      properties: {
+        hs_note_body: noteBody,
+        hs_timestamp: Date.now().toString(),
+      },
+      associations: [
+        {
+          to: { id: contactId },
+          types: [{ associationCategory: "HUBSPOT_DEFINED", associationTypeId: 202 }],
+        },
+      ],
+    }),
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -52,6 +75,7 @@ export async function POST(request: NextRequest) {
 
   // ── 2. Create / update contact in HubSpot CRM ────────────────────────────
   let hsContactId: string | null = null;
+  const resolvedSource = source ?? "website";
 
   if (process.env.HUBSPOT_ACCESS_TOKEN) {
     try {
@@ -67,7 +91,6 @@ export async function POST(request: NextRequest) {
             lastname: lastName,
             email,
             phone: phone ?? "",
-            message: `[${service}] ${message}`,
             lifecyclestage: "lead",
           },
         }),
@@ -76,29 +99,29 @@ export async function POST(request: NextRequest) {
       if (hsRes.ok) {
         const hsData = await hsRes.json() as { id: string };
         hsContactId = hsData.id;
-        // stamp HS id back onto the DB row
         await sql`
           UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${row.id}
         `;
-      } else {
-        // Conflict = contact already exists — try patch via email search
-        if (hsRes.status === 409) {
-          const searchRes = await fetch(
-            `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(email)}?idProperty=email`,
-            {
-              headers: { Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}` },
-            }
-          );
-          if (searchRes.ok) {
-            const existing = await searchRes.json() as { id: string };
-            hsContactId = existing.id;
-            await sql`
-              UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${row.id}
-            `;
-          }
-        } else {
-          console.error("HubSpot create failed:", hsRes.status, await hsRes.text());
+      } else if (hsRes.status === 409) {
+        // Contact already exists — fetch by email
+        const searchRes = await fetch(
+          `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(email)}?idProperty=email`,
+          { headers: { Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}` } }
+        );
+        if (searchRes.ok) {
+          const existing = await searchRes.json() as { id: string };
+          hsContactId = existing.id;
+          await sql`
+            UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${row.id}
+          `;
         }
+      } else {
+        console.error("HubSpot create failed:", hsRes.status, await hsRes.text());
+      }
+
+      // ── 3. Create a Note with service of inquiry ─────────────────────────
+      if (hsContactId) {
+        await createHubSpotNote(hsContactId, service, message, resolvedSource);
       }
     } catch (err) {
       // HubSpot failure must never break the form submission

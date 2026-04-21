@@ -132,6 +132,7 @@ export default function ContactUsPage() {
                       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, source: "contact-us" }) });
                       if (!res.ok) throw new Error();
                       setSubmitted(true);
+                      setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
                     } catch { setError("Something went wrong. Please try again or email us directly."); }
                     finally { setLoading(false); }
                   }} className="space-y-5">

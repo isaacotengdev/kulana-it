@@ -60,6 +60,7 @@ export default function Contact() {
       });
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
+      setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
     } catch {
       setError("Something went wrong. Please try again or email us directly.");
     } finally {
@@ -142,7 +143,7 @@ export default function Contact() {
                   business hours.
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => { setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" }); }}
                   className="mt-6 px-6 py-2.5 border border-gray-200 text-gray-600 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors text-sm font-medium"
                 >
                   Send another message
