@@ -2,12 +2,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #0057a8;
-  --primary-dark: #003d7a;
-  --primary-light: #e8f0fe;
-  --accent: #00b4d8;
-  --surface: #f8fafc;
+  --foreground: #1A2332;
+  --primary: #00C8D8;
+  --primary-dark: #1A2332;
+  --primary-light: #ecfcfd;
+  --accent: #00E5FF;
+  --surface: #F0F4F8;
+  --mid: #6B7A8D;
+  --grad: linear-gradient(135deg, #00C8D8 0%, #00E5FF 100%);
 }
 
 @theme inline {
@@ -18,6 +20,23 @@
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
   --color-surface: var(--surface);
+
+  /* Remap Tailwind blue → brand teal scale */
+  --color-blue-50: #ecfcfd;
+  --color-blue-100: #d0f7fa;
+  --color-blue-200: #a1eff5;
+  --color-blue-300: #67e4ef;
+  --color-blue-400: #33d4e0;
+  --color-blue-500: #00C8D8;
+  --color-blue-600: #00b3c2;
+  --color-blue-700: #009aaa;
+  --color-blue-800: #1A2332;
+  --color-blue-900: #0f1520;
+  --color-blue-950: #080b15;
+
+  /* Brand fonts */
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 }
 
 html {
@@ -27,20 +46,24 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), 'DM Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3 {
+  font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
+}
+
 .gradient-primary {
-  background: linear-gradient(135deg, #0057a8 0%, #003d7a 50%, #001f3f 100%);
+  background: linear-gradient(135deg, #1A2332 0%, #2A3548 50%, #00C8D8 100%);
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #001f3f 0%, #0057a8 60%, #00b4d8 100%);
+  background: linear-gradient(135deg, #0E1929 0%, #1A2332 55%, #00C8D8 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #0057a8, #00b4d8);
+  background: linear-gradient(135deg, #00C8D8, #00E5FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -52,7 +75,7 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 87, 168, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 200, 216, 0.15);
 }
 
 .nav-link {
@@ -67,7 +90,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #00b4d8;
+  background: var(--grad);
   transition: width 0.3s ease;
 }
 
