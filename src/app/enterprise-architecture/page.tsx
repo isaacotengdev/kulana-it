@@ -72,7 +72,7 @@ export default function EnterpriseArchitecturePage() {
               ))}
             </div>
             <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">
-              Request a Quote <ArrowRight className="w-4 h-4" />
+              Request a Consultation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
@@ -217,7 +217,7 @@ export default function EnterpriseArchitecturePage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">
-                  Request a Quote <ArrowRight className="w-4 h-4" />
+                  Request a Consultation <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
                   Contact Us

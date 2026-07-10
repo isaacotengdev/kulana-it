@@ -309,7 +309,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                Request a Quote
+                Request a Consultation
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a

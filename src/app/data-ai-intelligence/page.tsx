@@ -162,7 +162,7 @@ export default function DataAiIntelligencePage() {
                   href="/#contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5"
                 >
-                  Request a Quote <ArrowRight className="w-4 h-4" />
+                  Request a Consultation <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/contact-us"

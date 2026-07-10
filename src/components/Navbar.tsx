@@ -197,7 +197,7 @@ export default function Navbar() {
               href="/#contact"
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-blue-200"
             >
-              Request a Quote
+              Request a Consultation
             </Link>
           </div>
 
@@ -311,7 +311,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Request a Quote
+                Request a Consultation
               </Link>
             </div>
           </div>
