@@ -5,27 +5,6 @@ import { Headphones, Gauge } from "lucide-react";
 
 const partners = [
   {
-    name: "HubSpot",
-    category: "CRM",
-    logo: "/logos/hubspot.svg",
-    width: 120,
-    height: 40,
-  },
-  {
-    name: "Microsoft Dynamics 365",
-    category: "ERP",
-    logo: "/logos/microsoft.svg",
-    width: 120,
-    height: 40,
-  },
-  {
-    name: "Dell Technologies",
-    category: "Infrastructure",
-    logo: "/logos/dell.svg",
-    width: 100,
-    height: 40,
-  },
-  {
     name: "Temenos",
     category: "Core Banking",
     logo: "/logos/temenos.png",
@@ -33,11 +12,32 @@ const partners = [
     height: 80,
   },
   {
+    name: "Microsoft Dynamics 365",
+    category: "ERP & CRM",
+    logo: "/logos/microsoft.svg",
+    width: 120,
+    height: 40,
+  },
+  {
+    name: "HubSpot",
+    category: "ERP & CRM",
+    logo: "/logos/hubspot.svg",
+    width: 120,
+    height: 40,
+  },
+  {
     name: "WSO2",
     category: "Integration",
     logo: "/logos/wso2.png",
     width: 80,
     height: 80,
+  },
+  {
+    name: "Dell Technologies",
+    category: "Infrastructure",
+    logo: "/logos/dell.svg",
+    width: 100,
+    height: 40,
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Partners() {
                   alt={`${p.name} logo`}
                   width={p.width}
                   height={p.height}
-                  className="object-contain max-h-14 w-auto"
+                  className="object-contain max-h-14 h-auto w-auto"
                 />
               </div>
               <div className="text-xs font-semibold text-gray-800 leading-tight mb-1">

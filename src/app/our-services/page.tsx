@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroCanvas from "@/components/HeroCanvas";
 import {
-  Landmark, Server, LayoutGrid, Plug, ClipboardList, BarChart3,
+  Server, Network, Brain, GraduationCap,
   ShieldCheck, ArrowRight, CheckCircle2, Award, BadgeCheck,
   Globe, Users, Zap,
 } from "lucide-react";
@@ -13,56 +13,29 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services | Kulana IT Solutions",
   description:
-    "Enterprise IT services across Africa and the Middle East — Core Banking, Data Center, ERP & CRM, Digital Integrations, Project Management, and Predictive Analysis.",
+    "Enterprise IT services across Africa and the Middle East — Core & Enterprise Systems, Integration & Digital Connectivity, Data & AI Intelligence, and Kulana Academy.",
 };
 
 const services = [
   {
-    title: "Core Banking",
-    href: "/core-banking",
-    Icon: Landmark,
+    title: "Core & Enterprise Systems",
+    href: "/core-enterprise-systems",
+    Icon: Server,
     gradient: "from-blue-500 to-blue-700",
     iconBg: "bg-blue-600",
     border: "border-blue-100",
-    tag: "Financial Services",
+    tag: "Enterprise",
     tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     hoverBorder: "hover:border-blue-300",
-    partnerLogos: ["/logos/temenos.png"],
-    partnerNames: ["Temenos"],
-    desc: "End-to-end implementation and support for modern core banking platforms across African financial institutions.",
+    partnerLogos: ["/logos/temenos.png", "/logos/dell.svg"],
+    partnerNames: ["Temenos", "Dell"],
+    desc: "Mission-critical systems that power financial institutions and enterprises — Core Banking, ERP & CRM, Infrastructure, and Cybersecurity.",
+    subServices: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
   },
   {
-    title: "Data Center & Security Operations Centre",
-    href: "/data-center-security-operations-centre",
-    Icon: Server,
-    gradient: "from-slate-600 to-slate-800",
-    iconBg: "bg-slate-700",
-    border: "border-slate-100",
-    tag: "Infrastructure & Security",
-    tagColor: "bg-slate-50 text-slate-700 border-slate-200",
-    hoverBorder: "hover:border-slate-300",
-    partnerLogos: ["/logos/dell.svg"],
-    partnerNames: ["Dell"],
-    desc: "Design, build, and manage resilient data centers and 24/7 security operations for your enterprise.",
-  },
-  {
-    title: "ERP and CRM",
-    href: "/erp-and-crm",
-    Icon: LayoutGrid,
-    gradient: "from-violet-500 to-violet-700",
-    iconBg: "bg-violet-600",
-    border: "border-violet-100",
-    tag: "Business Operations",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
-    hoverBorder: "hover:border-violet-300",
-    partnerLogos: ["/logos/microsoft.svg", "/logos/hubspot.svg"],
-    partnerNames: ["Microsoft", "HubSpot"],
-    desc: "Streamline business processes with leading ERP and CRM platforms tailored to your organisation.",
-  },
-  {
-    title: "Digital Integrations & API Management",
-    href: "/digital-integrations-api-management",
-    Icon: Plug,
+    title: "Integration & Digital Connectivity",
+    href: "/integration-digital-connectivity",
+    Icon: Network,
     gradient: "from-cyan-500 to-blue-600",
     iconBg: "bg-cyan-600",
     border: "border-cyan-100",
@@ -71,35 +44,38 @@ const services = [
     hoverBorder: "hover:border-cyan-300",
     partnerLogos: ["/logos/wso2.png"],
     partnerNames: ["WSO2"],
-    desc: "Connect systems, automate workflows, and manage APIs at scale with enterprise-grade integration solutions.",
+    desc: "Seamless integration architectures and AI-native engineering that unify your digital landscape and unlock new business potential.",
+    subServices: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
   },
   {
-    title: "Project Management Consulting",
-    href: "/project-management-consulting",
-    Icon: ClipboardList,
+    title: "Data & AI Intelligence",
+    href: "/data-ai-intelligence",
+    Icon: Brain,
+    gradient: "from-violet-500 to-purple-700",
+    iconBg: "bg-violet-600",
+    border: "border-violet-100",
+    tag: "Data & AI",
+    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    hoverBorder: "hover:border-violet-300",
+    partnerLogos: [],
+    partnerNames: [],
+    desc: "Advanced data strategies, artificial intelligence, and intelligent automation that transform raw information into strategic advantage.",
+    subServices: ["Data", "AI", "RPA"],
+  },
+  {
+    title: "Kulana Academy",
+    href: "/kulana-academy",
+    Icon: GraduationCap,
     gradient: "from-emerald-500 to-teal-600",
     iconBg: "bg-emerald-600",
     border: "border-emerald-100",
-    tag: "Consulting",
+    tag: "Training",
     tagColor: "bg-emerald-50 text-emerald-700 border-emerald-100",
     hoverBorder: "hover:border-emerald-300",
     partnerLogos: [],
     partnerNames: [],
-    desc: "Expert project delivery and PMO setup to ensure your IT initiatives are delivered on time and on budget.",
-  },
-  {
-    title: "Predictive Analysis",
-    href: "/predictive-analysis",
-    Icon: BarChart3,
-    gradient: "from-amber-500 to-orange-600",
-    iconBg: "bg-amber-500",
-    border: "border-amber-100",
-    tag: "Analytics & AI",
-    tagColor: "bg-amber-50 text-amber-700 border-amber-100",
-    hoverBorder: "hover:border-amber-300",
-    partnerLogos: [],
-    partnerNames: [],
-    desc: "Turn raw data into strategic advantage with advanced analytics, machine learning, and business intelligence.",
+    desc: "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
+    subServices: ["Corporate Training", "Partner Offering"],
   },
 ];
 
@@ -118,11 +94,11 @@ const differentiators = [
 ];
 
 const allPartners = [
-  { name: "Temenos",      src: "/logos/temenos.png",   h: "h-7"  },
-  { name: "Dell",         src: "/logos/dell.svg",      h: "h-6"  },
-  { name: "Microsoft",    src: "/logos/microsoft.svg", h: "h-6"  },
-  { name: "HubSpot",      src: "/logos/hubspot.svg",   h: "h-6"  },
-  { name: "WSO2",         src: "/logos/wso2.png",      h: "h-7"  },
+  { name: "Temenos",      src: "/logos/temenos.png",   h: "h-10" },
+  { name: "Dell",         src: "/logos/dell.svg",      h: "h-9"  },
+  { name: "Microsoft",    src: "/logos/microsoft.svg", h: "h-9"  },
+  { name: "HubSpot",      src: "/logos/hubspot.svg",   h: "h-9"  },
+  { name: "WSO2",         src: "/logos/wso2.png",      h: "h-10" },
 ];
 
 export default function OurServicesPage() {
@@ -163,16 +139,16 @@ export default function OurServicesPage() {
           <div className="text-center mb-14">
             <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Do</p>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Six Practice Areas. One Trusted Partner.
+              Four Practice Areas. One Trusted Partner.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              From core banking to predictive analytics, our specialists deliver end-to-end
-              solutions built on industry-leading platforms and frameworks.
+              From core banking to AI intelligence, our specialists deliver end-to-end
+              solutions across four integrated pillars built on industry-leading platforms.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {services.map(({ title, href, Icon, gradient, iconBg, border, tag, tagColor, hoverBorder, partnerLogos, partnerNames, desc }) => (
+          <div className="grid md:grid-cols-2 gap-7">
+            {services.map(({ title, href, Icon, gradient, iconBg, border, tag, tagColor, hoverBorder, partnerLogos, partnerNames, desc, subServices }) => (
               <Link
                 key={title}
                 href={href}
@@ -196,7 +172,16 @@ export default function OurServicesPage() {
                   <h2 className="text-lg font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
                     {title}
                   </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{desc}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
+
+                  {/* Sub-services */}
+                  <div className="flex flex-wrap gap-2 flex-1">
+                    {subServices.map((s) => (
+                      <span key={s} className="inline-flex items-center gap-1 px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] font-semibold text-gray-600">
+                        <CheckCircle2 className="w-3 h-3 text-blue-400" /> {s}
+                      </span>
+                    ))}
+                  </div>
 
                   {/* Partner logos */}
                   {partnerLogos.length > 0 && (
@@ -263,14 +248,14 @@ export default function OurServicesPage() {
               {/* Partner logos */}
               <div>
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Strategic Technology Partners</p>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-5">
                   {allPartners.map(({ name, src, h }) => (
-                    <div key={name} className="flex items-center justify-center bg-gray-50 border border-gray-100 rounded-2xl px-4 py-5 hover:border-blue-100 hover:bg-blue-50 transition-all">
+                    <div key={name} className="flex items-center justify-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-8 hover:border-blue-100 hover:bg-blue-50 transition-all">
                       <Image
                         src={src}
                         alt={name}
-                        width={120}
-                        height={40}
+                        width={150}
+                        height={52}
                         className={`${h} w-auto object-contain`}
                       />
                     </div>
@@ -336,7 +321,7 @@ export default function OurServicesPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/request-quote"
+                  href="/#contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   Request a Quote <ArrowRight className="w-4 h-4" />

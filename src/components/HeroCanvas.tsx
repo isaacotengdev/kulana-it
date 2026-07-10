@@ -719,7 +719,7 @@ function drawNextGenDataScience(ctx: CanvasRenderingContext2D, w: number, h: num
 function drawOurServices(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
   const cx = w / 2, cy = h / 2;
   const R = Math.min(w, h) * 0.28;
-  const labels = ["Core Banking", "Data Center", "ERP & CRM", "API Mgmt", "PMO", "Predictive"];
+  const labels = ["Core & Enterprise", "Integration", "Data & AI", "Kulana Academy"];
   const spin = t * 0.00018;
 
   // orbit rings
@@ -970,13 +970,655 @@ function drawKulana(ctx: CanvasRenderingContext2D, w: number, h: number, t: numb
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+//  15.  CORE & ENTERPRISE SYSTEMS
+//  Four-node constellation: Core Banking, ERP & CRM, Infrastructure, Cybersecurity
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawCoreEnterprise(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const R = Math.min(w, h) * 0.28;
+  const labels = ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"];
+  const spin = t * 0.00014;
+
+  // outer grid lines (cross-hatch feel for "enterprise")
+  for (let i = 0; i < 3; i++) {
+    const r = R * (0.45 + i * 0.22);
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN(0.06 + i * 0.02); ctx.lineWidth = 1;
+    ctx.setLineDash([3, 8]); ctx.stroke(); ctx.setLineDash([]);
+  }
+
+  // central hub
+  const hp = (Math.sin(t * 0.0016) + 1) / 2;
+  glow(ctx, cx, cy, 60 + hp * 20, CYAN(0.22 + hp * 0.1), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 28, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.6); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.75); ctx.textAlign = "center";
+  ctx.fillText("ENTERPRISE", cx, cy + 3);
+
+  // sub-service nodes
+  labels.forEach((label, i) => {
+    const angle = spin + (i / labels.length) * Math.PI * 2 - Math.PI / 4;
+    const nx = cx + Math.cos(angle) * R, ny = cy + Math.sin(angle) * R;
+    const pulse = (Math.sin(t * 0.0022 + i * 1.2) + 1) / 2;
+
+    // spoke
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nx, ny);
+    ctx.strokeStyle = CYAN(0.1 + pulse * 0.05); ctx.lineWidth = 1; ctx.stroke();
+
+    // data packet travelling along spoke
+    const p = ((t * 0.00036 + i * 0.25) % 1);
+    const dx = cx + (nx - cx) * p, dy = cy + (ny - cy) * p;
+    ctx.beginPath(); ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN(0.7); ctx.fill();
+
+    // node glow ring + core
+    ctx.beginPath(); ctx.arc(nx, ny, 22 + pulse * 5, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN(0.14 - pulse * 0.08); ctx.lineWidth = 1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(nx, ny, 14, 0, Math.PI * 2);
+    ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.52); ctx.lineWidth = 1.5;
+    ctx.fill(); ctx.stroke();
+
+    ctx.font = "7.5px sans-serif"; ctx.fillStyle = WHITE(0.68); ctx.textAlign = "center";
+    ctx.fillText(label, nx, ny + 28);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  16.  INTEGRATION & DIGITAL CONNECTIVITY (pillar)
+//  Central API gateway hub with 3 service nodes, bidirectional data flow
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawIntegrationDigital(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const R = Math.min(w, h) * 0.27;
+  const nodes = ["Integration", "Enterprise Arch", "AI-Native PE"];
+  const spin = t * 0.00012;
+
+  [R * 0.38, R * 0.72, R].forEach((r, i) => {
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN(0.06 + i * 0.02); ctx.lineWidth = 1;
+    ctx.setLineDash([2, 8]); ctx.stroke(); ctx.setLineDash([]);
+  });
+
+  const gp = (Math.sin(t * 0.0015) + 1) / 2;
+  glow(ctx, cx, cy, 65 + gp * 22, CYAN(0.18 + gp * 0.1), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 30, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.18); ctx.strokeStyle = CYAN(0.62); ctx.lineWidth = 2.5;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.8); ctx.textAlign = "center";
+  ctx.fillText("API", cx, cy - 3); ctx.fillText("GATEWAY", cx, cy + 7);
+
+  nodes.forEach((label, i) => {
+    const angle = spin + (i / nodes.length) * Math.PI * 2 + Math.PI / 6;
+    const nx = cx + Math.cos(angle) * R, ny = cy + Math.sin(angle) * R;
+    const pulse = (Math.sin(t * 0.002 + i * 1.4) + 1) / 2;
+
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nx, ny);
+    ctx.strokeStyle = CYAN(0.1 + pulse * 0.05); ctx.lineWidth = 1; ctx.stroke();
+
+    const p1 = ((t * 0.00034 + i * 0.33) % 1);
+    const p2 = 1 - ((t * 0.00028 + i * 0.33 + 0.5) % 1);
+    [p1, p2].forEach((p, pi) => {
+      const dx = cx + (nx - cx) * p, dy = cy + (ny - cy) * p;
+      ctx.beginPath(); ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = pi === 0 ? CYAN(0.7) : GREEN(0.6); ctx.fill();
+    });
+
+    ctx.beginPath(); ctx.arc(nx, ny, 19 + pulse * 5, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN(0.12); ctx.lineWidth = 1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(nx, ny, 13, 0, Math.PI * 2);
+    ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.48); ctx.lineWidth = 1.5;
+    ctx.fill(); ctx.stroke();
+
+    ctx.font = "7.5px sans-serif"; ctx.fillStyle = WHITE(0.65); ctx.textAlign = "center";
+    ctx.fillText(label, nx, ny + 26);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  17.  DATA & AI INTELLIGENCE (pillar)
+//  Horizontal pipeline: Data → AI brain → Automation
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawDataAi(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cy = h * 0.5;
+  const nodeData = [
+    { label: "Data",      sub: "Analytics",    x: w * 0.2  },
+    { label: "AI",        sub: "Intelligence", x: w * 0.5  },
+    { label: "RPA",       sub: "Automation",   x: w * 0.8  },
+  ];
+
+  for (let i = 0; i < 5; i++) {
+    const y = cy + (i - 2) * h * 0.08;
+    const phase = t * 0.00032 + i * 0.22;
+    ctx.beginPath();
+    for (let x = 0; x <= w; x += 3) {
+      const wy = y + Math.sin(x * 0.012 + phase * 4) * 10;
+      x === 0 ? ctx.moveTo(x, wy) : ctx.lineTo(x, wy);
+    }
+    ctx.strokeStyle = CYAN(0.04 + (i === 2 ? 0.03 : 0)); ctx.lineWidth = 1; ctx.stroke();
+  }
+
+  for (let i = 0; i < nodeData.length - 1; i++) {
+    const a = nodeData[i], b = nodeData[i + 1];
+    ctx.beginPath(); ctx.moveTo(a.x, cy); ctx.lineTo(b.x, cy);
+    ctx.strokeStyle = CYAN(0.18); ctx.lineWidth = 2; ctx.stroke();
+    const p = ((t * 0.00048 + i * 0.5) % 1);
+    const px = a.x + (b.x - a.x) * p;
+    glow(ctx, px, cy, 10, CYAN(0.3), CYAN(0));
+    ctx.beginPath(); ctx.arc(px, cy, 3, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN(0.9); ctx.fill();
+  }
+
+  nodeData.forEach(({ label, sub, x }, i) => {
+    const pulse = (Math.sin(t * 0.002 + i * 1.1) + 1) / 2;
+    const isAI = i === 1;
+    const r = isAI ? 28 : 20;
+
+    glow(ctx, x, cy, r * 2 + pulse * 14, CYAN(isAI ? 0.2 : 0.1), CYAN(0));
+    ctx.beginPath(); ctx.arc(x, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(isAI ? 0.65 : 0.45); ctx.lineWidth = isAI ? 2.5 : 1.5;
+    ctx.fill(); ctx.stroke();
+
+    if (isAI) {
+      [14, 8].forEach(ri => {
+        ctx.beginPath(); ctx.arc(x, cy, ri, 0, Math.PI * 2);
+        ctx.strokeStyle = CYAN(0.18); ctx.lineWidth = 1;
+        ctx.setLineDash([2, 5]); ctx.stroke(); ctx.setLineDash([]);
+      });
+    }
+
+    ctx.font = `bold ${isAI ? 8 : 7.5}px sans-serif`;
+    ctx.fillStyle = WHITE(0.8); ctx.textAlign = "center";
+    ctx.fillText(label, x, cy + 3);
+    ctx.font = "6.5px sans-serif"; ctx.fillStyle = WHITE(0.42);
+    ctx.fillText(sub, x, cy + r + 14);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  18.  INFRASTRUCTURE
+//  Hierarchical network tree: core → distribution → edge
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawInfrastructure(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const tiers: { y: number; nodes: { x: number; label: string }[] }[] = [
+    { y: h * 0.25, nodes: [{ x: w * 0.5,  label: "Core Network" }] },
+    { y: h * 0.5,  nodes: [{ x: w * 0.3,  label: "Distribution" }, { x: w * 0.7, label: "Distribution" }] },
+    { y: h * 0.75, nodes: [
+      { x: w * 0.12, label: "Edge" }, { x: w * 0.38, label: "Edge" },
+      { x: w * 0.62, label: "Edge" }, { x: w * 0.88, label: "Edge" },
+    ]},
+  ];
+
+  tiers.forEach((tier, ti) => {
+    if (ti === tiers.length - 1) return;
+    const next = tiers[ti + 1];
+    tier.nodes.forEach(parent => {
+      next.nodes.forEach(child => {
+        if (Math.abs(parent.x - child.x) < w * 0.4) {
+          ctx.beginPath(); ctx.moveTo(parent.x, tier.y); ctx.lineTo(child.x, next.y);
+          ctx.strokeStyle = CYAN(0.1); ctx.lineWidth = 1;
+          ctx.setLineDash([3, 7]); ctx.stroke(); ctx.setLineDash([]);
+          const p = ((t * 0.00036 + parent.x * 0.0008 + child.x * 0.0005) % 1);
+          const px = parent.x + (child.x - parent.x) * p;
+          const py = tier.y + (next.y - tier.y) * p;
+          ctx.beginPath(); ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = CYAN(0.62); ctx.fill();
+        }
+      });
+    });
+  });
+
+  tiers.forEach((tier, ti) => {
+    const r = ti === 0 ? 22 : ti === 1 ? 16 : 11;
+    tier.nodes.forEach(({ x, label }, ni) => {
+      const pulse = (Math.sin(t * 0.0018 + ti * 0.9 + ni * 0.6) + 1) / 2;
+      glow(ctx, x, tier.y, r * 2.5 + pulse * 8, CYAN(0.14), CYAN(0));
+      ctx.beginPath(); ctx.arc(x, tier.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = BLUE(0.22); ctx.strokeStyle = CYAN(0.5 + pulse * 0.15); ctx.lineWidth = 1.5;
+      ctx.fill(); ctx.stroke();
+      ctx.font = `${ti === 0 ? 7 : 6}px sans-serif`;
+      ctx.fillStyle = WHITE(ti === 0 ? 0.75 : 0.55); ctx.textAlign = "center";
+      ctx.fillText(label, x, tier.y + r + 11);
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  19.  CYBERSECURITY
+//  Central shield with threat particles being repelled by a perimeter ring
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawCybersecurity(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const R = Math.min(w, h) * 0.27;
+
+  // threat orbit rings
+  [R * 1.38, R].forEach((r, i) => {
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = i === 0 ? RED(0.08) : CYAN(0.28); ctx.lineWidth = i === 0 ? 1 : 2;
+    ctx.setLineDash(i === 0 ? [3, 8] : []); ctx.stroke(); ctx.setLineDash([]);
+  });
+
+  const bp = (Math.sin(t * 0.002) + 1) / 2;
+  glow(ctx, cx, cy, 72 + bp * 22, CYAN(0.2 + bp * 0.1), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 30, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.22); ctx.strokeStyle = CYAN(0.7); ctx.lineWidth = 2.5;
+  ctx.fill(); ctx.stroke();
+
+  // shield icon
+  const sh = 16;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - sh);
+  ctx.lineTo(cx + sh * 0.75, cy - sh * 0.35);
+  ctx.lineTo(cx + sh * 0.75, cy + sh * 0.2);
+  ctx.lineTo(cx, cy + sh);
+  ctx.lineTo(cx - sh * 0.75, cy + sh * 0.2);
+  ctx.lineTo(cx - sh * 0.75, cy - sh * 0.35);
+  ctx.closePath();
+  ctx.strokeStyle = CYAN(0.85); ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.fillStyle = CYAN(0.12); ctx.fill();
+
+  // threat particles
+  for (let i = 0; i < 7; i++) {
+    const angle = t * 0.00052 + (i / 7) * Math.PI * 2;
+    const rr = R * (1.18 + 0.22 * Math.sin(t * 0.0011 + i));
+    const tx = cx + Math.cos(angle) * rr, ty = cy + Math.sin(angle) * rr;
+    const a = (Math.sin(t * 0.003 + i) + 1) / 2 * 0.5 + 0.2;
+    glow(ctx, tx, ty, 11, RED(a * 0.5), RED(0));
+    ctx.beginPath(); ctx.arc(tx, ty, 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = RED(a); ctx.fill();
+  }
+
+  // deflection sparks at barrier
+  for (let i = 0; i < 4; i++) {
+    const angle = t * 0.0006 + (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const sx = cx + Math.cos(angle) * R, sy = cy + Math.sin(angle) * R;
+    const flash = (Math.sin(t * 0.004 + i * 0.9) + 1) / 2;
+    if (flash > 0.55) {
+      ctx.beginPath(); ctx.arc(sx, sy, 3 + flash * 4, 0, Math.PI * 2);
+      ctx.fillStyle = CYAN(flash * 0.65); ctx.fill();
+    }
+  }
+
+  ctx.font = "6.5px sans-serif"; ctx.textAlign = "center";
+  ctx.fillStyle = CYAN(0.45);
+  ctx.fillText("PROTECTED PERIMETER", cx, cy - R - 10);
+  ctx.fillStyle = RED(0.4);
+  ctx.fillText("THREAT DETECTION", cx, cy + R * 1.42);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  20.  ENTERPRISE ARCHITECTURE
+//  Horizontal layered stack (Business / Application / Data / Infrastructure)
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawEnterpriseArch(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const layers = [
+    { label: "Business Layer",       y: h * 0.25 },
+    { label: "Application Layer",    y: h * 0.42 },
+    { label: "Data Layer",           y: h * 0.58 },
+    { label: "Infrastructure Layer", y: h * 0.75 },
+  ];
+  const LX = w * 0.1, RX = w * 0.9, lw = RX - LX;
+
+  // vertical connectors between layers
+  const cols = [0.2, 0.4, 0.6, 0.8];
+  layers.forEach((layer, li) => {
+    if (li === layers.length - 1) return;
+    const next = layers[li + 1];
+    cols.forEach(cx => {
+      const x = LX + lw * cx;
+      ctx.beginPath(); ctx.moveTo(x, layer.y); ctx.lineTo(x, next.y);
+      ctx.strokeStyle = CYAN(0.1); ctx.lineWidth = 1;
+      ctx.setLineDash([3, 6]); ctx.stroke(); ctx.setLineDash([]);
+
+      const p = ((t * 0.00028 + cx + li * 0.25) % 1);
+      const py = layer.y + (next.y - layer.y) * p;
+      ctx.beginPath(); ctx.arc(x, py, 2, 0, Math.PI * 2);
+      ctx.fillStyle = CYAN(0.6); ctx.fill();
+    });
+  });
+
+  // layer bars
+  layers.forEach(({ label, y }, i) => {
+    const pulse = (Math.sin(t * 0.0016 + i * 0.8) + 1) / 2;
+    const barH = 18;
+
+    ctx.beginPath();
+    ctx.rect(LX, y - barH / 2, lw, barH);
+    const grad = ctx.createLinearGradient(LX, 0, RX, 0);
+    grad.addColorStop(0, BLUE(0.08));
+    grad.addColorStop(0.5, CYAN(0.1 + pulse * 0.08));
+    grad.addColorStop(1, BLUE(0.08));
+    ctx.fillStyle = grad; ctx.fill();
+    ctx.strokeStyle = CYAN(0.3 + pulse * 0.1); ctx.lineWidth = 1; ctx.stroke();
+
+    ctx.font = "bold 8px sans-serif"; ctx.fillStyle = WHITE(0.7); ctx.textAlign = "center";
+    ctx.fillText(label, w / 2, y + 3);
+
+    // node dots on the bar
+    cols.forEach(cx => {
+      const x = LX + lw * cx;
+      ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = CYAN(0.5 + pulse * 0.2); ctx.fill();
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  21.  AI-NATIVE PRODUCT ENGINEERING
+//  Floating code tokens + neural network formation
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawAiNative(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+
+  // floating code symbols
+  const symbols = ["</>", "fn()", "{}", "AI", "=>", "model", "prompt", "[]"];
+  symbols.forEach((sym, i) => {
+    const angle = (i / symbols.length) * Math.PI * 2 + t * 0.00008;
+    const r = Math.min(w, h) * (0.25 + (i % 2) * 0.1);
+    const sx = cx + Math.cos(angle) * r;
+    const sy = cy + Math.sin(angle) * r + Math.sin(t * 0.001 + i) * 8;
+    const a = (Math.sin(t * 0.0015 + i * 0.8) + 1) / 2 * 0.35 + 0.12;
+    ctx.font = "bold 9px monospace"; ctx.fillStyle = CYAN(a); ctx.textAlign = "center";
+    ctx.fillText(sym, sx, sy);
+  });
+
+  // neural connections
+  const neuronCount = 5;
+  const neurons = Array.from({ length: neuronCount }, (_, i) => ({
+    x: cx + Math.cos((i / neuronCount) * Math.PI * 2) * 50,
+    y: cy + Math.sin((i / neuronCount) * Math.PI * 2) * 40,
+  }));
+
+  neurons.forEach((a, i) => {
+    neurons.forEach((b, j) => {
+      if (j <= i) return;
+      const pulse = (Math.sin(t * 0.0025 + i * 0.7 + j * 0.5) + 1) / 2;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = CYAN(0.08 + pulse * 0.12); ctx.lineWidth = 1; ctx.stroke();
+
+      if (pulse > 0.6) {
+        const p = ((t * 0.0004 + i * 0.2 + j * 0.15) % 1);
+        const px = a.x + (b.x - a.x) * p, py = a.y + (b.y - a.y) * p;
+        ctx.beginPath(); ctx.arc(px, py, 2, 0, Math.PI * 2);
+        ctx.fillStyle = CYAN(pulse * 0.7); ctx.fill();
+      }
+    });
+  });
+
+  neurons.forEach(({ x, y }, i) => {
+    const pulse = (Math.sin(t * 0.002 + i * 1.1) + 1) / 2;
+    glow(ctx, x, y, 16 + pulse * 6, CYAN(0.2 + pulse * 0.1), CYAN(0));
+    ctx.beginPath(); ctx.arc(x, y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN(0.4 + pulse * 0.2); ctx.fill();
+  });
+
+  // central label
+  const cp = (Math.sin(t * 0.002) + 1) / 2;
+  glow(ctx, cx, cy, 55 + cp * 18, CYAN(0.2), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 24, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.22); ctx.strokeStyle = CYAN(0.6); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.78); ctx.textAlign = "center";
+  ctx.fillText("AI", cx, cy - 2); ctx.fillText("ENGINE", cx, cy + 7);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  22.  RPA — ROBOTIC PROCESS AUTOMATION
+//  Circular automation track with bots processing task items
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawRpa(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const R = Math.min(w, h) * 0.28;
+
+  // automation track
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+  ctx.strokeStyle = CYAN(0.14); ctx.lineWidth = 2; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx, cy, R * 0.55, 0, Math.PI * 2);
+  ctx.strokeStyle = CYAN(0.08); ctx.lineWidth = 1;
+  ctx.setLineDash([3, 7]); ctx.stroke(); ctx.setLineDash([]);
+
+  // task items (squares) being processed around the track
+  const tasks = 6;
+  for (let i = 0; i < tasks; i++) {
+    const angle = (i / tasks) * Math.PI * 2 + t * 0.00045;
+    const tx = cx + Math.cos(angle) * R, ty = cy + Math.sin(angle) * R;
+    const done = (Math.sin(t * 0.0015 + i) + 1) / 2 > 0.5;
+    const size = 7;
+    ctx.beginPath();
+    ctx.rect(tx - size, ty - size, size * 2, size * 2);
+    ctx.fillStyle = done ? CYAN(0.25) : BLUE(0.18);
+    ctx.strokeStyle = done ? CYAN(0.7) : CYAN(0.3);
+    ctx.lineWidth = 1.5; ctx.fill(); ctx.stroke();
+    if (done) {
+      ctx.font = "bold 7px sans-serif"; ctx.fillStyle = CYAN(0.85); ctx.textAlign = "center";
+      ctx.fillText("✓", tx, ty + 2.5);
+    }
+  }
+
+  // bot agents on the inner ring
+  const bots = 3;
+  for (let i = 0; i < bots; i++) {
+    const angle = (i / bots) * Math.PI * 2 + t * 0.00065 + Math.PI / bots;
+    const bx = cx + Math.cos(angle) * R * 0.55, by = cy + Math.sin(angle) * R * 0.55;
+    const pulse = (Math.sin(t * 0.003 + i) + 1) / 2;
+    glow(ctx, bx, by, 16 + pulse * 6, GREEN(0.25), GREEN(0));
+    ctx.beginPath(); ctx.arc(bx, by, 9, 0, Math.PI * 2);
+    ctx.fillStyle = C(0, 160, 100, 0.2); ctx.strokeStyle = GREEN(0.65); ctx.lineWidth = 1.5;
+    ctx.fill(); ctx.stroke();
+    ctx.font = "bold 7px sans-serif"; ctx.fillStyle = GREEN(0.8); ctx.textAlign = "center";
+    ctx.fillText("BOT", bx, by + 2.5);
+  }
+
+  // central hub
+  const hp = (Math.sin(t * 0.0018) + 1) / 2;
+  glow(ctx, cx, cy, 50 + hp * 18, CYAN(0.18 + hp * 0.08), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.55); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.75); ctx.textAlign = "center";
+  ctx.fillText("RPA", cx, cy - 2); ctx.fillText("ENGINE", cx, cy + 7);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  23.  PARTNER OFFERING
+//  Two constellations converging — Kulana nodes + Partner nodes meeting
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawPartnerOffering(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cy = h / 2;
+  const merge = (Math.sin(t * 0.0008) + 1) / 2;
+  const gap = w * 0.12 * (1 - merge);
+  const lcx = w * 0.32 - gap, rcx = w * 0.68 + gap;
+
+  // bridge line at center
+  const bridgeAlpha = merge * 0.4;
+  ctx.beginPath(); ctx.moveTo(lcx, cy); ctx.lineTo(rcx, cy);
+  ctx.strokeStyle = CYAN(bridgeAlpha); ctx.lineWidth = 2; ctx.stroke();
+  const bp = ((t * 0.0005) % 1);
+  const bpx = lcx + (rcx - lcx) * bp;
+  glow(ctx, bpx, cy, 10, CYAN(0.4), CYAN(0));
+  ctx.beginPath(); ctx.arc(bpx, cy, 3, 0, Math.PI * 2);
+  ctx.fillStyle = CYAN(0.9); ctx.fill();
+
+  [
+    { cx: lcx, label: "KULANA", color: CYAN,  satellites: ["Core Systems", "Integration", "Data & AI"] },
+    { cx: rcx, label: "PARTNER", color: GREEN, satellites: ["Training", "Licensing", "Co-delivery"] },
+  ].forEach(({ cx, label, color, satellites }) => {
+    const Rn = Math.min(w, h) * 0.16;
+
+    // satellite ring
+    ctx.beginPath(); ctx.arc(cx, cy, Rn, 0, Math.PI * 2);
+    ctx.strokeStyle = color(0.1); ctx.lineWidth = 1;
+    ctx.setLineDash([3, 7]); ctx.stroke(); ctx.setLineDash([]);
+
+    satellites.forEach((sat, i) => {
+      const angle = t * 0.0001 + (i / satellites.length) * Math.PI * 2;
+      const sx = cx + Math.cos(angle) * Rn, sy = cy + Math.sin(angle) * Rn;
+      const pulse = (Math.sin(t * 0.002 + i * 1.3) + 1) / 2;
+
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(sx, sy);
+      ctx.strokeStyle = color(0.08 + pulse * 0.04); ctx.lineWidth = 1; ctx.stroke();
+
+      ctx.beginPath(); ctx.arc(sx, sy, 10, 0, Math.PI * 2);
+      ctx.fillStyle = BLUE(0.18); ctx.strokeStyle = color(0.45); ctx.lineWidth = 1.5;
+      ctx.fill(); ctx.stroke();
+      ctx.font = "6px sans-serif"; ctx.fillStyle = WHITE(0.55); ctx.textAlign = "center";
+      ctx.fillText(sat, sx, sy + 18);
+    });
+
+    // center node
+    const cp = (Math.sin(t * 0.002) + 1) / 2;
+    glow(ctx, cx, cy, 45 + cp * 15, color(0.2), color(0));
+    ctx.beginPath(); ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+    ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = color(0.65); ctx.lineWidth = 2;
+    ctx.fill(); ctx.stroke();
+    ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.8); ctx.textAlign = "center";
+    ctx.fillText(label, cx, cy + 3);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  24.  CONTACT US
+//  Radial signal rings pulsing outward from a message centre
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawContact(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const maxR = Math.min(w, h) * 0.38;
+
+  // concentric pulse rings
+  for (let i = 0; i < 4; i++) {
+    const phase = ((t * 0.00045 + i * 0.25) % 1);
+    const r = phase * maxR;
+    const a = (1 - phase) * 0.18;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN(a); ctx.lineWidth = 1.5; ctx.stroke();
+  }
+
+  // radial spokes
+  const spokeCount = 8;
+  for (let i = 0; i < spokeCount; i++) {
+    const angle = (i / spokeCount) * Math.PI * 2;
+    const len = maxR * (0.4 + 0.2 * Math.abs(Math.sin(t * 0.001 + i)));
+    ctx.beginPath();
+    ctx.moveTo(cx + Math.cos(angle) * 32, cy + Math.sin(angle) * 32);
+    ctx.lineTo(cx + Math.cos(angle) * len, cy + Math.sin(angle) * len);
+    ctx.strokeStyle = CYAN(0.06); ctx.lineWidth = 1; ctx.stroke();
+  }
+
+  // center node
+  const cp = (Math.sin(t * 0.002) + 1) / 2;
+  glow(ctx, cx, cy, 55 + cp * 20, CYAN(0.2 + cp * 0.08), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 28, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.6); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 8px sans-serif"; ctx.fillStyle = WHITE(0.78); ctx.textAlign = "center";
+  ctx.fillText("REACH", cx, cy - 2); ctx.fillText("OUT", cx, cy + 8);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  25.  REQUEST QUOTE
+//  Floating document cards flowing into a check-marked brief
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawQuote(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+
+  // floating requirement cards
+  const cards = [
+    { label: "Requirements", offset: -0.3 },
+    { label: "Timeline",     offset: 0    },
+    { label: "Budget",       offset: 0.3  },
+    { label: "Team Size",    offset: 0.6  },
+  ];
+
+  cards.forEach(({ label, offset }, i) => {
+    const phase = ((t * 0.00032 + offset) % 1);
+    const x = w * 0.12 + (w * 0.35) * phase;
+    const y = cy + Math.sin(t * 0.001 + i * 1.4) * h * 0.12 + (i - 1.5) * h * 0.1;
+    const a = Math.min(1, Math.min(phase, 1 - phase) * 4) * 0.5;
+    if (a < 0.02) return;
+
+    ctx.beginPath(); ctx.rect(x - 28, y - 10, 56, 20);
+    ctx.fillStyle = BLUE(a * 0.4); ctx.strokeStyle = CYAN(a * 0.7); ctx.lineWidth = 1;
+    ctx.fill(); ctx.stroke();
+    ctx.font = "6.5px sans-serif"; ctx.fillStyle = WHITE(a * 0.7); ctx.textAlign = "center";
+    ctx.fillText(label, x, y + 3);
+  });
+
+  // central brief document
+  const cp = (Math.sin(t * 0.002) + 1) / 2;
+  glow(ctx, cx + w * 0.18, cy, 55 + cp * 18, CYAN(0.2 + cp * 0.08), CYAN(0));
+  ctx.beginPath(); ctx.rect(cx + w * 0.06, cy - 30, 40, 60);
+  ctx.fillStyle = BLUE(0.22); ctx.strokeStyle = CYAN(0.55); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+
+  ["✓ Spec", "✓ Cost", "✓ Plan"].forEach((line, i) => {
+    ctx.font = "7px sans-serif"; ctx.fillStyle = CYAN(0.65); ctx.textAlign = "left";
+    ctx.fillText(line, cx + w * 0.07, cy - 12 + i * 14);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  26.  LEARN MORE
+//  Knowledge graph — connected concept nodes expanding outward
+// ═══════════════════════════════════════════════════════════════════════════════
+function drawLearnMore(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {
+  const cx = w / 2, cy = h / 2;
+  const topics = ["Cloud", "AI", "Data", "Security", "Integration", "ERP"];
+  const R = Math.min(w, h) * 0.27;
+
+  // edges between random topic pairs
+  const edges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,3],[1,4]];
+  edges.forEach(([a, b]) => {
+    const angleA = (a / topics.length) * Math.PI * 2 - Math.PI / 2;
+    const angleB = (b / topics.length) * Math.PI * 2 - Math.PI / 2;
+    const ax = cx + Math.cos(angleA) * R, ay = cy + Math.sin(angleA) * R;
+    const bx = cx + Math.cos(angleB) * R, by = cy + Math.sin(angleB) * R;
+    ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by);
+    ctx.strokeStyle = CYAN(0.08); ctx.lineWidth = 1; ctx.stroke();
+
+    const p = ((t * 0.00032 + a * 0.17 + b * 0.11) % 1);
+    const px = ax + (bx - ax) * p, py = ay + (by - ay) * p;
+    ctx.beginPath(); ctx.arc(px, py, 2, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN(0.55); ctx.fill();
+  });
+
+  // topic nodes
+  topics.forEach((label, i) => {
+    const angle = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
+    const nx = cx + Math.cos(angle) * R, ny = cy + Math.sin(angle) * R;
+    const pulse = (Math.sin(t * 0.002 + i * 0.9) + 1) / 2;
+
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nx, ny);
+    ctx.strokeStyle = CYAN(0.06); ctx.lineWidth = 1; ctx.stroke();
+
+    glow(ctx, nx, ny, 18 + pulse * 7, CYAN(0.16 + pulse * 0.08), CYAN(0));
+    ctx.beginPath(); ctx.arc(nx, ny, 12, 0, Math.PI * 2);
+    ctx.fillStyle = BLUE(0.2); ctx.strokeStyle = CYAN(0.45 + pulse * 0.15); ctx.lineWidth = 1.5;
+    ctx.fill(); ctx.stroke();
+    ctx.font = "6.5px sans-serif"; ctx.fillStyle = WHITE(0.62); ctx.textAlign = "center";
+    ctx.fillText(label, nx, ny + 22);
+  });
+
+  // central knowledge hub
+  const kp = (Math.sin(t * 0.0018) + 1) / 2;
+  glow(ctx, cx, cy, 52 + kp * 16, CYAN(0.2), CYAN(0));
+  ctx.beginPath(); ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+  ctx.fillStyle = BLUE(0.22); ctx.strokeStyle = CYAN(0.58); ctx.lineWidth = 2;
+  ctx.fill(); ctx.stroke();
+  ctx.font = "bold 7px sans-serif"; ctx.fillStyle = WHITE(0.75); ctx.textAlign = "center";
+  ctx.fillText("KNOW-", cx, cy - 2); ctx.fillText("LEDGE", cx, cy + 7);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 //  Variant map + component
 // ═══════════════════════════════════════════════════════════════════════════════
 export type HeroVariant =
   | "core-banking" | "data-center" | "erp-crm" | "digital-integrations"
   | "project-management" | "predictive-analysis" | "ai-cloud"
   | "digital-transformation" | "cloud-computing" | "next-gen-data-science"
-  | "our-services" | "academy" | "about" | "kulana";
+  | "our-services" | "academy" | "about" | "kulana" | "core-enterprise"
+  | "integration-digital" | "data-ai" | "infrastructure" | "cybersecurity"
+  | "enterprise-arch" | "ai-native" | "rpa" | "partner-offering"
+  | "contact" | "quote" | "learn-more";
 
 const DRAW_FNS: Record<HeroVariant, (ctx: CanvasRenderingContext2D, w: number, h: number, t: number) => void> = {
   "core-banking":           drawCoreBanking,
@@ -993,6 +1635,18 @@ const DRAW_FNS: Record<HeroVariant, (ctx: CanvasRenderingContext2D, w: number, h
   "academy":                drawAcademy,
   "about":                  drawAbout,
   "kulana":                 drawKulana,
+  "core-enterprise":        drawCoreEnterprise,
+  "integration-digital":    drawIntegrationDigital,
+  "data-ai":                drawDataAi,
+  "infrastructure":         drawInfrastructure,
+  "cybersecurity":          drawCybersecurity,
+  "enterprise-arch":        drawEnterpriseArch,
+  "ai-native":              drawAiNative,
+  "rpa":                    drawRpa,
+  "partner-offering":       drawPartnerOffering,
+  "contact":                drawContact,
+  "quote":                  drawQuote,
+  "learn-more":             drawLearnMore,
 };
 
 interface Props { variant?: HeroVariant; }

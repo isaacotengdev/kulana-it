@@ -71,6 +71,7 @@ export default function KulanaPage() {
               src="/images/kulana/hero.jpg"
               alt="Kulana IT Solutions team"
               fill
+              sizes="100vw"
               className="object-cover opacity-20"
               priority
             />

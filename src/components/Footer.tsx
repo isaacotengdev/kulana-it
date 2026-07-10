@@ -5,12 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const serviceLinks = [
-  { name: "Core Banking", href: "/core-banking" },
-  { name: "Data Center & Security Operations Centre", href: "/data-center-security-operations-centre" },
-  { name: "ERP and CRM", href: "/erp-and-crm" },
-  { name: "Digital Integrations & API Management", href: "/digital-integrations-api-management" },
-  { name: "Project Management Consulting", href: "/project-management-consulting" },
-  { name: "Predictive Analysis", href: "/predictive-analysis" },
+  { name: "Core & Enterprise Systems", href: "/core-enterprise-systems", isPillar: true },
+  { name: "Core Banking",              href: "/core-banking" },
+  { name: "ERP & CRM",                 href: "/erp-and-crm" },
+  { name: "Infrastructure",            href: "/infrastructure" },
+  { name: "Cybersecurity",             href: "/cybersecurity" },
+  { name: "Integration & Digital Connectivity", href: "/integration-digital-connectivity", isPillar: true },
+  { name: "Integration",               href: "/digital-integrations-api-management" },
+  { name: "Enterprise Architecture",   href: "/enterprise-architecture" },
+  { name: "AI-Native Engineering",     href: "/ai-native-product-engineering" },
+  { name: "Data & AI Intelligence",    href: "/data-ai-intelligence", isPillar: true },
+  { name: "Data",                      href: "/predictive-analysis" },
+  { name: "AI",                        href: "/ai-cloud-ai" },
+  { name: "RPA",                       href: "/rpa" },
+  { name: "Kulana Academy",            href: "/kulana-academy", isPillar: true },
+  { name: "Corporate Training",        href: "/kulana-academy" },
+  { name: "Partner Offering",          href: "/partner-offering" },
 ];
 
 const quickLinks = [
@@ -18,7 +28,7 @@ const quickLinks = [
   { name: "Kulana Academy", href: "/kulana-academy" },
   { name: "About us", href: "/about-us" },
   { name: "Contact us", href: "/contact-us" },
-  { name: "Request a quote", href: "/request-quote" },
+  { name: "Request a quote", href: "/#contact" },
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Cookies Policy", href: "/cookies-policy" },
   { name: "IMS Policy", href: "/ims-policy" },
@@ -30,7 +40,7 @@ export default function Footer() {
     <footer className="bg-gray-950 text-gray-400">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 gap-10">
+        <div className="grid lg:grid-cols-5 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
@@ -120,14 +130,18 @@ export default function Footer() {
           </div>
 
           {/* Our Services */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-white font-semibold text-sm mb-4">Our Services</h4>
-            <ul className="space-y-2.5">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
               {serviceLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.name} className={link.isPillar ? "col-span-2 mt-3 first:mt-0" : "pl-3"}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-white hover:translate-x-0.5 inline-block transition-all"
+                    className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
+                      link.isPillar
+                        ? "text-white font-semibold hover:text-[#00C8D8]"
+                        : "text-gray-400 hover:text-white"
+                    }`}
                   >
                     {link.name}
                   </Link>

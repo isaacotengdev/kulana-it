@@ -20,25 +20,30 @@ const offices = [
   },
 ];
 
-const services = [
-  "Core Banking",
-  "Data Center & Security Operations Centre",
-  "ERP and CRM",
-  "Digital Integrations & API Management",
-  "Project Management Consulting",
-  "Predictive Analysis",
-  "AI & Cloud AI",
-  "Digital Transformation",
-  "Next-Gen Data Science",
-  "Cloud Computing",
-  "Kulana Academy",
-  "Other",
+const serviceGroups = [
+  {
+    label: "Core & Enterprise Systems",
+    options: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
+  },
+  {
+    label: "Integration & Digital Connectivity",
+    options: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
+  },
+  {
+    label: "Data & AI Intelligence",
+    options: ["Data", "AI", "RPA"],
+  },
+  {
+    label: "Kulana Academy",
+    options: ["Corporate Training", "Partner Offering"],
+  },
 ];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -56,7 +61,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "homepage" }),
+        body: JSON.stringify({ ...form, website: honeypot, source: "homepage" }),
       });
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
@@ -151,6 +156,13 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Honeypot — hidden from users, catches bots */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                  <label>
+                    Website
+                    <input type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                  </label>
+                </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -217,9 +229,14 @@ export default function Contact() {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all bg-white text-gray-700"
                   >
                     <option value="">Select a service…</option>
-                    {services.map((s) => (
-                      <option key={s} value={s}>{s}</option>
+                    {serviceGroups.map((group) => (
+                      <optgroup key={group.label} label={group.label}>
+                        {group.options.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </optgroup>
                     ))}
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 

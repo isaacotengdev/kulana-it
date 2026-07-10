@@ -115,7 +115,7 @@ export default function DigitalIntegrationsPage() {
               ))}
             </div>
             <Link
-              href="/request-quote"
+              href="/#contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Request a Quote <ArrowRight className="w-4 h-4" />
@@ -153,7 +153,7 @@ export default function DigitalIntegrationsPage() {
                 technologies, formats, and protocols.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Kulana's middleware and integration practice bridges gaps between software applications,
+                Kulana&apos;s middleware and integration practice bridges gaps between software applications,
                 databases, and platforms — whether connecting legacy systems with modern cloud solutions
                 or linking enterprise applications. We provide solutions customised to your specific
                 business requirements.
@@ -349,7 +349,7 @@ export default function DigitalIntegrationsPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/request-quote"
+                  href="/#contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   Request a Quote <ArrowRight className="w-4 h-4" />

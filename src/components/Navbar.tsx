@@ -2,43 +2,60 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const services = [
-  { name: "Core Banking", href: "/core-banking" },
-  { name: "Data Center & Security Operations Centre", href: "/data-center-security-operations-centre" },
-  { name: "ERP and CRM", href: "/erp-and-crm" },
-  { name: "Digital Integrations & API Management", href: "/digital-integrations-api-management" },
-  { name: "Project Management Consulting", href: "/project-management-consulting" },
-  { name: "Predictive Analysis", href: "/predictive-analysis" },
+const servicePillars = [
+  {
+    name: "Core & Enterprise Systems",
+    href: "/core-enterprise-systems",
+    services: [
+      { name: "Core Banking",   href: "/core-banking" },
+      { name: "ERP & CRM",      href: "/erp-and-crm" },
+      { name: "Infrastructure", href: "/infrastructure" },
+      { name: "Cybersecurity",  href: "/cybersecurity" },
+    ],
+  },
+  {
+    name: "Integration & Digital Connectivity",
+    href: "/integration-digital-connectivity",
+    services: [
+      { name: "Integration",                   href: "/digital-integrations-api-management" },
+      { name: "Enterprise Architecture",        href: "/enterprise-architecture" },
+      { name: "AI-Native Product Engineering",  href: "/ai-native-product-engineering" },
+    ],
+  },
+  {
+    name: "Data & AI Intelligence",
+    href: "/data-ai-intelligence",
+    services: [
+      { name: "Data", href: "/predictive-analysis" },
+      { name: "AI",   href: "/ai-cloud-ai" },
+      { name: "RPA",  href: "/rpa" },
+    ],
+  },
+  {
+    name: "Kulana Academy",
+    href: "/kulana-academy",
+    services: [
+      { name: "Corporate Training", href: "/kulana-academy" },
+      { name: "Partner Offering",   href: "/partner-offering" },
+    ],
+  },
 ];
 
-const academy = [
-  { name: "AI & Cloud AI", href: "/ai-cloud-ai" },
-  { name: "Digital Transformation", href: "/digital-transformation" },
-  { name: "Next-Gen Data Science", href: "/next-gen-data-science" },
-  { name: "Cloud Computing", href: "/cloud-computing" },
-];
+const about = [{ name: "Kulana", href: "/kulana" }];
 
-const about = [
-  { name: "Kulana", href: "/kulana" },
-];
+type SimpleItem = { name: string; href: string };
+type NavLink =
+  | { name: string; href: string; dropdown?: SimpleItem[]; isMega?: false }
+  | { name: string; href: string; isMega: true };
 
-const projects = [
-  { name: "DBG Middleware Project",      href: "/projects/dbg-middleware" },
-  { name: "DBG Core Banking Project",    href: "/projects/dbg-core-banking" },
-  { name: "CBG Middleware Project",      href: "/projects/cbg-middleware" },
-  { name: "DBG Dynamics 365 Project",    href: "/projects/dbg-dynamics-365" },
-];
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Our Services", href: "/our-services", dropdown: services },
-  { name: "Projects", href: "/projects", dropdown: projects },
-  { name: "Kulana Academy", href: "/kulana-academy", dropdown: academy },
-  { name: "About us", href: "/about-us", dropdown: about },
-  { name: "Contact us", href: "/#contact" },
+const navLinks: NavLink[] = [
+  { name: "Home",        href: "/" },
+  { name: "Our Services",href: "/our-services", isMega: true },
+  { name: "About us",    href: "/about-us",    dropdown: about },
+  { name: "Contact us",  href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -56,12 +73,16 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setActiveDropdown(null), 150);
   };
 
+  const hasFlyout = (link: NavLink) =>
+    "isMega" in link ? link.isMega : !!link.dropdown;
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <div className="rounded-xl px-2 py-1">
               <Image
                 src="/logos/logo.svg"
@@ -75,20 +96,20 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <div
                 key={link.name}
                 className="relative"
-                onMouseEnter={() => link.dropdown && openDropdown(link.name)}
-                onMouseLeave={() => link.dropdown && closeDropdown()}
+                onMouseEnter={() => hasFlyout(link) && openDropdown(link.name)}
+                onMouseLeave={() => hasFlyout(link) && closeDropdown()}
               >
                 <Link
                   href={link.href}
-                  className="nav-link flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                  className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                 >
                   {link.name}
-                  {link.dropdown && (
+                  {hasFlyout(link) && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
                         activeDropdown === link.name ? "rotate-180" : ""
@@ -97,8 +118,56 @@ export default function Navbar() {
                   )}
                 </Link>
 
-                {/* Dropdown */}
-                {link.dropdown && activeDropdown === link.name && (
+                {/* ── Mega-dropdown: Our Services ── */}
+                {"isMega" in link && link.isMega && activeDropdown === link.name && (
+                  <div
+                    className="absolute top-full left-0 mt-1 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                    style={{ width: "780px" }}
+                    onMouseEnter={() => openDropdown(link.name)}
+                    onMouseLeave={closeDropdown}
+                  >
+                    <div className="grid grid-cols-4 gap-0 divide-x divide-gray-100">
+                      {servicePillars.map((pillar) => (
+                        <div key={pillar.name} className="p-5">
+                          {/* Pillar header */}
+                          <Link
+                            href={pillar.href}
+                            className="block text-[11px] font-bold text-[#00C8D8] uppercase tracking-wider mb-3 hover:text-[#009aaa] transition-colors leading-snug"
+                          >
+                            {pillar.name}
+                          </Link>
+                          {/* Service links */}
+                          <ul className="space-y-0.5">
+                            {pillar.services.map((svc) => (
+                              <li key={svc.name}>
+                                <Link
+                                  href={svc.href}
+                                  className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                >
+                                  <div className="w-1.5 h-1.5 rounded-full bg-blue-300 flex-shrink-0" />
+                                  {svc.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Footer strip */}
+                    <div className="px-5 py-2.5 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                      <span className="text-xs text-gray-400">All services and solutions</span>
+                      <Link
+                        href="/our-services"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                      >
+                        Browse all <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Regular dropdown ── */}
+                {"dropdown" in link && link.dropdown && activeDropdown === link.name && (
                   <div
                     className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden"
                     onMouseEnter={() => openDropdown(link.name)}
@@ -122,8 +191,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA */}
+          <div className="hidden lg:block flex-shrink-0">
             <Link
               href="/#contact"
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-blue-200"
@@ -132,7 +201,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-lg transition-colors text-gray-700 hover:bg-gray-100"
@@ -148,7 +217,7 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
-                {link.dropdown ? (
+                {hasFlyout(link) ? (
                   <button
                     onClick={() =>
                       setOpenMobileSection(
@@ -174,7 +243,45 @@ export default function Navbar() {
                   </Link>
                 )}
 
-                {link.dropdown && openMobileSection === link.name && (
+                {/* Mobile: Our Services — pillar groups */}
+                {"isMega" in link && link.isMega && openMobileSection === link.name && (
+                  <div className="ml-3 mt-1 pb-2 space-y-3">
+                    {servicePillars.map((pillar) => (
+                      <div key={pillar.name}>
+                        <Link
+                          href={pillar.href}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-[#00C8D8] uppercase tracking-wider hover:text-[#009aaa] transition-colors"
+                        >
+                          <ChevronRight className="w-3 h-3" />
+                          {pillar.name}
+                        </Link>
+                        <div className="ml-5 space-y-0.5">
+                          {pillar.services.map((svc) => (
+                            <Link
+                              key={svc.name}
+                              href={svc.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                            >
+                              {svc.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    <Link
+                      href="/our-services"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    >
+                      View all services <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                )}
+
+                {/* Mobile: regular dropdowns */}
+                {"dropdown" in link && link.dropdown && openMobileSection === link.name && (
                   <div className="ml-4 mt-1 space-y-1 pb-2">
                     <Link
                       href={link.href}
@@ -197,6 +304,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+
             <div className="pt-3 border-t border-gray-100">
               <Link
                 href="/#contact"

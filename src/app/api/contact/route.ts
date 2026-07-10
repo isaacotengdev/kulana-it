@@ -3,6 +3,34 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
+// ── Basic in-memory rate limiter ──────────────────────────────────────────────
+// Best-effort protection against spam/abuse. Note: on serverless this is
+// per-instance and resets on cold start — for hard guarantees move to a shared
+// store (e.g. Upstash Redis). Still meaningfully raises the cost of flooding.
+const RATE_LIMIT_MAX = 5;                 // submissions…
+const RATE_LIMIT_WINDOW_MS = 10 * 60_000; // …per 10 minutes, per IP
+const hits = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  // opportunistic cleanup so the map doesn't grow unbounded
+  if (hits.size > 5_000) {
+    for (const [k, v] of hits) {
+      if (v.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) hits.delete(k);
+    }
+  }
+  return recent.length > RATE_LIMIT_MAX;
+}
+
+// ── Validation ────────────────────────────────────────────────────────────────
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const LIMITS = { firstName: 100, lastName: 100, email: 254, phone: 40, service: 100, message: 5000, source: 50 } as const;
+
+const clean = (v: unknown): string => (typeof v === "string" ? v.trim() : "");
+
 async function ensureTable(sql: NeonQueryFunction<false, false>) {
   await sql`
     CREATE TABLE IF NOT EXISTS contact_submissions (
@@ -24,39 +52,73 @@ async function ensureTable(sql: NeonQueryFunction<false, false>) {
 }
 
 export async function POST(request: NextRequest) {
-  const { firstName, lastName, email, phone, service, message, source } =
-    await request.json() as {
-      firstName: string;
-      lastName: string;
-      email: string;
-      phone?: string;
-      service: string;
-      message: string;
-      source?: string;
-    };
+  // ── Rate limit ──────────────────────────────────────────────────────────────
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+  }
 
+  let body: Record<string, unknown>;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
+  // ── Honeypot: hidden field only bots fill. Pretend success, drop silently. ──
+  if (clean(body.website)) {
+    return NextResponse.json({ success: true });
+  }
+
+  const firstName = clean(body.firstName);
+  const lastName = clean(body.lastName);
+  const email = clean(body.email);
+  const phone = clean(body.phone);
+  const service = clean(body.service);
+  const message = clean(body.message);
+  const source = clean(body.source) || "website";
+
+  // ── Validation ────────────────────────────────────────────────────────────
   if (!firstName || !lastName || !email || !service || !message) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+  if (!EMAIL_RE.test(email) || email.length > LIMITS.email) {
+    return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });
+  }
+  if (
+    firstName.length > LIMITS.firstName ||
+    lastName.length > LIMITS.lastName ||
+    phone.length > LIMITS.phone ||
+    service.length > LIMITS.service ||
+    message.length > LIMITS.message ||
+    source.length > LIMITS.source
+  ) {
+    return NextResponse.json({ error: "One or more fields exceed the allowed length." }, { status: 400 });
   }
 
   if (!process.env.DATABASE_URL) {
     console.error("DATABASE_URL is not set");
-    return NextResponse.json({ error: "Server misconfiguration: DATABASE_URL missing" }, { status: 500 });
+    return NextResponse.json({ error: "Something went wrong. Please try again later." }, { status: 500 });
   }
 
   // ── 1. Save to Neon Postgres ──────────────────────────────────────────────
+  let rowId: number;
   const sql = neon(process.env.DATABASE_URL);
-  await ensureTable(sql);
-
-  const [row] = await sql`
-    INSERT INTO contact_submissions (first_name, last_name, email, phone, service, message, source)
-    VALUES (${firstName}, ${lastName}, ${email}, ${phone ?? null}, ${service}, ${message}, ${source ?? "website"})
-    RETURNING id
-  `;
+  try {
+    await ensureTable(sql);
+    const [row] = await sql`
+      INSERT INTO contact_submissions (first_name, last_name, email, phone, service, message, source)
+      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${service}, ${message}, ${source})
+      RETURNING id
+    `;
+    rowId = row.id;
+  } catch (err) {
+    console.error("DB insert error:", err);
+    return NextResponse.json({ error: "Something went wrong. Please try again later." }, { status: 500 });
+  }
 
   // ── 2. Create / update contact in HubSpot CRM ────────────────────────────
   let hsContactId: string | null = null;
-  const resolvedSource = source ?? "website";
 
   if (process.env.HUBSPOT_ACCESS_TOKEN) {
     try {
@@ -71,7 +133,7 @@ export async function POST(request: NextRequest) {
             firstname: firstName,
             lastname: lastName,
             email,
-            phone: phone ?? "",
+            phone: phone || "",
             message: message,
             service_of_inquiry: service,
             lifecyclestage: "lead",
@@ -83,7 +145,7 @@ export async function POST(request: NextRequest) {
         const hsData = await hsRes.json() as { id: string };
         hsContactId = hsData.id;
         await sql`
-          UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${row.id}
+          UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${rowId}
         `;
       } else if (hsRes.status === 409) {
         // Contact already exists — fetch by email then patch
@@ -106,7 +168,7 @@ export async function POST(request: NextRequest) {
               },
               body: JSON.stringify({
                 properties: {
-                  phone: phone ?? "",
+                  phone: phone || "",
                   message: message,
                   service_of_inquiry: service,
                   lifecyclestage: "lead",
@@ -116,7 +178,7 @@ export async function POST(request: NextRequest) {
           );
 
           await sql`
-            UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${row.id}
+            UPDATE contact_submissions SET hs_contact_id = ${hsContactId} WHERE id = ${rowId}
           `;
         }
       } else {
@@ -127,5 +189,5 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  return NextResponse.json({ success: true, id: row.id, hsContactId });
+  return NextResponse.json({ success: true, id: rowId, hsContactId });
 }

@@ -6,25 +6,30 @@ import HeroCanvas from "@/components/HeroCanvas";
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
-const services = [
-  "Core Banking",
-  "Data Center & Security Operations Centre",
-  "ERP and CRM",
-  "Digital Integrations & API Management",
-  "Project Management Consulting",
-  "Predictive Analysis",
-  "AI & Cloud AI",
-  "Digital Transformation",
-  "Next-Gen Data Science",
-  "Cloud Computing",
-  "Kulana Academy",
-  "Other",
+const serviceGroups = [
+  {
+    label: "Core & Enterprise Systems",
+    options: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
+  },
+  {
+    label: "Integration & Digital Connectivity",
+    options: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
+  },
+  {
+    label: "Data & AI Intelligence",
+    options: ["Data", "AI", "RPA"],
+  },
+  {
+    label: "Kulana Academy",
+    options: ["Corporate Training", "Partner Offering"],
+  },
 ];
 
 export default function LearnMoreFormPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
 
   return (
@@ -34,7 +39,7 @@ export default function LearnMoreFormPage() {
 
         {/* Hero */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
-          <HeroCanvas variant="academy" />
+          <HeroCanvas variant="learn-more" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Learn More</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
@@ -68,13 +73,17 @@ export default function LearnMoreFormPage() {
               <form onSubmit={async (e) => {
                 e.preventDefault(); setLoading(true); setError("");
                 try {
-                  const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, source: "learn-more" }) });
+                  const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, website: honeypot, source: "learn-more" }) });
                   if (!res.ok) throw new Error();
                   setSubmitted(true);
                   setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
                 } catch { setError("Something went wrong. Please try again or email us directly."); }
                 finally { setLoading(false); }
               }} className="space-y-5">
+                {/* Honeypot — hidden from users, catches bots */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                  <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} /></label>
+                </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">First Name <span className="text-red-400">*</span></label>
@@ -104,7 +113,14 @@ export default function LearnMoreFormPage() {
                   <select required value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all bg-white text-gray-700">
                     <option value="">Select a service…</option>
-                    {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    {serviceGroups.map((group) => (
+                      <optgroup key={group.label} label={group.label}>
+                        {group.options.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </optgroup>
+                    ))}
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 <div>

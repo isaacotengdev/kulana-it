@@ -1,42 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, GraduationCap, Monitor, Users, Building2, Video } from "lucide-react";
-
-const courses = [
-  {
-    title: "AI & Cloud AI",
-    href: "/ai-cloud-ai",
-    type: "Professional Program",
-    description:
-      "Learn how to integrate AI and cloud technologies into your business processes to improve efficiency, reduce costs, and stay ahead in a competitive market.",
-    color: "bg-blue-600",
-  },
-  {
-    title: "Digital Transformation",
-    href: "/digital-transformation",
-    type: "Professional Program",
-    description:
-      "Support your organisation's growth by developing the operational skills needed to implement effective digital change across teams and systems.",
-    color: "bg-cyan-600",
-  },
-  {
-    title: "Next-Gen Data Science",
-    href: "/next-gen-data-science",
-    type: "Professional Program",
-    description:
-      "Discover how data can drive smarter business decisions with practical training designed to help your team turn information into strategic insight.",
-    color: "bg-violet-600",
-  },
-  {
-    title: "Cloud Computing",
-    href: "/cloud-computing",
-    type: "Professional Program",
-    description:
-      "Understand how cloud solutions can enhance business scalability, resilience, and security through structured learning and certification-backed expertise.",
-    color: "bg-emerald-600",
-  },
-];
+import { GraduationCap, Users, Building2, Video, ExternalLink } from "lucide-react";
 
 const deliveryModes = [
   {
@@ -84,42 +48,18 @@ export default function Academy() {
               professionally-designed programs. Keep your workforce aligned with the
               latest advancements in technology.
             </p>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
-            >
-              Request a Quote
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://www.kulana.academy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
+              >
+                Visit Kulana Academy
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
-        </div>
-
-        {/* Course cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {courses.map((course) => (
-            <Link
-              key={course.title}
-              href={course.href}
-              className="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className={`h-1.5 ${course.color}`} />
-              <div className="p-6">
-                <div className={`w-11 h-11 rounded-xl ${course.color} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
-                  <Monitor className="w-5 h-5 text-white" />
-                </div>
-                <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">{course.type}</div>
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {course.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {course.description}
-                </p>
-                <span className="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-blue-600">
-                  Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </Link>
-          ))}
         </div>
 
         {/* Training typology */}
@@ -148,12 +88,15 @@ export default function Academy() {
               Custom programmes for teams of any size — onsite, remote, or hybrid.
             </div>
           </div>
-          <Link
-            href="/#contact"
-            className="flex-shrink-0 px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-md"
+          <a
+            href="https://www.kulana.academy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-md"
           >
-            Get a Custom Quote
-          </Link>
+            Explore Academy
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

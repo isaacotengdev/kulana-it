@@ -1,69 +1,59 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Server, Network, Brain, GraduationCap, CheckCircle2 } from "lucide-react";
 
-const services = [
+const pillars = [
   {
-    title: "Core Banking",
-    href: "/core-banking",
+    icon: Server,
+    number: "01",
+    title: "Core & Enterprise Systems",
+    tagline: "The backbone of enterprise operations",
     description:
-      "In the realm of modern banking, core banking systems serve as the backbone of financial operations, facilitating essential functions such as account management, transactions, and regulatory compliance.",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
-    alt: "Earth with data connections representing global core banking",
+      "Mission-critical systems that power financial institutions and enterprises with reliability, security, and performance at scale.",
+    services: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
+    href: "/core-enterprise-systems",
+    image: "/images/kulana/hero.jpg",
   },
   {
-    title: "Data Center & Security Operations Center",
-    href: "/data-center-security-operations-centre",
+    icon: Network,
+    number: "02",
+    title: "Integration & Digital Connectivity",
+    tagline: "Connect everything. Accelerate everything.",
     description:
-      "In the digital era, the reliability, security, and efficiency of data centers and security operations centers (SOCs) are paramount for safeguarding critical assets and ensuring uninterrupted business operations.",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
-    alt: "Data center servers representing infrastructure and security operations",
+      "Seamless integration architectures and AI-native engineering that unify your digital landscape and unlock new business potential.",
+    services: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
+    href: "/integration-digital-connectivity",
+    image: "/images/about/step-5-reporting.jpg",
   },
   {
-    title: "ERP and CRM",
-    href: "/erp-and-crm",
+    icon: Brain,
+    number: "03",
+    title: "Data & AI Intelligence",
+    tagline: "Turn data into your competitive edge",
     description:
-      "In the realm of business management, enterprise resource planning (ERP) and customer relationship management (CRM) systems play pivotal roles in streamlining operations and enhancing customer interactions.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    alt: "Circuit board representing ERP and CRM technology platforms",
+      "Advanced data strategies, artificial intelligence, and intelligent automation that transform raw information into strategic advantage.",
+    services: ["Data", "AI", "RPA"],
+    href: "/data-ai-intelligence",
+    image: "/images/about/step-1-assessment.jpg",
   },
   {
-    title: "Digital Integrations & API Management",
-    href: "/digital-integrations-api-management",
+    icon: GraduationCap,
+    number: "04",
+    title: "Kulana Academy",
+    tagline: "Build the talent your organisation needs",
     description:
-      "In today's interconnected digital landscape, seamless communication and collaboration between disparate systems are imperative for agile, efficient organisations.",
-    image:
-      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80",
-    alt: "Quantum computing visualization representing digital integrations",
-  },
-  {
-    title: "Project Management Consulting",
-    href: "/project-management-consulting",
-    description:
-      "In today's complex business environment, effective project management is essential for driving successful outcomes and achieving strategic objectives across your organisation.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-    alt: "Business colleagues collaborating representing project management",
-  },
-  {
-    title: "Predictive Analysis",
-    href: "/predictive-analysis",
-    description:
-      "In the dynamic landscape of modern business, predictive analysis emerges as a critical tool for informed decision-making and strategic planning based on data-driven insights.",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
-    alt: "IT security data monitoring center representing predictive analysis",
+      "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
+    services: ["Corporate Training", "Partner Offering"],
+    href: "/kulana-academy",
+    image: "/images/about/step-3-implementation.jpg",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-[#F0F4F8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -74,45 +64,75 @@ export default function Services() {
             Our <span className="text-gradient">Services</span>
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            At our core, we excel in core banking solutions, middleware and integration,
-            predictive analysis, project management consulting, ERP and CRM systems,
-            data center and security operations.
+            Four integrated pillars delivering end-to-end technology solutions — from enterprise
+            systems and digital connectivity to data intelligence and capability building.
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((svc) => (
-            <div
-              key={svc.title}
-              className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
-              {/* Image */}
-              <div className="relative h-52 w-full overflow-hidden">
-                <Image
-                  src={svc.image}
-                  alt={svc.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+        {/* Pillar cards */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {pillars.map((pillar) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.title}
+                className="group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Card header — photo background with gradient overlay */}
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={pillar.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,53,72,0.84) 50%, rgba(0,200,216,0.70) 100%)" }}
+                  />
+                  <div className="absolute top-4 right-6 text-8xl font-black text-white/5 select-none leading-none z-10">
+                    {pillar.number}
+                  </div>
+                  <div className="relative z-10 px-8 pt-8 pb-10">
+                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-7 h-7 text-[#00C8D8]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-[#00C8D8] text-sm font-medium">{pillar.tagline}</p>
+                  </div>
+                </div>
 
-              {/* Info strip */}
-              <div className="bg-[#00b4d8] px-6 py-5">
-                <h3 className="text-lg font-bold text-white mb-3">
-                  {svc.title}
-                </h3>
-                <Link
-                  href={svc.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/90 hover:text-white transition-colors"
-                >
-                  See more
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                {/* Card body — white */}
+                <div className="bg-white px-8 py-7">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                    {pillar.description}
+                  </p>
+
+                  {/* Sub-services grid */}
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
+                    {pillar.services.map((svc) => (
+                      <div key={svc} className="flex items-center gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#00C8D8] flex-shrink-0" />
+                        <span className="text-sm font-medium text-gray-700">{svc}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Link
+                    href={pillar.href}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
+                  >
+                    Explore {pillar.title}
+                    <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
