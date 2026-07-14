@@ -18,14 +18,12 @@ const serviceLinks = [
   { name: "Data",                      href: "/predictive-analysis" },
   { name: "AI",                        href: "/ai-cloud-ai" },
   { name: "RPA",                       href: "/rpa" },
-  { name: "Kulana Academy",            href: "/kulana-academy", isPillar: true },
-  { name: "Corporate Training",        href: "/kulana-academy" },
-  { name: "Partner Offering",          href: "/partner-offering" },
+  { name: "Kulana Academy", href: "https://www.kulana.academy/", isPillar: true, external: true },
 ];
 
 const quickLinks = [
   { name: "Our Services", href: "/our-services" },
-  { name: "Kulana Academy", href: "/kulana-academy" },
+  { name: "Kulana Academy", href: "https://www.kulana.academy/", external: true },
   { name: "About us", href: "/about-us" },
   { name: "Contact us", href: "/contact-us" },
   { name: "Request a Consultation", href: "/#contact" },
@@ -118,12 +116,23 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm hover:text-white hover:translate-x-0.5 inline-block transition-all"
-                  >
-                    {link.name}
-                  </Link>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-white hover:translate-x-0.5 inline-block transition-all"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm hover:text-white hover:translate-x-0.5 inline-block transition-all"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -135,16 +144,31 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
               {serviceLinks.map((link) => (
                 <li key={link.name} className={link.isPillar ? "col-span-2 mt-3 first:mt-0" : "pl-3"}>
-                  <Link
-                    href={link.href}
-                    className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
-                      link.isPillar
-                        ? "text-white font-semibold hover:text-[#00C8D8]"
-                        : "text-gray-400 hover:text-white"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
+                        link.isPillar
+                          ? "text-white font-semibold hover:text-[#00C8D8]"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
+                        link.isPillar
+                          ? "text-white font-semibold hover:text-[#00C8D8]"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

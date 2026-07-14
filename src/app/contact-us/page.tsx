@@ -36,10 +36,6 @@ const serviceGroups = [
     label: "Data & AI Intelligence",
     options: ["Data", "AI", "RPA"],
   },
-  {
-    label: "Kulana Academy",
-    options: ["Corporate Training", "Partner Offering"],
-  },
 ];
 
 export default function ContactUsPage() {

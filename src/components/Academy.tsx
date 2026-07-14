@@ -1,27 +1,23 @@
 "use client";
 
-import { GraduationCap, Users, Building2, Video, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { GraduationCap, ExternalLink } from "lucide-react";
 
-const deliveryModes = [
+const solutions = [
   {
-    icon: Users,
-    title: "Workshops",
-    desc: "Hands-on in-person sessions combining expert presentations with collaborative discussion.",
+    title: "Tailored Corporate Training",
+    desc: "Professional development workshops aligned with corporate needs and industry standards.",
+    image: "/images/academy/corporate-training.jpg",
   },
   {
-    icon: GraduationCap,
-    title: "Professional Classes",
-    desc: "Instructor-guided learning for structured skill development and certification preparation.",
+    title: "On-Demand Course Portfolio",
+    desc: "Foundational courses for beginners and advanced pathways for professionals.",
+    image: "/images/academy/online-course.jpg",
   },
   {
-    icon: Building2,
-    title: "Onsite",
-    desc: "On-premise training conducted by certified trainers at your organisation's location.",
-  },
-  {
-    icon: Video,
-    title: "Virtual / Online",
-    desc: "Remote learning via video conferencing with live or recorded content access for flexibility.",
+    title: "E-Learning Development",
+    desc: "Custom e-learning solutions with interactive designs, and immersive simulations.",
+    image: "/images/academy/elearning-dev.jpg",
   },
 ];
 
@@ -29,6 +25,7 @@ export default function Academy() {
   return (
     <section id="academy" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-end mb-14">
           <div>
@@ -48,56 +45,57 @@ export default function Academy() {
               professionally-designed programs. Keep your workforce aligned with the
               latest advancements in technology.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://www.kulana.academy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
-              >
-                Visit Kulana Academy
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
+            <a
+              href="https://www.kulana.academy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
+            >
+              Visit Kulana Academy
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
-        {/* Training typology */}
-        <div className="bg-white rounded-2xl border border-gray-100 p-8 mb-6">
-          <h3 className="text-lg font-bold text-gray-900 mb-6">Training Delivery Options</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliveryModes.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="flex gap-3">
-                <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-blue-600" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900 text-sm mb-1">{title}</div>
-                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
-                </div>
+        {/* Technology Enablement Solutions */}
+        <div className="text-center mb-10">
+          <h3 className="text-3xl lg:text-4xl font-extrabold text-[#1A2332]">
+            Technology Enablement Solutions
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#00C8D8]" />
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {solutions.map(({ title, desc, image }) => (
+            <a
+              key={title}
+              href="https://www.kulana.academy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+            >
+              {/* Photo */}
+              <div className="relative h-72 w-full">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
+
+              {/* Dark label panel — overlaps bottom of image */}
+              <div className="relative -mt-8 mx-3 rounded-2xl bg-[#1A2275] px-6 py-6 z-10">
+                <h4 className="text-lg font-bold text-[#00C8D8] mb-2 leading-snug">
+                  {title}
+                </h4>
+                <p className="text-white/80 text-sm leading-relaxed">{desc}</p>
+              </div>
+            </a>
+          ))}
         </div>
 
-        {/* Bottom banner */}
-        <div className="bg-gradient-to-r from-cyan-600 to-blue-700 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-white">
-            <div className="font-bold text-xl mb-1">Corporate Training Packages</div>
-            <div className="text-blue-100 text-sm">
-              Custom programmes for teams of any size — onsite, remote, or hybrid.
-            </div>
-          </div>
-          <a
-            href="https://www.kulana.academy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-md"
-          >
-            Explore Academy
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
