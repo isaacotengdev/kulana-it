@@ -4,7 +4,7 @@ import Link from "next/link";
 import HeroCanvas from "@/components/HeroCanvas";
 import {
   Brain, BarChart3, Zap, RefreshCw,
-  ArrowRight, CheckCircle2, Globe, Users, Award,
+  ArrowRight, CheckCircle2,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -50,13 +50,6 @@ const subServices = [
   },
 ];
 
-const stats = [
-  { Icon: Globe,  value: "20+", label: "Countries Served"   },
-  { Icon: Users,  value: "50+", label: "Enterprise Clients" },
-  { Icon: Award,  value: "2",   label: "ISO Certifications" },
-  { Icon: Zap,    value: "15+", label: "Years of Expertise" },
-];
-
 export default function DataAiIntelligencePage() {
   return (
     <>
@@ -77,17 +70,6 @@ export default function DataAiIntelligencePage() {
               Turn data into your competitive edge. Advanced analytics, artificial intelligence,
               and intelligent automation that drive smarter decisions at every level.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 mt-6">
-              {stats.map(({ Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-3 px-5 py-3 bg-white/10 border border-white/20 rounded-2xl backdrop-blur-sm">
-                  <Icon className="w-5 h-5 text-cyan-300" strokeWidth={1.75} />
-                  <div className="text-left">
-                    <p className="text-xl font-extrabold text-white leading-none">{value}</p>
-                    <p className="text-xs text-blue-200 leading-none mt-0.5">{label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

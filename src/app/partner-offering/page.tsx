@@ -42,13 +42,6 @@ const offerings = [
   },
 ];
 
-const stats = [
-  { Icon: Globe,     value: "20+", label: "Countries Served"   },
-  { Icon: Users,     value: "50+", label: "Enterprise Clients" },
-  { Icon: Award,     value: "2",   label: "ISO Certifications" },
-  { Icon: BadgeCheck,value: "4+",  label: "Technology Partners"},
-];
-
 export default function PartnerOfferingPage() {
   return (
     <>
@@ -77,21 +70,6 @@ export default function PartnerOfferingPage() {
             <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">
               Become a Partner <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="bg-white border-b border-gray-100 py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map(({ Icon, value, label }) => (
-                <div key={label} className="text-center">
-                  <Icon className="w-6 h-6 text-blue-600 mx-auto mb-3" strokeWidth={1.75} />
-                  <p className="text-3xl font-extrabold text-gray-900">{value}</p>
-                  <p className="text-gray-500 text-sm mt-1">{label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

@@ -5,7 +5,7 @@ import HeroCanvas from "@/components/HeroCanvas";
 import {
   BarChart3, TrendingUp, Database, ShieldCheck,
   Users, Zap, Target, CheckCircle2, ArrowRight, Search,
-  RefreshCw, LineChart, Filter, Activity, Globe, Award,
+  RefreshCw, LineChart, Filter, Activity,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -76,13 +76,6 @@ const faqs = [
     q: "How do you handle data privacy and compliance?",
     a: "We build privacy-by-design into every data architecture — encryption at rest and in transit, role-based access controls, data masking, and full audit trails aligned with GDPR and local data protection laws.",
   },
-];
-
-const stats = [
-  { Icon: Globe,  value: "20+", label: "Countries Served"   },
-  { Icon: Users,  value: "50+", label: "Enterprise Clients" },
-  { Icon: Award,  value: "2",   label: "ISO Certifications" },
-  { Icon: Zap,    value: "15+", label: "Years of Expertise" },
 ];
 
 export default function DataPage() {
@@ -243,21 +236,6 @@ export default function DataPage() {
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="bg-white border-y border-gray-100 py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map(({ Icon, value, label }) => (
-                <div key={label} className="text-center">
-                  <Icon className="w-6 h-6 text-blue-600 mx-auto mb-3" strokeWidth={1.75} />
-                  <p className="text-3xl font-extrabold text-gray-900">{value}</p>
-                  <p className="text-gray-500 text-sm mt-1">{label}</p>
                 </div>
               ))}
             </div>

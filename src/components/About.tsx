@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, MapPin, Award, Users } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const strengths = [
   "Deep expertise across banking, finance, and enterprise sectors",
@@ -11,12 +11,6 @@ const strengths = [
   "Ongoing support, training, and knowledge transfer",
 ];
 
-const stats = [
-  { icon: Users, value: "10+", label: "Enterprise Clients" },
-  { icon: Award, value: "ISO", label: "Certified Quality" },
-  { icon: MapPin, value: "2", label: "African Offices" },
-  { icon: CheckCircle2, value: "10+", label: "Projects Delivered" },
-];
 
 export default function About() {
   return (
@@ -51,24 +45,13 @@ export default function About() {
               </div>
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4 mt-4">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div
-                  key={label}
-                  className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-4 card-hover"
-                >
-                  <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-extrabold text-gray-900">
-                      {value}
-                    </div>
-                    <div className="text-xs text-gray-500 mt-0.5">{label}</div>
-                  </div>
-                </div>
-              ))}
+            {/* Motto */}
+            <div className="mt-4 flex items-center gap-3 px-2">
+              <span className="w-6 h-px bg-cyan-500/50" />
+              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-cyan-600/80">
+                Technology Value Creators
+              </p>
+              <span className="flex-1 h-px bg-cyan-500/20" />
             </div>
           </div>
 

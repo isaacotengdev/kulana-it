@@ -80,8 +80,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
-            <div className="rounded-xl px-2 py-1">
+          <Link href="/" className="flex flex-col items-start flex-shrink-0">
+            <div className="rounded-xl px-2 pt-1">
               <Image
                 src="/logos/logo.svg"
                 alt="Kulana IT Solutions — Technology Value Creators"
@@ -91,6 +91,9 @@ export default function Navbar() {
                 priority
               />
             </div>
+            <p className="text-[9px] font-semibold tracking-[0.22em] uppercase text-gray-400 px-2 pb-0.5">
+              Technology Value Creators
+            </p>
           </Link>
 
           {/* Desktop Nav */}

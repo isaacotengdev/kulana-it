@@ -321,18 +321,13 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-10 border-t border-white/20">
-              {[
-                { value: "4+", label: "Years Experience" },
-                { value: "10+", label: "Enterprise Clients" },
-                { value: "2", label: "African Offices" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-blue-200 mt-0.5">{stat.label}</div>
-                </div>
-              ))}
+            {/* Motto */}
+            <div className="mt-14 pt-8 border-t border-white/20 flex items-center gap-3">
+              <span className="w-8 h-px bg-cyan-400/60" />
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300/80">
+                Technology Value Creators
+              </p>
+              <span className="w-8 h-px bg-cyan-400/60" />
             </div>
           </div>
 
