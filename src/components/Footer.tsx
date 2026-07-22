@@ -16,7 +16,7 @@ const serviceLinks = [
   { name: "AI-Native Engineering",     href: "/ai-native-product-engineering" },
   { name: "Data & AI Intelligence",    href: "/data-ai-intelligence", isPillar: true },
   { name: "Data",                      href: "/predictive-analysis" },
-  { name: "AI",                        href: "/ai-cloud-ai" },
+  { name: "AI",                        href: "/ai" },
   { name: "RPA",                       href: "/rpa" },
   { name: "Kulana Academy", href: "https://www.kulana.academy/", isPillar: true, external: true },
 ];

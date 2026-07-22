@@ -45,8 +45,9 @@ const pillars = [
     tagline: "Build the talent your organisation needs",
     description:
       "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
-    services: ["Corporate Training", "Partner Offering"],
-    href: "/kulana-academy",
+    services: [] as string[],
+    href: "https://www.kulana.academy/",
+    external: true,
     image: "/images/about/step-3-implementation.jpg",
   },
 ];
@@ -122,13 +123,25 @@ export default function Services() {
                   </div>
 
                   {/* CTA */}
-                  <Link
-                    href={pillar.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
-                  >
-                    Explore {pillar.title}
-                    <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
-                  </Link>
+                  {"external" in pillar && pillar.external ? (
+                    <a
+                      href={pillar.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
+                    >
+                      Explore {pillar.title}
+                      <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={pillar.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
+                    >
+                      Explore {pillar.title}
+                      <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             );

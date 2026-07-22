@@ -3,111 +3,111 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import HeroCanvas from "@/components/HeroCanvas";
 import {
-  BarChart3, TrendingUp, Brain, Database, ShieldCheck,
+  BarChart3, TrendingUp, Database, ShieldCheck,
   Users, Zap, Target, CheckCircle2, ArrowRight, Search,
-  RefreshCw, LineChart, Filter, Activity,
+  RefreshCw, LineChart, Filter, Activity, Globe, Award,
 } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Predictive Analysis | Kulana IT Solutions",
+  title: "Data Intelligence | Kulana IT Solutions",
   description:
-    "Anticipate the future with confidence. Our predictive analysis practice empowers businesses to leverage data-driven insights for strategic decision-making and proactive planning.",
+    "Transform raw data into strategic advantage. Kulana's data practice covers data strategy, engineering, governance, analytics, and business intelligence for enterprises across Africa and the Middle East.",
 };
 
 const capabilities = [
-  { Icon: LineChart,  label: "Forecasting Models",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Brain,      label: "Machine Learning",        color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
-  { Icon: Database,   label: "Data Engineering",        color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { Icon: ShieldCheck,label: "Risk Analytics",          color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
-  { Icon: Filter,     label: "Data Governance",         color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
-  { Icon: Activity,   label: "Real-time Dashboards",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
+  { Icon: Database,    label: "Data Engineering",      color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
+  { Icon: BarChart3,   label: "Business Intelligence",  color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
+  { Icon: LineChart,   label: "Advanced Analytics",     color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
+  { Icon: ShieldCheck, label: "Data Governance",        color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+  { Icon: Filter,      label: "Data Quality",           color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
+  { Icon: Activity,    label: "Real-time Streaming",    color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
 ];
 
 const benefits = [
-  { Icon: BarChart3,  bg: "bg-blue-600",    title: "Data-driven Insights",          desc: "Gain actionable insights from your data to make informed business decisions and drive innovation across your organisation." },
-  { Icon: Zap,        bg: "bg-emerald-600", title: "Optimised Operations",          desc: "Enhance efficiency through process optimisation and resource allocation grounded in analytics and real-world patterns." },
-  { Icon: ShieldCheck,bg: "bg-red-500",     title: "Risk Management",               desc: "Identify and mitigate potential risks by analysing historical data and predicting future outcomes before they occur." },
-  { Icon: TrendingUp, bg: "bg-violet-600",  title: "Predictive Modelling",          desc: "Leverage predictive analytics to anticipate future trends, mitigate risks, and capitalise on emerging opportunities." },
-  { Icon: Users,      bg: "bg-amber-500",   title: "Personalised Customer Experience", desc: "Tailor customer interactions using behaviour and preference analysis to deliver more relevant, impactful engagements." },
-  { Icon: Target,     bg: "bg-cyan-600",    title: "Competitive Advantage",         desc: "Stay ahead of the competition by leveraging data and analytics to innovate and adapt to market changes in real time." },
-  { Icon: RefreshCw,  bg: "bg-indigo-600",  title: "Continuous Improvement",        desc: "Use analytics systematically to refine strategies, accelerate growth, and sustain performance over the long term." },
+  { Icon: BarChart3,   bg: "bg-blue-600",    title: "Faster, Better Decisions",      desc: "Replace gut-feel decisions with data-backed insight — giving every team the information they need, in the format they need it, when they need it." },
+  { Icon: Zap,         bg: "bg-emerald-600", title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
+  { Icon: ShieldCheck, bg: "bg-red-500",     title: "Risk & Compliance Confidence",   desc: "Data governance frameworks and audit trails ensure your data meets regulatory requirements and internal quality standards consistently." },
+  { Icon: TrendingUp,  bg: "bg-violet-600",  title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
+  { Icon: Users,       bg: "bg-amber-500",   title: "Unified Data View",              desc: "Break down silos with a single source of truth — one platform where every function accesses consistent, trusted data." },
+  { Icon: Target,      bg: "bg-cyan-600",    title: "Competitive Advantage",          desc: "Organisations that treat data as a strategic asset respond faster to market shifts and outperform peers who are still working from spreadsheets." },
+  { Icon: RefreshCw,   bg: "bg-indigo-600",  title: "Continuous Improvement",         desc: "Data-driven feedback loops let you measure what works, iterate quickly, and compound gains across every part of the business." },
 ];
 
 const useCases = [
-  { emoji: "🏦", label: "Fraud Detection",         desc: "Real-time anomaly scoring across transactions" },
-  { emoji: "📦", label: "Demand Forecasting",      desc: "Predict inventory needs before shortages hit" },
-  { emoji: "🎯", label: "Customer Churn",          desc: "Identify at-risk customers before they leave" },
-  { emoji: "⚙️", label: "Predictive Maintenance",  desc: "Pre-empt equipment failures with sensor data" },
-  { emoji: "📈", label: "Sales Forecasting",       desc: "Accurate pipeline and revenue predictions" },
-  { emoji: "🌐", label: "Market Intelligence",     desc: "Anticipate competitive and market shifts" },
+  { emoji: "🏦", label: "Financial Reporting",      desc: "Automated, accurate management accounts and regulatory reports" },
+  { emoji: "📦", label: "Supply Chain Visibility",  desc: "End-to-end inventory and logistics data in a single dashboard" },
+  { emoji: "🎯", label: "Customer 360",             desc: "Unified customer profiles across CRM, sales, and support data" },
+  { emoji: "⚙️", label: "Operational Analytics",    desc: "Real-time KPIs to monitor and optimise business performance" },
+  { emoji: "📈", label: "Sales Intelligence",        desc: "Pipeline analytics and revenue forecasting for leadership" },
+  { emoji: "🌐", label: "Data Monetisation",         desc: "Turn proprietary data into products or partner insights" },
 ];
 
 const faqs = [
   {
-    q: "How accurate are predictive analysis models?",
-    a: "Models achieve high accuracy levels but remain probabilistic — they never guarantee 100% precision. Quality data and rigorous evaluation support reliable predictions over time.",
+    q: "Where do we start if our data is scattered across many systems?",
+    a: "We begin with a data landscape assessment — mapping every source, format, and owner. From there we design an integration architecture that brings data together without disrupting existing systems.",
   },
   {
-    q: "What are key challenges and limitations?",
-    a: "Data quality and availability present the primary obstacles. Poor-quality or incomplete data can lead to biased or inaccurate results, making data governance a critical foundation.",
+    q: "What is a data warehouse and do we need one?",
+    a: "A data warehouse is a centralised repository optimised for analytics. Whether you need one depends on your data volume, query complexity, and reporting needs — we help you make the right choice between warehouse, lakehouse, or hybrid architectures.",
   },
   {
-    q: "What resources and expertise are required?",
-    a: "Implementation needs skilled data scientists, relevant data sources, robust processing infrastructure, and advanced analytics technologies tailored to your business context.",
+    q: "How long does a data engineering project typically take?",
+    a: "A foundational data pipeline delivering business-ready dashboards typically takes 6–12 weeks. More complex platforms with multiple source integrations and governance layers are phased over 3–6 months.",
   },
   {
-    q: "How does predictive analysis comply with privacy regulations?",
-    a: "Compliance involves data anonymisation, encryption, access controls, and adherence to relevant laws and standards such as GDPR and regional data protection frameworks.",
+    q: "What is data governance and why does it matter?",
+    a: "Data governance defines who owns data, how it is defined, and who can access it. Without governance, the same metric can mean different things in different reports — eroding trust and slowing decisions.",
   },
   {
-    q: "What are data collection best practices?",
-    a: "Identify relevant sources, ensure quality and consistency, preprocess missing values and outliers, and select analytical features aligned with specific business objectives.",
+    q: "Can you work with our existing BI tools?",
+    a: "Yes. We work with Power BI, Tableau, Looker, Metabase, and other tools. We can extend what you already have or recommend a better fit if your current tooling is holding you back.",
   },
   {
-    q: "What data types are used in predictive analysis?",
-    a: "The service incorporates transactional data, demographics, behavioural information, market trends, social signals, and sensor data — combining structured and unstructured sources.",
+    q: "How do you ensure data quality?",
+    a: "We implement automated validation rules, data profiling, anomaly detection, and quality scoring at each stage of the pipeline — so problems are caught and flagged before they reach your dashboards.",
   },
   {
-    q: "What can organisations do with predictive analysis results?",
-    a: "Results inform strategy, optimise processes, identify growth opportunities, manage risks, and enhance overall competitive performance across business units.",
+    q: "What cloud platforms do you support?",
+    a: "We work across Azure (Synapse, Fabric), AWS (Redshift, Glue), and Google Cloud (BigQuery, Dataflow), as well as on-premise and hybrid environments common across African enterprises.",
   },
   {
-    q: "What data collection pitfalls should be avoided?",
-    a: "Common errors include relying on incomplete or biased data, overlooking quality issues, ignoring ethical considerations, and misaligning data efforts with business targets.",
-  },
-  {
-    q: "What factors affect data quality?",
-    a: "Inaccuracies, inconsistencies, incompleteness, duplication, bias, and errors in collection, storage, processing, or integration all impact the quality of analytical outputs.",
-  },
-  {
-    q: "How is data integrity ensured throughout the process?",
-    a: "The team implements validation, verification, cleansing, governance adherence, and integrated quality checks across workflows to maintain reliable, trustworthy data.",
+    q: "How do you handle data privacy and compliance?",
+    a: "We build privacy-by-design into every data architecture — encryption at rest and in transit, role-based access controls, data masking, and full audit trails aligned with GDPR and local data protection laws.",
   },
 ];
 
-export default function PredictiveAnalysisPage() {
+const stats = [
+  { Icon: Globe,  value: "20+", label: "Countries Served"   },
+  { Icon: Users,  value: "50+", label: "Enterprise Clients" },
+  { Icon: Award,  value: "2",   label: "ISO Certifications" },
+  { Icon: Zap,    value: "15+", label: "Years of Expertise" },
+];
+
+export default function DataPage() {
   return (
     <>
       <Navbar />
       <main className="pt-20">
 
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        {/* Hero */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="predictive-analysis" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <BarChart3 className="w-4 h-4" /> Our Services
+              <BarChart3 className="w-4 h-4" /> Data &amp; AI Intelligence
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Predictive Analysis
+              Data
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Anticipate the future with confidence. Our predictive analysis practice empowers businesses
-              to leverage data-driven insights for strategic decision-making and proactive planning.
+              Turn raw data into your most valuable asset. We design, build, and operate
+              data platforms that give your organisation a single source of truth — and the
+              analytics to act on it with confidence.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["Machine Learning", "Real-time Analytics", "Risk Modelling", "BI Dashboards"].map((tag) => (
+              {["Data Engineering", "Business Intelligence", "Data Governance", "Real-time Analytics"].map((tag) => (
                 <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
                 </span>
@@ -122,7 +122,7 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── Capability strip ─────────────────────────────────────────── */}
+        {/* Capability strip */}
         <section className="bg-white border-b border-gray-100 py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -138,27 +138,27 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── What is Predictive Analysis? ─────────────────────────────── */}
+        {/* Overview */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                What is Predictive Analysis?
+                Data as a strategic asset
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Predictive analysis employs historical data, statistical algorithms, and machine learning
-                techniques to forecast future outcomes or trends. Organisations use this approach to
-                identify opportunities, mitigate risks, and understand customer behaviours.
+                Most organisations collect enormous amounts of data but struggle to extract value
+                from it. Information sits in siloed systems, reports take days to produce, and
+                leadership makes decisions based on incomplete pictures. That gap between data
+                and insight is where Kulana operates.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                The practice applies to sales forecasting, fraud detection, risk management, marketing
-                optimisation, and resource planning. In today&apos;s data-driven landscape, extracting
-                insights from information is essential for competitive positioning and sound
-                decision-making.
+                We build the pipelines, platforms, and governance frameworks that transform
+                scattered data into a reliable, governed, and accessible asset — then layer
+                analytics and BI on top so every team can make faster, smarter decisions.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Statistical Modelling", "ML Pipelines", "Data Visualisation", "Prescriptive Analytics"].map((tag) => (
+                {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (
                   <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
                     <CheckCircle2 className="w-3 h-3" /> {tag}
                   </span>
@@ -171,13 +171,13 @@ export default function PredictiveAnalysisPage() {
                 <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
                   <ArrowRight className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
+                <h3 className="text-xl font-bold text-gray-900">Our Delivery Approach</h3>
               </div>
               <div className="space-y-5">
                 {[
-                  { Icon: Search,    step: "01", title: "Discovery",                desc: "We collaborate to identify the analyses aligned with your organisational objectives and uncover previously hidden, actionable data patterns." },
-                  { Icon: Brain,     step: "02", title: "Implementation Planning",  desc: "Our experts develop customised implementation plans, including tool recommendations, partnership suggestions, and data governance frameworks." },
-                  { Icon: TrendingUp, step: "03", title: "Delivery & Optimisation", desc: "We balance desired information depth against time investment, delivering insights and continuously refining models to improve accuracy and business impact." },
+                  { Icon: Search,     step: "01", title: "Data Discovery",        desc: "We audit your existing data landscape — sources, quality, ownership, and gaps — and identify the highest-value opportunities to address first." },
+                  { Icon: Database,   step: "02", title: "Platform Design",        desc: "We architect the right data platform for your scale and context — warehouse, lakehouse, or streaming — and design governance structures from day one." },
+                  { Icon: TrendingUp, step: "03", title: "Build & Activate",       desc: "We engineer pipelines, build dashboards, and enable your teams to self-serve insight — then support and evolve the platform as your data needs grow." },
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
@@ -197,14 +197,14 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── Use cases ────────────────────────────────────────────────── */}
+        {/* Use cases */}
         <section className="bg-gray-950 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
               <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
               <p className="text-gray-400 max-w-xl mx-auto">
-                We apply predictive analytics across industries and business functions to deliver tangible outcomes.
+                We apply data engineering and analytics across industries to solve concrete business problems.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -223,15 +223,15 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── Benefits ─────────────────────────────────────────────────── */}
+        {/* Benefits */}
         <section className="bg-gray-50 py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why It Matters</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                Experience the power of data-driven decision-making and unlock the full potential of
-                your data for strategic business success.
+                A well-built data capability pays dividends across every function in your organisation —
+                from finance and operations to sales and product.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -249,7 +249,22 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── FAQ ──────────────────────────────────────────────────────── */}
+        {/* Stats */}
+        <section className="bg-white border-y border-gray-100 py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map(({ Icon, value, label }) => (
+                <div key={label} className="text-center">
+                  <Icon className="w-6 h-6 text-blue-600 mx-auto mb-3" strokeWidth={1.75} />
+                  <p className="text-3xl font-extrabold text-gray-900">{value}</p>
+                  <p className="text-gray-500 text-sm mt-1">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center mb-14">
             <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">FAQ</p>
@@ -257,7 +272,7 @@ export default function PredictiveAnalysisPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-500 text-lg">
-              Everything you need to know about our predictive analysis practice.
+              Common questions about our data engineering and analytics practice.
             </p>
           </div>
           <div className="space-y-3">
@@ -280,18 +295,19 @@ export default function PredictiveAnalysisPage() {
           </div>
         </section>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* CTA */}
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Database className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Ready to unlock the power of your data?
+                Ready to make your data work for you?
               </h2>
               <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Partner with us to drive strategic business success through data and predictive analytics.
+                Talk to our data specialists and discover how a well-built data platform
+                can accelerate decisions and drive measurable business outcomes.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

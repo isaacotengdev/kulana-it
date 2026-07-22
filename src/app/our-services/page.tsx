@@ -64,7 +64,8 @@ const services = [
   },
   {
     title: "Kulana Academy",
-    href: "/kulana-academy",
+    href: "https://www.kulana.academy/",
+    external: true,
     Icon: GraduationCap,
     gradient: "from-emerald-500 to-teal-600",
     iconBg: "bg-emerald-600",
@@ -75,7 +76,7 @@ const services = [
     partnerLogos: [],
     partnerNames: [],
     desc: "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
-    subServices: ["Corporate Training", "Partner Offering"],
+    subServices: [] as string[],
   },
 ];
 
@@ -148,67 +149,74 @@ export default function OurServicesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-7">
-            {services.map(({ title, href, Icon, gradient, iconBg, border, tag, tagColor, hoverBorder, partnerLogos, partnerNames, desc, subServices }) => (
-              <Link
-                key={title}
-                href={href}
-                className={`group relative bg-white rounded-3xl border ${border} ${hoverBorder} hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col`}
-              >
-                {/* Gradient top bar */}
-                <div className={`h-1.5 bg-gradient-to-r ${gradient}`} />
-
-                <div className="p-7 flex flex-col flex-1">
-                  {/* Icon + tag row */}
-                  <div className="flex items-start justify-between mb-5">
-                    <div className={`w-13 h-13 rounded-2xl ${iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
-                      style={{ width: "52px", height: "52px" }}>
-                      <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                    </div>
-                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold border ${tagColor}`}>
-                      {tag}
-                    </span>
-                  </div>
-
-                  <h2 className="text-lg font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
-                    {title}
-                  </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-
-                  {/* Sub-services */}
-                  <div className="flex flex-wrap gap-2 flex-1">
-                    {subServices.map((s) => (
-                      <span key={s} className="inline-flex items-center gap-1 px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] font-semibold text-gray-600">
-                        <CheckCircle2 className="w-3 h-3 text-blue-400" /> {s}
+            {services.map(({ title, href, Icon, gradient, iconBg, border, tag, tagColor, hoverBorder, partnerLogos, partnerNames, desc, subServices, ...rest }) => {
+              const isExternal = "external" in rest && (rest as { external?: boolean }).external;
+              const cardClass = `group relative bg-white rounded-3xl border ${border} ${hoverBorder} hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col`;
+              const inner = (
+                <>
+                  <div className={`h-1.5 bg-gradient-to-r ${gradient}`} />
+                  <div className="p-7 flex flex-col flex-1">
+                    <div className="flex items-start justify-between mb-5">
+                      <div className={`rounded-2xl ${iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
+                        style={{ width: "52px", height: "52px" }}>
+                        <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
+                      </div>
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold border ${tagColor}`}>
+                        {tag}
                       </span>
-                    ))}
-                  </div>
-
-                  {/* Partner logos */}
-                  {partnerLogos.length > 0 && (
-                    <div className="mt-5 pt-4 border-t border-gray-100 flex items-center gap-3">
-                      <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Powered by</span>
-                      <div className="flex items-center gap-3">
-                        {partnerLogos.map((src, i) => (
-                          <Image
-                            key={src}
-                            src={src}
-                            alt={partnerNames[i]}
-                            width={72}
-                            height={24}
-                            className="h-5 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity"
-                          />
+                    </div>
+                    <h2 className="text-lg font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
+                      {title}
+                    </h2>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
+                    {subServices.length > 0 && (
+                      <div className="flex flex-wrap gap-2 flex-1">
+                        {subServices.map((s) => (
+                          <span key={s} className="inline-flex items-center gap-1 px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] font-semibold text-gray-600">
+                            <CheckCircle2 className="w-3 h-3 text-blue-400" /> {s}
+                          </span>
                         ))}
                       </div>
+                    )}
+                    {partnerLogos.length > 0 && (
+                      <div className="mt-5 pt-4 border-t border-gray-100 flex items-center gap-3">
+                        <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Powered by</span>
+                        <div className="flex items-center gap-3">
+                          {partnerLogos.map((src, i) => (
+                            <Image
+                              key={src}
+                              src={src}
+                              alt={partnerNames[i]}
+                              width={72}
+                              height={24}
+                              className="h-5 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:gap-2.5 transition-all">
+                      Learn more <ArrowRight className="w-4 h-4" />
                     </div>
-                  )}
-
-                  {/* Learn more */}
-                  <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:gap-2.5 transition-all">
-                    Learn more <ArrowRight className="w-4 h-4" />
                   </div>
-                </div>
-              </Link>
-            ))}
+                </>
+              );
+              return isExternal ? (
+                <a
+                  key={title}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClass}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <Link key={title} href={href} className={cardClass}>
+                  {inner}
+                </Link>
+              );
+            })}
           </div>
         </section>
 
