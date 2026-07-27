@@ -25,19 +25,19 @@ const benefits = [
   },
   {
     Icon: Zap,
-    bg: "bg-violet-600",
+    bg: "bg-teal-600",
     title: "Operational Efficiency",
     desc: "Automate routine workflows, reduce manual effort, and significantly lower operational costs across your banking operations.",
   },
   {
     Icon: BadgeCheck,
-    bg: "bg-emerald-600",
+    bg: "bg-blue-600",
     title: "Regulatory Compliance",
     desc: "Built-in compliance features, comprehensive audit trails, reporting capabilities, and robust data security to meet evolving regulations.",
   },
   {
     Icon: TrendingUp,
-    bg: "bg-amber-500",
+    bg: "bg-cyan-500",
     title: "Innovation and Agility",
     desc: "Rapidly launch new products, configure services flexibly, and scale with confidence to stay ahead of the competition.",
   },
@@ -45,20 +45,20 @@ const benefits = [
 
 const capabilities = [
   { Icon: CreditCard, label: "Account Management",       color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: RefreshCw,  label: "Transaction Processing",   color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
-  { Icon: ShieldCheck,label: "Fraud & AML Controls",     color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
+  { Icon: RefreshCw,  label: "Transaction Processing",   color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
+  { Icon: ShieldCheck,label: "Fraud and AML Controls",    color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
   { Icon: Globe,      label: "Digital Channel Ready",    color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: BarChart3,  label: "Regulatory Reporting",     color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { Icon: Layers,     label: "Microservices Architecture",color: "text-amber-600",  bg: "bg-amber-50",   border: "border-amber-100" },
+  { Icon: BarChart3,  label: "Regulatory Reporting",     color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
+  { Icon: Layers,     label: "Microservices Architecture",color: "text-cyan-600",   bg: "bg-cyan-50",    border: "border-cyan-100"  },
 ];
 
 const modules = [
   { Icon: Landmark,   label: "Core Ledger",          desc: "Real-time account and general ledger processing" },
-  { Icon: CreditCard, label: "Loans & Deposits",     desc: "End-to-end origination, servicing and collections" },
+  { Icon: CreditCard, label: "Loans and Deposits",    desc: "End-to-end origination, servicing and collections" },
   { Icon: Globe,      label: "Digital Channels",     desc: "Mobile, internet, and API-first banking" },
   { Icon: Users,      label: "CRM",                  desc: "360° customer relationship management" },
-  { Icon: Lock,       label: "Compliance & Risk",    desc: "AML, KYC, fraud detection and audit" },
-  { Icon: BarChart3,  label: "Analytics & BI",       desc: "Dashboards, reporting, and predictive insights" },
+  { Icon: Lock,       label: "Compliance and Risk",   desc: "AML, KYC, fraud detection and audit" },
+  { Icon: BarChart3,  label: "Analytics and BI",      desc: "Dashboards, reporting, and predictive insights" },
 ];
 
 const faqs = [
@@ -115,7 +115,7 @@ export default function CoreBankingPage() {
           <HeroCanvas variant="core-banking" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <Landmark className="w-4 h-4" /> Our Services
+              <Landmark className="w-4 h-4" /> Core and Enterprise Systems
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Core Banking</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -196,7 +196,7 @@ export default function CoreBankingPage() {
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={2} />
+                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -356,7 +356,7 @@ export default function CoreBankingPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Landmark className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Landmark className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to modernise your core banking?

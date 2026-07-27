@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us | Kulana IT Solutions",
   description:
-    "Innovative Solutions, Unique Value — empowering your business to thrive in the digital age. Learn about Kulana IT Solutions and our mission across Africa and the Middle East.",
+    "Innovative Solutions, Unique Value — empowering your business to thrive in the digital age. Learn about Kulana IT Solutions, headquartered in Ghana and Mauritius.",
 };
 
 const entities = [
@@ -67,14 +67,14 @@ const steps = [
   },
   {
     num: "04",
-    title: "Monitoring & Adjustments",
+    title: "Monitoring and Adjustments",
     desc: "Ongoing solution monitoring ensures delivery remains on course, with necessary adjustments made in real time.",
     image: "/images/about/step-4-monitoring.jpg",
     alt: "Monitoring and adjustments",
   },
   {
     num: "05",
-    title: "Reporting & Optimisation",
+    title: "Reporting and Optimisation",
     desc: "We provide transparent reporting and continuous insights on software utilisation to sustain long-term value.",
     image: "/images/about/step-5-reporting.jpg",
     alt: "Reporting and software optimisation",
@@ -112,8 +112,8 @@ export default function AboutUsPage() {
             <div className="text-center mb-14">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Who We Are</h2>
               <p className="text-gray-500 text-lg max-w-3xl mx-auto">
-                Kulana is a group of technology companies dedicated to empowering organisations across
-                Africa and the Middle East through enterprise-grade IT solutions, consulting, and
+                Kulana is a group of technology companies dedicated to empowering organisations in
+                Ghana and Mauritius through enterprise-grade IT solutions, consulting, and
                 implementation expertise.
               </p>
             </div>

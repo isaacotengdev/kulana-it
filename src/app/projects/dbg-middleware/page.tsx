@@ -29,9 +29,9 @@ export default function DbgMiddlewarePage() {
 
         <section className="flex flex-col items-center justify-center py-32 px-4 text-center">
           <div className="w-24 h-24 rounded-3xl bg-cyan-50 border border-cyan-100 flex items-center justify-center mb-8">
-            <Hammer className="w-12 h-12 text-cyan-500" strokeWidth={1.5} />
+            <Hammer className="w-12 h-12 text-cyan-600" strokeWidth={1.75} />
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-sm font-semibold text-amber-700 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-200 rounded-full text-sm font-semibold text-blue-700 mb-6">
             <Clock className="w-4 h-4" /> Under Development
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-4">This page is under development</h2>

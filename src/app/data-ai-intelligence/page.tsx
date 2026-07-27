@@ -20,9 +20,9 @@ const subServices = [
     title: "Data",
     href: "/predictive-analysis",
     tag: "Analytics & BI",
-    gradient: "from-amber-500 to-orange-600",
-    iconBg: "bg-amber-500",
-    tagColor: "bg-amber-50 text-amber-700 border-amber-100",
+    gradient: "from-cyan-500 to-blue-600",
+    iconBg: "bg-cyan-600",
+    tagColor: "bg-cyan-50 text-cyan-700 border-cyan-100",
     desc: "Build a data-driven organisation. From data strategy and governance to warehousing, pipelines, and business intelligence, we help you unlock the full value of your data assets.",
     highlights: ["Data Strategy & Governance", "Data Warehousing", "Business Intelligence", "Predictive Analytics"],
   },
@@ -31,9 +31,9 @@ const subServices = [
     title: "AI",
     href: "/ai-cloud-ai",
     tag: "Artificial Intelligence",
-    gradient: "from-violet-500 to-purple-700",
-    iconBg: "bg-violet-600",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    gradient: "from-blue-500 to-teal-600",
+    iconBg: "bg-blue-600",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     desc: "Deploy intelligent solutions that learn, adapt, and improve over time. From machine learning models to generative AI and large language models, we build AI that delivers measurable outcomes.",
     highlights: ["Machine Learning", "Generative AI & LLMs", "Computer Vision", "AI Strategy & Roadmapping"],
   },
@@ -42,9 +42,9 @@ const subServices = [
     title: "RPA",
     href: "/rpa",
     tag: "Automation",
-    gradient: "from-emerald-500 to-teal-600",
-    iconBg: "bg-emerald-600",
-    tagColor: "bg-emerald-50 text-emerald-700 border-emerald-100",
+    gradient: "from-teal-500 to-blue-600",
+    iconBg: "bg-teal-600",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
     desc: "Automate repetitive, rule-based processes at scale with Robotic Process Automation. Free your teams to focus on high-value work while bots handle the rest — accurately and at speed.",
     highlights: ["Process Discovery & Design", "Bot Development & Deployment", "Attended & Unattended Bots", "Process Monitoring & Optimisation"],
   },
@@ -64,7 +64,7 @@ export default function DataAiIntelligencePage() {
               <Brain className="w-4 h-4" /> Our Services
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Data &amp; AI Intelligence
+              Data and AI Intelligence
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               Turn data into your competitive edge. Advanced analytics, artificial intelligence,
@@ -81,7 +81,7 @@ export default function DataAiIntelligencePage() {
               Data. AI. Automation. All Together.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Our Data &amp; AI Intelligence practice helps organisations harness the power of their
+              Our Data and AI Intelligence practice helps organisations harness the power of their
               data, apply intelligence at scale, and automate processes that slow them down.
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function DataAiIntelligencePage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Brain className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to unlock the power of your data?

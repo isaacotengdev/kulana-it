@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Headphones, Gauge } from "lucide-react";
+import { MapPin, Layers } from "lucide-react";
 
 const partners = [
   {
@@ -121,25 +121,25 @@ export default function Partners() {
               </div>
             </div>
 
-            {/* 24/7 Support */}
+            {/* Offices */}
             <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
               <div className="w-14 h-14 flex-shrink-0 bg-cyan-400/20 border border-cyan-400/30 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Headphones className="w-7 h-7 text-cyan-300" />
+                <MapPin className="w-7 h-7 text-cyan-300" />
               </div>
               <div>
-                <div className="text-white font-bold text-base leading-tight">24/7 Support</div>
-                <div className="text-blue-200 text-xs mt-0.5">Always available</div>
+                <div className="text-white font-bold text-base leading-tight">Ghana and Mauritius</div>
+                <div className="text-blue-200 text-xs mt-0.5">Dual-country offices</div>
               </div>
             </div>
 
-            {/* SLA Uptime */}
+            {/* Service model */}
             <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
               <div className="w-14 h-14 flex-shrink-0 bg-cyan-400/20 border border-cyan-400/30 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Gauge className="w-7 h-7 text-cyan-300" />
+                <Layers className="w-7 h-7 text-cyan-300" />
               </div>
               <div>
-                <div className="text-white font-bold text-base leading-tight">SLA Guaranteed</div>
-                <div className="text-blue-200 text-xs mt-0.5">99.9% uptime</div>
+                <div className="text-white font-bold text-base leading-tight">End-to-End Delivery</div>
+                <div className="text-blue-200 text-xs mt-0.5">Strategy to support</div>
               </div>
             </div>
 

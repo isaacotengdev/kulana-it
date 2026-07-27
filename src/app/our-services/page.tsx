@@ -13,12 +13,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services | Kulana IT Solutions",
   description:
-    "Enterprise IT services across Africa and the Middle East — Core & Enterprise Systems, Integration & Digital Connectivity, Data & AI Intelligence, and Kulana Academy.",
+    "Enterprise IT services from offices in Ghana and Mauritius — Core & Enterprise Systems, Integration & Digital Connectivity, Data & AI Intelligence, and Kulana Academy.",
 };
 
 const services = [
   {
-    title: "Core & Enterprise Systems",
+    title: "Core and Enterprise Systems",
     href: "/core-enterprise-systems",
     Icon: Server,
     gradient: "from-blue-500 to-blue-700",
@@ -33,7 +33,7 @@ const services = [
     subServices: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
   },
   {
-    title: "Integration & Digital Connectivity",
+    title: "Integration and Digital Connectivity",
     href: "/integration-digital-connectivity",
     Icon: Network,
     gradient: "from-cyan-500 to-blue-600",
@@ -48,15 +48,15 @@ const services = [
     subServices: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
   },
   {
-    title: "Data & AI Intelligence",
+    title: "Data and AI Intelligence",
     href: "/data-ai-intelligence",
     Icon: Brain,
-    gradient: "from-violet-500 to-purple-700",
-    iconBg: "bg-violet-600",
-    border: "border-violet-100",
+    gradient: "from-blue-500 to-teal-600",
+    iconBg: "bg-blue-600",
+    border: "border-blue-100",
     tag: "Data & AI",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
-    hoverBorder: "hover:border-violet-300",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
+    hoverBorder: "hover:border-blue-300",
     partnerLogos: [],
     partnerNames: [],
     desc: "Advanced data strategies, artificial intelligence, and intelligent automation that transform raw information into strategic advantage.",
@@ -67,12 +67,12 @@ const services = [
     href: "https://www.kulana.academy/",
     external: true,
     Icon: GraduationCap,
-    gradient: "from-emerald-500 to-teal-600",
-    iconBg: "bg-emerald-600",
-    border: "border-emerald-100",
+    gradient: "from-teal-500 to-blue-600",
+    iconBg: "bg-teal-600",
+    border: "border-teal-100",
     tag: "Training",
-    tagColor: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    hoverBorder: "hover:border-emerald-300",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
+    hoverBorder: "hover:border-teal-300",
     partnerLogos: [],
     partnerNames: [],
     desc: "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
@@ -81,7 +81,7 @@ const services = [
 ];
 
 const differentiators = [
-  { Icon: ShieldCheck, title: "ISO 9001 & 27001 Certified",  desc: "Independently audited quality and information security management systems." },
+  { Icon: ShieldCheck, title: "ISO 9001 and 27001 Certified", desc: "Independently audited quality and information security management systems." },
   { Icon: Globe,       title: "Pan-African Footprint",       desc: "Offices in Ghana and Mauritius with delivery across 20+ countries." },
   { Icon: BadgeCheck,  title: "Proven Technology Partners",  desc: "Alliances with Temenos, Dell, Microsoft, HubSpot, and WSO2." },
   { Icon: Users,       title: "Dedicated Expert Teams",      desc: "Specialists embedded in your project from strategy through to go-live." },
@@ -110,8 +110,8 @@ export default function OurServicesPage() {
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Our Services</h1>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Enterprise-grade IT solutions designed to drive digital transformation
-              across Africa and the Middle East.
+              Enterprise-grade IT solutions designed to drive digital transformation,
+              with offices in Ghana and Mauritius.
             </p>
           </div>
         </section>
@@ -299,7 +299,7 @@ export default function OurServicesPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <CheckCircle2 className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to transform your organisation?

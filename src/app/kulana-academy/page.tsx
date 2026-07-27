@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const courses = [
   {
-    title: "AI & Cloud AI",
+    title: "AI and Cloud AI",
     href: "/ai-cloud-ai",
     type: "Professional Program",
     desc: "Learn how to integrate AI and cloud technologies into your business processes to improve efficiency, reduce costs, and stay ahead in a competitive market.",

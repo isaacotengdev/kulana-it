@@ -72,25 +72,29 @@ export default function Academy() {
               href="https://www.kulana.academy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+              className="group flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              {/* Photo */}
-              <div className="relative h-72 w-full">
+              {/* Photo with brand gradient overlay */}
+              <div className="relative h-64 w-full overflow-hidden">
                 <Image
                   src={image}
                   alt={title}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-105"
                 />
               </div>
 
-              {/* Dark label panel — overlaps bottom of image */}
-              <div className="relative -mt-8 mx-3 rounded-2xl bg-[#1A2275] px-6 py-6 z-10">
-                <h4 className="text-lg font-bold text-[#00C8D8] mb-2 leading-snug">
-                  {title}
-                </h4>
-                <p className="text-white/80 text-sm leading-relaxed">{desc}</p>
+              {/* Brand-navy panel — overlaps bottom of image */}
+              <div className="relative -mt-8 mx-3 rounded-2xl overflow-hidden z-10 shadow-lg">
+                {/* Teal accent bar */}
+                <div className="h-1 bg-gradient-to-r from-[#00C8D8] to-blue-500" />
+                <div className="bg-[#1A2332] px-6 py-6">
+                  <h4 className="text-base font-bold text-[#00C8D8] mb-2 leading-snug">
+                    {title}
+                  </h4>
+                  <p className="text-white/70 text-sm leading-relaxed">{desc}</p>
+                </div>
               </div>
             </a>
           ))}

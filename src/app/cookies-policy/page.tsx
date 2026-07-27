@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     Icon: Cookie,
-    iconBg: "bg-amber-500",
+    iconBg: "bg-cyan-600",
     title: "What Are Cookies?",
     body: "A cookie is a small file placed on your computer's hard drive only with your permission. Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual, tailoring operations to your needs, likes, and dislikes.",
   },
@@ -30,7 +30,7 @@ const sections = [
   },
   {
     Icon: ToggleRight,
-    iconBg: "bg-violet-600",
+    iconBg: "bg-blue-600",
     title: "Your Choice",
     body: "You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. Please be aware that declining cookies may prevent you from taking full advantage of certain features on this website.",
   },
@@ -49,17 +49,17 @@ const cookieTypes = [
     name: "Analytics Cookies",
     desc: "Help us understand how visitors interact with the website by collecting and reporting information anonymously. We use tools such as Google Analytics for this purpose.",
     required: false,
-    color: "border-l-amber-500",
+    color: "border-l-cyan-500",
     tag: "Optional",
-    tagColor: "bg-amber-50 text-amber-700 border-amber-100",
+    tagColor: "bg-cyan-50 text-cyan-700 border-cyan-100",
   },
   {
     name: "Preference Cookies",
     desc: "Enable the website to remember information that changes the way the site behaves or looks, such as your preferred language or the region you are in.",
     required: false,
-    color: "border-l-violet-500",
+    color: "border-l-teal-500",
     tag: "Optional",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function CookiesPolicyPage() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-10">
               <div className="flex-1">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-                  <Cookie className="w-4 h-4" /> Legal &amp; Compliance
+                  <Cookie className="w-4 h-4" /> Legal and Compliance
                 </span>
                 <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">Cookies Policy</h1>
                 <p className="text-blue-100 text-lg leading-relaxed max-w-xl">
@@ -95,7 +95,7 @@ export default function CookiesPolicyPage() {
               {/* Big cookie icon */}
               <div className="flex-shrink-0 flex items-center justify-center">
                 <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <Cookie className="w-20 h-20 text-amber-300" strokeWidth={1.25} />
+                  <Cookie className="w-20 h-20 text-cyan-300" strokeWidth={1.75} />
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function CookiesPolicyPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-violet-600 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
                     <Settings className="w-5 h-5 text-white" />
                   </div>
                   <h2 className="text-2xl font-extrabold text-gray-900">Managing Your Cookies</h2>

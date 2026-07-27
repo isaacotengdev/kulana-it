@@ -18,29 +18,29 @@ export const metadata: Metadata = {
 const capabilities = [
   { Icon: Database,    label: "Data Engineering",      color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
   { Icon: BarChart3,   label: "Business Intelligence",  color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: LineChart,   label: "Advanced Analytics",     color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
-  { Icon: ShieldCheck, label: "Data Governance",        color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { Icon: Filter,      label: "Data Quality",           color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
-  { Icon: Activity,    label: "Real-time Streaming",    color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
+  { Icon: LineChart,   label: "Advanced Analytics",     color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
+  { Icon: ShieldCheck, label: "Data Governance",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
+  { Icon: Filter,      label: "Data Quality",           color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"   },
+  { Icon: Activity,    label: "Real-time Streaming",    color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
 ];
 
 const benefits = [
   { Icon: BarChart3,   bg: "bg-blue-600",    title: "Faster, Better Decisions",      desc: "Replace gut-feel decisions with data-backed insight — giving every team the information they need, in the format they need it, when they need it." },
-  { Icon: Zap,         bg: "bg-emerald-600", title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
-  { Icon: ShieldCheck, bg: "bg-red-500",     title: "Risk & Compliance Confidence",   desc: "Data governance frameworks and audit trails ensure your data meets regulatory requirements and internal quality standards consistently." },
-  { Icon: TrendingUp,  bg: "bg-violet-600",  title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
-  { Icon: Users,       bg: "bg-amber-500",   title: "Unified Data View",              desc: "Break down silos with a single source of truth — one platform where every function accesses consistent, trusted data." },
-  { Icon: Target,      bg: "bg-cyan-600",    title: "Competitive Advantage",          desc: "Organisations that treat data as a strategic asset respond faster to market shifts and outperform peers who are still working from spreadsheets." },
-  { Icon: RefreshCw,   bg: "bg-indigo-600",  title: "Continuous Improvement",         desc: "Data-driven feedback loops let you measure what works, iterate quickly, and compound gains across every part of the business." },
+  { Icon: Zap,         bg: "bg-teal-600",    title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
+  { Icon: ShieldCheck, bg: "bg-cyan-600",    title: "Risk & Compliance Confidence",   desc: "Data governance frameworks and audit trails ensure your data meets regulatory requirements and internal quality standards consistently." },
+  { Icon: TrendingUp,  bg: "bg-blue-600",    title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
+  { Icon: Users,       bg: "bg-teal-600",    title: "Unified Data View",              desc: "Break down silos with a single source of truth — one platform where every function accesses consistent, trusted data." },
+  { Icon: Target,      bg: "bg-cyan-500",    title: "Competitive Advantage",          desc: "Organisations that treat data as a strategic asset respond faster to market shifts and outperform peers who are still working from spreadsheets." },
+  { Icon: RefreshCw,   bg: "bg-blue-600",    title: "Continuous Improvement",         desc: "Data-driven feedback loops let you measure what works, iterate quickly, and compound gains across every part of the business." },
 ];
 
 const useCases = [
-  { emoji: "🏦", label: "Financial Reporting",      desc: "Automated, accurate management accounts and regulatory reports" },
-  { emoji: "📦", label: "Supply Chain Visibility",  desc: "End-to-end inventory and logistics data in a single dashboard" },
-  { emoji: "🎯", label: "Customer 360",             desc: "Unified customer profiles across CRM, sales, and support data" },
-  { emoji: "⚙️", label: "Operational Analytics",    desc: "Real-time KPIs to monitor and optimise business performance" },
-  { emoji: "📈", label: "Sales Intelligence",        desc: "Pipeline analytics and revenue forecasting for leadership" },
-  { emoji: "🌐", label: "Data Monetisation",         desc: "Turn proprietary data into products or partner insights" },
+  { Icon: BarChart3,   label: "Financial Reporting",      desc: "Automated, accurate management accounts and regulatory reports" },
+  { Icon: RefreshCw,   label: "Supply Chain Visibility",  desc: "End-to-end inventory and logistics data in a single dashboard" },
+  { Icon: Users,       label: "Customer 360",             desc: "Unified customer profiles across CRM, sales, and support data" },
+  { Icon: Activity,    label: "Operational Analytics",    desc: "Real-time KPIs to monitor and optimise business performance" },
+  { Icon: TrendingUp,  label: "Sales Intelligence",       desc: "Pipeline analytics and revenue forecasting for leadership" },
+  { Icon: Database,    label: "Data Monetisation",        desc: "Turn proprietary data into products or partner insights" },
 ];
 
 const faqs = [
@@ -89,7 +89,7 @@ export default function DataPage() {
           <HeroCanvas variant="predictive-analysis" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <BarChart3 className="w-4 h-4" /> Data &amp; AI Intelligence
+              <BarChart3 className="w-4 h-4" /> Data and AI Intelligence
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
               Data
@@ -174,7 +174,7 @@ export default function DataPage() {
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={2} />
+                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -201,10 +201,10 @@ export default function DataPage() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {useCases.map(({ emoji, label, desc }) => (
+              {useCases.map(({ Icon: Ic, label, desc }) => (
                 <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-2xl group-hover:bg-blue-600/40 transition-colors">
-                    {emoji}
+                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
+                    <Ic className="w-5 h-5 text-blue-400" strokeWidth={1.75} />
                   </div>
                   <div>
                     <p className="font-bold text-white mb-1">{label}</p>
@@ -278,7 +278,7 @@ export default function DataPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Database className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Database className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to make your data work for you?

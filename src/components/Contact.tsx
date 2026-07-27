@@ -22,15 +22,15 @@ const offices = [
 
 const serviceGroups = [
   {
-    label: "Core & Enterprise Systems",
+    label: "Core and Enterprise Systems",
     options: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
   },
   {
-    label: "Integration & Digital Connectivity",
+    label: "Integration and Digital Connectivity",
     options: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
   },
   {
-    label: "Data & AI Intelligence",
+    label: "Data and AI Intelligence",
     options: ["Data", "AI", "RPA"],
   },
 ];

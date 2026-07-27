@@ -8,7 +8,7 @@ const pillars = [
   {
     icon: Server,
     number: "01",
-    title: "Core & Enterprise Systems",
+    title: "Core and Enterprise Systems",
     tagline: "The backbone of enterprise operations",
     description:
       "Mission-critical systems that power financial institutions and enterprises with reliability, security, and performance at scale.",
@@ -19,7 +19,7 @@ const pillars = [
   {
     icon: Network,
     number: "02",
-    title: "Integration & Digital Connectivity",
+    title: "Integration and Digital Connectivity",
     tagline: "Connect everything. Accelerate everything.",
     description:
       "Seamless integration architectures and AI-native engineering that unify your digital landscape and unlock new business potential.",
@@ -30,7 +30,7 @@ const pillars = [
   {
     icon: Brain,
     number: "03",
-    title: "Data & AI Intelligence",
+    title: "Data and AI Intelligence",
     tagline: "Turn data into your competitive edge",
     description:
       "Advanced data strategies, artificial intelligence, and intelligent automation that transform raw information into strategic advantage.",
@@ -42,9 +42,9 @@ const pillars = [
     icon: GraduationCap,
     number: "04",
     title: "Kulana Academy",
-    tagline: "Build the talent your organisation needs",
+    tagline: "Bridging technology gaps in your workforce.",
     description:
-      "Structured training programmes and partner offerings that elevate your team's digital capabilities and keep your workforce future-ready.",
+      "Industry aligned programmes that equip your workforce with the required skills to drive business.",
     services: [] as string[],
     href: "https://www.kulana.academy/",
     external: true,
@@ -86,11 +86,11 @@ export default function Services() {
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover brightness-110"
                   />
                   <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,53,72,0.84) 50%, rgba(0,200,216,0.70) 100%)" }}
+                    style={{ background: "linear-gradient(135deg, rgba(26,35,50,0.58) 0%, rgba(42,53,72,0.52) 50%, rgba(0,200,216,0.38) 100%)" }}
                   />
                   <div className="absolute top-4 right-6 text-8xl font-black text-white/5 select-none leading-none z-10">
                     {pillar.number}

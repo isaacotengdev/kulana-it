@@ -47,7 +47,7 @@ const sections = [
   {
     id: "how-we-use",
     Icon: Eye,
-    iconBg: "bg-violet-600",
+    iconBg: "bg-blue-600",
     title: "How We Use Your Information",
     content: (
       <>
@@ -99,7 +99,7 @@ const sections = [
   {
     id: "analytics",
     Icon: BarChart2,
-    iconBg: "bg-amber-500",
+    iconBg: "bg-cyan-600",
     title: "Analytics & Third Parties",
     content: (
       <p className="text-gray-500 leading-relaxed">
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-10">
               <div className="flex-1">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-                  <FileText className="w-4 h-4" /> Legal &amp; Compliance
+                  <FileText className="w-4 h-4" /> Legal and Compliance
                 </span>
                 <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">Privacy Policy</h1>
                 <p className="text-blue-100 text-lg leading-relaxed max-w-xl">
@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
                 { Icon: RefreshCw,  label: "Regularly Updated"     },
               ].map(({ Icon, label }) => (
                 <div key={label} className="flex items-center gap-2.5 px-4 py-2.5 bg-blue-50 border border-blue-100 rounded-xl">
-                  <Icon className="w-4 h-4 text-blue-600" strokeWidth={2} />
+                  <Icon className="w-4 h-4 text-blue-600" strokeWidth={1.75} />
                   <span className="text-sm font-semibold text-blue-800">{label}</span>
                 </div>
               ))}

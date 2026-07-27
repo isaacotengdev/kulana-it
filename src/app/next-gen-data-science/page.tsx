@@ -16,7 +16,7 @@ const tracks = [
     modules: [
       { num: "01", title: "Business Automation Technology Overview", desc: "Non-technical coverage of Cloud Computing, RPA, and IoT — drivers, benefits, goals, risks, and challenges for managers." },
       { num: "02", title: "Data Science Technology Overview", desc: "Introductory coverage of Big Data, Machine Learning, and AI for professionals requiring a general strategic understanding." },
-      { num: "03", title: "Digital & Security Technology Overview", desc: "Non-technical introduction to Digital Transformation, Blockchain, and Cybersecurity — drivers, benefits, goals, and challenges." },
+      { num: "03", title: "Digital and Security Technology Overview", desc: "Non-technical introduction to Digital Transformation, Blockchain, and Cybersecurity — drivers, benefits, goals, and challenges." },
     ],
   },
   {
@@ -39,7 +39,7 @@ const tracks = [
     name: "Containerisation",
     modules: [
       { num: "01", title: "Fundamental Containerisation", desc: "Containerisation models, technologies, mechanisms, and the business and technical impact of container utilisation." },
-      { num: "02", title: "Containerisation Technology & Architecture", desc: "Deep-dive into architectures, hosting models, deployment models, and advanced topics including security and lifecycle." },
+      { num: "02", title: "Containerisation Technology and Architecture", desc: "Deep-dive into architectures, hosting models, deployment models, and advanced topics including security and lifecycle." },
       { num: "03", title: "Containerisation Lab", desc: "Applied exercises for hands-on proficiency in containerisation architecture models and patterns." },
     ],
   },
@@ -47,7 +47,7 @@ const tracks = [
     name: "Internet of Things (IoT)",
     modules: [
       { num: "01", title: "Fundamental IoT", desc: "Business and technical essentials of IoT, use cases, concepts, models, technologies, and introductory architecture." },
-      { num: "02", title: "IoT Technology & Architecture", desc: "IoT architectural models, enabling technologies, telemetry data processing, and scalability approaches." },
+      { num: "02", title: "IoT Technology and Architecture", desc: "IoT architectural models, enabling technologies, telemetry data processing, and scalability approaches." },
       { num: "03", title: "IoT Lab", desc: "Hands-on exercises applying IoT knowledge through real-world problem-solving scenarios and devices." },
     ],
   },
@@ -71,7 +71,7 @@ const tracks = [
     name: "Blockchain",
     modules: [
       { num: "01", title: "Fundamental Blockchain", desc: "End-to-end blockchain functionality, technology and architecture, industry drivers, and component interactions." },
-      { num: "02", title: "Blockchain Technology & Architecture", desc: "Inner workings, key design patterns, techniques, architectural models, and customisation for business requirements." },
+      { num: "02", title: "Blockchain Technology and Architecture", desc: "Inner workings, key design patterns, techniques, architectural models, and customisation for business requirements." },
       { num: "03", title: "Blockchain Lab", desc: "Hands-on exercises applying blockchain knowledge — technologies, mechanisms, and security controls." },
     ],
   },
@@ -156,7 +156,7 @@ export default function NextGenDataSciencePage() {
         <section className="bg-gray-50 py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Course Tracks & Modules</h2>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Course Tracks and Modules</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
                 9 specialist tracks with 3 modules each — covering fundamentals, advanced concepts,
                 and applied labs for every area of modern data science.

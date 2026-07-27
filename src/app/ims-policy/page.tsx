@@ -72,7 +72,7 @@ function IsoBadge({ code, label, color }: { code: string; label: string; color: 
       <span className="text-xl font-black text-gray-800 leading-tight">{code}</span>
       <span className="text-[9px] font-semibold text-gray-500 text-center leading-tight px-3 mt-0.5">{label}</span>
       {/* top star */}
-      <Star className="absolute -top-3 w-5 h-5 text-yellow-400 fill-yellow-400" />
+      <Star className="absolute -top-3 w-5 h-5 text-cyan-400 fill-cyan-400" />
     </div>
   );
 }
@@ -91,7 +91,7 @@ export default function ImsPolicyPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-                  <ShieldCheck className="w-4 h-4" /> Legal &amp; Compliance
+                  <ShieldCheck className="w-4 h-4" /> Legal and Compliance
                 </span>
                 <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">
                   Integrated Management<br />System Policy
@@ -169,7 +169,7 @@ export default function ImsPolicyPage() {
                         idx === 0 ? "border-blue-200" : "border-emerald-200"
                       } bg-gradient-to-br ${gradient} shadow-xl flex flex-col items-center justify-center ring-4 ${ringColor}`}>
                         <div className="absolute inset-2 rounded-full border-2 border-white/30 border-dashed" />
-                        <Icon className="w-8 h-8 text-white mb-0.5" strokeWidth={1.5} />
+                        <Icon className="w-8 h-8 text-white mb-0.5" strokeWidth={1.75} />
                         <span className="text-white text-[10px] font-black tracking-widest uppercase">{code}</span>
                         <span className="text-white/80 text-[9px] font-medium">:{year}</span>
                       </div>
@@ -200,7 +200,7 @@ export default function ImsPolicyPage() {
                         <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Key Commitments</p>
                         {commitments.map((c) => (
                           <div key={c} className="flex items-start gap-3">
-                            <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${idx === 0 ? "text-blue-500" : "text-emerald-500"}`} strokeWidth={2} />
+                            <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${idx === 0 ? "text-blue-500" : "text-emerald-500"}`} strokeWidth={1.75} />
                             <span className="text-gray-600 text-sm leading-relaxed">{c}</span>
                           </div>
                         ))}
@@ -226,7 +226,7 @@ export default function ImsPolicyPage() {
                     <p className="font-bold text-white/80 text-sm uppercase tracking-widest">Our Certifications</p>
                   </div>
                   <h2 className="text-2xl lg:text-3xl font-extrabold mb-3">
-                    Independently Audited &amp; Certified
+                    Independently Audited and Certified
                   </h2>
                   <p className="text-blue-100 leading-relaxed">
                     Both our Quality Management System and Information Security Management System
@@ -242,7 +242,7 @@ export default function ImsPolicyPage() {
                     { code: "Active",     year: "",     label: "Continuously Maintained",        Icon: RefreshCw   },
                   ].map(({ code, year, label, Icon: Ic }) => (
                     <div key={code} className="bg-white/10 border border-white/20 rounded-2xl p-4 flex flex-col gap-2">
-                      <Ic className="w-6 h-6 text-cyan-300" strokeWidth={1.5} />
+                      <Ic className="w-6 h-6 text-cyan-300" strokeWidth={1.75} />
                       <p className="font-bold text-white text-sm">{code}{year ? ` : ${year}` : ""}</p>
                       <p className="text-blue-200 text-xs leading-snug">{label}</p>
                     </div>

@@ -18,25 +18,30 @@ export const metadata: Metadata = {
 
 const capabilities = [
   { Icon: DollarSign,    label: "Financial Management",  color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Package,       label: "Supply Chain",          color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
-  { Icon: Users,         label: "Human Resources",       color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+  { Icon: Package,       label: "Supply Chain",          color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
+  { Icon: Users,         label: "Human Resources",       color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
   { Icon: ShoppingCart,  label: "Sales Pipeline",        color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: Megaphone,     label: "Marketing Automation",  color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
-  { Icon: BarChart3,     label: "Analytics & Reporting", color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
+  { Icon: Megaphone,     label: "Marketing Automation",  color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
+  { Icon: BarChart3,     label: "Analytics and Reporting", color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
 ];
 
-const erpBenefits = [
-  { Icon: DollarSign, bg: "bg-blue-600",    title: "Streamlined Financial Management", desc: "Dynamics 365 ERP simplifies financial tasks like budgeting and reporting for real-time insights and regulatory compliance." },
-  { Icon: Zap,        bg: "bg-violet-600",  title: "Operational Efficiency",           desc: "Production planning and asset management ensure lean processes and responsive project handling across your organisation." },
-  { Icon: Globe,      bg: "bg-cyan-600",    title: "Scalability and Flexibility",      desc: "Cloud-based infrastructure adapts to organisational growth and market shifts without disrupting operations." },
-  { Icon: Plug,       bg: "bg-emerald-600", title: "Seamless Integrations",            desc: "Microsoft Power Platform enables connectivity with business applications, productivity tools, and data repositories." },
+const features = [
+  { Icon: DollarSign,   label: "Financial Management",        desc: "Dynamics 365 ERP simplifies budgeting, reporting, and financial close for real-time insights and regulatory compliance." },
+  { Icon: Package,      label: "Supply Chain and Operations",  desc: "Production planning and asset management ensure lean processes and responsive project handling across your organisation." },
+  { Icon: Users,        label: "Human Resources",             desc: "End-to-end HR management from recruitment and onboarding to payroll and performance — built for scale." },
+  { Icon: ShoppingCart, label: "Sales Pipeline Management",   desc: "Lead tracking and deal management accelerate sales cycles with automated follow-ups and real-time pipeline visibility." },
+  { Icon: Megaphone,    label: "Marketing Automation",        desc: "Automated targeted campaigns with performance tracking enhance engagement metrics and marketing ROI." },
+  { Icon: BarChart3,    label: "Analytics & Reporting",       desc: "Comprehensive dashboards and reporting across ERP and CRM data for data-driven decisions and strategic planning." },
+  { Icon: Plug,         label: "Seamless Integrations",       desc: "Microsoft Power Platform enables connectivity with business applications, productivity tools, and data repositories." },
+  { Icon: Globe,        label: "Global Scale and Flexibility", desc: "Cloud-based infrastructure adapts to organisational growth and market shifts across regions without disruption." },
+  { Icon: HeartHandshake, label: "Unified Customer View",     desc: "HubSpot CRM consolidates customer interactions across email, calls, social, and website into a single timeline." },
 ];
 
-const crmBenefits = [
-  { Icon: Users,         bg: "bg-orange-500",  title: "Unified Customer View",    desc: "HubSpot CRM consolidates customer interactions across channels for better understanding of preferences and needs." },
-  { Icon: ShoppingCart,  bg: "bg-amber-500",   title: "Efficient Sales Pipeline", desc: "Lead tracking and deal management accelerate sales cycles with automated follow-ups and pipeline visibility." },
-  { Icon: Megaphone,     bg: "bg-rose-500",    title: "Personalised Marketing",   desc: "Automated targeted campaigns with performance tracking enhance engagement metrics and marketing ROI." },
-  { Icon: BarChart3,     bg: "bg-violet-600",  title: "Insightful Analytics",     desc: "Comprehensive reporting measures campaign effectiveness for data-driven choices and strategic planning." },
+const benefits = [
+  { Icon: DollarSign,     bg: "bg-blue-600",    title: "Streamlined Financial Management", desc: "Dynamics 365 ERP simplifies financial tasks like budgeting and reporting for real-time insights and regulatory compliance." },
+  { Icon: Users,          bg: "bg-teal-600",    title: "Unified Customer View",            desc: "HubSpot CRM consolidates customer interactions across channels for better understanding of preferences and needs." },
+  { Icon: Zap,            bg: "bg-cyan-600",    title: "Operational Efficiency",           desc: "Production planning, asset management, and process automation ensure lean operations across your organisation." },
+  { Icon: TrendingUp,     bg: "bg-cyan-500",    title: "Revenue Growth",                   desc: "Aligned sales and marketing data, pipeline visibility, and AI-driven insights help teams close more deals at higher value." },
 ];
 
 const faqs = [
@@ -49,8 +54,8 @@ const faqs = [
     a: "Dynamics 365 ERP supports multi-currency transactions and multi-language interfaces, allowing businesses to operate globally and manage diverse customer and vendor relationships seamlessly.",
   },
   {
-    q: "What deployment options exist?",
-    a: "Cloud-based options (Finance and Supply Chain Management) and on-premises solutions (Finance and Operations) serve different organisational preferences.",
+    q: "What deployment options exist for Microsoft Dynamics 365?",
+    a: "Dynamics 365 is primarily a cloud-hosted platform delivered via Microsoft Azure. Most modules — including Finance, Supply Chain Management, and Sales — run in the cloud, with updates managed by Microsoft. For organisations with specific data-residency or on-premises requirements, hybrid configurations are possible, and Microsoft's on-premises product (Dynamics 365 Business Central on-premises) exists for smaller deployments. Kulana will recommend the right model based on your compliance, infrastructure, and scale requirements.",
   },
   {
     q: "Can it integrate with external applications?",
@@ -77,8 +82,8 @@ const faqs = [
     a: "Yes, customisable deal stages, automation rules, and workflows accommodate intricate sales processes for enterprise and B2B environments.",
   },
   {
-    q: "What support options exist for HubSpot?",
-    a: "HubSpot provides extensive customer support resources, including online documentation, knowledge base, community forums, live chat support, and training courses through HubSpot Academy.",
+    q: "What post-implementation support does Kulana provide for HubSpot?",
+    a: "Kulana provides hands-on support after go-live — including configuration adjustments, user training, troubleshooting, and ongoing optimisation as your sales and marketing processes evolve. HubSpot itself offers documentation, a knowledge base, and community forums. Paid HubSpot tiers also include direct chat and phone support from HubSpot's own team. Kulana acts as your local partner for day-to-day guidance and platform administration.",
   },
 ];
 
@@ -93,7 +98,7 @@ export default function ErpCrmPage() {
           <HeroCanvas variant="erp-crm" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <LayoutGrid className="w-4 h-4" /> Our Services
+              <LayoutGrid className="w-4 h-4" /> Core and Enterprise Systems
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">ERP and CRM</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -175,7 +180,7 @@ export default function ErpCrmPage() {
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={2} />
+                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -206,8 +211,8 @@ export default function ErpCrmPage() {
               {/* Microsoft Dynamics 365 */}
               <div className="bg-gray-900 border border-gray-800 rounded-3xl p-8 hover:border-blue-500/40 transition-colors">
                 <div className="flex items-center gap-5 mb-6">
-                  <div className="bg-white rounded-2xl p-4 flex items-center justify-center w-20 h-16 shadow-lg">
-                    <Image src="/logos/microsoft.svg" alt="Microsoft" width={80} height={32} className="h-7 w-auto object-contain" />
+                  <div className="bg-white rounded-2xl p-5 flex items-center justify-center w-32 h-20 shadow-lg">
+                    <Image src="/logos/microsoft.svg" alt="Microsoft" width={120} height={48} className="h-10 w-auto object-contain" />
                   </div>
                   <div>
                     <p className="text-white font-extrabold text-lg leading-tight">Microsoft Dynamics 365</p>
@@ -233,8 +238,8 @@ export default function ErpCrmPage() {
               {/* HubSpot */}
               <div className="bg-gray-900 border border-gray-800 rounded-3xl p-8 hover:border-orange-500/40 transition-colors">
                 <div className="flex items-center gap-5 mb-6">
-                  <div className="bg-white rounded-2xl p-4 flex items-center justify-center w-20 h-16 shadow-lg">
-                    <Image src="/logos/hubspot.svg" alt="HubSpot" width={80} height={32} className="h-7 w-auto object-contain" />
+                  <div className="bg-white rounded-2xl p-5 flex items-center justify-center w-32 h-20 shadow-lg">
+                    <Image src="/logos/hubspot.svg" alt="HubSpot" width={120} height={48} className="h-10 w-auto object-contain" />
                   </div>
                   <div>
                     <p className="text-white font-extrabold text-lg leading-tight">HubSpot CRM</p>
@@ -260,91 +265,58 @@ export default function ErpCrmPage() {
           </div>
         </section>
 
-        {/* ── ERP Benefits ─────────────────────────────────────────────── */}
+        {/* ── Features ─────────────────────────────────────────────────── */}
         <section className="bg-white py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
-                <Image src="/logos/microsoft.svg" alt="Microsoft" width={80} height={28} className="h-6 w-auto object-contain" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Dynamics 365</p>
-                <h2 className="text-2xl font-extrabold text-gray-900">ERP Benefits</h2>
-              </div>
+            <div className="text-center mb-14">
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+                ERP and CRM Capabilities
+              </h2>
+              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+                A unified set of capabilities spanning both Microsoft Dynamics 365 and HubSpot — covering every function from finance to customer success.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {erpBenefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:border-blue-100 hover:bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-11 h-11 rounded-xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {features.map(({ Icon, label, desc }, i) => (
+                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
+                      <p className="font-bold text-gray-900">{label}</p>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── CRM Benefits ─────────────────────────────────────────────── */}
+        {/* ── Benefits ─────────────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
-                <Image src="/logos/hubspot.svg" alt="HubSpot" width={80} height={28} className="h-6 w-auto object-contain" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">HubSpot</p>
-                <h2 className="text-2xl font-extrabold text-gray-900">CRM Benefits</h2>
-              </div>
+            <div className="text-center mb-14">
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Modernise</p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
+              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+                When ERP and CRM work together, every team — from finance to sales — shares a single source of truth and moves faster.
+              </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {crmBenefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-7 border border-gray-100 hover:border-orange-100 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+              {benefits.map(({ Icon, bg, title, desc }) => (
+                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
                   <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-11 h-11 rounded-xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
+                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
+                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Why Together ─────────────────────────────────────────────── */}
-        <section className="bg-white py-20 border-y border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-violet-50 to-blue-50 rounded-3xl p-10 md:p-14 border border-violet-100">
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                  <p className="text-xs font-bold text-violet-600 uppercase tracking-widest mb-3">Better Together</p>
-                  <h2 className="text-3xl font-extrabold text-gray-900 mb-5">
-                    ERP + CRM: Unified Business Intelligence
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    When Dynamics 365 and HubSpot work together, every team — from finance to sales —
-                    shares a single source of truth. Customer data flows seamlessly between platforms,
-                    enabling faster decisions, better service, and higher revenue.
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { Icon: TrendingUp,    label: "Revenue Growth",     desc: "Aligned sales and ops" },
-                    { Icon: HeartHandshake,label: "Customer Retention", desc: "360° relationship view" },
-                    { Icon: Zap,           label: "Faster Decisions",   desc: "Real-time shared data" },
-                    { Icon: Globe,         label: "Global Scale",       desc: "Multi-region ready" },
-                  ].map(({ Icon: Ic, label, desc }) => (
-                    <div key={label} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
-                      <Ic className="w-6 h-6 text-violet-600 mb-3" strokeWidth={1.75} />
-                      <p className="font-bold text-gray-900 text-sm">{label}</p>
-                      <p className="text-gray-400 text-xs mt-0.5">{desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -383,13 +355,13 @@ export default function ErpCrmPage() {
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-violet-600 rounded-3xl p-10 md:p-14 text-white text-center">
+            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="flex justify-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2.5">
-                  <Image src="/logos/microsoft.svg" alt="Microsoft" width={48} height={20} className="h-5 w-auto object-contain" />
+                <div className="bg-white rounded-2xl px-6 py-4 flex items-center justify-center shadow-lg">
+                  <Image src="/logos/microsoft.svg" alt="Microsoft" width={120} height={44} className="h-11 w-auto object-contain" />
                 </div>
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2.5">
-                  <Image src="/logos/hubspot.svg" alt="HubSpot" width={48} height={20} className="h-5 w-auto object-contain" />
+                <div className="bg-white rounded-2xl px-6 py-4 flex items-center justify-center shadow-lg">
+                  <Image src="/logos/hubspot.svg" alt="HubSpot" width={120} height={44} className="h-11 w-auto object-contain" />
                 </div>
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">

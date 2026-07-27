@@ -31,9 +31,9 @@ const subServices = [
     title: "Enterprise Architecture",
     href: "/enterprise-architecture",
     tag: "Architecture",
-    gradient: "from-indigo-500 to-indigo-700",
-    iconBg: "bg-indigo-600",
-    tagColor: "bg-indigo-50 text-indigo-700 border-indigo-100",
+    gradient: "from-teal-500 to-teal-700",
+    iconBg: "bg-teal-600",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
     desc: "Design a coherent technology landscape that aligns with your business strategy. Our enterprise architects define the blueprints, standards, and governance frameworks that guide your digital evolution.",
     highlights: ["TOGAF-aligned Frameworks", "Technology Roadmapping", "Architecture Governance", "Cloud Strategy"],
   },
@@ -42,9 +42,9 @@ const subServices = [
     title: "AI-Native Product Engineering",
     href: "/ai-native-product-engineering",
     tag: "AI Engineering",
-    gradient: "from-violet-500 to-purple-700",
-    iconBg: "bg-violet-600",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    gradient: "from-blue-500 to-teal-600",
+    iconBg: "bg-blue-600",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     desc: "Build products with intelligence at their core. We engineer AI-native applications that embed machine learning, natural language processing, and intelligent automation from day one.",
     highlights: ["LLM Integration", "ML Model Development", "Intelligent Automation", "AI Product Strategy"],
   },
@@ -64,7 +64,7 @@ export default function IntegrationDigitalConnectivityPage() {
               <Network className="w-4 h-4" /> Our Services
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Integration &amp; Digital Connectivity
+              Integration and Digital Connectivity
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               Connect everything. Accelerate everything. Seamless integration architectures
@@ -131,7 +131,7 @@ export default function IntegrationDigitalConnectivityPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Network className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Network className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to connect your digital ecosystem?

@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRight, Play, Shield, Cpu, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, Shield, Award, Globe } from "lucide-react";
 
 const highlights = [
-  { icon: Shield, label: "ISO Certified", desc: "Enterprise Security" },
-  { icon: Cpu, label: "10+ Technologies", desc: "Cutting-edge Stack" },
-  { icon: TrendingUp, label: "10+ Projects", desc: "Delivered Successfully" },
+  { icon: Shield, label: "ISO Certified",       desc: "Enterprise Security" },
+  { icon: Award,  label: "Certified Partners",  desc: "Microsoft · HubSpot · Temenos" },
+  { icon: Globe,  label: "Ghana and Mauritius",   desc: "Dual-Country Offices" },
 ];
 
 // Simplified continent outlines as [lat, lon] arrays (equirectangular)
@@ -284,7 +284,7 @@ export default function Hero() {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-cyan-300 font-medium mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              Trusted IT Partner Across Africa and The Middle East
+              Trusted IT Partner — Ghana and Mauritius
             </div>
 
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6">

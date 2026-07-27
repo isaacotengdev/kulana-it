@@ -30,7 +30,6 @@ const quickLinks = [
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Cookies Policy", href: "/cookies-policy" },
   { name: "IMS Policy", href: "/ims-policy" },
-  { name: "Learn More Form", href: "/learn-more-form" },
 ];
 
 export default function Footer() {
@@ -42,19 +41,19 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
-              <div className="bg-white rounded-xl px-3 py-2 inline-flex">
+              <div className="bg-white rounded-2xl px-5 py-3 inline-flex shadow-sm">
                 <Image
                   src="/logos/logo.svg"
                   alt="Kulana IT Solutions — Technology Value Creators"
-                  width={160}
-                  height={51}
-                  className="h-11 w-auto object-contain"
+                  width={200}
+                  height={64}
+                  className="h-14 w-auto object-contain"
                 />
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
-              Technology Value Creators — empowering organisations across Africa
-              and the Middle East through enterprise-grade IT solutions and expert consultancy.
+              Technology Value Creators — empowering organisations in Ghana and
+              Mauritius through enterprise-grade IT solutions and expert consultancy.
             </p>
 
             {/* Contact info */}
@@ -183,7 +182,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
-              ISO 9001 &amp; 27001 Certified
+              ISO 9001 and 27001 Certified
             </span>
           </div>
         </div>

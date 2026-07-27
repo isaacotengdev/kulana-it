@@ -80,20 +80,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-start flex-shrink-0">
-            <div className="rounded-xl px-2 pt-1">
-              <Image
-                src="/logos/logo.svg"
-                alt="Kulana IT Solutions — Technology Value Creators"
-                width={148}
-                height={47}
-                className="h-10 w-auto object-contain"
-                priority
-              />
-            </div>
-            <p className="text-[9px] font-semibold tracking-[0.22em] uppercase text-gray-400 px-2 pb-0.5">
-              Technology Value Creators
-            </p>
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logos/logo.svg"
+              alt="Kulana IT Solutions — Technology Value Creators"
+              width={210}
+              height={67}
+              className="h-[54px] w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

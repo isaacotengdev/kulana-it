@@ -18,29 +18,29 @@ export const metadata: Metadata = {
 
 const capabilities = [
   { Icon: GitMerge,  label: "API Gateway",            color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: RefreshCw, label: "Event Streaming",         color: "text-violet-600",  bg: "bg-violet-50",  border: "border-violet-100" },
-  { Icon: Database,  label: "Data Integration",        color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { Icon: Shield,    label: "API Security",            color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
-  { Icon: Layers,    label: "Microservices",           color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
+  { Icon: RefreshCw, label: "Event Streaming",         color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
+  { Icon: Database,  label: "Data Integration",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
+  { Icon: Shield,    label: "API Security",            color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
+  { Icon: Layers,    label: "Microservices",           color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
   { Icon: Activity,  label: "Real-time Monitoring",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
 ];
 
 const benefits = [
   { Icon: GitMerge, bg: "bg-blue-600",    title: "Streamlined Processes",         desc: "Integration eliminates data silos and ensures smooth system communication, reducing manual effort and increasing operational efficiency." },
-  { Icon: Database, bg: "bg-emerald-600", title: "Improved Data Quality",         desc: "Middleware automates data exchange and validation, reducing errors, duplication, and inconsistencies for better data integrity." },
-  { Icon: Zap,      bg: "bg-violet-600",  title: "Cost Savings & ROI",            desc: "Process optimisation, reduced manual effort, and minimised duplication deliver significant savings and rapid return on investment." },
-  { Icon: Globe,    bg: "bg-cyan-600",    title: "Enhanced Agility",              desc: "Integrated systems enable faster decision-making, market responsiveness, and flexibility to adapt to evolving business requirements." },
-  { Icon: Users,    bg: "bg-amber-500",   title: "Enhanced Customer Experiences", desc: "A unified customer data view enables personalised interactions, targeted campaigns, and superior service delivery." },
-  { Icon: Lock,     bg: "bg-red-500",     title: "End-to-End Security",           desc: "Authentication, authorisation, encryption, and data masking protect sensitive information during transmission between systems." },
+  { Icon: Database, bg: "bg-teal-600",    title: "Improved Data Quality",         desc: "Middleware automates data exchange and validation, reducing errors, duplication, and inconsistencies for better data integrity." },
+  { Icon: Zap,      bg: "bg-cyan-600",    title: "Cost Savings and ROI",          desc: "Process optimisation, reduced manual effort, and minimised duplication deliver significant savings and rapid return on investment." },
+  { Icon: Globe,    bg: "bg-blue-600",    title: "Enhanced Agility",              desc: "Integrated systems enable faster decision-making, market responsiveness, and flexibility to adapt to evolving business requirements." },
+  { Icon: Users,    bg: "bg-teal-600",    title: "Enhanced Customer Experiences", desc: "A unified customer data view enables personalised interactions, targeted campaigns, and superior service delivery." },
+  { Icon: Lock,     bg: "bg-cyan-500",    title: "End-to-End Security",           desc: "Authentication, authorisation, encryption, and data masking protect sensitive information during transmission between systems." },
 ];
 
 const integrationPatterns = [
-  { label: "Point-to-Point",    desc: "Direct, lightweight connections for simple two-system scenarios" },
-  { label: "ESB / Middleware",  desc: "Central hub routing messages across many systems reliably" },
-  { label: "API-First",         desc: "Expose capabilities as governed APIs consumed by any client" },
-  { label: "Event-Driven",      desc: "Asynchronous event streams for real-time, decoupled architectures" },
-  { label: "ETL / ELT Pipelines", desc: "Batch or real-time data transformation and loading at scale" },
-  { label: "iPaaS / Cloud",     desc: "Managed integration platform as a service for cloud estates" },
+  { Icon: Plug,      label: "Point-to-Point",    desc: "Direct, lightweight connections for simple two-system scenarios" },
+  { Icon: Layers,    label: "ESB / Middleware",  desc: "Central hub routing messages across many systems reliably" },
+  { Icon: GitMerge,  label: "API-First",         desc: "Expose capabilities as governed APIs consumed by any client" },
+  { Icon: RefreshCw, label: "Event-Driven",      desc: "Asynchronous event streams for real-time, decoupled architectures" },
+  { Icon: Database,  label: "ETL / ELT Pipelines", desc: "Batch or real-time data transformation and loading at scale" },
+  { Icon: Globe,     label: "iPaaS / Cloud",     desc: "Managed integration platform as a service for cloud estates" },
 ];
 
 const faqs = [
@@ -69,8 +69,8 @@ const faqs = [
     a: "It decouples systems, enabling modular architectures that scale horizontally or vertically without disrupting existing infrastructure or downstream integrations.",
   },
   {
-    q: "What key considerations exist when selecting solutions?",
-    a: "Compatibility with existing infrastructure, scalability, performance, security, vendor support, total cost of ownership, and alignment with business objectives are all critical factors.",
+    q: "What should we consider when selecting an integration platform?",
+    a: "The most important factors are: the protocols and standards your existing systems use (REST, SOAP, AMQP, etc.), the volume and latency requirements of your data flows, whether you need an event-driven or request-driven architecture, the vendor's support model and long-term roadmap, and total cost of ownership including licensing, implementation, and maintenance. WSO2, for example, is well-suited to enterprise API management and high-volume event streaming — but the right platform depends on your specific landscape. Kulana runs an assessment before recommending any tooling.",
   },
   {
     q: "How is system compatibility ensured during integration?",
@@ -78,11 +78,11 @@ const faqs = [
   },
   {
     q: "What role does middleware play in digital transformation?",
-    a: "Middleware plays a crucial role in enabling digital transformation initiatives by providing the necessary integration capabilities for real-time data exchange and process automation.",
+    a: "Middleware removes the point-to-point dependency problem: without it, connecting five systems requires up to ten direct integrations, each brittle and hard to maintain. Middleware creates a central integration layer where each system connects once — to the middleware — rather than to every other system. This makes it possible to add, replace, or upgrade individual systems without rewriting integrations, which is what makes digital transformation programs sustainable rather than one-off projects.",
   },
   {
-    q: "How can ROI be measured for integration projects?",
-    a: "Evaluate cost savings, productivity gains, revenue growth, risk mitigation, and customer satisfaction through KPIs like reduced integration time and increased data accuracy.",
+    q: "How do we measure the return on an integration project?",
+    a: "The clearest measures are operational: how many manual data transfers or reconciliation steps were eliminated, how long end-to-end processes now take versus before, and what error rates look like in data flowing between systems. On the business side, look at time-to-decision (faster data = faster action), the cost of building new integrations after the platform is in place versus before, and any revenue impact from systems that can now talk to each other — for example, a CRM connected to your billing system enabling faster invoicing. Kulana defines these baseline metrics during the assessment phase so ROI can be tracked from day one.",
   },
 ];
 
@@ -97,10 +97,10 @@ export default function DigitalIntegrationsPage() {
           <HeroCanvas variant="digital-integrations" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <Plug className="w-4 h-4" /> Our Services
+              <Plug className="w-4 h-4" /> Integration and Digital Connectivity
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Digital Integrations &amp;<br />API Management
+              Digital Integrations and<br />API Management
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               Unlock the potential of seamless connectivity. Our middleware and integration practice ensures
@@ -145,7 +145,7 @@ export default function DigitalIntegrationsPage() {
             <div>
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                What is Middleware &amp; Integration Practice?
+                What is Middleware and Integration Practice?
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Businesses depend on multiple software systems for operations and data management. The
@@ -182,7 +182,7 @@ export default function DigitalIntegrationsPage() {
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={2} />
+                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -262,13 +262,16 @@ export default function DigitalIntegrationsPage() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {integrationPatterns.map(({ label, desc }, i) => (
+              {integrationPatterns.map(({ Icon, label, desc }, i) => (
                 <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <span className="text-white text-xs font-black">0{i + 1}</span>
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 mb-1">{label}</p>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
+                      <p className="font-bold text-gray-900">{label}</p>
+                    </div>
                     <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
@@ -339,7 +342,7 @@ export default function DigitalIntegrationsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Plug className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Plug className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to seamlessly connect your systems?

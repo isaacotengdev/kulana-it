@@ -774,7 +774,7 @@ function drawAcademy(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
   const L = w * 0.06, R = w * 0.94, cy = h * 0.55, PW = R - L;
   const courses = [
     { label: "Fundamentals", sub: "Foundation" },
-    { label: "AI & Cloud", sub: "Arcitura" },
+    { label: "AI and Cloud", sub: "Arcitura" },
     { label: "Data Science", sub: "Next-Gen" },
     { label: "Digital Tx", sub: "Programme" },
     { label: "Certified", sub: "Expert 🎓" },
@@ -1440,7 +1440,7 @@ function drawPartnerOffering(ctx: CanvasRenderingContext2D, w: number, h: number
   ctx.fillStyle = CYAN(0.9); ctx.fill();
 
   [
-    { cx: lcx, label: "KULANA", color: CYAN,  satellites: ["Core Systems", "Integration", "Data & AI"] },
+    { cx: lcx, label: "KULANA", color: CYAN,  satellites: ["Core Systems", "Integration", "Data and AI"] },
     { cx: rcx, label: "PARTNER", color: GREEN, satellites: ["Training", "Licensing", "Co-delivery"] },
   ].forEach(({ cx, label, color, satellites }) => {
     const Rn = Math.min(w, h) * 0.16;

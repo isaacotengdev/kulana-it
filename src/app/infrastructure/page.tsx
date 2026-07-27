@@ -5,7 +5,7 @@ import Image from "next/image";
 import HeroCanvas from "@/components/HeroCanvas";
 import {
   Server, Cloud, Network, Shield, RefreshCw, MonitorCheck,
-  ArrowRight, CheckCircle2,
+  ArrowRight, CheckCircle2, Search, Settings, Zap, TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -16,28 +16,63 @@ export const metadata: Metadata = {
 };
 
 const capabilities = [
-  { Icon: Server,       label: "Data Center Design",     color: "text-slate-700",   bg: "bg-slate-50",   border: "border-slate-200" },
+  { Icon: Server,       label: "Data Center Design",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
   { Icon: Cloud,        label: "Cloud Infrastructure",   color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
   { Icon: Network,      label: "Network Architecture",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: MonitorCheck, label: "24/7 Monitoring",        color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { Icon: RefreshCw,    label: "Disaster Recovery",      color: "text-amber-600",   bg: "bg-amber-50",   border: "border-amber-100" },
-  { Icon: Shield,       label: "Security Hardening",     color: "text-red-500",     bg: "bg-red-50",     border: "border-red-100" },
+  { Icon: MonitorCheck, label: "24/7 Monitoring",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
+  { Icon: RefreshCw,    label: "Disaster Recovery",      color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
+  { Icon: Shield,       label: "Security Hardening",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
 ];
 
 const features = [
-  { label: "Data Center Build & Co-location", desc: "Design and build high-availability data centers or manage your co-location deployments." },
-  { label: "Hybrid & Multi-Cloud",           desc: "Seamlessly extend on-premise environments into AWS, Azure, or Google Cloud." },
-  { label: "Network & SD-WAN",               desc: "Design resilient, software-defined networks that scale with your business." },
-  { label: "Virtualisation & HCI",           desc: "VMware, Nutanix, and hyper-converged infrastructure to reduce hardware sprawl." },
-  { label: "Backup & Disaster Recovery",     desc: "Automated backup, replication, and tested DR plans to protect critical workloads." },
-  { label: "Infrastructure Monitoring",      desc: "24/7 NOC services, proactive alerting, and capacity planning to prevent downtime." },
+  { Icon: Server,       label: "Data Center Build and Co-location", desc: "Design and build high-availability data centers or manage your co-location deployments." },
+  { Icon: Cloud,        label: "Hybrid and Multi-Cloud",           desc: "Seamlessly extend on-premise environments into AWS, Azure, or Google Cloud." },
+  { Icon: Network,      label: "Network and SD-WAN",               desc: "Design resilient, software-defined networks that scale with your business." },
+  { Icon: Zap,          label: "Virtualisation and HCI",           desc: "VMware, Nutanix, and hyper-converged infrastructure to reduce hardware sprawl." },
+  { Icon: RefreshCw,    label: "Backup and Disaster Recovery",     desc: "Automated backup, replication, and tested DR plans to protect critical workloads." },
+  { Icon: MonitorCheck, label: "Infrastructure Monitoring",       desc: "24/7 NOC services, proactive alerting, and capacity planning to prevent downtime." },
 ];
 
 const benefits = [
-  { title: "High Availability", desc: "Engineered uptime with redundant power, cooling, and network paths." },
-  { title: "Scalability",       desc: "Infrastructure that grows with your business without costly redesigns." },
-  { title: "Cost Optimisation", desc: "Right-size your environment and eliminate waste with continuous optimisation." },
-  { title: "Risk Mitigation",   desc: "Tested DR plans and hardened security that keep your operations running." },
+  { Icon: MonitorCheck, bg: "bg-blue-600",    title: "High Availability",    desc: "Engineered uptime with redundant power, cooling, and network paths." },
+  { Icon: TrendingUp,   bg: "bg-teal-600",    title: "Scalability",          desc: "Infrastructure that grows with your business without costly redesigns." },
+  { Icon: Zap,          bg: "bg-cyan-600",    title: "Cost Optimisation",    desc: "Right-size your environment and eliminate waste with continuous optimisation." },
+  { Icon: Shield,       bg: "bg-cyan-500",    title: "Risk Mitigation",      desc: "Tested DR plans and hardened security that keep your operations running." },
+];
+
+const faqs = [
+  {
+    q: "What is the difference between co-location and a private data center?",
+    a: "Co-location means housing your own servers in a third-party facility — you own the hardware but share power, cooling, and physical security. A private data center gives you full control but requires significant capital investment. We help you evaluate both options based on your workload, budget, and risk profile.",
+  },
+  {
+    q: "How do you approach hybrid cloud architecture?",
+    a: "We design hybrid environments that extend on-premise workloads into public clouds (AWS, Azure, Google Cloud) using secure, low-latency connectivity. Workloads are placed based on cost, performance, data sovereignty, and regulatory requirements.",
+  },
+  {
+    q: "What is SD-WAN and why does it matter?",
+    a: "Software-Defined Wide Area Networking (SD-WAN) replaces traditional MPLS with intelligent, policy-driven routing over multiple connections. It reduces cost, improves performance, and enables centralised management across branch offices.",
+  },
+  {
+    q: "How does Kulana ensure infrastructure security?",
+    a: "We implement defence-in-depth — network segmentation, firewall hardening, endpoint protection, identity and access management, encryption at rest and in transit, and regular vulnerability assessments aligned to ISO 27001.",
+  },
+  {
+    q: "What disaster recovery SLAs can you deliver?",
+    a: "Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) vary by workload criticality. We design tiered DR strategies — from warm standby to active-active configurations — and test them regularly to validate SLAs.",
+  },
+  {
+    q: "Do you offer 24/7 monitoring and managed services?",
+    a: "Yes. Our Network Operations Centre (NOC) provides continuous monitoring, proactive alerting, capacity planning, and incident response. We offer tiered managed service packages aligned to your operational requirements.",
+  },
+  {
+    q: "How long does an infrastructure deployment typically take?",
+    a: "A standard server and network deployment takes 4–8 weeks. Large-scale data center builds or complex cloud migrations are phased over 3–6 months. We provide a detailed project plan after the initial assessment.",
+  },
+  {
+    q: "What certifications does Kulana hold for infrastructure work?",
+    a: "Kulana is certified under ISO 9001 (Quality Management) and ISO 27001 (Information Security). We are also a Dell Technologies partner with trained and certified engineers across storage, compute, and networking.",
+  },
 ];
 
 export default function InfrastructurePage() {
@@ -51,7 +86,7 @@ export default function InfrastructurePage() {
           <HeroCanvas variant="infrastructure" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <Server className="w-4 h-4" /> Core &amp; Enterprise Systems
+              <Server className="w-4 h-4" /> Core and Enterprise Systems
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Infrastructure</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -113,20 +148,29 @@ export default function InfrastructurePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-10 border border-slate-100">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <ArrowRight className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
+              </div>
               <div className="space-y-5">
                 {[
-                  { step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
-                  { step: "02", title: "Design",     desc: "Produce a detailed architecture design aligned to your business requirements, budget, and growth plans." },
-                  { step: "03", title: "Deploy",     desc: "Implement and configure infrastructure using best-practice methodologies with minimal disruption." },
-                  { step: "04", title: "Operate",    desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
-                ].map(({ step, title, desc }) => (
+                  { Icon: Search,   step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
+                  { Icon: Settings, step: "02", title: "Design",     desc: "Produce a detailed architecture design aligned to your business requirements, budget, and growth plans." },
+                  { Icon: Zap,      step: "03", title: "Deploy",     desc: "Implement and configure infrastructure using best-practice methodologies with minimal disruption." },
+                  { Icon: MonitorCheck, step: "04", title: "Operate", desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
+                ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-slate-700 flex items-center justify-center shadow-sm">
-                      <span className="text-xs font-black text-white">{step}</span>
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
+                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900 mb-1">{title}</p>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
+                        <span className="font-semibold text-gray-900">{title}</span>
+                      </div>
                       <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
                     </div>
                   </div>
@@ -191,13 +235,16 @@ export default function InfrastructurePage() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map(({ label, desc }, i) => (
+              {features.map(({ Icon, label, desc }, i) => (
                 <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <span className="text-xs font-black text-white">0{i + 1}</span>
+                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 mb-1">{label}</p>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
+                      <p className="font-bold text-gray-900">{label}</p>
+                    </div>
                     <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
@@ -212,12 +259,17 @@ export default function InfrastructurePage() {
             <div className="text-center mb-14">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Modernise</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
+              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+                A well-designed infrastructure foundation reduces risk, cuts cost, and enables every
+                part of your business to move faster.
+              </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-700 mb-5 flex items-center justify-center shadow-md">
-                    <Server className="w-6 h-6 text-white" strokeWidth={1.75} />
+              {benefits.map(({ Icon, bg, title, desc }) => (
+                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
+                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -227,12 +279,43 @@ export default function InfrastructurePage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">FAQ</p>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Everything you need to know about our infrastructure practice.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {faqs.map(({ q, a }) => (
+              <details key={q} className="group border border-gray-200 rounded-2xl overflow-hidden">
+                <summary className="flex items-start justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-gray-900 hover:bg-blue-50 transition-colors">
+                  <span className="flex items-start gap-3">
+                    <Server className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
+                    {q}
+                  </span>
+                  <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 group-open:bg-blue-100 flex-shrink-0 transition-colors mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-gray-500 group-open:text-blue-600 group-open:rotate-45 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="px-6 pb-5 pt-2 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pl-14">{a}</div>
+              </details>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Server className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Server className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to build a resilient infrastructure?

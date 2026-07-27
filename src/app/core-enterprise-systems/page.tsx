@@ -28,12 +28,12 @@ const subServices = [
   },
   {
     Icon: LayoutGrid,
-    title: "ERP & CRM",
+    title: "ERP and CRM",
     href: "/erp-and-crm",
     tag: "Business Operations",
-    gradient: "from-violet-500 to-violet-700",
-    iconBg: "bg-violet-600",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    gradient: "from-blue-500 to-blue-700",
+    iconBg: "bg-blue-600",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     desc: "Streamline operations with Microsoft Dynamics 365 and HubSpot CRM — tailored to your workflows, integrated with your existing systems, and designed for long-term growth.",
     highlights: ["Microsoft Dynamics 365", "HubSpot CRM", "Process Automation", "Reporting & BI"],
   },
@@ -42,9 +42,9 @@ const subServices = [
     title: "Infrastructure",
     href: "/infrastructure",
     tag: "Infrastructure",
-    gradient: "from-slate-600 to-slate-800",
-    iconBg: "bg-slate-700",
-    tagColor: "bg-slate-50 text-slate-700 border-slate-200",
+    gradient: "from-blue-500 to-cyan-600",
+    iconBg: "bg-blue-600",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     desc: "Design, build, and manage resilient data centers and IT infrastructure. We deliver scalable, high-availability environments that underpin your critical business operations.",
     highlights: ["Data Center Design", "Cloud Infrastructure", "Network Architecture", "24/7 Operations"],
   },
@@ -53,9 +53,9 @@ const subServices = [
     title: "Cybersecurity",
     href: "/cybersecurity",
     tag: "Security",
-    gradient: "from-red-500 to-red-700",
-    iconBg: "bg-red-600",
-    tagColor: "bg-red-50 text-red-700 border-red-100",
+    gradient: "from-blue-500 to-cyan-600",
+    iconBg: "bg-blue-600",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
     desc: "Protect your organisation with a comprehensive security posture — from SOC monitoring and threat intelligence to vulnerability assessments and incident response.",
     highlights: ["Security Operations Centre", "Threat Detection", "Vulnerability Management", "Compliance"],
   },
@@ -75,7 +75,7 @@ export default function CoreEnterpriseSystemsPage() {
               <Building2 className="w-4 h-4" /> Our Services
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Core &amp; Enterprise Systems
+              Core and Enterprise Systems
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               The mission-critical backbone of modern enterprises — from core banking and ERP
@@ -92,7 +92,7 @@ export default function CoreEnterpriseSystemsPage() {
               Four Disciplines. One Integrated Practice.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Our Core &amp; Enterprise Systems practice spans the full spectrum of critical business
+              Our Core and Enterprise Systems practice spans the full spectrum of critical business
               technology — delivered by specialists with deep domain knowledge.
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function CoreEnterpriseSystemsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Building2 className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <Building2 className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
                 Ready to strengthen your enterprise systems?

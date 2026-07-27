@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Kulana IT Solutions",
   },
   description:
-    "End-to-end IT solutions and consultancy for enterprises across Africa and the Middle East. Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI, and corporate training.",
+    "End-to-end IT solutions and consultancy for enterprises, with offices in Ghana and Mauritius. Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI, and corporate training.",
   keywords:
     "IT solutions Africa, IT consultancy Ghana, core banking software, ERP CRM Africa, cybersecurity Ghana, digital transformation, data analytics, AI solutions, Kulana IT, Kulana Academy",
   authors: [{ name: "Kulana IT Solutions", url: "https://kulana.net" }],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Kulana IT Solutions",
     title: "Kulana IT Solutions | Technology Value Creators",
     description:
-      "Enterprise-grade IT solutions across Africa and the Middle East — Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI Intelligence, and Kulana Academy.",
+      "Enterprise-grade IT solutions with offices in Ghana and Mauritius — Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI Intelligence, and Kulana Academy.",
     images: [
       {
         url: "/images/kulana/hero.jpg",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kulana IT Solutions | Technology Value Creators",
     description:
-      "Enterprise-grade IT solutions across Africa and the Middle East — Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI, and Kulana Academy.",
+      "Enterprise-grade IT solutions with offices in Ghana and Mauritius — Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI, and Kulana Academy.",
     images: ["/images/kulana/hero.jpg"],
   },
   robots: {
@@ -83,7 +83,7 @@ const organizationSchema = {
   url: "https://kulana.net",
   logo: "https://kulana.net/logos/logo.svg",
   description:
-    "Technology Value Creators — enterprise-grade IT solutions and consultancy across Africa and the Middle East.",
+    "Technology Value Creators — enterprise-grade IT solutions and consultancy, with offices in Ghana and Mauritius.",
   email: "contact@kulana.net",
   telephone: "+233540127400",
   address: [
@@ -106,7 +106,7 @@ const organizationSchema = {
   ],
   areaServed: {
     "@type": "GeoShape",
-    description: "Africa and the Middle East",
+    description: "Ghana and Mauritius",
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",

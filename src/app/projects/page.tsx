@@ -34,10 +34,10 @@ const projects = [
     name: "CBG Middleware Project",
     href: "/projects/cbg-middleware",
     Icon: Plug,
-    color: "from-violet-500 to-violet-700",
-    iconBg: "bg-violet-600",
+    color: "from-teal-500 to-teal-700",
+    iconBg: "bg-teal-600",
     tag: "Middleware",
-    tagColor: "bg-violet-50 text-violet-700 border-violet-100",
+    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
     client: "CBG",
   },
   {

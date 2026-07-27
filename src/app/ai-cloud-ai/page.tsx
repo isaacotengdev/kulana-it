@@ -47,7 +47,7 @@ const tracks = [
     name: "AI Architecture",
     modules: [
       { num: "13", title: "AI System Architecture", desc: "Architectural patterns for designing scalable, resilient, and maintainable AI systems." },
-      { num: "14", title: "Scalability & Resiliency", desc: "Design approaches for AI system scalability, fault tolerance, and performance under load." },
+      { num: "14", title: "Scalability and Resiliency", desc: "Design approaches for AI system scalability, fault tolerance, and performance under load." },
       { num: "15", title: "AI Architecture Lab", desc: "Architecture design exercises using patterns and case studies from real enterprise deployments." },
     ],
   },
@@ -72,7 +72,7 @@ export default function AiCloudAiPage() {
           <HeroCanvas variant="ai-cloud" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-cyan-300 font-medium mb-4 uppercase tracking-widest text-sm">Kulana Academy</p>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">AI & Cloud AI</h1>
+            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">AI and Cloud AI</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               Learn how to integrate AI and cloud technologies into your business processes to improve
               efficiency, reduce costs, and stay ahead in a competitive market.

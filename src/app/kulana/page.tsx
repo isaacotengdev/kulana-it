@@ -41,20 +41,20 @@ const coreValues = [
     title: "Trust",
     desc: "Trust is the foundation of every partnership we build. We earn it through reliability, expertise, and a genuine commitment to our clients' long-term success.",
     Icon: Handshake,
-    accent: "from-indigo-500 to-blue-700",
-    ring: "ring-indigo-100",
-    iconBg: "bg-indigo-600",
+    accent: "from-teal-500 to-blue-700",
+    ring: "ring-teal-100",
+    iconBg: "bg-teal-600",
     tag: "Partnership",
   },
 ];
 
 const offerings = [
   { title: "Software Sales",          desc: "Best-in-class enterprise software solutions tailored to your industry and business size.",                                              Icon: Package2,      color: "text-blue-600",   bg: "bg-blue-50" },
-  { title: "Consultative Guidance",   desc: "Strategic advisory that bridges business objectives with the right technology roadmap.",                                                Icon: Lightbulb,     color: "text-amber-600",  bg: "bg-amber-50" },
+  { title: "Consultative Guidance",   desc: "Strategic advisory that bridges business objectives with the right technology roadmap.",                                                Icon: Lightbulb,     color: "text-cyan-600",   bg: "bg-cyan-50" },
   { title: "Implementation Services", desc: "End-to-end deployment, configuration, and integration delivered using proven agile frameworks.",                                       Icon: Wrench,        color: "text-cyan-600",   bg: "bg-cyan-50" },
-  { title: "System Optimisation",     desc: "Ongoing tuning of your existing platforms to maximise performance and reduce operational overhead.",                                   Icon: Zap,           color: "text-violet-600", bg: "bg-violet-50" },
-  { title: "Process Automation",      desc: "Workflow automation solutions that reduce manual effort, eliminate errors, and free your team to focus on higher-value work.",         Icon: Bot,           color: "text-emerald-600",bg: "bg-emerald-50" },
-  { title: "Training & Academy",      desc: "Arcitura-partnered professional programmes that upskill your workforce with certifications built for the digital era.",                Icon: GraduationCap, color: "text-rose-600",   bg: "bg-rose-50" },
+  { title: "System Optimisation",     desc: "Ongoing tuning of your existing platforms to maximise performance and reduce operational overhead.",                                   Icon: Zap,           color: "text-teal-600",   bg: "bg-teal-50" },
+  { title: "Process Automation",      desc: "Workflow automation solutions that reduce manual effort, eliminate errors, and free your team to focus on higher-value work.",         Icon: Bot,           color: "text-teal-600",   bg: "bg-teal-50" },
+  { title: "Training and Academy",     desc: "Arcitura-partnered professional programmes that upskill your workforce with certifications built for the digital era.",                Icon: GraduationCap, color: "text-blue-600",   bg: "bg-blue-50" },
 ];
 
 export default function KulanaPage() {
