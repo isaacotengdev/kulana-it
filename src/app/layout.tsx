@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
-import Script from "next/script";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -68,11 +68,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Replace the value below with the code from Google Search Console
-  // (Settings → Ownership verification → HTML tag → content="…")
-  verification: {
-    google: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
-  },
+  // Set GOOGLE_SITE_VERIFICATION in your hosting environment variables.
+  // Get the value from Google Search Console → Settings → Ownership verification → HTML tag.
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
 const organizationSchema = {
@@ -133,11 +133,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         {children}
-        <Script
-          id="hs-script-loader"
-          src="//js.hs-scripts.com/9031498.js"
-          strategy="lazyOnload"
-        />
+        <CookieConsent />
       </body>
     </html>
   );

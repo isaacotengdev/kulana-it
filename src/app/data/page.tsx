@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Data Intelligence | Kulana IT Solutions",
   description:
-    "Transform raw data into strategic advantage. Kulana's data practice covers data strategy, engineering, governance, analytics, and business intelligence for enterprises across Africa and the Middle East.",
+    "Predictive risk modelling, regulatory compliance reporting, credit scoring, and actuarial analytics — Kulana's data practice for financial services and regulated enterprises.",
 };
 
 const capabilities = [
@@ -27,7 +27,7 @@ const capabilities = [
 const benefits = [
   { Icon: BarChart3,   bg: "bg-blue-600",    title: "Faster, Better Decisions",      desc: "Replace gut-feel decisions with data-backed insight — giving every team the information they need, in the format they need it, when they need it." },
   { Icon: Zap,         bg: "bg-teal-600",    title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
-  { Icon: ShieldCheck, bg: "bg-cyan-600",    title: "Risk & Compliance Confidence",   desc: "Data governance frameworks and audit trails ensure your data meets regulatory requirements and internal quality standards consistently." },
+  { Icon: ShieldCheck, bg: "bg-cyan-600",    title: "Risk & Compliance Confidence",   desc: "Governance frameworks, model validation, audit trails, and Explainable AI (XAI) outputs ensure your models and data meet regulatory requirements — and can be interrogated by auditors." },
   { Icon: TrendingUp,  bg: "bg-blue-600",    title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
   { Icon: Users,       bg: "bg-teal-600",    title: "Unified Data View",              desc: "Break down silos with a single source of truth — one platform where every function accesses consistent, trusted data." },
   { Icon: Target,      bg: "bg-cyan-500",    title: "Competitive Advantage",          desc: "Organisations that treat data as a strategic asset respond faster to market shifts and outperform peers who are still working from spreadsheets." },
@@ -35,12 +35,12 @@ const benefits = [
 ];
 
 const useCases = [
-  { Icon: BarChart3,   label: "Financial Reporting",      desc: "Automated, accurate management accounts and regulatory reports" },
-  { Icon: RefreshCw,   label: "Supply Chain Visibility",  desc: "End-to-end inventory and logistics data in a single dashboard" },
-  { Icon: Users,       label: "Customer 360",             desc: "Unified customer profiles across CRM, sales, and support data" },
-  { Icon: Activity,    label: "Operational Analytics",    desc: "Real-time KPIs to monitor and optimise business performance" },
-  { Icon: TrendingUp,  label: "Sales Intelligence",       desc: "Pipeline analytics and revenue forecasting for leadership" },
-  { Icon: Database,    label: "Data Monetisation",        desc: "Turn proprietary data into products or partner insights" },
+  { Icon: ShieldCheck,  label: "Regulatory Compliance Reporting", desc: "Automated pipelines that prepare, validate, and format regulatory submissions on schedule — with full data lineage" },
+  { Icon: LineChart,    label: "Predictive Risk Modelling",       desc: "Credit risk, default probability, and operational risk models validated against historical data before production deployment" },
+  { Icon: Search,       label: "Credit Scoring & Fraud Detection",desc: "ML-informed scorecards and anomaly detection models that flag high-risk applications and suspicious transactions in real time" },
+  { Icon: TrendingUp,   label: "Actuarial Analytics",             desc: "Data infrastructure and reporting layers supporting reserve calculations, claims analysis, and pricing decisions" },
+  { Icon: Users,        label: "Customer Analytics",              desc: "Unified customer profiles with churn prediction, lifetime value modelling, and segmentation across all touchpoints" },
+  { Icon: BarChart3,    label: "Management Reporting & BI",       desc: "Automated management accounts and executive dashboards replacing manual spreadsheet consolidation" },
 ];
 
 const faqs = [
@@ -76,6 +76,14 @@ const faqs = [
     q: "How do you handle data privacy and compliance?",
     a: "We build privacy-by-design into every data architecture — encryption at rest and in transit, role-based access controls, data masking, and full audit trails aligned with GDPR and local data protection laws.",
   },
+  {
+    q: "What is Explainable AI and why does it matter for regulated industries?",
+    a: "Explainable AI (XAI) refers to models that can surface the reasons behind a prediction or decision — not just the output. A credit scoring model might return a probability, but XAI frameworks show which factors drove that score. For regulated industries this matters because regulators increasingly require institutions to justify automated decisions, and internal risk committees need to interrogate model behaviour before sign-off. We build XAI outputs into predictive models so they can be audited, challenged, and explained to non-technical stakeholders.",
+  },
+  {
+    q: "How do you validate models before they go into production?",
+    a: "We follow a structured model validation process: the dataset is split so the model is trained on one portion and tested on held-out data it has never seen. For risk models we apply back-testing against historical outcomes — comparing model predictions to what actually happened. We also run champion-challenger tests where a new model runs in parallel against the existing approach before any cutover. Bias testing is applied to check whether the model performs consistently across demographic segments. The full validation report becomes part of the audit trail.",
+  },
 ];
 
 export default function DataPage() {
@@ -95,12 +103,12 @@ export default function DataPage() {
               Data
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Turn raw data into your most valuable asset. We design, build, and operate
-              data platforms that give your organisation a single source of truth — and the
-              analytics to act on it with confidence.
+              We design, build, and operate data platforms that go beyond reporting — powering
+              predictive risk models, regulatory compliance pipelines, and actuarial analytics
+              built for institutions where accuracy and auditability are non-negotiable.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["Data Engineering", "Business Intelligence", "Data Governance", "Real-time Analytics"].map((tag) => (
+              {["Predictive Risk Analytics", "Compliance Reporting", "Data Governance", "Model Validation"].map((tag) => (
                 <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
                 </span>
@@ -140,15 +148,17 @@ export default function DataPage() {
                 Data as a strategic asset
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Most organisations collect enormous amounts of data but struggle to extract value
-                from it. Information sits in siloed systems, reports take days to produce, and
-                leadership makes decisions based on incomplete pictures. That gap between data
-                and insight is where Kulana operates.
+                In financial services and regulated industries, the gap between data and
+                structured intelligence carries real cost: compliance exposures from manual
+                reporting, credit decisions made without predictive models, and operational
+                risks that analytics could have surfaced months earlier.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                We build the pipelines, platforms, and governance frameworks that transform
-                scattered data into a reliable, governed, and accessible asset — then layer
-                analytics and BI on top so every team can make faster, smarter decisions.
+                Kulana&apos;s data practice is built around decision science. We architect
+                platforms that power regulatory compliance reporting, predictive risk models,
+                and management intelligence — with data governance, model validation frameworks,
+                and the audit trails that regulators and risk officers require built in from
+                the start.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (

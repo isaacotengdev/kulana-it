@@ -5,72 +5,97 @@ import HeroCanvas from "@/components/HeroCanvas";
 import {
   Cpu, Brain, Zap, MessageSquare, Eye, GitMerge,
   ArrowRight, CheckCircle2, Search, Settings, TrendingUp, Shield,
+  FlaskConical, Layers, RefreshCw, FileText,
 } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI-Native Product Engineering | Kulana IT Solutions",
   description:
-    "Build products with intelligence at their core — LLM integration, machine learning, generative AI, and AI product strategy.",
+    "Build software where intelligence is the product, not a feature. LLM orchestration, agentic systems, MLOps, model evaluation, and responsible AI engineering for enterprise products.",
 };
 
 const capabilities = [
-  { Icon: Brain,        label: "LLM Integration",       color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: Cpu,          label: "ML Model Development",  color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: MessageSquare,label: "Generative AI",         color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"  },
-  { Icon: Eye,          label: "Computer Vision",        color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: GitMerge,     label: "AI Integration",        color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
-  { Icon: Zap,          label: "AI Product Strategy",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
+  { Icon: Brain,        label: "LLM Orchestration",        color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
+  { Icon: GitMerge,     label: "Agentic Systems",           color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
+  { Icon: RefreshCw,    label: "MLOps & LLMOps",           color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"  },
+  { Icon: FlaskConical, label: "Model Evaluation",          color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
+  { Icon: Layers,       label: "RAG & Knowledge Systems",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
+  { Icon: Shield,       label: "Responsible AI",            color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
 ];
 
 const features = [
-  { Icon: Brain,        label: "LLM and Generative AI Integration", desc: "Embed large language models — GPT, Claude, Gemini — into your products and workflows with robust, production-grade architectures." },
-  { Icon: Cpu,          label: "Machine Learning Development",    desc: "Build and deploy custom ML models for classification, prediction, recommendation, and anomaly detection." },
-  { Icon: Zap,          label: "AI Product Strategy",             desc: "Define where AI creates the most value in your product, and build a roadmap to get there responsibly and at pace." },
-  { Icon: Eye,          label: "Computer Vision",                 desc: "Document processing, visual inspection, and image recognition — trained on your data and deployed in your environment." },
-  { Icon: MessageSquare,label: "Natural Language Processing",     desc: "Extract, classify, and understand unstructured text at scale — from financial documents to customer communications." },
-  { Icon: GitMerge,     label: "RAG and Knowledge Systems",        desc: "Build retrieval-augmented generation systems that ground AI responses in your proprietary data and knowledge bases." },
+  {
+    Icon: Brain,
+    label: "LLM Orchestration and Agentic Systems",
+    desc: "Design and build multi-step AI systems that use tools, retrieve context, plan across steps, and integrate with your business systems — from simple prompt chains to complex multi-agent workflows with state, memory, and escalation logic.",
+  },
+  {
+    Icon: Layers,
+    label: "RAG and Knowledge Systems",
+    desc: "Ground AI responses in your proprietary data — documents, databases, policies, and operational records — using vector search, reranking, and retrieval strategies tuned for accuracy and production latency.",
+  },
+  {
+    Icon: FlaskConical,
+    label: "Model Evaluation and Testing",
+    desc: "AI systems require evaluation frameworks, not just unit tests. We build eval suites that measure output quality, regression-test against prompt and model changes, and A/B test model versions in production before full rollout.",
+  },
+  {
+    Icon: RefreshCw,
+    label: "MLOps and LLMOps",
+    desc: "Automate the full model lifecycle — training pipelines, serving infrastructure, monitoring, drift detection, and retraining triggers — so your AI stays accurate as data and usage patterns change.",
+  },
+  {
+    Icon: GitMerge,
+    label: "Enterprise AI Integration",
+    desc: "Embed AI capabilities directly into your ERP, CRM, core banking, or operational platforms — connecting intelligence to the systems where decisions are made, with full audit trails and governance controls.",
+  },
+  {
+    Icon: Shield,
+    label: "Responsible AI and Guardrails",
+    desc: "Production AI requires more than a good model. We build input/output filtering, content moderation, confidence thresholds, human-in-the-loop escalation paths, and audit logging into every system from the start.",
+  },
 ];
 
 const benefits = [
-  { Icon: TrendingUp, bg: "bg-blue-600",    title: "Competitive Differentiation", desc: "AI capabilities built into your core product create moats that are hard for competitors to replicate quickly." },
-  { Icon: Zap,        bg: "bg-teal-600",    title: "Faster Decision-Making",      desc: "Intelligent systems surface insights and recommendations at the moment they are needed, not after the fact." },
-  { Icon: Cpu,        bg: "bg-cyan-600",    title: "Operational Leverage",        desc: "AI handles high-volume, cognitive tasks at scale — freeing your team to focus on higher-value work." },
-  { Icon: Shield,     bg: "bg-cyan-500",    title: "Responsible AI by Design",    desc: "We build with explainability, bias mitigation, and governance frameworks embedded from day one." },
+  { Icon: TrendingUp, bg: "bg-blue-600",  title: "Compounding Competitive Advantage", desc: "AI systems improve with usage — more interactions generate better training signals. The earlier you build the feedback flywheel into your product, the wider the gap grows over time." },
+  { Icon: Zap,        bg: "bg-teal-600",  title: "Decisions at Inference Speed",      desc: "Intelligent systems surface recommendations, flag anomalies, and complete multi-step tasks in seconds — removing human bottlenecks from processes that previously took hours." },
+  { Icon: Cpu,        bg: "bg-cyan-600",  title: "Engineering-Grade Reliability",     desc: "AI-native does not mean experimental. We deliver with the same CI/CD, observability, and incident response discipline as any production software system." },
+  { Icon: Shield,     bg: "bg-cyan-500",  title: "Responsible AI by Design",          desc: "Explainability, bias auditing, confidence thresholds, and human override mechanisms are built into the architecture — not bolted on after deployment." },
 ];
 
 const faqs = [
   {
     q: "What does 'AI-native' mean in product engineering?",
-    a: "AI-native means intelligence is designed into the product architecture from day one — not bolted on as a feature. It shapes data models, APIs, UX, and infrastructure decisions from the start. This results in products that are more capable, more differentiated, and easier to evolve as AI capabilities advance.",
+    a: "AI-native means the intelligent system is a first-class architectural concern — not a feature added later. It shapes decisions about data schemas, API contracts, infrastructure, feedback loops, and UX from day one. This is meaningfully different from 'adding AI' to an existing product, which usually produces fragile integrations that are hard to improve over time.",
+  },
+  {
+    q: "What is an AI agent and how is it different from a chatbot?",
+    a: "A chatbot generates a response to a single message. An AI agent can take actions — call external tools, query databases, write to systems, and execute plans that span multiple steps — to autonomously complete a task. We design agents with explicit tool registries, state machines, memory systems, and escalation paths. They are not prompt wrappers; they are distributed systems with an AI decision-making core.",
   },
   {
     q: "What large language models do you work with?",
-    a: "We work across all major LLM providers — including OpenAI (GPT-4o), Anthropic (Claude), Google (Gemini), and open-source models via Hugging Face and Ollama. We select the right model for your use case based on performance, cost, data privacy requirements, and latency constraints.",
+    a: "We work across all major providers — OpenAI (GPT-4o), Anthropic (Claude), Google (Gemini), and open-source models via Hugging Face and Ollama. Model selection is driven by your use case, latency requirements, data privacy constraints, and cost profile. We design systems that are model-agnostic where possible, so you are not locked in as the landscape evolves.",
   },
   {
     q: "What is RAG and when should we use it?",
-    a: "Retrieval-Augmented Generation (RAG) is a pattern that grounds LLM responses in your specific knowledge base — documents, databases, or real-time data — rather than relying solely on the model's training data. Use RAG when you need AI to answer questions accurately about your proprietary content, policies, products, or operational data.",
+    a: "Retrieval-Augmented Generation (RAG) grounds an LLM's responses in your specific knowledge — documents, policies, product data, operational records — rather than relying on the model's training data alone. Use RAG when you need AI to answer accurately about your proprietary content, when hallucination risk is unacceptable, or when the knowledge changes frequently and fine-tuning would be impractical.",
   },
   {
-    q: "How do you handle AI data privacy and security?",
-    a: "We design AI systems with privacy-by-default — data minimisation, access controls, encryption, and audit logging. Where models are used for sensitive data, we evaluate on-premise or private cloud deployment options and ensure no customer data is used to train third-party models without explicit consent.",
+    q: "How do you evaluate whether an AI system is actually working?",
+    a: "Traditional software has unit tests; AI systems need evaluation frameworks. We build eval suites that test model outputs against expected results, measure regression when prompts or model versions change, and A/B test variants in production. Evaluation methods include heuristic checks (format, structure, keyword presence), model-graded scoring using a judge LLM, and human review on representative sample sets — with all results tracked over time to catch quality drift before it reaches users.",
   },
   {
     q: "What is MLOps and why does it matter?",
-    a: "MLOps (Machine Learning Operations) is the practice of automating the deployment, monitoring, and retraining of ML models in production. Without MLOps, models degrade silently as data changes. We implement MLOps pipelines that catch drift, trigger retraining, and manage model versions — keeping your AI accurate and reliable over time.",
+    a: "MLOps (Machine Learning Operations) is the discipline of shipping and operating ML models with the same rigour as software — automated deployment pipelines, model versioning, performance monitoring, and drift detection. Without MLOps, models degrade silently as data distributions shift. We implement LLMOps pipelines with the same principles applied to language model systems — prompt versioning, output monitoring, and structured retraining triggers.",
   },
   {
-    q: "How long does it take to go from AI concept to production?",
-    a: "A focused proof-of-concept — validating a specific AI use case — typically takes 4–6 weeks. A production-grade AI system with full MLOps, monitoring, and integration into your product takes 3–6 months depending on data readiness and integration complexity. We deliver in iterative sprints so you see value early.",
+    q: "How do you handle AI data privacy and security?",
+    a: "We design AI systems with privacy-by-default — data minimisation, role-based access, encryption at rest and in transit, and full audit logging. Where models process sensitive data, we evaluate on-premise or private cloud deployment, and ensure no customer data is used to train third-party models without explicit consent.",
   },
   {
-    q: "Can you fine-tune models on our data?",
-    a: "Yes. Fine-tuning is appropriate when a base model needs to learn your domain-specific terminology, style, or task patterns. We manage the full fine-tuning pipeline — data curation, training, evaluation, and deployment — on your chosen infrastructure or a managed platform.",
-  },
-  {
-    q: "How do you ensure AI systems are fair and explainable?",
-    a: "Responsible AI is built into our engineering process from the start. We conduct bias audits on training data, implement explainability tools (such as SHAP or LIME for ML models), create human-in-the-loop review points for high-stakes decisions, and document model cards for transparency and auditability.",
+    q: "How long does it take to go from concept to a production AI system?",
+    a: "A focused proof-of-concept validating a specific use case typically takes 4–6 weeks. A production-grade system with MLOps, monitoring, and enterprise integration takes 3–6 months depending on data readiness and integration complexity. We work in iterative sprints so you see working software early and can validate direction before committing to the full build.",
   },
 ];
 
@@ -87,13 +112,16 @@ export default function AiNativeProductEngineeringPage() {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
               <Cpu className="w-4 h-4" /> Integration and Digital Connectivity
             </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">AI-Native Product Engineering</h1>
+            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+              AI-Native Product Engineering
+            </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Build products with intelligence at their core — LLM integration, machine learning,
-              generative AI, and AI strategy that delivers measurable business outcomes.
+              A discipline where intelligence is the product, not a feature. We design, build,
+              and operate AI systems — agentic architectures, LLM orchestration, model evaluation,
+              and MLOps — with the engineering rigour that production environments demand.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["LLM Integration", "Generative AI", "ML Models", "AI Strategy"].map((tag) => (
+              {["LLM Orchestration", "Agentic Systems", "MLOps & LLMOps", "Responsible AI"].map((tag) => (
                 <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
                 </span>
@@ -127,17 +155,22 @@ export default function AiNativeProductEngineeringPage() {
             <div>
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                Intelligence as a product feature, not an afterthought
+                Intelligence as architecture, not a feature
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                The era of bolt-on AI is over. Organisations that will lead their sectors in the
-                next decade are those building AI into the fabric of their products from day one —
-                not adding it as a feature after the fact.
+                Most teams encounter AI as a feature request. AI-native engineering starts
+                from a different premise: the intelligent system is the product. That changes
+                how you design your data model, your APIs, your infrastructure, and your
+                feedback loops — because prompts are code, inference latency is a UX
+                constraint, and model quality needs its own test discipline.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Kulana&apos;s AI-native product engineering team combines deep AI research knowledge
-                with enterprise engineering discipline. We design, build, and ship AI-powered
-                products that are production-grade, explainable, and aligned to real business value.
+                Kulana&apos;s AI-native practice delivers the full engineering stack — LLM
+                orchestration and agentic system design, RAG architectures grounded in your
+                proprietary data, MLOps pipelines that keep models accurate over time, and
+                responsible AI governance. We integrate these directly into the enterprise
+                systems — ERP, CRM, core banking — our other practices implement, so AI
+                capabilities connect to the workflows where decisions are actually made.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["RAG", "Fine-tuning", "MLOps", "Responsible AI"].map((tag) => (
@@ -156,10 +189,10 @@ export default function AiNativeProductEngineeringPage() {
               </div>
               <div className="space-y-5">
                 {[
-                  { Icon: Search,   step: "01", title: "Discover",  desc: "Identify where AI creates the most value in your product, process, or customer experience." },
-                  { Icon: Settings, step: "02", title: "Design",    desc: "Architect the AI system — models, data pipelines, APIs, guardrails, and evaluation frameworks." },
-                  { Icon: Cpu,      step: "03", title: "Build",     desc: "Develop and iterate using agile ML engineering — from prototype to production." },
-                  { Icon: TrendingUp, step: "04", title: "Operate", desc: "Monitor model performance, manage drift, retrain on new data, and continuously improve." },
+                  { Icon: Search,      step: "01", title: "Discover",  desc: "Identify where AI creates the most leverage in your product or process — and whether the data, latency, and accuracy requirements make a given use case viable." },
+                  { Icon: Settings,    step: "02", title: "Design",    desc: "Architect the system — model selection, orchestration layer, retrieval strategy, evaluation framework, guardrails, and integration points." },
+                  { Icon: Cpu,         step: "03", title: "Build",     desc: "Develop iteratively from proof-of-concept through to production, with evals running at every stage and MLOps infrastructure in place before go-live." },
+                  { Icon: TrendingUp,  step: "04", title: "Operate",   desc: "Monitor output quality, detect drift, capture feedback signals, and retrain — so the system improves with usage rather than degrading over time." },
                 ].map(({ Icon: StepIcon, step, title, desc }) => (
                   <div key={step} className="flex gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
@@ -186,17 +219,41 @@ export default function AiNativeProductEngineeringPage() {
               <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
               <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
               <p className="text-gray-400 max-w-xl mx-auto">
-                AI-native product engineering drives impact across industries and product categories.
+                What AI-native engineering looks like when applied to concrete enterprise problems.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { Icon: MessageSquare, label: "Intelligent Customer Assistants", desc: "LLM-powered support agents that resolve queries, escalate intelligently, and learn from interactions" },
-                { Icon: Eye,           label: "Document Intelligence",           desc: "Automated extraction, classification, and routing of data from contracts, invoices, and forms" },
-                { Icon: Brain,         label: "Recommendation Engines",          desc: "Personalised product, content, and service recommendations powered by ML models trained on your data" },
-                { Icon: Cpu,           label: "Predictive Maintenance",          desc: "Anomaly detection on sensor and operational data to predict failures before they occur" },
-                { Icon: GitMerge,      label: "AI-Powered Search",               desc: "Semantic and hybrid search experiences that understand intent, not just keywords" },
-                { Icon: Zap,           label: "Automated Quality Inspection",    desc: "Computer vision models that detect defects and non-conformances at machine speed" },
+                {
+                  Icon: FileText,
+                  label: "Intelligent Document Processing",
+                  desc: "Multi-stage pipelines that classify documents, extract structured fields, score confidence, and route low-confidence outputs to a human review queue — not just OCR with a language model on top",
+                },
+                {
+                  Icon: MessageSquare,
+                  label: "Agentic Customer Support",
+                  desc: "Support agents with tool access, conversation memory, CRM integration, and escalation logic — resolving queries autonomously and handing off with full context when human judgement is needed",
+                },
+                {
+                  Icon: Brain,
+                  label: "AI-Augmented Underwriting",
+                  desc: "LLM-powered document analysis that extracts risk signals, applies policy rules, flags exceptions, and generates explainable outputs — connected directly to core banking or insurance systems",
+                },
+                {
+                  Icon: Eye,
+                  label: "AI-Powered Search and Discovery",
+                  desc: "Semantic and hybrid search that understands intent, applies business ranking rules, and returns contextually ordered results across structured and unstructured data at query latency",
+                },
+                {
+                  Icon: GitMerge,
+                  label: "Automated Report Generation",
+                  desc: "Agentic systems that gather data from multiple sources, apply business logic, and produce narrative management reports — reducing analyst cycle time from hours to minutes",
+                },
+                {
+                  Icon: Zap,
+                  label: "Predictive Anomaly Detection",
+                  desc: "ML models on operational data streams that surface anomalies with confidence scores and historical context — before they become incidents, not after",
+                },
               ].map(({ Icon: Ic, label, desc }) => (
                 <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
@@ -219,7 +276,7 @@ export default function AiNativeProductEngineeringPage() {
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">AI Engineering Services</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                End-to-end AI product engineering — from strategy and architecture to deployment and ongoing operations.
+                The full engineering stack — from architecture and orchestration to evaluation, operations, and governance.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -248,7 +305,8 @@ export default function AiNativeProductEngineeringPage() {
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why AI-Native</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                Building AI into the core of your product creates advantages that compound over time.
+                AI-native products compound. Systems that capture feedback improve over time — and
+                the engineering investment required to reach that point is substantial.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -274,7 +332,7 @@ export default function AiNativeProductEngineeringPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-500 text-lg">
-              Everything you need to know about our AI-native product engineering practice.
+              Common questions about our AI-native product engineering practice.
             </p>
           </div>
           <div className="space-y-3">
@@ -308,7 +366,8 @@ export default function AiNativeProductEngineeringPage() {
                 Ready to build AI into your product?
               </h2>
               <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Talk to our AI engineering team and discover how to embed intelligence at the core of your offering.
+                Talk to our AI engineering team — we will help you identify the right use case,
+                validate feasibility, and build a system that is production-ready from day one.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">

@@ -1,0 +1,5 @@
+Contact: mailto:contact@kulana.net
+Preferred-Languages: en
+Canonical: https://kulana.net/.well-known/security.txt
+Policy: https://kulana.net/ims-policy
+Expires: 2027-09-08T23:59:00.000Z

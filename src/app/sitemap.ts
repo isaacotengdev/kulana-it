@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/ai-native-product-engineering`,       lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
     // ── Data & AI sub-services ────────────────────────────────
-    { url: `${BASE}/predictive-analysis`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/data`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/ai`,                  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/rpa`,                 lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
@@ -40,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/digital-transformation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/cloud-computing`,        lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/next-gen-data-science`,  lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+
+    // ── Case studies ──────────────────────────────────────────
+    { url: `${BASE}/projects`,                      lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/projects/cbg-middleware`,        lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
+    { url: `${BASE}/projects/dbg-core-banking`,      lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
+    { url: `${BASE}/projects/dbg-dynamics-365`,      lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
+    { url: `${BASE}/projects/dbg-middleware`,         lastModified: now, changeFrequency: "yearly",  priority: 0.6 },
 
     // ── Policies ──────────────────────────────────────────────
     { url: `${BASE}/privacy-policy`,  lastModified: now, changeFrequency: "yearly", priority: 0.3 },

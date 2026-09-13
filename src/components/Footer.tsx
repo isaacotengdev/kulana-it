@@ -15,7 +15,7 @@ const serviceLinks = [
   { name: "Enterprise Architecture",   href: "/enterprise-architecture" },
   { name: "AI-Native Engineering",     href: "/ai-native-product-engineering" },
   { name: "Data & AI Intelligence",    href: "/data-ai-intelligence", isPillar: true },
-  { name: "Data",                      href: "/predictive-analysis" },
+  { name: "Data",                      href: "/data" },
   { name: "AI",                        href: "/ai" },
   { name: "RPA",                       href: "/rpa" },
   { name: "Kulana Academy", href: "https://www.kulana.academy/", isPillar: true, external: true },
@@ -71,7 +71,7 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <a href="tel:+23046325190" className="hover:text-white transition-colors">
-                  +230 46 32 519
+                  +230 46 32 5190
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

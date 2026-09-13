@@ -4,38 +4,48 @@ import Link from "next/link";
 import HeroCanvas from "@/components/HeroCanvas";
 import {
   Brain, BarChart3, Zap, RefreshCw,
-  ArrowRight, CheckCircle2,
+  ArrowRight, CheckCircle2, ShieldCheck, FileCheck, Eye,
 } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Data & AI Intelligence | Kulana IT Solutions",
   description:
-    "Turn data into strategic advantage with Kulana's Data, AI, and RPA services — advanced analytics, artificial intelligence, and intelligent process automation.",
+    "Predictive risk analytics, automated compliance reporting, and AI governance frameworks — built for institutions where accuracy and auditability are non-negotiable.",
 };
 
 const subServices = [
   {
     Icon: BarChart3,
     title: "Data",
-    href: "/predictive-analysis",
+    href: "/data",
     tag: "Analytics & BI",
     gradient: "from-cyan-500 to-blue-600",
     iconBg: "bg-cyan-600",
     tagColor: "bg-cyan-50 text-cyan-700 border-cyan-100",
-    desc: "Build a data-driven organisation. From data strategy and governance to warehousing, pipelines, and business intelligence, we help you unlock the full value of your data assets.",
-    highlights: ["Data Strategy & Governance", "Data Warehousing", "Business Intelligence", "Predictive Analytics"],
+    desc: "Build a governed, analytics-ready data platform. From regulatory compliance reporting and predictive risk models to business intelligence and real-time pipelines — with data governance and audit trails built in from the start.",
+    highlights: [
+      "Regulatory Compliance Reporting",
+      "Predictive Risk Modelling",
+      "Data Governance & Audit Trails",
+      "Business Intelligence",
+    ],
   },
   {
     Icon: Brain,
     title: "AI",
-    href: "/ai-cloud-ai",
+    href: "/ai",
     tag: "Artificial Intelligence",
     gradient: "from-blue-500 to-teal-600",
     iconBg: "bg-blue-600",
     tagColor: "bg-blue-50 text-blue-700 border-blue-100",
-    desc: "Deploy intelligent solutions that learn, adapt, and improve over time. From machine learning models to generative AI and large language models, we build AI that delivers measurable outcomes.",
-    highlights: ["Machine Learning", "Generative AI & LLMs", "Computer Vision", "AI Strategy & Roadmapping"],
+    desc: "Build AI that institutions can trust and regulators can audit. From credit scoring and fraud detection models to generative AI — with model validation, bias testing, and Explainable AI (XAI) built in.",
+    highlights: [
+      "Credit Scoring & Fraud Detection",
+      "Explainable AI (XAI)",
+      "Model Validation & Governance",
+      "Generative AI & LLMs",
+    ],
   },
   {
     Icon: RefreshCw,
@@ -45,8 +55,37 @@ const subServices = [
     gradient: "from-teal-500 to-blue-600",
     iconBg: "bg-teal-600",
     tagColor: "bg-teal-50 text-teal-700 border-teal-100",
-    desc: "Automate repetitive, rule-based processes at scale with Robotic Process Automation. Free your teams to focus on high-value work while bots handle the rest — accurately and at speed.",
-    highlights: ["Process Discovery & Design", "Bot Development & Deployment", "Attended & Unattended Bots", "Process Monitoring & Optimisation"],
+    desc: "Automate high-volume regulatory and operational workflows — from compliance data collection and report generation to reconciliations and audit pack assembly — reducing error rates and freeing skilled staff for higher-value work.",
+    highlights: [
+      "Compliance & Audit Automation",
+      "Regulatory Report Generation",
+      "Reconciliation Bots",
+      "Process Monitoring & Optimisation",
+    ],
+  },
+];
+
+const strategicCapabilities = [
+  {
+    Icon: Zap,
+    color: "text-cyan-600",
+    bg: "bg-cyan-50",
+    title: "Predictive Risk Analytics",
+    body: "Credit risk, default probability, and operational risk models built with statistical rigour and back-tested against historical data before deployment into production decision flows.",
+  },
+  {
+    Icon: FileCheck,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+    title: "Automated Compliance & Audit Reporting",
+    body: "Automated pipelines that pull, transform, and format regulatory submissions on schedule — reducing cycle times, eliminating manual reconciliation errors, and creating a verifiable data lineage.",
+  },
+  {
+    Icon: Eye,
+    color: "text-teal-600",
+    bg: "bg-teal-50",
+    title: "Data Governance & Explainable AI",
+    body: "Model validation frameworks, audit trails, and Explainable AI (XAI) outputs that help risk officers, auditors, and boards understand exactly how conclusions are reached — essential for regulated environments.",
   },
 ];
 
@@ -67,8 +106,9 @@ export default function DataAiIntelligencePage() {
               Data and AI Intelligence
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Turn data into your competitive edge. Advanced analytics, artificial intelligence,
-              and intelligent automation that drive smarter decisions at every level.
+              Move beyond dashboards to decision science. Our Data and AI Intelligence practice
+              delivers predictive risk analytics, automated compliance reporting, and governance
+              frameworks built for institutions where accuracy and auditability are non-negotiable.
             </p>
           </div>
         </section>
@@ -81,8 +121,8 @@ export default function DataAiIntelligencePage() {
               Data. AI. Automation. All Together.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Our Data and AI Intelligence practice helps organisations harness the power of their
-              data, apply intelligence at scale, and automate processes that slow them down.
+              Three integrated capabilities that turn raw information into governed intelligence,
+              automated workflows, and decisions that withstand regulatory scrutiny.
             </p>
           </div>
 
@@ -126,18 +166,46 @@ export default function DataAiIntelligencePage() {
           </div>
         </section>
 
+        {/* Strategic capabilities callout */}
+        <section className="bg-gray-950 py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Where We Focus</p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+                High-Value Capabilities for Regulated Institutions
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                Financial services and regulated industries demand more than generic analytics.
+                These are the capabilities we have built specifically for that context.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {strategicCapabilities.map(({ Icon, color, bg, title, body }) => (
+                <div key={title} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-cyan-800 transition-colors">
+                  <div className={`w-12 h-12 ${bg} rounded-xl flex items-center justify-center mb-5`}>
+                    <Icon className={`w-6 h-6 ${color}`} strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-8 h-8 text-white" strokeWidth={1.75} />
+                <ShieldCheck className="w-8 h-8 text-white" strokeWidth={1.75} />
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Ready to unlock the power of your data?
+                Ready to build on governed intelligence?
               </h2>
               <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Talk to our data and AI specialists to discover how intelligence can transform your organisation.
+                Talk to our data and AI specialists to discuss your compliance reporting,
+                risk modelling, or automation requirements.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

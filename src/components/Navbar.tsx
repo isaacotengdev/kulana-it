@@ -29,7 +29,7 @@ const servicePillars = [
     name: "Data & AI Intelligence",
     href: "/data-ai-intelligence",
     services: [
-      { name: "Data", href: "/predictive-analysis" },
+      { name: "Data", href: "/data" },
       { name: "AI",   href: "/ai" },
       { name: "RPA",  href: "/rpa" },
     ],
