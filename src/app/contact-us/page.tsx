@@ -130,10 +130,13 @@ export default function ContactUsPage() {
                     e.preventDefault(); setLoading(true); setError("");
                     try {
                       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, source: "contact-us" }) });
-                      if (!res.ok) throw new Error();
+                      if (!res.ok) {
+                        const data = await res.json().catch(() => ({}));
+                        throw new Error(data.error || "Submission failed");
+                      }
                       setSubmitted(true);
                       setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
-                    } catch { setError("Something went wrong. Please try again or email us directly."); }
+                    } catch (err) { setError(err instanceof Error ? err.message : "Something went wrong. Please try again or email us directly."); }
                     finally { setLoading(false); }
                   }} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">

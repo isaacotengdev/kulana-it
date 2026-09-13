@@ -58,11 +58,14 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, source: "homepage" }),
       });
-      if (!res.ok) throw new Error("Submission failed");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Submission failed");
+      }
       setSubmitted(true);
       setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
-    } catch {
-      setError("Something went wrong. Please try again or email us directly.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again or email us directly.");
     } finally {
       setLoading(false);
     }
