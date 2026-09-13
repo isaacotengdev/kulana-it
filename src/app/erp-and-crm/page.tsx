@@ -113,7 +113,7 @@ export default function ErpCrmPage() {
               ))}
             </div>
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Request a Consultation <ArrowRight className="w-4 h-4" />
@@ -372,7 +372,7 @@ export default function ErpCrmPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   Request a Consultation <ArrowRight className="w-4 h-4" />

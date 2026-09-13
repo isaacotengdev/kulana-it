@@ -134,7 +134,7 @@ export default function KulanaAcademyPage() {
               Contact us to register your interest or request a custom corporate training package.
             </p>
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Request a Consultation

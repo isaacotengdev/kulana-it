@@ -26,7 +26,7 @@ const quickLinks = [
   { name: "Kulana Academy", href: "https://www.kulana.academy/", external: true },
   { name: "About us", href: "/about-us" },
   { name: "Contact us", href: "/contact-us" },
-  { name: "Request a Consultation", href: "/#contact" },
+  { name: "Request a Consultation", href: "/contact-us" },
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Cookies Policy", href: "/cookies-policy" },
   { name: "IMS Policy", href: "/ims-policy" },

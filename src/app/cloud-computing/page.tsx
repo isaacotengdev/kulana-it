@@ -48,7 +48,7 @@ export default function CloudComputingPage() {
               through structured learning and certification-backed expertise.
             </p>
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Register Your Interest
@@ -131,7 +131,7 @@ export default function CloudComputingPage() {
               Contact us to register your interest or find out more about the Cloud Computing programme.
             </p>
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Get in Touch

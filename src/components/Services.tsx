@@ -150,13 +150,13 @@ export default function Services() {
 
         {/* Bottom CTA */}
         <div className="mt-14 text-center">
-          <Link
-            href="/#contact"
+          <a
+            href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5"
           >
             Discuss Your Requirements
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

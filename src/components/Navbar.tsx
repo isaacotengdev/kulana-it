@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -53,10 +54,12 @@ const navLinks: NavLink[] = [
   { name: "Home",        href: "/" },
   { name: "Our Services",href: "/our-services", isMega: true },
   { name: "About us",    href: "/about-us",    dropdown: about },
-  { name: "Contact us",  href: "/#contact" },
+  { name: "Contact us",  href: "/contact-us" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const contactHref = pathname === "/" ? "#contact" : "/contact-us";
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
@@ -200,12 +203,12 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:block flex-shrink-0">
-            <Link
-              href="/#contact"
+            <a
+              href={contactHref}
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-blue-200"
             >
               Request a Consultation
-            </Link>
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -326,13 +329,13 @@ export default function Navbar() {
             ))}
 
             <div className="pt-3 border-t border-gray-100">
-              <Link
-                href="/#contact"
+              <a
+                href={contactHref}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Request a Consultation
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -61,14 +61,66 @@ const HS_HEADERS = () => ({
   Authorization: `Bearer ${HS_TOKEN()}`,
 });
 
-// Create or locate a HubSpot contact using standard properties only.
-// Returns the HubSpot contact ID, or null on failure.
+// Sync a contact to HubSpot. Strategy: look up first, then write.
+// This prevents archived (deleted) contacts from being silently restored,
+// which happens when HubSpot auto-unarchives on a POST with a matching email.
 async function upsertHubSpotContact(
   firstName: string,
   lastName: string,
   email: string,
   phone: string,
 ): Promise<string | null> {
+  const encodedEmail = encodeURIComponent(email);
+
+  // ── 1. Check for an active contact ───────────────────────────────────────
+  const activeRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${encodedEmail}?idProperty=email`,
+    { headers: HS_HEADERS() },
+  );
+
+  if (activeRes.ok) {
+    // Contact is active — patch with the latest submitted data
+    const existing = await activeRes.json() as { id: string };
+    const contactId = existing.id;
+    const patchProps: Record<string, string> = {
+      firstname: firstName,
+      lastname: lastName,
+      lifecyclestage: "lead",
+    };
+    if (phone) patchProps.phone = phone;
+    const patchRes = await fetch(
+      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
+      {
+        method: "PATCH",
+        headers: HS_HEADERS(),
+        body: JSON.stringify({ properties: patchProps }),
+      },
+    );
+    if (!patchRes.ok) {
+      console.error("HubSpot contact patch failed:", patchRes.status, await patchRes.text());
+    }
+    return contactId;
+  }
+
+  if (activeRes.status !== 404) {
+    console.error("HubSpot active-contact lookup failed:", activeRes.status, await activeRes.text());
+    return null;
+  }
+
+  // ── 2. Check whether the contact is archived (deleted in HubSpot UI) ─────
+  // archived=true returns the record ONLY if it is archived; 404 = never existed
+  const archivedRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${encodedEmail}?idProperty=email&archived=true`,
+    { headers: HS_HEADERS() },
+  );
+
+  if (archivedRes.ok) {
+    // Contact was deleted — respect the deletion, do not resurrect
+    console.log(`HubSpot: ${email} is archived/deleted, skipping sync`);
+    return null;
+  }
+
+  // ── 3. Contact does not exist — create fresh ──────────────────────────────
   const properties: Record<string, string> = {
     firstname: firstName,
     lastname: lastName,
@@ -86,41 +138,6 @@ async function upsertHubSpotContact(
   if (createRes.ok) {
     const data = await createRes.json() as { id: string };
     return data.id;
-  }
-
-  if (createRes.status === 409) {
-    // Contact already exists — look them up by email
-    const getRes = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(email)}?idProperty=email`,
-      { headers: HS_HEADERS() },
-    );
-    if (!getRes.ok) {
-      console.error("HubSpot contact lookup failed:", getRes.status, await getRes.text());
-      return null;
-    }
-    const existing = await getRes.json() as { id: string };
-    const contactId = existing.id;
-
-    // Overwrite all submitted fields so the latest data always wins
-    const patchProps: Record<string, string> = {
-      firstname: firstName,
-      lastname: lastName,
-      lifecyclestage: "lead",
-    };
-    if (phone) patchProps.phone = phone;
-
-    const patchRes = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
-      {
-        method: "PATCH",
-        headers: HS_HEADERS(),
-        body: JSON.stringify({ properties: patchProps }),
-      },
-    );
-    if (!patchRes.ok) {
-      console.error("HubSpot contact patch failed:", patchRes.status, await patchRes.text());
-    }
-    return contactId;
   }
 
   console.error("HubSpot contact create failed:", createRes.status, await createRes.text());
@@ -160,7 +177,7 @@ async function patchHubSpotCustomProps(
 // ── Route handler ─────────────────────────────────────────────────────────────
 export async function POST(request: NextRequest) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
-  if (isRateLimited(ip)) {
+  if (process.env.NODE_ENV !== "development" && isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       { status: 429 },
@@ -172,11 +189,6 @@ export async function POST(request: NextRequest) {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
-  }
-
-  // Honeypot — bots fill the hidden field; real users never see it
-  if (clean(body.website)) {
-    return NextResponse.json({ success: true });
   }
 
   const firstName = clean(body.firstName);

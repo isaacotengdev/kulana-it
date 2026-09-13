@@ -39,7 +39,6 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -57,7 +56,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, website: honeypot, source: "homepage" }),
+        body: JSON.stringify({ ...form, source: "homepage" }),
       });
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
@@ -152,13 +151,6 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Honeypot — hidden from users, catches bots */}
-                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
-                  <label>
-                    Website
-                    <input type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
-                  </label>
-                </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">

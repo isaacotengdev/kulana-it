@@ -244,7 +244,7 @@ export default function KulanaPage() {
               Get in touch to find out how Kulana can empower your organisation in the digital age.
             </p>
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Request a Consultation

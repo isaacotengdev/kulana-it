@@ -42,7 +42,6 @@ export default function ContactUsPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
 
   return (
@@ -130,17 +129,13 @@ export default function ContactUsPage() {
                   <form onSubmit={async (e) => {
                     e.preventDefault(); setLoading(true); setError("");
                     try {
-                      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, website: honeypot, source: "contact-us" }) });
+                      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, source: "contact-us" }) });
                       if (!res.ok) throw new Error();
                       setSubmitted(true);
                       setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" });
                     } catch { setError("Something went wrong. Please try again or email us directly."); }
                     finally { setLoading(false); }
                   }} className="space-y-5">
-                    {/* Honeypot — hidden from users, catches bots */}
-                    <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
-                      <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} /></label>
-                    </div>
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">First Name <span className="text-red-400">*</span></label>
