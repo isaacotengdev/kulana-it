@@ -59,10 +59,10 @@ export default function Academy() {
 
         {/* Technology Enablement Solutions */}
         <div className="text-center mb-10">
-          <h3 className="text-3xl lg:text-4xl font-extrabold text-[#1A2332]">
+          <h3 className="text-3xl lg:text-4xl font-extrabold text-[#404040]">
             Technology Enablement Solutions
           </h3>
-          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#00C8D8]" />
+          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#03B2EE]" />
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -88,9 +88,9 @@ export default function Academy() {
               {/* Brand-navy panel — overlaps bottom of image */}
               <div className="relative -mt-8 mx-3 rounded-2xl overflow-hidden z-10 shadow-lg">
                 {/* Teal accent bar */}
-                <div className="h-1 bg-gradient-to-r from-[#00C8D8] to-blue-500" />
-                <div className="bg-[#1A2332] px-6 py-6">
-                  <h4 className="text-base font-bold text-[#00C8D8] mb-2 leading-snug">
+                <div className="h-1 bg-gradient-to-r from-[#57EBBB] to-blue-500" />
+                <div className="bg-[#0a2a3a] px-6 py-6">
+                  <h4 className="text-base font-bold text-[#03B2EE] mb-2 leading-snug">
                     {title}
                   </h4>
                   <p className="text-white/70 text-sm leading-relaxed">{desc}</p>

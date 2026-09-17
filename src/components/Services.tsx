@@ -90,19 +90,19 @@ export default function Services() {
                   />
                   <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(135deg, rgba(26,35,50,0.58) 0%, rgba(42,53,72,0.52) 50%, rgba(0,200,216,0.38) 100%)" }}
+                    style={{ background: "linear-gradient(135deg, rgba(10,42,58,0.60) 0%, rgba(13,58,82,0.54) 50%, rgba(3,178,238,0.38) 100%)" }}
                   />
                   <div className="absolute top-4 right-6 text-8xl font-black text-white/5 select-none leading-none z-10">
                     {pillar.number}
                   </div>
                   <div className="relative z-10 px-8 pt-8 pb-10">
                     <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7 text-[#00C8D8]" />
+                      <Icon className="w-7 h-7 text-[#03B2EE]" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
                       {pillar.title}
                     </h3>
-                    <p className="text-[#00C8D8] text-sm font-medium">{pillar.tagline}</p>
+                    <p className="text-[#57EBBB] text-sm font-medium">{pillar.tagline}</p>
                   </div>
                 </div>
 
@@ -116,7 +116,7 @@ export default function Services() {
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
                     {pillar.services.map((svc) => (
                       <div key={svc} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#00C8D8] flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-[#03B2EE] flex-shrink-0" />
                         <span className="text-sm font-medium text-gray-700">{svc}</span>
                       </div>
                     ))}
@@ -128,7 +128,7 @@ export default function Services() {
                       href={pillar.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#0299cc] hover:text-[#027faa] transition-colors group/cta"
                     >
                       Explore {pillar.title}
                       <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
@@ -136,7 +136,7 @@ export default function Services() {
                   ) : (
                     <Link
                       href={pillar.href}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#00b3c2] hover:text-[#1A2332] transition-colors group/cta"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#0299cc] hover:text-[#027faa] transition-colors group/cta"
                     >
                       Explore {pillar.title}
                       <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />

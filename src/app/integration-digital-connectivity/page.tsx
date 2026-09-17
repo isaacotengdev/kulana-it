@@ -286,7 +286,7 @@ export default function IntegrationDigitalConnectivityPage() {
                   <div className="space-y-2 mb-6">
                     {highlights.map((h) => (
                       <div key={h} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#00C8D8] flex-shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#03B2EE] flex-shrink-0" />
                         <span className="text-xs font-medium text-gray-600">{h}</span>
                       </div>
                     ))}

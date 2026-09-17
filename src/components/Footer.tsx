@@ -150,7 +150,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
                         link.isPillar
-                          ? "text-white font-semibold hover:text-[#00C8D8]"
+                          ? "text-white font-semibold hover:text-[#03B2EE]"
                           : "text-gray-400 hover:text-white"
                       }`}
                     >
@@ -161,7 +161,7 @@ export default function Footer() {
                       href={link.href}
                       className={`text-sm inline-block transition-all hover:translate-x-0.5 ${
                         link.isPillar
-                          ? "text-white font-semibold hover:text-[#00C8D8]"
+                          ? "text-white font-semibold hover:text-[#03B2EE]"
                           : "text-gray-400 hover:text-white"
                       }`}
                     >

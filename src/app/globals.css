@@ -2,14 +2,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1A2332;
-  --primary: #00C8D8;
-  --primary-dark: #1A2332;
-  --primary-light: #ecfcfd;
-  --accent: #00E5FF;
+  --foreground: #404040;
+  --primary: #03B2EE;
+  --primary-dark: #036a8c;
+  --primary-light: #e6f7fd;
+  --accent: #57EBBB;
+  --turquoise: #32D2D2;
   --surface: #F0F4F8;
   --mid: #6B7A8D;
-  --grad: linear-gradient(135deg, #00C8D8 0%, #00E5FF 100%);
+  --grad: linear-gradient(135deg, #57EBBB 0%, #03B2EE 100%);
 }
 
 @theme inline {
@@ -21,21 +22,20 @@
   --color-accent: var(--accent);
   --color-surface: var(--surface);
 
-  /* Remap Tailwind blue → brand teal scale */
-  --color-blue-50: #ecfcfd;
-  --color-blue-100: #d0f7fa;
-  --color-blue-200: #a1eff5;
-  --color-blue-300: #67e4ef;
-  --color-blue-400: #33d4e0;
-  --color-blue-500: #00C8D8;
-  --color-blue-600: #00b3c2;
-  --color-blue-700: #009aaa;
-  --color-blue-800: #1A2332;
-  --color-blue-900: #0f1520;
-  --color-blue-950: #080b15;
+  /* Remap Tailwind blue → Kulana Blue scale */
+  --color-blue-50: #e6f7fd;
+  --color-blue-100: #b3e6f9;
+  --color-blue-200: #80d5f5;
+  --color-blue-300: #4dc4f1;
+  --color-blue-400: #29baef;
+  --color-blue-500: #03B2EE;
+  --color-blue-600: #0299cc;
+  --color-blue-700: #027faa;
+  --color-blue-800: #015c7a;
+  --color-blue-900: #013a50;
+  --color-blue-950: #011e28;
 
-  /* Brand fonts */
-  --font-serif: var(--font-serif);
+  /* Brand font */
   --font-sans: var(--font-sans);
 }
 
@@ -46,24 +46,24 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), 'Roboto', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-sans), 'Roboto', system-ui, sans-serif;
 }
 
 .gradient-primary {
-  background: linear-gradient(135deg, #1A2332 0%, #2A3548 50%, #00C8D8 100%);
+  background: linear-gradient(135deg, #0a2a3a 0%, #0d3a52 50%, #03B2EE 100%);
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #0E1929 0%, #1A2332 55%, #00C8D8 100%);
+  background: linear-gradient(135deg, #0a2a3a 0%, #0d3a52 55%, #03B2EE 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #00C8D8, #00E5FF);
+  background: linear-gradient(135deg, #57EBBB, #03B2EE);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,7 +75,7 @@ h1, h2, h3 {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 200, 216, 0.15);
+  box-shadow: 0 20px 40px rgba(3, 178, 238, 0.15);
 }
 
 .nav-link {

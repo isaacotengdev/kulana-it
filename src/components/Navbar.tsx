@@ -134,14 +134,14 @@ export default function Navbar() {
                               href={pillar.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block text-[11px] font-bold text-[#00C8D8] uppercase tracking-wider mb-3 hover:text-[#009aaa] transition-colors leading-snug"
+                              className="block text-[11px] font-bold text-[#03B2EE] uppercase tracking-wider mb-3 hover:text-[#0299cc] transition-colors leading-snug"
                             >
                               {pillar.name}
                             </a>
                           ) : (
                             <Link
                               href={pillar.href}
-                              className="block text-[11px] font-bold text-[#00C8D8] uppercase tracking-wider mb-3 hover:text-[#009aaa] transition-colors leading-snug"
+                              className="block text-[11px] font-bold text-[#03B2EE] uppercase tracking-wider mb-3 hover:text-[#0299cc] transition-colors leading-snug"
                             >
                               {pillar.name}
                             </Link>
@@ -264,7 +264,7 @@ export default function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-[#00C8D8] uppercase tracking-wider hover:text-[#009aaa] transition-colors"
+                            className="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-[#03B2EE] uppercase tracking-wider hover:text-[#0299cc] transition-colors"
                           >
                             <ChevronRight className="w-3 h-3" />
                             {pillar.name}
@@ -273,7 +273,7 @@ export default function Navbar() {
                           <Link
                             href={pillar.href}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-[#00C8D8] uppercase tracking-wider hover:text-[#009aaa] transition-colors"
+                            className="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-[#03B2EE] uppercase tracking-wider hover:text-[#0299cc] transition-colors"
                           >
                             <ChevronRight className="w-3 h-3" />
                             {pillar.name}
