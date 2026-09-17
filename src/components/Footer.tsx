@@ -41,15 +41,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
-              <div className="bg-white rounded-2xl px-5 py-3 inline-flex shadow-sm">
-                <Image
-                  src="/logos/logo.svg"
-                  alt="Kulana IT Solutions — Technology Value Creators"
-                  width={200}
-                  height={64}
-                  className="h-14 w-auto object-contain"
-                />
-              </div>
+              <Image
+                src="/logos/logo-white.svg"
+                alt="Kulana IT Solutions — Technology Value Creators"
+                width={200}
+                height={64}
+                className="h-14 w-auto object-contain"
+              />
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
               Technology Value Creators — empowering organisations in Ghana and
