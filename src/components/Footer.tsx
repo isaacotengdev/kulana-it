@@ -44,9 +44,9 @@ export default function Footer() {
               <Image
                 src="/logos/logo-white.svg"
                 alt="Kulana IT Solutions — Technology Value Creators"
-                width={200}
-                height={64}
-                className="h-14 w-auto object-contain"
+                width={280}
+                height={90}
+                className="h-20 w-auto object-contain"
               />
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
