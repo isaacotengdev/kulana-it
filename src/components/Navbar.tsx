@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
@@ -64,7 +64,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const openDropdown = (name: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -79,7 +86,10 @@ export default function Navbar() {
     "isMega" in link ? link.isMega : !!link.dropdown;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={isHome ? {} : { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={scrolled ? { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)", backdropFilter: "blur(12px)" } : {}}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
@@ -229,7 +239,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-white/10" style={isHome ? { background: "rgba(45,0,112,0.85)" } : { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
+        <div className="lg:hidden border-t border-white/10" style={{ background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
