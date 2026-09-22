@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRight, Play, Shield, Award, Globe } from "lucide-react";
+import { ArrowRight, Shield, Award, Globe } from "lucide-react";
 
 const highlights = [
   { icon: Shield, label: "ISO Certified",       desc: "Enterprise Security" },
@@ -269,33 +269,31 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden gradient-hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ background: "linear-gradient(135deg, #2d0070 0%, #080d28 40%, #0a1535 100%)" }}
     >
       {/* World network animation */}
       <NetworkCanvas />
 
-      {/* Decorative blobs */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl" />
+      {/* Purple glow — left side */}
+      <div className="absolute -left-40 top-1/4 w-[700px] h-[700px] bg-purple-900/60 rounded-full blur-3xl pointer-events-none" />
+      {/* Cyan glow — right */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-cyan-300 font-medium mb-6 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              Trusted IT Partner — Ghana and Mauritius
-            </div>
+            <p className="text-sm font-bold tracking-[0.18em] uppercase text-[#03B2EE] mb-6">
+              Trusted IT Partner&nbsp;&nbsp;|&nbsp;&nbsp;Ghana and Mauritius
+            </p>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 uppercase">
               Technology
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
-                experts
-              </span>{" "}
-              for
+              Experts For
               <br />
-              your business
+              Your Business.
             </h1>
 
             <p className="text-lg text-blue-100/80 max-w-xl mb-10 leading-relaxed">
@@ -307,7 +305,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-4 bg-[#03B2EE] hover:bg-[#0299cc] text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-[#03B2EE]/40 hover:-translate-y-0.5"
               >
                 Request a Consultation
                 <ArrowRight className="w-4 h-4" />
@@ -316,18 +314,18 @@ export default function Hero() {
                 href="#services"
                 className="inline-flex items-center gap-2 px-7 py-4 bg-transparent border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
               >
-                <Play className="w-4 h-4" />
                 Explore Services
+                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
             {/* Motto */}
             <div className="mt-14 pt-8 border-t border-white/20 flex items-center gap-3">
-              <span className="w-8 h-px bg-cyan-400/60" />
-              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300/80">
+              <span className="w-8 h-px bg-[#03B2EE]/60" />
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#03B2EE]/80">
                 Technology Value Creators
               </p>
-              <span className="w-8 h-px bg-cyan-400/60" />
+              <span className="w-8 h-px bg-[#03B2EE]/60" />
             </div>
           </div>
 
@@ -338,8 +336,8 @@ export default function Hero() {
                 key={label}
                 className="w-72 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/15 transition-all cursor-default"
               >
-                <div className="w-12 h-12 bg-cyan-400/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-cyan-300" />
+                <div className="w-12 h-12 bg-[#03B2EE]/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-[#03B2EE]" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">{label}</div>
@@ -349,15 +347,15 @@ export default function Hero() {
             ))}
 
             {/* Main visual card */}
-            <div className="w-72 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 backdrop-blur-md border border-cyan-400/30 rounded-2xl p-6 mt-2">
+            <div className="w-72 bg-gradient-to-br from-[#03B2EE]/20 to-purple-900/30 backdrop-blur-md border border-[#03B2EE]/30 rounded-2xl p-6 mt-2">
               <div className="text-white font-bold text-lg mb-3">
                 End-to-End IT Solutions
               </div>
               <div className="space-y-2">
                 {["Strategy", "Implementation", "Support", "Training"].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-sm text-blue-100">
-                    <div className="w-4 h-4 rounded-full bg-cyan-400/30 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <div className="w-4 h-4 rounded-full bg-[#03B2EE]/30 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#03B2EE]" />
                     </div>
                     {item}
                   </div>
