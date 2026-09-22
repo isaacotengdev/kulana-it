@@ -1,13 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRight, Shield, Award, Globe } from "lucide-react";
-
-const highlights = [
-  { icon: Shield, label: "ISO Certified",       desc: "Enterprise Security" },
-  { icon: Award,  label: "Certified Partners",  desc: "Microsoft · HubSpot · Temenos" },
-  { icon: Globe,  label: "Ghana and Mauritius",   desc: "Dual-Country Offices" },
-];
+import { ArrowRight } from "lucide-react";
 
 // Simplified continent outlines as [lat, lon] arrays (equirectangular)
 const CONTINENTS: [number, number][][] = [
@@ -272,13 +266,10 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "linear-gradient(135deg, #2d0070 0%, #080d28 40%, #0a1535 100%)" }}
     >
-      {/* World network animation */}
-      <NetworkCanvas />
-
       {/* Purple glow — left side */}
       <div className="absolute -left-40 top-1/4 w-[700px] h-[700px] bg-purple-900/60 rounded-full blur-3xl pointer-events-none" />
-      {/* Cyan glow — right */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Cyan glow behind globe — right */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -329,37 +320,24 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right content — floating cards */}
-          <div className="hidden lg:flex flex-col gap-4 items-end">
-            {highlights.map(({ icon: Icon, label, desc }) => (
+          {/* Right — Africa globe */}
+          <div className="hidden lg:flex items-center justify-center">
+            {/* Outer glow ring */}
+            <div className="relative">
               <div
-                key={label}
-                className="w-72 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/15 transition-all cursor-default"
+                className="absolute inset-0 rounded-full blur-2xl"
+                style={{ background: "radial-gradient(circle, rgba(3,178,238,0.25) 0%, rgba(3,178,238,0.05) 60%, transparent 80%)" }}
+              />
+              {/* Globe circle with clipping */}
+              <div
+                className="relative w-[480px] h-[480px] rounded-full overflow-hidden"
+                style={{
+                  border: "1px solid rgba(3,178,238,0.25)",
+                  boxShadow: "0 0 80px 20px rgba(3,178,238,0.12), inset 0 0 80px rgba(3,178,238,0.05)",
+                  background: "radial-gradient(circle at 50% 50%, rgba(10,21,53,0.6) 0%, rgba(8,13,40,0.9) 100%)",
+                }}
               >
-                <div className="w-12 h-12 bg-[#03B2EE]/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-[#03B2EE]" />
-                </div>
-                <div>
-                  <div className="text-white font-semibold">{label}</div>
-                  <div className="text-blue-200 text-sm">{desc}</div>
-                </div>
-              </div>
-            ))}
-
-            {/* Main visual card */}
-            <div className="w-72 bg-gradient-to-br from-[#03B2EE]/20 to-purple-900/30 backdrop-blur-md border border-[#03B2EE]/30 rounded-2xl p-6 mt-2">
-              <div className="text-white font-bold text-lg mb-3">
-                End-to-End IT Solutions
-              </div>
-              <div className="space-y-2">
-                {["Strategy", "Implementation", "Support", "Training"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm text-blue-100">
-                    <div className="w-4 h-4 rounded-full bg-[#03B2EE]/30 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#03B2EE]" />
-                    </div>
-                    {item}
-                  </div>
-                ))}
+                <NetworkCanvas />
               </div>
             </div>
           </div>
