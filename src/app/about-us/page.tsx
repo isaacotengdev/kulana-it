@@ -233,7 +233,7 @@ export default function AboutUsPage() {
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
             >
               Request a Consultation
             </Link>

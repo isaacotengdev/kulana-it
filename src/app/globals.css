@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #404040;
+  --background: #080d28;
+  --foreground: #e2e8f0;
   --primary: #03B2EE;
   --primary-dark: #036a8c;
-  --primary-light: #e6f7fd;
+  --primary-light: #0d1a40;
   --accent: #57EBBB;
   --turquoise: #32D2D2;
-  --surface: #F0F4F8;
-  --mid: #6B7A8D;
+  --surface: #0d1535;
+  --mid: #94a3b8;
   --grad: linear-gradient(135deg, #57EBBB 0%, #03B2EE 100%);
 }
 
@@ -44,10 +44,11 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #2d0070 0%, #080d28 40%, #0a1535 100%) fixed;
   color: var(--foreground);
   font-family: var(--font-sans), 'Roboto', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 h1, h2, h3 {

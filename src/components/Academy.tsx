@@ -23,23 +23,23 @@ const solutions = [
 
 export default function Academy() {
   return (
-    <section id="academy" className="py-24 bg-slate-50">
+    <section id="academy" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-end mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-sm font-medium text-blue-600 mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-[#03B2EE] mb-5">
               <GraduationCap className="w-4 h-4" />
               Kulana Academy
             </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
               Grow your business with{" "}
               <span className="text-gradient">Kulana Academy</span>
             </h2>
           </div>
           <div>
-            <p className="text-gray-500 leading-relaxed mb-6">
+            <p className="text-white/60 leading-relaxed mb-6">
               Kulana Academy, partnering with Arcitura, delivers professional IT training
               programmes that assist businesses in upskilling employees through
               professionally-designed programs. Keep your workforce aligned with the
@@ -49,7 +49,7 @@ export default function Academy() {
               href="https://www.kulana.academy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-200"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] font-semibold rounded-md transition-all shadow-md hover:shadow-[#00D4EE]/40"
             >
               Visit Kulana Academy
               <ExternalLink className="w-4 h-4" />
@@ -59,7 +59,7 @@ export default function Academy() {
 
         {/* Technology Enablement Solutions */}
         <div className="text-center mb-10">
-          <h3 className="text-3xl lg:text-4xl font-extrabold text-[#404040]">
+          <h3 className="text-3xl lg:text-4xl font-extrabold text-white">
             Technology Enablement Solutions
           </h3>
           <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#03B2EE]" />

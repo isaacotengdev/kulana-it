@@ -100,7 +100,7 @@ export default function InfrastructurePage() {
                 </span>
               ))}
             </div>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
+            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
               Request a Consultation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -324,7 +324,7 @@ export default function InfrastructurePage() {
                 Talk to our infrastructure specialists and get a tailored design for your environment.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
+                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
                   Request a Consultation <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">

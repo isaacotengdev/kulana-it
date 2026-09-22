@@ -72,18 +72,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-sm font-medium text-blue-600 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-[#03B2EE] mb-4">
             Get In Touch
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-5">
             We&apos;re here to{" "}
             <span className="text-gradient">help you</span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-white/60 max-w-xl mx-auto">
             If you&apos;re interested in learning more about our services, please fill out the
             form and we&apos;ll be happy to send you more information.
           </p>
@@ -96,34 +96,34 @@ export default function Contact() {
             {offices.map((office) => (
               <div
                 key={office.city}
-                className="bg-slate-50 rounded-2xl p-6 border border-gray-100"
+                className="bg-white/5 rounded-2xl p-6 border border-white/10"
               >
                 <div className="text-2xl mb-3">{office.flag}</div>
-                <div className="font-bold text-gray-900 mb-2">{office.city}</div>
-                <div className="flex items-start gap-2 text-sm text-gray-500 mb-1">
-                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-400" />
+                <div className="font-bold text-white mb-2">{office.city}</div>
+                <div className="flex items-start gap-2 text-sm text-white/60 mb-1">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#03B2EE]" />
                   <div>
                     <div>{office.address}</div>
                     <div>{office.poBox}</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
-                  <Phone className="w-4 h-4 flex-shrink-0 text-blue-400" />
+                <div className="flex items-center gap-2 text-sm text-white/60 mt-2">
+                  <Phone className="w-4 h-4 flex-shrink-0 text-[#03B2EE]" />
                   {office.phone}
                 </div>
               </div>
             ))}
 
             {/* Email */}
-            <div className="flex items-center gap-3 p-5 bg-blue-50 rounded-2xl border border-blue-100">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-3 p-5 bg-white/5 rounded-2xl border border-white/10">
+              <div className="w-10 h-10 bg-[#03B2EE] rounded-xl flex items-center justify-center flex-shrink-0">
                 <Mail className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="text-xs text-gray-500 mb-0.5">Email us</div>
+                <div className="text-xs text-white/50 mb-0.5">Email us</div>
                 <a
                   href="mailto:contact@kulana.net"
-                  className="text-blue-600 font-semibold text-sm hover:text-blue-700"
+                  className="text-[#03B2EE] font-semibold text-sm hover:text-[#57EBBB]"
                 >
                   contact@kulana.net
                 </a>
@@ -135,19 +135,19 @@ export default function Contact() {
           <div className="lg:col-span-3">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-5">
-                  <CheckCircle className="w-8 h-8 text-emerald-600" />
+                <div className="w-16 h-16 bg-emerald-500/20 border border-emerald-500/30 rounded-full flex items-center justify-center mb-5">
+                  <CheckCircle className="w-8 h-8 text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-white mb-3">
                   Message sent!
                 </h3>
-                <p className="text-gray-500 max-w-sm">
+                <p className="text-white/60 max-w-sm">
                   Thank you for reaching out. Our team will contact you within 24
                   business hours.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" }); }}
-                  className="mt-6 px-6 py-2.5 border border-gray-200 text-gray-600 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors text-sm font-medium"
+                  className="mt-6 px-6 py-2.5 border border-white/20 text-white/70 rounded-md hover:border-[#03B2EE]/60 hover:text-[#03B2EE] transition-colors text-sm font-medium"
                 >
                   Send another message
                 </button>
@@ -156,7 +156,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">
                       First Name <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -165,11 +165,11 @@ export default function Contact() {
                       value={form.firstName}
                       onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                       placeholder="John"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">
                       Last Name <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -178,14 +178,14 @@ export default function Contact() {
                       value={form.lastName}
                       onChange={(e) => setForm({ ...form, lastName: e.target.value })}
                       placeholder="Mensah"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">
                       Email Address <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -194,30 +194,30 @@ export default function Contact() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="john@company.com"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">Phone Number</label>
                     <input
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       placeholder="+233 500 000 000"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label className="block text-sm font-medium text-white/70 mb-1.5">
                     Service of Inquiry <span className="text-red-400">*</span>
                   </label>
                   <select
                     required
                     value={form.service}
                     onChange={(e) => setForm({ ...form, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all bg-white text-gray-700"
+                    className="w-full px-4 py-3 rounded-md border border-white/10 bg-[#0d1535] text-white focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all"
                   >
                     <option value="">Select a service…</option>
                     {serviceGroups.map((group) => (
@@ -232,7 +232,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label className="block text-sm font-medium text-white/70 mb-1.5">
                     Message <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -241,17 +241,17 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell us about your project, challenges, or requirements..."
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-sm transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:border-[#03B2EE]/60 focus:ring-2 focus:ring-[#03B2EE]/10 text-sm transition-all resize-none"
                   />
                 </div>
 
                 {error && (
-                  <p className="text-sm text-red-500 bg-red-50 border border-red-100 rounded-xl px-4 py-3">{error}</p>
+                  <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-4 py-3">{error}</p>
                 )}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-blue-600 hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5"
+                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#00D4EE] hover:bg-[#00BCDA] disabled:opacity-60 disabled:cursor-not-allowed text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:shadow-[#00D4EE]/40 hover:-translate-y-0.5"
                 >
                   {loading ? "Sending…" : "Send"}
                   <Send className="w-4 h-4" />

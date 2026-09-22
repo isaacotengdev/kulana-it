@@ -54,17 +54,17 @@ const pillars = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#F0F4F8]">
+    <section id="services" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-sm font-medium text-blue-600 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-[#03B2EE] mb-4">
             What We Do
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-5">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Four integrated pillars delivering end-to-end technology solutions — from enterprise
             systems and digital connectivity to data intelligence and capability building.
           </p>
@@ -106,9 +106,9 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Card body — white */}
-                <div className="bg-white px-8 py-7">
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                {/* Card body — dark glass */}
+                <div className="bg-[#0d1535]/80 backdrop-blur-sm px-8 py-7 border-x border-b border-white/10 rounded-b-2xl">
+                  <p className="text-white/60 text-sm leading-relaxed mb-6">
                     {pillar.description}
                   </p>
 
@@ -117,7 +117,7 @@ export default function Services() {
                     {pillar.services.map((svc) => (
                       <div key={svc} className="flex items-center gap-2.5">
                         <CheckCircle2 className="w-4 h-4 text-[#03B2EE] flex-shrink-0" />
-                        <span className="text-sm font-medium text-gray-700">{svc}</span>
+                        <span className="text-sm font-medium text-white/80">{svc}</span>
                       </div>
                     ))}
                   </div>
@@ -152,7 +152,7 @@ export default function Services() {
         <div className="mt-14 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:shadow-[#00D4EE]/40 hover:-translate-y-0.5"
           >
             Discuss Your Requirements
             <ArrowRight className="w-4 h-4" />
