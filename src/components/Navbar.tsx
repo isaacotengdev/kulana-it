@@ -206,7 +206,7 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <a
               href={contactHref}
-              className="px-5 py-2.5 bg-[#03B2EE] hover:bg-[#0299cc] text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-[#03B2EE]/30 inline-flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-[#03B2EE] hover:bg-[#0299cc] text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-[#03B2EE]/30 inline-flex items-center gap-1.5"
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />

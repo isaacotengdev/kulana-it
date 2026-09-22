@@ -287,23 +287,17 @@ export default function Hero() {
               Your Business.
             </h1>
 
-            <p className="text-lg text-blue-100/80 max-w-xl mb-10 leading-relaxed">
-              Your company&apos;s technology is your competitive edge. Kulana takes a
-              holistic approach to your organisation&apos;s digital transformation. We are
-              the technology experts you need to drive your business forward.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-10">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-[#03B2EE] hover:bg-[#0299cc] text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-[#03B2EE]/40 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#03B2EE] hover:bg-[#0299cc] text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-[#03B2EE]/40 hover:-translate-y-0.5"
               >
                 Request a Consultation
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-transparent border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-white/40 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/60 transition-all"
               >
                 Explore Services
                 <ArrowRight className="w-4 h-4" />
