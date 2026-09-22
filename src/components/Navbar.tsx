@@ -59,7 +59,8 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const contactHref = pathname === "/" ? "#contact" : "/contact-us";
+  const isHome = pathname === "/";
+  const contactHref = isHome ? "#contact" : "/contact-us";
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
@@ -78,7 +79,7 @@ export default function Navbar() {
     "isMega" in link ? link.isMega : !!link.dropdown;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
+    <nav className="fixed top-0 left-0 right-0 z-50" style={isHome ? {} : { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
@@ -224,7 +225,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-white/10" style={{ background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
+        <div className="lg:hidden border-t border-white/10" style={isHome ? { background: "rgba(45,0,112,0.85)" } : { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
