@@ -106,7 +106,11 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-white/80 hover:text-white hover:bg-white/10"
+                  className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    pathname === link.href
+                      ? "border border-[#03B2EE] text-[#03B2EE]"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
                 >
                   {link.name}
                   {hasFlyout(link) && (
@@ -206,7 +210,7 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <a
               href={contactHref}
-              className="px-5 py-2.5 bg-[#03B2EE] hover:bg-[#0299cc] text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-[#03B2EE]/30 inline-flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40 inline-flex items-center gap-1.5"
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />
