@@ -34,7 +34,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400">
+    <footer className="text-gray-400" style={{ background: "linear-gradient(135deg, #2d0070 0%, #080d28 40%, #0a1535 100%)" }}>
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-5 gap-10">
@@ -174,7 +174,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <span>&copy; 2025 Kulana – Technology Value Creators. All rights reserved.</span>
           <div className="flex items-center gap-4">
