@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Layers } from "lucide-react";
 
 const partners = [
   {
@@ -46,7 +45,7 @@ export default function Partners() {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-[#03B2EE] mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-white/20 rounded-full text-sm font-medium text-[#03B2EE] mb-4">
             Technology Partners
           </div>
           <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
@@ -60,7 +59,7 @@ export default function Partners() {
         </div>
 
         {/* Partners grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {partners.map((p) => (
             <div
               key={p.name}
@@ -83,68 +82,6 @@ export default function Partners() {
           ))}
         </div>
 
-        {/* Trust bar */}
-        <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 rounded-2xl overflow-hidden">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10 divide-y lg:divide-y-0">
-
-            {/* ISO 9001 */}
-            <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
-              <div className="w-14 h-14 flex-shrink-0 bg-white rounded-xl p-1.5 shadow-md group-hover:scale-105 transition-transform">
-                <Image
-                  src="/logos/iso9001.svg"
-                  alt="ISO 9001 Certified"
-                  width={52}
-                  height={52}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <div>
-                <div className="text-white font-bold text-base leading-tight">ISO 9001</div>
-                <div className="text-blue-200 text-xs mt-0.5">Quality Management</div>
-              </div>
-            </div>
-
-            {/* ISO 27001 */}
-            <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
-              <div className="w-14 h-14 flex-shrink-0 bg-white rounded-xl p-1.5 shadow-md group-hover:scale-105 transition-transform">
-                <Image
-                  src="/logos/iso27001.svg"
-                  alt="ISO 27001 Certified"
-                  width={52}
-                  height={52}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <div>
-                <div className="text-white font-bold text-base leading-tight">ISO 27001</div>
-                <div className="text-blue-200 text-xs mt-0.5">Information Security</div>
-              </div>
-            </div>
-
-            {/* Offices */}
-            <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
-              <div className="w-14 h-14 flex-shrink-0 bg-cyan-400/20 border border-cyan-400/30 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-                <MapPin className="w-7 h-7 text-cyan-300" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-base leading-tight">Ghana and Mauritius</div>
-                <div className="text-blue-200 text-xs mt-0.5">Dual-country offices</div>
-              </div>
-            </div>
-
-            {/* Service model */}
-            <div className="flex items-center gap-4 px-8 py-7 group hover:bg-white/5 transition-colors">
-              <div className="w-14 h-14 flex-shrink-0 bg-cyan-400/20 border border-cyan-400/30 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Layers className="w-7 h-7 text-cyan-300" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-base leading-tight">End-to-End Delivery</div>
-                <div className="text-blue-200 text-xs mt-0.5">Strategy to support</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </section>
   );
