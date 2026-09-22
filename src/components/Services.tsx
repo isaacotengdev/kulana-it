@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Server, Network, Brain, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const pillars = [
@@ -14,7 +13,6 @@ const pillars = [
       "Mission-critical systems that power financial institutions and enterprises with reliability, security, and performance at scale.",
     services: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
     href: "/core-enterprise-systems",
-    image: "/images/kulana/hero.jpg",
   },
   {
     icon: Network,
@@ -25,7 +23,6 @@ const pillars = [
       "Seamless integration architectures and AI-native engineering that unify your digital landscape and unlock new business potential.",
     services: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
     href: "/integration-digital-connectivity",
-    image: "/images/about/step-5-reporting.jpg",
   },
   {
     icon: Brain,
@@ -36,7 +33,6 @@ const pillars = [
       "Advanced data strategies, artificial intelligence, and intelligent automation that transform raw information into strategic advantage.",
     services: ["Data", "AI", "RPA"],
     href: "/data-ai-intelligence",
-    image: "/images/about/step-1-assessment.jpg",
   },
   {
     icon: GraduationCap,
@@ -48,7 +44,6 @@ const pillars = [
     services: [] as string[],
     href: "https://www.kulana.academy/",
     external: true,
-    image: "/images/about/step-3-implementation.jpg",
   },
 ];
 
@@ -79,19 +74,22 @@ export default function Services() {
                 key={pillar.title}
                 className="group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
               >
-                {/* Card header — photo background with gradient overlay */}
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={pillar.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover brightness-110"
-                  />
+                {/* Card header — hero/navbar gradient */}
+                <div
+                  className="relative overflow-hidden"
+                  style={{ background: "linear-gradient(135deg, #2d0070 0%, #080d28 45%, #073b54 78%, #085d72 100%)" }}
+                >
+                  {/* Subtle dot pattern */}
                   <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(135deg, rgba(10,42,58,0.60) 0%, rgba(13,58,82,0.54) 50%, rgba(3,178,238,0.38) 100%)" }}
+                    className="absolute inset-0 opacity-[0.07]"
+                    style={{
+                      backgroundImage: "radial-gradient(rgba(87,235,187,0.8) 1px, transparent 1px)",
+                      backgroundSize: "24px 24px",
+                    }}
                   />
+                  {/* Cyan glow accent */}
+                  <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#03B2EE]/15 rounded-full blur-3xl pointer-events-none" />
+
                   <div className="absolute top-4 right-6 text-8xl font-black text-white/5 select-none leading-none z-10">
                     {pillar.number}
                   </div>
