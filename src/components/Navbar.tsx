@@ -240,7 +240,7 @@ export default function Navbar() {
                   >
                     {link.name}
                     <ChevronDown
-                      className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-white/40 transition-transform duration-200 ${
                         openMobileSection === link.name ? "rotate-180" : ""
                       }`}
                     />
@@ -320,7 +320,7 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        className="block px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -334,7 +334,7 @@ export default function Navbar() {
               <a
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-5 py-3 bg-[#03B2EE] text-white font-semibold rounded-lg hover:bg-[#0299cc] transition-colors"
+                className="block w-full text-center px-5 py-3 bg-[#03B2EE] text-white font-semibold rounded-full hover:bg-[#0299cc] transition-colors"
               >
                 Request a Consultation
               </a>
