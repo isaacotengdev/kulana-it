@@ -279,7 +279,7 @@ export default function Hero() {
               Trusted IT Partner&nbsp;&nbsp;|&nbsp;&nbsp;Ghana and Mauritius
             </p>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 uppercase">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight mb-6 uppercase">
               Technology
               <br />
               Experts For

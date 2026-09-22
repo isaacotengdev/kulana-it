@@ -78,14 +78,14 @@ export default function Navbar() {
     "isMega" in link ? link.isMega : !!link.dropdown;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080d28] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/logos/logo.svg"
+              src="/logos/logo-white.svg"
               alt="Kulana IT Solutions — Technology Value Creators"
               width={210}
               height={67}
@@ -105,7 +105,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                  className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-white/80 hover:text-white hover:bg-white/10"
                 >
                   {link.name}
                   {hasFlyout(link) && (
@@ -188,7 +188,7 @@ export default function Navbar() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                          className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-blue-50 hover:text-[#03B2EE] transition-colors"
                         >
                           <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
                           {item.name}
@@ -215,7 +215,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg transition-colors text-gray-700 hover:bg-gray-100"
+            className="lg:hidden p-2 rounded-lg transition-colors text-white/80 hover:bg-white/10"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -224,7 +224,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl">
+        <div className="lg:hidden bg-[#080d28] border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
@@ -235,7 +235,7 @@ export default function Navbar() {
                         openMobileSection === link.name ? null : link.name
                       )
                     }
-                    className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-white/80 font-medium hover:bg-white/10 hover:text-white transition-colors"
                   >
                     {link.name}
                     <ChevronDown
@@ -248,7 +248,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    className="flex items-center justify-between px-4 py-3 rounded-lg text-white/80 font-medium hover:bg-white/10 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -286,7 +286,7 @@ export default function Navbar() {
                               key={svc.name}
                               href={svc.href}
                               onClick={() => setIsOpen(false)}
-                              className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                              className="block px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                             >
                               {svc.name}
                             </Link>
@@ -297,7 +297,7 @@ export default function Navbar() {
                     <Link
                       href="/our-services"
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-[#03B2EE] hover:bg-white/10 rounded-lg transition-colors"
                     >
                       View all services <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -310,7 +310,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="block px-4 py-2 text-sm font-medium text-[#03B2EE] hover:bg-white/10 rounded-lg transition-colors"
                     >
                       All {link.name}
                     </Link>
@@ -329,7 +329,7 @@ export default function Navbar() {
               </div>
             ))}
 
-            <div className="pt-3 border-t border-gray-100">
+            <div className="pt-3 border-t border-white/10">
               <a
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
