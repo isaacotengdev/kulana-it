@@ -210,7 +210,7 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <a
               href={contactHref}
-              className="px-5 py-2.5 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40 inline-flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] text-sm font-semibold rounded-none transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40 inline-flex items-center gap-1.5"
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />
@@ -338,7 +338,7 @@ export default function Navbar() {
               <a
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-5 py-3 bg-[#03B2EE] text-white font-semibold rounded-full hover:bg-[#0299cc] transition-colors"
+                className="block w-full text-center px-5 py-3 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none hover:bg-[#00BCDA] transition-colors"
               >
                 Request a Consultation
               </a>

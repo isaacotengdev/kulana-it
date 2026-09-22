@@ -290,7 +290,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 mt-10">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#03B2EE] hover:bg-[#0299cc] text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-[#03B2EE]/40 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:shadow-[#00D4EE]/40 hover:-translate-y-0.5"
               >
                 Request a Consultation
                 <ArrowRight className="w-4 h-4" />

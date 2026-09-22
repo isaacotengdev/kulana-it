@@ -97,7 +97,7 @@ export default function PartnerOfferingPage() {
                 </span>
               ))}
             </div>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">
+            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
               Become a Partner <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -323,7 +323,7 @@ export default function PartnerOfferingPage() {
                 Let&apos;s explore how a partnership can extend your training capability and geographic reach.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5">
+                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-none transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
                   Start a Conversation <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
