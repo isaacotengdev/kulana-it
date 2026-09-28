@@ -1,33 +1,40 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Handshake } from "lucide-react";
+import Image from "next/image";
 
 const pillars = [
   {
     label: "African Expertise",
     sub: "Ghana & Mauritius",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#57EBBB" strokeWidth="2" className="w-14 h-14">
-        {/* Africa outline — simplified */}
-        <path d="M28 8 c-4 1-8 3-10 7-3 4-3 8-2 12-2 2-4 4-4 8 0 5 2 9 5 13 2 3 4 6 4 10 1 4 3 7 6 8 2 1 5 0 7-2 3-3 4-7 4-11 2-1 5-2 6-5 2-3 1-7-1-9 3-2 5-5 5-9 0-5-2-9-5-13-1-2-3-3-4-5-1-3 0-6-2-8-2-2-5-3-9-2z" strokeLinejoin="round"/>
-        <circle cx="24" cy="42" r="1.5" fill="#57EBBB" stroke="none"/>
-      </svg>
+      <Image
+        src="/images/africa-map.svg"
+        alt="Africa map"
+        width={56}
+        height={56}
+        className="w-14 h-14"
+        unoptimized
+      />
     ),
   },
   {
     label: "End-to-End Solutions",
     sub: "Strategy to Implementation",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#57EBBB" strokeWidth="2" className="w-14 h-14">
-        <circle cx="32" cy="32" r="5" fill="#57EBBB" stroke="none"/>
-        <circle cx="14" cy="22" r="3.5"/>
-        <circle cx="50" cy="22" r="3.5"/>
-        <circle cx="14" cy="44" r="3.5"/>
-        <circle cx="50" cy="44" r="3.5"/>
-        <line x1="32" y1="27" x2="14" y2="25.5"/>
-        <line x1="32" y1="27" x2="50" y2="25.5"/>
-        <line x1="32" y1="37" x2="14" y2="40.5"/>
-        <line x1="32" y1="37" x2="50" y2="40.5"/>
+      <svg viewBox="0 0 64 64" fill="none" stroke="#00D4EE" strokeWidth="3.5" strokeLinecap="round" className="w-14 h-14">
+        {/* Center hub */}
+        <circle cx="32" cy="32" r="6" fill="#00D4EE" stroke="none"/>
+        {/* Satellite nodes */}
+        <circle cx="13" cy="18" r="4"/>
+        <circle cx="50" cy="14" r="4"/>
+        <circle cx="54" cy="38" r="4"/>
+        <circle cx="18" cy="52" r="4"/>
+        {/* Connecting lines */}
+        <line x1="27" y1="28" x2="17" y2="22"/>
+        <line x1="37" y1="27" x2="46" y2="18"/>
+        <line x1="38" y1="34" x2="50" y2="37"/>
+        <line x1="28" y1="37" x2="22" y2="48"/>
       </svg>
     ),
   },
@@ -35,28 +42,24 @@ const pillars = [
     label: "Global Standards",
     sub: "Certified Processes & Partnerships",
     icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#57EBBB" strokeWidth="2" className="w-14 h-14">
-        <path d="M32 10 L50 18 L50 34 C50 45 32 54 32 54 C32 54 14 45 14 34 L14 18 Z" strokeLinejoin="round"/>
-        <polyline points="24,32 30,38 42,26" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg viewBox="0 0 64 64" fill="none" stroke="#00D4EE" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-14 h-14">
+        {/* Rounded shield */}
+        <path d="M32 8 L51 17 L51 34 C51 46 32 56 32 56 C32 56 13 46 13 34 L13 17 Z"/>
+        {/* Checkmark */}
+        <polyline points="22,33 29,40 43,25"/>
       </svg>
     ),
   },
   {
     label: "Long-Term Support",
     sub: "Support & Knowledge Transfer",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#57EBBB" strokeWidth="2" className="w-14 h-14">
-        <path d="M10 38 C10 38 14 28 22 28 C26 28 28 32 32 32 C36 32 38 28 42 28 C50 28 54 38 54 38" strokeLinecap="round"/>
-        <path d="M10 38 L14 44 C18 50 26 52 32 48 C38 52 46 50 50 44 L54 38" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M22 28 C22 22 27 18 32 18 C37 18 42 22 42 28" strokeLinecap="round"/>
-      </svg>
-    ),
+    icon: <Handshake className="w-14 h-14" stroke="#00D4EE" strokeWidth={2} />,
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-20" style={{ background: "#eaf9f9" }}>
+    <section id="about" className="py-20" style={{ background: "#f9fffe" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label with line */}
@@ -95,8 +98,8 @@ export default function About() {
         <div className="flex justify-center">
           <a
             href="/kulana"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-all hover:scale-105"
-            style={{ background: "#57EBBB", color: "#040d28" }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-semibold transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40"
+            style={{ background: "#00D4EE", color: "#040d28" }}
           >
             Discover Kulana
             <ArrowRight className="w-4 h-4" />

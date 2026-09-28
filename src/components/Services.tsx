@@ -58,6 +58,28 @@ export default function Services() {
 
   return (
     <section id="services" className="bg-white">
+
+      {/* Intro header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        {/* Label + rule */}
+        <div className="flex items-center gap-4 mb-10">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 whitespace-nowrap">
+            Our Services
+          </span>
+          <div className="flex-1 h-px bg-gray-200" />
+        </div>
+
+        {/* Heading + description */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
+            What Can We Solve<br />for You?
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed lg:pt-2">
+            Four integrated pillars delivering end-to-end technology solutions — from enterprise systems and digital connectivity to data intelligence and capability building.
+          </p>
+        </div>
+      </div>
+
       {pillars.map((pillar, i) => {
         const isOpen = openIndex === i;
 
@@ -188,13 +210,13 @@ export default function Services() {
                 </div>
 
                 {/* Thumbnail */}
-                <div className="hidden lg:block relative w-52 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="hidden lg:block relative w-72 h-44 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
                     src={pillar.image}
                     alt={pillar.title}
                     fill
                     className="object-cover"
-                    sizes="208px"
+                    sizes="288px"
                   />
                   <div className="absolute inset-0 bg-[#080d28]/50" />
                   <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold leading-snug whitespace-pre-line">

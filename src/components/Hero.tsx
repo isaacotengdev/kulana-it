@@ -22,7 +22,7 @@ export default function Hero() {
               Trusted IT Partner&nbsp;&nbsp;|&nbsp;&nbsp;Ghana and Mauritius
             </p>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight mb-6 uppercase">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight mb-6 uppercase">
               Technology
               <br />
               Experts For
@@ -57,32 +57,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — glowing orb */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="relative">
-              {/* Outer radial glow */}
-              <div
-                className="absolute inset-0 rounded-full blur-2xl"
-                style={{ background: "radial-gradient(circle, rgba(3,178,238,0.25) 0%, rgba(3,178,238,0.05) 60%, transparent 80%)" }}
-              />
-              {/* Orb */}
-              <div
-                className="relative w-[480px] h-[480px] rounded-full"
-                style={{
-                  border: "1px solid rgba(3,178,238,0.25)",
-                  boxShadow: "0 0 80px 20px rgba(3,178,238,0.12), inset 0 0 80px rgba(3,178,238,0.05)",
-                  background: "radial-gradient(circle at 40% 35%, rgba(45,0,112,0.6) 0%, rgba(8,13,40,0.85) 60%, rgba(10,21,53,0.95) 100%)",
-                }}
-              >
-                {/* Inner glow rings */}
-                <div className="absolute inset-8 rounded-full border border-[#03B2EE]/10" />
-                <div className="absolute inset-20 rounded-full border border-[#03B2EE]/15" />
-                <div className="absolute inset-32 rounded-full border border-[#03B2EE]/20" />
-                {/* Centre pulse */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#03B2EE]/80 blur-sm" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white" />
-              </div>
-            </div>
+          {/* Right — subtle ambient glow only */}
+          <div className="hidden lg:block">
+            <div
+              className="w-[480px] h-[480px] rounded-full blur-3xl opacity-30 pointer-events-none"
+              style={{ background: "radial-gradient(circle, rgba(3,178,238,0.4) 0%, rgba(45,0,112,0.3) 50%, transparent 75%)" }}
+            />
           </div>
 
         </div>

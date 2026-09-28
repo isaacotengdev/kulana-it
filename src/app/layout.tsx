@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Manrope, Inter } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
@@ -7,6 +7,20 @@ const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "700", "900"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -119,7 +133,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${roboto.variable} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${roboto.variable} ${manrope.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full">
         <script
           type="application/ld+json"

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProvenResults from "@/components/ProvenResults";
 import Services from "@/components/Services";
+import TechChallenge from "@/components/TechChallenge";
 import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Academy from "@/components/Academy";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <ProvenResults />
         <Services />
+        <TechChallenge />
         <About />
         <Partners />
         <Academy />

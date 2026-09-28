@@ -100,8 +100,9 @@ export default function Navbar() {
               alt="Kulana IT Solutions — Technology Value Creators"
               width={210}
               height={67}
-              className="h-[54px] w-auto object-contain"
+              className="h-[64px] w-auto object-contain"
               priority
+              unoptimized
             />
           </Link>
 
