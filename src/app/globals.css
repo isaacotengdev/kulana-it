@@ -14,6 +14,8 @@
 }
 
 @theme inline {
+  --max-width-8xl: 89.75rem; /* 1436px */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -81,20 +83,5 @@ h1, h2, h3 {
 
 .nav-link {
   position: relative;
-  transition: color 0.2s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--grad);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  transition: color 0.2s ease, font-weight 0.1s ease;
 }

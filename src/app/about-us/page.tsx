@@ -90,7 +90,7 @@ export default function AboutUsPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="about" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">About Us</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Innovative Solutions, Unique Value — Empowering Your Business to Thrive in the Digital Age.
@@ -108,7 +108,7 @@ export default function AboutUsPage() {
 
         {/* ── Company entities ─────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Who We Are</h2>
               <p className="text-gray-500 text-lg max-w-3xl mx-auto">
@@ -143,7 +143,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* ── Benefits ─────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
@@ -187,7 +187,7 @@ export default function AboutUsPage() {
 
         {/* ── Process ──────────────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
                 Kulana&apos;s Process, Step by Step

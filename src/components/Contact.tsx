@@ -18,8 +18,17 @@ const serviceGroups = [
   },
 ];
 
+const MF = "var(--font-manrope), sans-serif";
+
+const inputStyle: React.CSSProperties = {
+  fontFamily: MF,
+  fontWeight: 600,
+  color: "#000000",
+  fontSize: "0.875rem",
+};
+
 const inputClass =
-  "w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#00D4EE] focus:ring-1 focus:ring-[#00D4EE]/30 text-sm transition-all rounded-sm";
+  "w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-[#57D9D4] focus:ring-1 focus:ring-[#57D9D4]/30 text-sm transition-all rounded-sm";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -52,59 +61,86 @@ export default function Contact() {
     }
   };
 
+  const labelStyle: React.CSSProperties = {
+    fontFamily: MF,
+    fontWeight: 600,
+    color: "#000000",
+    fontSize: "0.8125rem",
+  };
+
   return (
     <section id="contact" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Label + rule */}
-        <div className="flex items-center gap-4 mb-12">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 whitespace-nowrap">
+        <div className="mb-12">
+          <span
+            className="text-xs tracking-[0.2em] uppercase"
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}
+          >
             Get In Touch
           </span>
-          <div className="flex-1 h-px bg-gray-200" />
+          <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
 
           {/* Left — heading + office info */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-16">
+            <h2
+              className="text-3xl lg:text-5xl leading-tight mb-8 lg:mb-16"
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}
+            >
               Let&apos;s Talk About Your<br />Technology Needs
             </h2>
 
             <div className="space-y-10">
               {/* Ghana */}
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.15em] text-gray-900 mb-3">
+                <p className="text-xs uppercase tracking-[0.15em] mb-3"
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
                   Ghana Office
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
                   The Rhombus, HRJ5+J6Q,<br />Kanda, Accra
                 </p>
-                <p className="text-gray-500 text-sm mt-2">+233 540 127 400</p>
+                <p className="text-sm mt-2"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                  +233 540 127 400
+                </p>
               </div>
 
               {/* Mauritius */}
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.15em] text-gray-900 mb-3">
+                <p className="text-xs uppercase tracking-[0.15em] mb-3"
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
                   Mauritius Office
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
                   Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
                 </p>
-                <p className="text-gray-500 text-sm mt-2">+230 46 32 519</p>
+                <p className="text-sm mt-2"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                  +230 46 32 519
+                </p>
               </div>
 
               {/* Email */}
               <div>
-                <p className="text-base font-bold text-gray-900">contact@kulana.net</p>
+                <p className="text-sm"
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                  contact@kulana.net
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right — description + form */}
           <div>
-            <p className="text-gray-500 text-base leading-relaxed mb-10">
+            <p className="text-sm leading-relaxed mb-8"
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
               Tell us about your technology needs or challenges. Our team will get
               in touch to discuss how Kulana can support your business.
             </p>
@@ -114,23 +150,24 @@ export default function Contact() {
                 <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-full flex items-center justify-center mb-5">
                   <CheckCircle className="w-8 h-8 text-emerald-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Message sent!</h3>
-                <p className="text-gray-500 max-w-sm">
+                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: MF, color: "#000000" }}>Message sent!</h3>
+                <p className="max-w-sm text-sm" style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
                   Thank you for reaching out. Our team will contact you within 24 business hours.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" }); }}
-                  className="mt-6 px-6 py-2.5 border border-gray-200 text-gray-600 rounded-md hover:border-[#00D4EE] hover:text-[#00D4EE] transition-colors text-sm font-medium"
+                  className="mt-6 px-6 py-2.5 border border-gray-200 rounded-md transition-colors text-sm"
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Row 1 */}
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-gray-700 mb-1.5">
+                    <label className="block mb-1.5" style={labelStyle}>
                       First Name <span className="text-gray-400">*</span>
                     </label>
                     <input
@@ -138,10 +175,11 @@ export default function Contact() {
                       value={form.firstName}
                       onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                       className={inputClass}
+                      style={inputStyle}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-gray-700 mb-1.5">
+                    <label className="block mb-1.5" style={labelStyle}>
                       Surname <span className="text-gray-400">*</span>
                     </label>
                     <input
@@ -149,14 +187,15 @@ export default function Contact() {
                       value={form.lastName}
                       onChange={(e) => setForm({ ...form, lastName: e.target.value })}
                       className={inputClass}
+                      style={inputStyle}
                     />
                   </div>
                 </div>
 
                 {/* Row 2 */}
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-gray-700 mb-1.5">
+                    <label className="block mb-1.5" style={labelStyle}>
                       Email Address <span className="text-gray-400">*</span>
                     </label>
                     <input
@@ -164,22 +203,24 @@ export default function Contact() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className={inputClass}
+                      style={inputStyle}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-gray-700 mb-1.5">Phone Number</label>
+                    <label className="block mb-1.5" style={labelStyle}>Phone Number</label>
                     <input
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className={inputClass}
+                      style={inputStyle}
                     />
                   </div>
                 </div>
 
                 {/* Service */}
                 <div>
-                  <label className="block text-sm text-gray-700 mb-1.5">
+                  <label className="block mb-1.5" style={labelStyle}>
                     Service of Interest <span className="text-gray-400">*</span>
                   </label>
                   <select
@@ -187,6 +228,7 @@ export default function Contact() {
                     value={form.service}
                     onChange={(e) => setForm({ ...form, service: e.target.value })}
                     className={inputClass}
+                    style={inputStyle}
                   >
                     <option value=""></option>
                     {serviceGroups.map((group) => (
@@ -202,7 +244,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm text-gray-700 mb-1.5">
+                  <label className="block mb-1.5" style={labelStyle}>
                     Message <span className="text-gray-400">*</span>
                   </label>
                   <textarea
@@ -210,6 +252,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className={`${inputClass} resize-none`}
+                    style={inputStyle}
                   />
                 </div>
 
@@ -217,11 +260,12 @@ export default function Contact() {
                   <p className="text-sm text-red-500 bg-red-50 border border-red-100 rounded px-4 py-3">{error}</p>
                 )}
 
-                <div className="flex justify-end">
+                <div className="flex justify-end pt-2">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#00D4EE] hover:bg-[#00BCDA] disabled:opacity-60 text-[#040d28] font-semibold rounded-md transition-all hover:shadow-lg hover:shadow-[#00D4EE]/30"
+                    className="inline-flex items-center gap-2 px-8 py-3.5 disabled:opacity-60 rounded-sm transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "0.875rem" }}
                   >
                     {loading ? "Sending…" : "Send Inquiry"}
                     <ArrowRight className="w-4 h-4" />

@@ -65,7 +65,7 @@ export default function KulanaAcademyPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="academy" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Kulana Academy</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Keep your workforce aligned with the latest advancements in technology.
@@ -74,7 +74,7 @@ export default function KulanaAcademyPage() {
         </section>
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">

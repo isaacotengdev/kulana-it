@@ -95,7 +95,7 @@ export default function DigitalIntegrationsPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="digital-integrations" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
               <Plug className="w-4 h-4" /> Integration and Digital Connectivity
             </span>
@@ -125,7 +125,7 @@ export default function DigitalIntegrationsPage() {
 
         {/* ── Capability strip ─────────────────────────────────────────── */}
         <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {capabilities.map(({ Icon, label, color, bg, border }) => (
                 <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
@@ -140,7 +140,7 @@ export default function DigitalIntegrationsPage() {
         </section>
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
@@ -200,7 +200,7 @@ export default function DigitalIntegrationsPage() {
 
         {/* ── WSO2 Platform spotlight ──────────────────────────────────── */}
         <section className="bg-gray-950 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Powered By</p>
@@ -250,7 +250,7 @@ export default function DigitalIntegrationsPage() {
 
         {/* ── Integration patterns ──────────────────────────────────────── */}
         <section className="bg-white py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Architecture</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
@@ -282,7 +282,7 @@ export default function DigitalIntegrationsPage() {
 
         {/* ── Benefits ─────────────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why It Matters</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>

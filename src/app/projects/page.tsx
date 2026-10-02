@@ -62,7 +62,7 @@ export default function ProjectsPage() {
         <section className="gradient-hero relative overflow-hidden py-24 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
               <Hammer className="w-4 h-4" /> Client Engagements
             </span>
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Project cards */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid md:grid-cols-2 gap-7">
             {projects.map(({ name, href, Icon, color, iconBg, tag, tagColor, client }) => (
               <Link

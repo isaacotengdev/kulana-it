@@ -52,7 +52,7 @@ export default function ContactUsPage() {
         {/* Hero */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="contact" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Contact Us</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               We are here to make your business grow. Let us show you how the right technology
@@ -63,7 +63,7 @@ export default function ContactUsPage() {
 
         {/* Contact section */}
         <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-5 gap-12">
 
               {/* Left — offices */}

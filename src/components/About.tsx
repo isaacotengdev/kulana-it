@@ -1,73 +1,45 @@
 "use client";
 
-import { ArrowRight, Handshake } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const pillars = [
   {
     label: "African Expertise",
     sub: "Ghana & Mauritius",
-    icon: (
-      <Image
-        src="/images/africa-map.svg"
-        alt="Africa map"
-        width={56}
-        height={56}
-        className="w-14 h-14"
-        unoptimized
-      />
-    ),
+    icon: "/images/Links_homepage/Map_icon_64x64px.svg",
   },
   {
     label: "End-to-End Solutions",
     sub: "Strategy to Implementation",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#00D4EE" strokeWidth="3.5" strokeLinecap="round" className="w-14 h-14">
-        {/* Center hub */}
-        <circle cx="32" cy="32" r="6" fill="#00D4EE" stroke="none"/>
-        {/* Satellite nodes */}
-        <circle cx="13" cy="18" r="4"/>
-        <circle cx="50" cy="14" r="4"/>
-        <circle cx="54" cy="38" r="4"/>
-        <circle cx="18" cy="52" r="4"/>
-        {/* Connecting lines */}
-        <line x1="27" y1="28" x2="17" y2="22"/>
-        <line x1="37" y1="27" x2="46" y2="18"/>
-        <line x1="38" y1="34" x2="50" y2="37"/>
-        <line x1="28" y1="37" x2="22" y2="48"/>
-      </svg>
-    ),
+    icon: "/images/Links_homepage/End-to-end_icon_64x64px.svg",
   },
   {
     label: "Global Standards",
     sub: "Certified Processes & Partnerships",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="#00D4EE" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-14 h-14">
-        {/* Rounded shield */}
-        <path d="M32 8 L51 17 L51 34 C51 46 32 56 32 56 C32 56 13 46 13 34 L13 17 Z"/>
-        {/* Checkmark */}
-        <polyline points="22,33 29,40 43,25"/>
-      </svg>
-    ),
+    icon: "/images/Links_homepage/Standards_icon_64x64px.svg",
   },
   {
     label: "Long-Term Support",
     sub: "Support & Knowledge Transfer",
-    icon: <Handshake className="w-14 h-14" stroke="#00D4EE" strokeWidth={2} />,
+    icon: "/images/Links_homepage/Handshake_icon_64x64px.svg",
   },
 ];
 
 export default function About() {
   return (
     <section id="about" className="py-20" style={{ background: "#f9fffe" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label with line */}
-        <div className="flex items-center gap-4 mb-10">
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500">
+        <div className="mb-10">
+          <span
+            className="text-xs tracking-[0.2em] uppercase"
+            style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, color: "#000000" }}
+          >
             About Kulana IT
           </span>
-          <div className="flex-1 h-px bg-gray-300" />
+          <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
 
         {/* Heading + description row */}
@@ -85,7 +57,9 @@ export default function About() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
           {pillars.map((p) => (
             <div key={p.label} className="flex flex-col items-center text-center">
-              <div className="mb-5">{p.icon}</div>
+              <div className="mb-5">
+                <Image src={p.icon} alt={p.label} width={64} height={64} className="w-14 h-14" unoptimized />
+              </div>
               <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#1a0060] mb-2">
                 {p.label}
               </p>

@@ -36,7 +36,7 @@ export default function LearnMoreFormPage() {
         {/* Hero */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="learn-more" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Learn More</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Getting started is easy. Fill out the form below and a Kulana adviser will

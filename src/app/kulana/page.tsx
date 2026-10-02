@@ -76,7 +76,7 @@ export default function KulanaPage() {
               priority
             />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Kulana</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               We have a passion: delivering innovative solutions for our clients with a unique value
@@ -86,7 +86,7 @@ export default function KulanaPage() {
         </section>
 
         {/* ── Who We Are ───────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
@@ -123,7 +123,7 @@ export default function KulanaPage() {
 
         {/* ── Mission & Vision ─────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-10">
               {/* Mission */}
               <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm">
@@ -159,7 +159,7 @@ export default function KulanaPage() {
 
         {/* ── Core Values ──────────────────────────────────────────────── */}
         <section className="py-24 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-sm font-semibold text-blue-600 mb-4">
                 What we stand for
@@ -209,7 +209,7 @@ export default function KulanaPage() {
 
         {/* ── We Offer ─────────────────────────────────────────────────── */}
         <section className="bg-gray-50 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-sm font-semibold text-blue-600 mb-4">
                 Our Capabilities

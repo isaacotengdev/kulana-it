@@ -104,7 +104,7 @@ export default function OurServicesPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="gradient-hero relative overflow-hidden py-28 text-white">
           <HeroCanvas variant="our-services" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
               <Zap className="w-4 h-4" /> Enterprise IT Solutions
             </span>
@@ -117,7 +117,7 @@ export default function OurServicesPage() {
         </section>
 
         {/* ── Services grid ─────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center mb-14">
             <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Do</p>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
@@ -203,7 +203,7 @@ export default function OurServicesPage() {
 
         {/* ── Why Kulana ───────────────────────────────────────────────── */}
         <section className="bg-gray-50 border-y border-gray-100 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Kulana</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
@@ -231,7 +231,7 @@ export default function OurServicesPage() {
 
         {/* ── Partners + Certifications ─────────────────────────────────── */}
         <section className="bg-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
 
               {/* Partner logos */}

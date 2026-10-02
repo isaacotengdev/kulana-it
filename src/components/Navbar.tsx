@@ -90,7 +90,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={scrolled ? { background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)", backdropFilter: "blur(12px)" } : {}}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
@@ -117,11 +117,17 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-colors ${
                     pathname === link.href
-                      ? "border border-[#03B2EE] text-[#03B2EE]"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                      ? "font-semibold"
+                      : "font-normal hover:font-semibold"
                   }`}
+                  style={{
+                    fontFamily: "var(--font-manrope), sans-serif",
+                    color: pathname === link.href ? "#57D9D4" : undefined,
+                  }}
+                  onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
+                  onMouseLeave={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = ""; }}
                 >
                   {link.name}
                   {hasFlyout(link) && (
@@ -221,7 +227,8 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <a
               href={contactHref}
-              className="px-5 py-2.5 bg-[#00D4EE] hover:bg-[#00BCDA] text-[#040d28] text-sm font-semibold rounded-md transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40 inline-flex items-center gap-1.5"
+              className="px-5 py-2.5 text-sm rounded-md transition-all hover:shadow-lg inline-flex items-center gap-1.5"
+              style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, background: "#57D9D4", color: "#040d28" }}
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />
@@ -241,7 +248,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden border-t border-white/10" style={{ background: "linear-gradient(to right, #2d0070 0%, #080d28 42%, #073b54 78%, #085d72 100%)" }}>
-          <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+          <div className="max-w-8xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
                 {hasFlyout(link) ? (
@@ -349,7 +356,8 @@ export default function Navbar() {
               <a
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-5 py-3 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md hover:bg-[#00BCDA] transition-colors"
+                className="block w-full text-center px-5 py-3 rounded-md transition-colors"
+                style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, background: "#57D9D4", color: "#040d28" }}
               >
                 Request a Consultation
               </a>
