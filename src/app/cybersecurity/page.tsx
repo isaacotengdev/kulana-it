@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import HeroCanvas from "@/components/HeroCanvas";
+import Image from "next/image";
 import {
   ShieldCheck, Eye, Bug, AlertTriangle, FileCheck, Lock,
   ArrowRight, CheckCircle2, Search, Zap, TrendingUp, RefreshCw,
@@ -74,6 +74,8 @@ const faqs = [
   },
 ];
 
+const MF = "var(--font-manrope), sans-serif";
+
 export default function CybersecurityPage() {
   return (
     <>
@@ -81,25 +83,37 @@ export default function CybersecurityPage() {
       <main>
 
         {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
-          <HeroCanvas variant="cybersecurity" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <ShieldCheck className="w-4 h-4" /> Core and Enterprise Systems
-            </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Cybersecurity</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Protect your organisation with a comprehensive security posture — from 24/7 SOC
-              monitoring and threat intelligence to vulnerability management and incident response.
+        <section className="relative overflow-hidden flex flex-col justify-end" style={{ height: "100vh" }}>
+          <Image
+            src="/images/Service_Core & Enterprise Systems/Cybersecurity_image.webp"
+            alt="Cybersecurity"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.85) 0%, rgba(8,0,32,0.68) 45%, rgba(8,0,32,0.28) 75%, rgba(8,0,32,0.10) 100%)" }}
+          />
+          <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
+            <p
+              className="text-xs tracking-[0.22em] uppercase mb-4"
+              style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
+            >
+              Core &amp; Enterprise Systems
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["ISO 27001 Certified", "24/7 SOC", "Threat Intelligence", "Compliance-Ready"].map((tag) => (
-                <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
-                </span>
-              ))}
-            </div>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
+            <h1
+              className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white mb-10 leading-[1.0]"
+              style={{ fontFamily: MF }}
+            >
+              Cybersecurity
+            </h1>
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+              style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+            >
               Request a Consultation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
