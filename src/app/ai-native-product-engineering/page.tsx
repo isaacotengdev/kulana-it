@@ -103,10 +103,10 @@ export default function AiNativeProductEngineeringPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main>
 
         {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
           <HeroCanvas variant="ai-native" />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">

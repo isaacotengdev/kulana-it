@@ -27,7 +27,7 @@ const pillars = [
       "Connect systems, platforms and people across your organisation. Our integration and architecture expertise helps you unlock new possibilities and accelerate your digital transformation.",
     services: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
     href: "/integration-digital-connectivity",
-    image: "/images/Links_homepage/2-image_1600x1000px.webp",
+    image: "/images/Links_homepage/2-image_1600x1000px.png",
     imageTagline: "Connected for\nWhat's Next.",
   },
   {

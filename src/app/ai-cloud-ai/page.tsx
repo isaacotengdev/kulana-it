@@ -65,10 +65,10 @@ export default function AiCloudAiPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
           <HeroCanvas variant="ai-cloud" />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-cyan-300 font-medium mb-4 uppercase tracking-widest text-sm">Kulana Academy</p>

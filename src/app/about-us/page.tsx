@@ -85,10 +85,10 @@ export default function AboutUsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
           <HeroCanvas variant="about" />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">About Us</h1>

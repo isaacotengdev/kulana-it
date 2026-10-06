@@ -61,10 +61,10 @@ export default function KulanaPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
           <HeroCanvas variant="kulana" />
           <div className="absolute inset-0">
             <Image

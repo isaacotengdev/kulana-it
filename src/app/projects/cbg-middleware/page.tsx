@@ -13,8 +13,8 @@ export default function CbgMiddlewarePage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+      <main>
+        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

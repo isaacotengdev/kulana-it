@@ -8,8 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [
     // ── Core pages ────────────────────────────────────────────
     { url: `${BASE}/`,           lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
-    { url: `${BASE}/our-services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/about-us`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+{ url: `${BASE}/about-us`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact-us`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/kulana`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 

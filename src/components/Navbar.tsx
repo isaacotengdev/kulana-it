@@ -52,7 +52,7 @@ type NavLink =
 
 const navLinks: NavLink[] = [
   { name: "Home",        href: "/" },
-  { name: "Our Services",href: "/our-services", isMega: true },
+  { name: "Our Services", href: "/our-services", isMega: true },
   { name: "About us",    href: "/about-us",    dropdown: about },
   { name: "Contact us",  href: "/contact-us" },
 ];
@@ -115,29 +115,35 @@ export default function Navbar() {
                 onMouseEnter={() => hasFlyout(link) && openDropdown(link.name)}
                 onMouseLeave={() => hasFlyout(link) && closeDropdown()}
               >
-                <Link
-                  href={link.href}
-                  className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-colors ${
-                    pathname === link.href
-                      ? "font-semibold"
-                      : "font-normal hover:font-semibold"
-                  }`}
-                  style={{
-                    fontFamily: "var(--font-manrope), sans-serif",
-                    color: pathname === link.href ? "#57D9D4" : undefined,
-                  }}
-                  onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
-                  onMouseLeave={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = ""; }}
-                >
-                  {link.name}
-                  {hasFlyout(link) && (
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        activeDropdown === link.name ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </Link>
+                {link.isMega ? (
+                  <button
+                    className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-normal hover:font-semibold transition-colors"
+                    style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = ""; }}
+                  >
+                    {link.name}
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180" : ""}`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-colors ${
+                      pathname === link.href ? "font-semibold" : "font-normal hover:font-semibold"
+                    }`}
+                    style={{
+                      fontFamily: "var(--font-manrope), sans-serif",
+                      color: pathname === link.href ? "#57D9D4" : undefined,
+                    }}
+                    onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
+                    onMouseLeave={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = ""; }}
+                  >
+                    {link.name}
+                    {link.dropdown && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180" : ""}`} />
+                    )}
+                  </Link>
+                )}
 
                 {/* ── Mega-dropdown: Our Services ── */}
                 {"isMega" in link && link.isMega && activeDropdown === link.name && (
@@ -186,14 +192,8 @@ export default function Navbar() {
                       ))}
                     </div>
                     {/* Footer strip */}
-                    <div className="px-5 py-2.5 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                    <div className="px-5 py-2.5 bg-gray-50 border-t border-gray-100">
                       <span className="text-xs text-gray-400">All services and solutions</span>
-                      <Link
-                        href="/our-services"
-                        className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
-                      >
-                        Browse all <ArrowRight className="w-3 h-3" />
-                      </Link>
                     </div>
                   </div>
                 )}
@@ -317,13 +317,6 @@ export default function Navbar() {
                         </div>
                       </div>
                     ))}
-                    <Link
-                      href="/our-services"
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-[#03B2EE] hover:bg-white/10 rounded-lg transition-colors"
-                    >
-                      View all services <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
                   </div>
                 )}
 

@@ -7,8 +7,7 @@ import Link from "next/link";
 const MF = "var(--font-manrope), sans-serif";
 
 const quickLinks = [
-  { name: "Our Services",           href: "/our-services" },
-  { name: "Kulana Academy",         href: "https://www.kulana.academy/", external: true },
+{ name: "Kulana Academy",         href: "https://www.kulana.academy/", external: true },
   { name: "About us",               href: "/about-us" },
   { name: "Contact us",             href: "/contact-us" },
   { name: "Request a Consultation", href: "/contact-us" },

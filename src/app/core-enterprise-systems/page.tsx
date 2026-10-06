@@ -1,12 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import HeroCanvas from "@/components/HeroCanvas";
-import {
-  Server, Landmark, LayoutGrid, ShieldCheck, Building2,
-  ArrowRight, CheckCircle2,
-} from "lucide-react";
+import Image from "next/image";
+import { Building2, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+
+const MF = "var(--font-manrope), sans-serif";
 
 export const metadata: Metadata = {
   title: "Core & Enterprise Systems | Kulana IT Solutions",
@@ -16,46 +15,38 @@ export const metadata: Metadata = {
 
 const subServices = [
   {
-    Icon: Landmark,
+    number: "01",
     title: "Core Banking",
     href: "/core-banking",
-    tag: "Financial Services",
-    gradient: "from-blue-500 to-blue-700",
-    iconBg: "bg-blue-600",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
+    tagline: "Modernise Your Financial Core",
+    image: "/images/Service_Core & Enterprise Systems/Core banking_image.webp",
     desc: "End-to-end implementation and support for modern core banking platforms. We help financial institutions modernise their systems with Temenos and other industry-leading platforms.",
     highlights: ["Account Management", "Loan Origination", "Digital Channels", "Regulatory Reporting"],
   },
   {
-    Icon: LayoutGrid,
-    title: "ERP and CRM",
+    number: "02",
+    title: "ERP & CRM",
     href: "/erp-and-crm",
-    tag: "Business Operations",
-    gradient: "from-blue-500 to-blue-700",
-    iconBg: "bg-blue-600",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
+    tagline: "Streamline Your Business Operations",
+    image: "/images/Service_Core & Enterprise Systems/ERP & CRM_image.webp",
     desc: "Streamline operations with Microsoft Dynamics 365 and HubSpot CRM — tailored to your workflows, integrated with your existing systems, and designed for long-term growth.",
     highlights: ["Microsoft Dynamics 365", "HubSpot CRM", "Process Automation", "Reporting & BI"],
   },
   {
-    Icon: Server,
+    number: "03",
     title: "Infrastructure",
     href: "/infrastructure",
-    tag: "Infrastructure",
-    gradient: "from-blue-500 to-cyan-600",
-    iconBg: "bg-blue-600",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
+    tagline: "Build Resilient IT Foundations",
+    image: "/images/Service_Core & Enterprise Systems/Infrastructure_image.webp",
     desc: "Design, build, and manage resilient data centers and IT infrastructure. We deliver scalable, high-availability environments that underpin your critical business operations.",
     highlights: ["Data Center Design", "Cloud Infrastructure", "Network Architecture", "24/7 Operations"],
   },
   {
-    Icon: ShieldCheck,
+    number: "04",
     title: "Cybersecurity",
     href: "/cybersecurity",
-    tag: "Security",
-    gradient: "from-blue-500 to-cyan-600",
-    iconBg: "bg-blue-600",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
+    tagline: "Protect Your Business",
+    image: "/images/Service_Core & Enterprise Systems/Cybersecurity_image.webp",
     desc: "Protect your organisation with a comprehensive security posture — from SOC monitoring and threat intelligence to vulnerability assessments and incident response.",
     highlights: ["Security Operations Centre", "Threat Detection", "Vulnerability Management", "Compliance"],
   },
@@ -65,72 +56,140 @@ export default function CoreEnterpriseSystemsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main>
 
         {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
-          <HeroCanvas variant="core-enterprise" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <Building2 className="w-4 h-4" /> Our Services
-            </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Core and Enterprise Systems
-            </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              The mission-critical backbone of modern enterprises — from core banking and ERP
-              to resilient infrastructure and cybersecurity.
-            </p>
+        <section
+          className="relative overflow-hidden flex items-center"
+          style={{ height: "100vh", paddingTop: "5rem" }}
+        >
+          {/* Background image — boosted brightness */}
+          <Image
+            src="/images/Links_homepage/1-image_1600x1000px.webp"
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+            style={{ filter: "brightness(1.4)" }}
+          />
+          {/* Gradient overlay — darker left for text legibility, opens up on the right */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.72) 0%, rgba(8,0,32,0.55) 45%, rgba(8,0,32,0.20) 75%, rgba(8,0,32,0.08) 100%)" }}
+          />
+
+          {/* Content */}
+          <div className="relative w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between">
+
+              {/* Left: tagline + heading + button */}
+              <div className="lg:w-[62%]">
+                <p
+                  className="text-xs tracking-[0.22em] uppercase mb-6"
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
+                >
+                  Keep Your Critical Systems Running
+                </p>
+                <h1
+                  className="text-5xl sm:text-6xl lg:text-7xl leading-[1.0] uppercase text-white mb-12"
+                  style={{ fontFamily: MF, fontWeight: 700 }}
+                >
+                  Core &amp; Enterprise<br />Systems
+                </h1>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+                >
+                  Request a Consultation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Right: caption — bottom-aligned with button */}
+              <div className="hidden lg:block text-right pb-1">
+                <p
+                  className="text-base lg:text-lg uppercase leading-snug"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}
+                >
+                  Stable Systems.<br />Stronger Business.
+                </p>
+              </div>
+
+            </div>
           </div>
         </section>
 
         {/* Sub-services */}
         <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
+          <div className="mb-14">
+            <span className="text-xs tracking-[0.2em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}>
+              What We Deliver
+            </span>
+            <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+          </div>
+          <div className="mb-12">
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
               Four Disciplines. One Integrated Practice.
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-2xl">
               Our Core and Enterprise Systems practice spans the full spectrum of critical business
               technology — delivered by specialists with deep domain knowledge.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {subServices.map(({ Icon, title, href, tag, gradient, iconBg, tagColor, desc, highlights }) => (
+          <div className="space-y-px">
+            {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
               <div
                 key={title}
-                className="group bg-white rounded-3xl border border-gray-100 hover:border-blue-100 hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+                className="group flex flex-col lg:flex-row items-stretch border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden"
               >
-                <div className={`h-1.5 bg-gradient-to-r ${gradient}`} />
-                <div className="p-8 flex flex-col flex-1">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-2xl ${iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-7 h-7 text-white" strokeWidth={1.75} />
-                    </div>
-                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${tagColor}`}>
-                      {tag}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                {/* Left — content */}
+                <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center">
+                  <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
+                    {number} — {tagline}
+                  </p>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ fontFamily: MF, color: "#200044" }}>
                     {title}
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed mb-6 flex-1">{desc}</p>
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {highlights.map((h) => (
-                      <div key={h} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#03B2EE] flex-shrink-0" />
-                        <span className="text-xs font-medium text-gray-600">{h}</span>
-                      </div>
-                    ))}
+                  </h3>
+                  {/* Description + bullets side by side */}
+                  <div className="grid lg:grid-cols-2 gap-6 mb-8">
+                    <p className="text-gray-500 leading-relaxed text-sm lg:text-base">{desc}</p>
+                    <ul className="space-y-2.5">
+                      {highlights.map((h) => (
+                        <li key={h} className="flex items-center gap-2 text-sm font-semibold text-gray-800">
+                          <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <Link
                     href={href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors group/link"
+                    className="self-start inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#57D9D4", color: "#040d28" }}
                   >
-                    Learn more <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    Learn more <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
+                </div>
+
+                {/* Right — image with title overlay */}
+                <div className="relative w-full lg:w-80 xl:w-[22rem] h-56 lg:h-auto flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 352px"
+                  />
+                  {/* Strong bottom gradient for text legibility */}
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,0,32,0.88) 0%, rgba(8,0,32,0.45) 40%, rgba(8,0,32,0.0) 70%)" }} />
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <p className="text-lg lg:text-xl font-bold uppercase leading-snug text-white" style={{ fontFamily: MF, letterSpacing: "0.04em" }}>
+                      {title}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
