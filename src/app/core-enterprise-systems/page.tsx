@@ -128,13 +128,12 @@ export default function CoreEnterpriseSystemsPage() {
             <span className="text-xs tracking-[0.2em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}>
               What We Deliver
             </span>
-            <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
           </div>
-          <div className="mb-12">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">
               Four Disciplines. One Integrated Practice.
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl">
+            <p className="text-gray-500 text-lg leading-relaxed lg:pt-2">
               Our Core and Enterprise Systems practice spans the full spectrum of critical business
               technology — delivered by specialists with deep domain knowledge.
             </p>
