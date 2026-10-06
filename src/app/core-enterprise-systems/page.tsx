@@ -143,10 +143,10 @@ export default function CoreEnterpriseSystemsPage() {
             {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
               <div
                 key={title}
-                className="group grid grid-cols-1 lg:grid-cols-[60%_40%] bg-white overflow-hidden"
+                className="group grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch bg-white overflow-hidden"
               >
                 {/* Left — content */}
-                <div className="pt-8 pb-8 pr-8 lg:pt-10 lg:pb-10 lg:pr-16 pl-0 flex flex-col justify-center">
+                <div className="pt-10 pb-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center">
                   <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
                     {number} — {tagline}
                   </p>
@@ -174,14 +174,24 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — square image */}
-                <div className="relative aspect-square overflow-hidden">
+                {/* Right — square image sized to card height */}
+                <div className="relative hidden lg:block aspect-square h-full overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="40vw"
+                  />
+                </div>
+                {/* Mobile fallback — fixed height landscape */}
+                <div className="relative lg:hidden h-56 overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="100vw"
                   />
                 </div>
               </div>
