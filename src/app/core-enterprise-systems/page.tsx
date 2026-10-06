@@ -174,8 +174,8 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — image fills full grid cell */}
-                <div className="relative min-h-[14rem] overflow-hidden">
+                {/* Right — square image */}
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
