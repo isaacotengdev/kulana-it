@@ -143,10 +143,10 @@ export default function CoreEnterpriseSystemsPage() {
             {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
               <div
                 key={title}
-                className="group flex flex-col lg:flex-row items-stretch bg-white overflow-hidden"
+                className="group grid grid-cols-1 lg:grid-cols-[60%_40%] bg-white overflow-hidden"
               >
                 {/* Left — content */}
-                <div className="flex-1 pt-8 pb-8 pr-8 lg:pt-10 lg:pb-10 lg:pr-10 pl-0 flex flex-col justify-center">
+                <div className="pt-8 pb-8 pr-8 lg:pt-10 lg:pb-10 lg:pr-16 pl-0 flex flex-col justify-center">
                   <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
                     {number} — {tagline}
                   </p>
@@ -174,14 +174,14 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — image */}
-                <div className="relative w-full lg:w-[32rem] h-56 self-stretch flex-shrink-0 overflow-hidden">
+                {/* Right — image fills full grid cell */}
+                <div className="relative min-h-[14rem] overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 512px"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                 </div>
               </div>
