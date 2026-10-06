@@ -45,7 +45,7 @@ const subServices = [
     number: "04",
     title: "Cybersecurity",
     href: "/cybersecurity",
-    tagline: "Security & Compliance",
+    tagline: "Protect Your Business",
     image: "/images/Service_Core & Enterprise Systems/Cybersecurity_image.webp",
     desc: "Protect your organisation with a comprehensive security posture — from SOC monitoring and threat intelligence to vulnerability assessments and incident response.",
     highlights: ["Security Operations Centre", "Threat Detection", "Vulnerability Management", "Compliance"],
