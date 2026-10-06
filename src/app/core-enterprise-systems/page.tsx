@@ -193,7 +193,7 @@ export default function CoreEnterpriseSystemsPage() {
         {/* CTA */}
         <section style={{ background: "#57D9D4" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-20">
               {/* Left — heading (fixed width ~40%) */}
               <h2
                 className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
