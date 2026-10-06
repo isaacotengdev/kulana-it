@@ -124,8 +124,8 @@ export default function CoreEnterpriseSystemsPage() {
         {/* Sub-services */}
         <section className="bg-white py-24">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
-            <span className="text-xs tracking-[0.2em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}>
+          <div className="mb-10">
+            <span className="text-sm tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>
               What We Deliver
             </span>
           </div>
