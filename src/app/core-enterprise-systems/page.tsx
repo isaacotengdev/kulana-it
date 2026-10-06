@@ -139,11 +139,11 @@ export default function CoreEnterpriseSystemsPage() {
             </p>
           </div>
 
-          <div className="space-y-px">
+          <div className="space-y-10">
             {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
               <div
                 key={title}
-                className="group flex flex-col lg:flex-row items-stretch border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden"
+                className="group flex flex-col lg:flex-row items-stretch bg-white overflow-hidden"
               >
                 {/* Left — content */}
                 <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center">
