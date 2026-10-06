@@ -143,10 +143,10 @@ export default function CoreEnterpriseSystemsPage() {
             {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
               <div
                 key={title}
-                className="group grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch bg-white overflow-hidden"
+                className="group flex flex-col lg:flex-row bg-white overflow-hidden"
               >
                 {/* Left — content */}
-                <div className="pt-10 pb-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center">
+                <div className="flex-1 py-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center">
                   <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
                     {number} — {tagline}
                   </p>
@@ -174,8 +174,8 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — square image sized to card height */}
-                <div className="relative hidden lg:block aspect-square h-full overflow-hidden">
+                {/* Right — square: height = card height, width = height */}
+                <div className="relative hidden lg:block aspect-square self-stretch flex-shrink-0 overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
@@ -184,7 +184,7 @@ export default function CoreEnterpriseSystemsPage() {
                     sizes="40vw"
                   />
                 </div>
-                {/* Mobile fallback — fixed height landscape */}
+                {/* Mobile — landscape */}
                 <div className="relative lg:hidden h-56 overflow-hidden">
                   <Image
                     src={image}
