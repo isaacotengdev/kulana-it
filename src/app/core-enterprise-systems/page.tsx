@@ -18,7 +18,7 @@ const subServices = [
     number: "01",
     title: "Core Banking",
     href: "/core-banking",
-    tagline: "Modernise Your Financial Core",
+    tagline: "Financial Services",
     image: "/images/Service_Core & Enterprise Systems/Core banking_image.webp",
     desc: "End-to-end implementation and support for modern core banking platforms. We help financial institutions modernise their systems with Temenos and other industry-leading platforms.",
     highlights: ["Account Management", "Loan Origination", "Digital Channels", "Regulatory Reporting"],
@@ -27,7 +27,7 @@ const subServices = [
     number: "02",
     title: "ERP & CRM",
     href: "/erp-and-crm",
-    tagline: "Streamline Your Business Operations",
+    tagline: "Business Operations",
     image: "/images/Service_Core & Enterprise Systems/ERP & CRM_image.webp",
     desc: "Streamline operations with Microsoft Dynamics 365 and HubSpot CRM — tailored to your workflows, integrated with your existing systems, and designed for long-term growth.",
     highlights: ["Microsoft Dynamics 365", "HubSpot CRM", "Process Automation", "Reporting & BI"],
@@ -36,7 +36,7 @@ const subServices = [
     number: "03",
     title: "Infrastructure",
     href: "/infrastructure",
-    tagline: "Build Resilient IT Foundations",
+    tagline: "Scalable & Secure",
     image: "/images/Service_Core & Enterprise Systems/Infrastructure_image.webp",
     desc: "Design, build, and manage resilient data centers and IT infrastructure. We deliver scalable, high-availability environments that underpin your critical business operations.",
     highlights: ["Data Center Design", "Cloud Infrastructure", "Network Architecture", "24/7 Operations"],
@@ -45,7 +45,7 @@ const subServices = [
     number: "04",
     title: "Cybersecurity",
     href: "/cybersecurity",
-    tagline: "Protect Your Business",
+    tagline: "Security & Compliance",
     image: "/images/Service_Core & Enterprise Systems/Cybersecurity_image.webp",
     desc: "Protect your organisation with a comprehensive security posture — from SOC monitoring and threat intelligence to vulnerability assessments and incident response.",
     highlights: ["Security Operations Centre", "Threat Detection", "Vulnerability Management", "Compliance"],
@@ -122,7 +122,8 @@ export default function CoreEnterpriseSystemsPage() {
         </section>
 
         {/* Sub-services */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="bg-white py-24">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
             <span className="text-xs tracking-[0.2em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}>
               What We Deliver
@@ -174,7 +175,7 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — image with title overlay */}
+                {/* Right — image */}
                 <div className="relative w-full lg:w-80 xl:w-[22rem] h-56 lg:h-auto flex-shrink-0 overflow-hidden">
                   <Image
                     src={image}
@@ -183,17 +184,11 @@ export default function CoreEnterpriseSystemsPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 352px"
                   />
-                  {/* Strong bottom gradient for text legibility */}
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,0,32,0.88) 0%, rgba(8,0,32,0.45) 40%, rgba(8,0,32,0.0) 70%)" }} />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <p className="text-lg lg:text-xl font-bold uppercase leading-snug text-white" style={{ fontFamily: MF, letterSpacing: "0.04em" }}>
-                      {title}
-                    </p>
-                  </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
         </section>
 
         {/* CTA */}
