@@ -174,18 +174,18 @@ export default function CoreEnterpriseSystemsPage() {
                   </Link>
                 </div>
 
-                {/* Right — square: height = card height, width = height */}
-                <div className="relative hidden lg:block aspect-square self-stretch flex-shrink-0 overflow-hidden">
+                {/* Right — fixed square image */}
+                <div className="relative hidden lg:flex w-72 h-72 flex-shrink-0 overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="40vw"
+                    sizes="288px"
                   />
                 </div>
                 {/* Mobile — landscape */}
-                <div className="relative lg:hidden h-56 overflow-hidden">
+                <div className="relative lg:hidden w-full h-56 overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
