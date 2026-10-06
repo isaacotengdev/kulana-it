@@ -146,7 +146,7 @@ export default function CoreEnterpriseSystemsPage() {
                 className="group flex flex-col lg:flex-row items-stretch bg-white overflow-hidden"
               >
                 {/* Left — content */}
-                <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center">
+                <div className="flex-1 pt-8 pb-8 pr-8 lg:pt-10 lg:pb-10 lg:pr-10 pl-0 flex flex-col justify-center">
                   <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
                     {number} — {tagline}
                   </p>
