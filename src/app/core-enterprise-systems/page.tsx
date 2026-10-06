@@ -192,31 +192,31 @@ export default function CoreEnterpriseSystemsPage() {
 
         {/* CTA */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              {/* Left — heading */}
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              {/* Left — heading (fixed width ~40%) */}
               <h2
-                className="text-3xl lg:text-4xl font-extrabold leading-tight"
+                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
                 style={{ fontFamily: MF, color: "#200044" }}
               >
                 Ready to strengthen your enterprise systems?
               </h2>
               {/* Right — description + buttons */}
-              <div>
-                <p className="text-base lg:text-lg mb-8 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+              <div className="flex-1">
+                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
                   Speak to our specialists and discover the right technology foundation for your organisation.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-md transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
                     style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-md border transition-all hover:bg-white/20"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
                     style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
