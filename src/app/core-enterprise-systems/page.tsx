@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Building2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 const MF = "var(--font-manrope), sans-serif";
@@ -191,31 +191,37 @@ export default function CoreEnterpriseSystemsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Building2 className="w-8 h-8 text-white" strokeWidth={1.75} />
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              {/* Left — heading */}
+              <h2
+                className="text-3xl lg:text-4xl font-extrabold leading-tight"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
                 Ready to strengthen your enterprise systems?
               </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Speak to our specialists and discover the right technology foundation for your organisation.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-                >
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
-                >
-                  Contact Us
-                </Link>
+              {/* Right — description + buttons */}
+              <div>
+                <p className="text-base lg:text-lg mb-8 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                  Speak to our specialists and discover the right technology foundation for your organisation.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
