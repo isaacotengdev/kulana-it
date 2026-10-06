@@ -175,13 +175,13 @@ export default function CoreEnterpriseSystemsPage() {
                 </div>
 
                 {/* Right — image */}
-                <div className="relative w-full lg:w-80 xl:w-[22rem] h-56 lg:h-auto flex-shrink-0 overflow-hidden">
+                <div className="relative w-full lg:w-[32rem] h-56 self-stretch flex-shrink-0 overflow-hidden">
                   <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 352px"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 512px"
                   />
                 </div>
               </div>
