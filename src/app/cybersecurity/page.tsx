@@ -14,14 +14,6 @@ export const metadata: Metadata = {
     "Protect your organisation with a comprehensive security posture — SOC monitoring, threat detection, vulnerability management, and compliance.",
 };
 
-const capabilities = [
-  { Icon: Eye,          label: "SOC Monitoring",          color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Bug,          label: "Threat Detection",         color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: AlertTriangle,label: "Vulnerability Management", color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: Lock,         label: "Incident Response",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
-  { Icon: FileCheck,    label: "Compliance Management",    color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: ShieldCheck,  label: "Penetration Testing",      color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-];
 
 const features = [
   { Icon: Eye,          label: "Security Operations Centre (SOC)", desc: "24/7 monitoring, detection, and response across your entire digital environment." },
@@ -123,22 +115,6 @@ export default function CybersecurityPage() {
               >
                 Request a Consultation <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Capability strip */}
-        <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {capabilities.map(({ Icon, label, color, bg, border }) => (
-                <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-white border ${border} flex items-center justify-center shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
-                </div>
-              ))}
             </div>
           </div>
         </section>
