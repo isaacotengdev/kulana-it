@@ -179,16 +179,18 @@ export default function IntegrationDigitalConnectivityPage() {
         {/* What We Deliver */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+            <div className="mb-10">
+              <span className="text-sm tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</span>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight" style={{ fontFamily: MF }}>
                 Three Disciplines. One Connected Enterprise.
               </h2>
-              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+              <p className="text-gray-500 text-lg leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
                 Integration, architecture, and AI engineering work together — each layer enabling the next, from connectivity foundation through to intelligent product capabilities.
               </p>
             </div>
-            <div className="space-y-20">
+            <div className="space-y-10">
               {[
                 {
                   num: "01", tag: "API & MIDDLEWARE", title: "Integration",
@@ -212,29 +214,41 @@ export default function IntegrationDigitalConnectivityPage() {
                   img: "/images/integration_digital_connectivity/AI-Native Product Engineering.webp",
                 },
               ].map(({ num, tag, title, href, desc, highlights, img }) => (
-                <div key={title} className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <p className="text-xs tracking-[0.15em] uppercase font-bold mb-4" style={{ fontFamily: MF, color: "#57D9D4" }}>{num} — {tag}</p>
-                    <h3 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-6" style={{ fontFamily: MF }}>{desc}</p>
-                    <div className="space-y-2 mb-8">
-                      {highlights.map((h) => (
-                        <div key={h} className="flex items-center gap-2">
-                          <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
-                          <span className="text-sm text-gray-600" style={{ fontFamily: MF }}>{h}</span>
-                        </div>
-                      ))}
+                <div key={title} className="group flex flex-col lg:flex-row bg-white overflow-hidden">
+                  {/* Left — content */}
+                  <div className="flex-1 py-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center min-h-[288px]">
+                    <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
+                      {num} — {tag}
+                    </p>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ fontFamily: MF, color: "#200044" }}>
+                      {title}
+                    </h3>
+                    <div className="grid lg:grid-cols-2 gap-6 mb-8">
+                      <p className="text-gray-500 leading-relaxed text-sm lg:text-base" style={{ fontFamily: MF }}>{desc}</p>
+                      <ul className="space-y-2.5">
+                        {highlights.map((h) => (
+                          <li key={h} className="flex items-center gap-2 text-sm font-semibold text-gray-800" style={{ fontFamily: MF }}>
+                            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     <Link
                       href={href}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                      className="self-start inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold transition-all hover:opacity-90"
                       style={{ fontFamily: MF, background: "#57D9D4", color: "#040d28" }}
                     >
-                      Learn more <ArrowRight className="w-4 h-4" />
+                      Learn more <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
-                  <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden">
-                    <Image src={img} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  {/* Right — fixed square image (desktop) */}
+                  <div className="relative hidden lg:flex w-72 h-72 flex-shrink-0 overflow-hidden">
+                    <Image src={img} alt={title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" sizes="288px" />
+                  </div>
+                  {/* Mobile — landscape image */}
+                  <div className="relative lg:hidden w-full h-56 overflow-hidden">
+                    <Image src={img} alt={title} fill className="object-cover object-center" sizes="100vw" />
                   </div>
                 </div>
               ))}
