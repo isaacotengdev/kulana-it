@@ -62,7 +62,7 @@ export default function AiPage() {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.72) 0%, rgba(8,0,32,0.52) 45%, rgba(8,0,32,0.22) 75%, rgba(8,0,32,0.06) 100%)" }}
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.40) 0%, rgba(8,0,32,0.25) 45%, rgba(8,0,32,0.10) 75%, rgba(8,0,32,0.02) 100%)" }}
           />
           <div
             className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
