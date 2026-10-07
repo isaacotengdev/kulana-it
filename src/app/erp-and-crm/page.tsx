@@ -204,7 +204,7 @@ export default function ErpCrmPage() {
               <div className="border border-gray-200 rounded-2xl p-8 bg-white">
                 <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-[0.15em] uppercase font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>ERP Platform</p>
-                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>Microsoft Dynamics 365</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>Microsoft Dynamics 365</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6" style={{ fontFamily: MF }}>
                   A unified suite of intelligent business applications combining ERP and CRM capabilities
                   with built-in AI, analytics, and seamless Microsoft 365 integration.
@@ -223,7 +223,7 @@ export default function ErpCrmPage() {
               <div className="border border-gray-200 rounded-2xl p-8 bg-white">
                 <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-[0.15em] uppercase font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>CRM Platform</p>
-                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>HubSpot CRM</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>HubSpot CRM</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6" style={{ fontFamily: MF }}>
                   An all-in-one inbound marketing, sales, and service platform that helps teams
                   attract visitors, convert leads, and close deals at scale.
