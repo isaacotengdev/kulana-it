@@ -114,7 +114,7 @@ export default function CoreBankingPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative overflow-hidden flex flex-col justify-end" style={{ height: "100vh" }}>
           <Image
-            src="/images/Service_Core & Enterprise Systems/Core banking_image.webp"
+            src="/images/Service_Core & Enterprise Systems/core_banking/Hero image Core banking_2560×1440px.webp"
             alt="Core Banking"
             fill
             className="object-cover object-center"
