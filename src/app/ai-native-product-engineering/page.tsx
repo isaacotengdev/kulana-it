@@ -1,68 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import HeroCanvas from "@/components/HeroCanvas";
-import {
-  Cpu, Brain, Zap, MessageSquare, Eye, GitMerge,
-  ArrowRight, CheckCircle2, Search, Settings, TrendingUp, Shield,
-  FlaskConical, Layers, RefreshCw, FileText,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+
+const MF = "var(--font-manrope), sans-serif";
 
 export const metadata: Metadata = {
   title: "AI-Native Product Engineering | Kulana IT Solutions",
   description:
     "Build software where intelligence is the product, not a feature. LLM orchestration, agentic systems, MLOps, model evaluation, and responsible AI engineering for enterprise products.",
 };
-
-const capabilities = [
-  { Icon: Brain,        label: "LLM Orchestration",        color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: GitMerge,     label: "Agentic Systems",           color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: RefreshCw,    label: "MLOps & LLMOps",           color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"  },
-  { Icon: FlaskConical, label: "Model Evaluation",          color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"  },
-  { Icon: Layers,       label: "RAG & Knowledge Systems",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
-  { Icon: Shield,       label: "Responsible AI",            color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
-];
-
-const features = [
-  {
-    Icon: Brain,
-    label: "LLM Orchestration and Agentic Systems",
-    desc: "Design and build multi-step AI systems that use tools, retrieve context, plan across steps, and integrate with your business systems — from simple prompt chains to complex multi-agent workflows with state, memory, and escalation logic.",
-  },
-  {
-    Icon: Layers,
-    label: "RAG and Knowledge Systems",
-    desc: "Ground AI responses in your proprietary data — documents, databases, policies, and operational records — using vector search, reranking, and retrieval strategies tuned for accuracy and production latency.",
-  },
-  {
-    Icon: FlaskConical,
-    label: "Model Evaluation and Testing",
-    desc: "AI systems require evaluation frameworks, not just unit tests. We build eval suites that measure output quality, regression-test against prompt and model changes, and A/B test model versions in production before full rollout.",
-  },
-  {
-    Icon: RefreshCw,
-    label: "MLOps and LLMOps",
-    desc: "Automate the full model lifecycle — training pipelines, serving infrastructure, monitoring, drift detection, and retraining triggers — so your AI stays accurate as data and usage patterns change.",
-  },
-  {
-    Icon: GitMerge,
-    label: "Enterprise AI Integration",
-    desc: "Embed AI capabilities directly into your ERP, CRM, core banking, or operational platforms — connecting intelligence to the systems where decisions are made, with full audit trails and governance controls.",
-  },
-  {
-    Icon: Shield,
-    label: "Responsible AI and Guardrails",
-    desc: "Production AI requires more than a good model. We build input/output filtering, content moderation, confidence thresholds, human-in-the-loop escalation paths, and audit logging into every system from the start.",
-  },
-];
-
-const benefits = [
-  { Icon: TrendingUp, bg: "bg-blue-600",  title: "Compounding Competitive Advantage", desc: "AI systems improve with usage — more interactions generate better training signals. The earlier you build the feedback flywheel into your product, the wider the gap grows over time." },
-  { Icon: Zap,        bg: "bg-teal-600",  title: "Decisions at Inference Speed",      desc: "Intelligent systems surface recommendations, flag anomalies, and complete multi-step tasks in seconds — removing human bottlenecks from processes that previously took hours." },
-  { Icon: Cpu,        bg: "bg-cyan-600",  title: "Engineering-Grade Reliability",     desc: "AI-native does not mean experimental. We deliver with the same CI/CD, observability, and incident response discipline as any production software system." },
-  { Icon: Shield,     bg: "bg-cyan-500",  title: "Responsible AI by Design",          desc: "Explainability, bias auditing, confidence thresholds, and human override mechanisms are built into the architecture — not bolted on after deployment." },
-];
 
 const faqs = [
   {
@@ -99,227 +47,171 @@ const faqs = [
   },
 ];
 
-const MF = "var(--font-manrope), sans-serif";
-
 export default function AiNativeProductEngineeringPage() {
   return (
     <>
       <Navbar />
       <main>
 
-        {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
-          <HeroCanvas variant="ai-native" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <Cpu className="w-4 h-4" /> Integration and Digital Connectivity
-            </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              AI-Native Product Engineering
-            </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              A discipline where intelligence is the product, not a feature. We design, build,
-              and operate AI systems — agentic architectures, LLM orchestration, model evaluation,
-              and MLOps — with the engineering rigour that production environments demand.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["LLM Orchestration", "Agentic Systems", "MLOps & LLMOps", "Responsible AI"].map((tag) => (
-                <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
-                </span>
-              ))}
+        {/* Hero — image to be added */}
+        <section className="relative overflow-hidden flex flex-col" style={{ height: "100vh", background: "#040d28" }}>
+          <div
+            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+          >
+            <div>
+              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+                Integration &amp; Digital Connectivity
+              </p>
+              <h1
+                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+                style={{ fontFamily: MF }}
+              >
+                AI-Native<br />Product Engineering
+              </h1>
             </div>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
-              Request a Consultation <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Capability strip */}
-        <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {capabilities.map(({ Icon, label, color, bg, border }) => (
-                <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-white border ${border} flex items-center justify-center shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
-                </div>
-              ))}
+            <div className="mt-auto">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+              >
+                Request a Consultation <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
                 Intelligence as architecture, not a feature
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Most teams encounter AI as a feature request. AI-native engineering starts
-                from a different premise: the intelligent system is the product. That changes
-                how you design your data model, your APIs, your infrastructure, and your
-                feedback loops — because prompts are code, inference latency is a UX
-                constraint, and model quality needs its own test discipline.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Kulana&apos;s AI-native practice delivers the full engineering stack — LLM
-                orchestration and agentic system design, RAG architectures grounded in your
-                proprietary data, MLOps pipelines that keep models accurate over time, and
-                responsible AI governance. We integrate these directly into the enterprise
-                systems — ERP, CRM, core banking — our other practices implement, so AI
-                capabilities connect to the workflows where decisions are actually made.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["RAG", "Fine-tuning", "MLOps", "Responsible AI"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+                  Most teams encounter AI as a feature request. AI-native engineering starts from a different premise: the intelligent system is the product. That changes how you design your data model, your APIs, your infrastructure, and your feedback loops — because prompts are code, inference latency is a UX constraint, and model quality needs its own test discipline.
+                </p>
+                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                  Kulana&apos;s AI-native practice delivers the full engineering stack — LLM orchestration and agentic system design, RAG architectures grounded in your proprietary data, MLOps pipelines that keep models accurate over time, and responsible AI governance. We integrate these directly into the enterprise systems our other practices implement, so AI capabilities connect to the workflows where decisions are actually made.
+                </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,      step: "01", title: "Discover",  desc: "Identify where AI creates the most leverage in your product or process — and whether the data, latency, and accuracy requirements make a given use case viable." },
-                  { Icon: Settings,    step: "02", title: "Design",    desc: "Architect the system — model selection, orchestration layer, retrieval strategy, evaluation framework, guardrails, and integration points." },
-                  { Icon: Cpu,         step: "03", title: "Build",     desc: "Develop iteratively from proof-of-concept through to production, with evals running at every stage and MLOps infrastructure in place before go-live." },
-                  { Icon: TrendingUp,  step: "04", title: "Operate",   desc: "Monitor output quality, detect drift, capture feedback signals, and retrain — so the system improves with usage rather than degrading over time." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap lg:flex-nowrap gap-3">
+              {["LLM Orchestration", "Agentic Systems", "MLOps & LLMOps", "Responsible AI"].map((tag) => (
+                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Dark section — real-world use cases */}
-        <section className="bg-gray-950 py-20">
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
-              <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Discover",  desc: "Identify where AI creates the most leverage in your product or process — and whether the data, latency, and accuracy requirements make a given use case viable." },
+                { step: "02", title: "Design",    desc: "Architect the system — model selection, orchestration layer, retrieval strategy, evaluation framework, guardrails, and integration points." },
+                { step: "03", title: "Build",     desc: "Develop iteratively from proof-of-concept through to production, with evals running at every stage and MLOps infrastructure in place before go-live." },
+                { step: "04", title: "Operate",   desc: "Monitor output quality, detect drift, capture feedback signals, and retrain — so the system improves with usage rather than degrading over time." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
+                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Applications */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Applications</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Real-world use cases
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 What AI-native engineering looks like when applied to concrete enterprise problems.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  Icon: FileText,
-                  label: "Intelligent Document Processing",
-                  desc: "Multi-stage pipelines that classify documents, extract structured fields, score confidence, and route low-confidence outputs to a human review queue — not just OCR with a language model on top",
-                },
-                {
-                  Icon: MessageSquare,
-                  label: "Agentic Customer Support",
-                  desc: "Support agents with tool access, conversation memory, CRM integration, and escalation logic — resolving queries autonomously and handing off with full context when human judgement is needed",
-                },
-                {
-                  Icon: Brain,
-                  label: "AI-Augmented Underwriting",
-                  desc: "LLM-powered document analysis that extracts risk signals, applies policy rules, flags exceptions, and generates explainable outputs — connected directly to core banking or insurance systems",
-                },
-                {
-                  Icon: Eye,
-                  label: "AI-Powered Search and Discovery",
-                  desc: "Semantic and hybrid search that understands intent, applies business ranking rules, and returns contextually ordered results across structured and unstructured data at query latency",
-                },
-                {
-                  Icon: GitMerge,
-                  label: "Automated Report Generation",
-                  desc: "Agentic systems that gather data from multiple sources, apply business logic, and produce narrative management reports — reducing analyst cycle time from hours to minutes",
-                },
-                {
-                  Icon: Zap,
-                  label: "Predictive Anomaly Detection",
-                  desc: "ML models on operational data streams that surface anomalies with confidence scores and historical context — before they become incidents, not after",
-                },
-              ].map(({ Icon: Ic, label, desc }) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
-                    <Ic className="w-5 h-5 text-blue-400" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1">{label}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-                  </div>
+                { label: "Intelligent Document Processing",  desc: "Multi-stage pipelines that classify documents, extract structured fields, score confidence, and route low-confidence outputs to a human review queue." },
+                { label: "Agentic Customer Support",         desc: "Support agents with tool access, conversation memory, CRM integration, and escalation logic — resolving queries autonomously and handing off with full context when human judgement is needed." },
+                { label: "AI-Augmented Underwriting",        desc: "LLM-powered document analysis that extracts risk signals, applies policy rules, flags exceptions, and generates explainable outputs connected to core banking or insurance systems." },
+                { label: "AI-Powered Search & Discovery",    desc: "Semantic and hybrid search that understands intent, applies business ranking rules, and returns contextually ordered results across structured and unstructured data." },
+                { label: "Automated Report Generation",      desc: "Agentic systems that gather data from multiple sources, apply business logic, and produce narrative management reports — reducing analyst cycle time from hours to minutes." },
+                { label: "Predictive Anomaly Detection",     desc: "ML models on operational data streams that surface anomalies with confidence scores and historical context — before they become incidents, not after." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="bg-white py-24">
+        {/* What We Deliver */}
+        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">AI Engineering Services</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                AI engineering services
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 The full engineering stack — from architecture and orchestration to evaluation, operations, and governance.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map(({ Icon, label, desc }, i) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <p className="font-bold text-gray-900">{label}</p>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { label: "LLM Orchestration and Agentic Systems", desc: "Design and build multi-step AI systems that use tools, retrieve context, plan across steps, and integrate with your business systems." },
+                { label: "RAG and Knowledge Systems",             desc: "Ground AI responses in your proprietary data — documents, databases, policies — using vector search, reranking, and retrieval strategies tuned for accuracy and latency." },
+                { label: "Model Evaluation and Testing",          desc: "Eval suites that measure output quality, regression-test against prompt and model changes, and A/B test model versions in production before full rollout." },
+                { label: "MLOps and LLMOps",                      desc: "Automate the full model lifecycle — training pipelines, serving infrastructure, monitoring, drift detection, and retraining triggers." },
+                { label: "Enterprise AI Integration",             desc: "Embed AI capabilities directly into your ERP, CRM, core banking, or operational platforms with full audit trails and governance controls." },
+                { label: "Responsible AI and Guardrails",         desc: "Input/output filtering, content moderation, confidence thresholds, human-in-the-loop escalation paths, and audit logging built in from the start." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        {/* Why It Matters */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why AI-Native</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                AI-native products compound. Systems that capture feedback improve over time — and
-                the engineering investment required to reach that point is substantial.
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Why It Matters</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Why AI-native products compound
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                AI-native products improve with usage — more interactions generate better training signals. The engineering investment required to reach that point is substantial, and the gap it creates is durable.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Compounding Competitive Advantage", desc: "AI systems improve with usage — more interactions generate better training signals. The earlier you build the feedback flywheel into your product, the wider the gap grows over time." },
+                { title: "Decisions at Inference Speed",      desc: "Intelligent systems surface recommendations, flag anomalies, and complete multi-step tasks in seconds — removing human bottlenecks from processes that previously took hours." },
+                { title: "Engineering-Grade Reliability",     desc: "AI-native does not mean experimental. We deliver with the same CI/CD, observability, and incident response discipline as any production software system." },
+                { title: "Responsible AI by Design",          desc: "Explainability, bias auditing, confidence thresholds, and human override mechanisms are built into the architecture — not bolted on after deployment." },
+              ].map(({ title, desc }) => (
+                <div key={title} className="p-8 border rounded-xl" style={{ borderColor: "#57D9D4" }}>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -356,30 +248,30 @@ export default function AiNativeProductEngineeringPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section style={{ background: "#57D9D4" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
-                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
+                className="text-3xl lg:text-4xl font-bold leading-tight lg:w-[42%] flex-shrink-0"
                 style={{ fontFamily: MF, color: "#200044" }}
               >
                 Ready to build AI into your product?
               </h2>
               <div className="flex-1">
-                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                <p className="text-base leading-relaxed mb-8" style={{ fontFamily: MF, color: "#200044", opacity: 0.85 }}>
                   Talk to our AI engineering team — we will help you identify the right use case, validate feasibility, and build a system that is production-ready from day one.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90"
                     style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold border transition-all hover:bg-white/20"
                     style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />

@@ -1,47 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import HeroCanvas from "@/components/HeroCanvas";
-import {
-  BarChart3, TrendingUp, Database, ShieldCheck,
-  Users, Zap, Target, CheckCircle2, ArrowRight, Search,
-  RefreshCw, LineChart, Filter, Activity,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+
+const MF = "var(--font-manrope), sans-serif";
 
 export const metadata: Metadata = {
   title: "Data Intelligence | Kulana IT Solutions",
   description:
     "Predictive risk modelling, regulatory compliance reporting, credit scoring, and actuarial analytics — Kulana's data practice for financial services and regulated enterprises.",
 };
-
-const capabilities = [
-  { Icon: Database,    label: "Data Engineering",      color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: BarChart3,   label: "Business Intelligence",  color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: LineChart,   label: "Advanced Analytics",     color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
-  { Icon: ShieldCheck, label: "Data Governance",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
-  { Icon: Filter,      label: "Data Quality",           color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"   },
-  { Icon: Activity,    label: "Real-time Streaming",    color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-];
-
-const benefits = [
-  { Icon: BarChart3,   bg: "bg-blue-600",    title: "Faster, Better Decisions",      desc: "Replace gut-feel decisions with data-backed insight — giving every team the information they need, in the format they need it, when they need it." },
-  { Icon: Zap,         bg: "bg-teal-600",    title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
-  { Icon: ShieldCheck, bg: "bg-cyan-600",    title: "Risk & Compliance Confidence",   desc: "Governance frameworks, model validation, audit trails, and Explainable AI (XAI) outputs ensure your models and data meet regulatory requirements — and can be interrogated by auditors." },
-  { Icon: TrendingUp,  bg: "bg-blue-600",    title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
-  { Icon: Users,       bg: "bg-teal-600",    title: "Unified Data View",              desc: "Break down silos with a single source of truth — one platform where every function accesses consistent, trusted data." },
-  { Icon: Target,      bg: "bg-cyan-500",    title: "Competitive Advantage",          desc: "Organisations that treat data as a strategic asset respond faster to market shifts and outperform peers who are still working from spreadsheets." },
-  { Icon: RefreshCw,   bg: "bg-blue-600",    title: "Continuous Improvement",         desc: "Data-driven feedback loops let you measure what works, iterate quickly, and compound gains across every part of the business." },
-];
-
-const useCases = [
-  { Icon: ShieldCheck,  label: "Regulatory Compliance Reporting", desc: "Automated pipelines that prepare, validate, and format regulatory submissions on schedule — with full data lineage" },
-  { Icon: LineChart,    label: "Predictive Risk Modelling",       desc: "Credit risk, default probability, and operational risk models validated against historical data before production deployment" },
-  { Icon: Search,       label: "Credit Scoring & Fraud Detection",desc: "ML-informed scorecards and anomaly detection models that flag high-risk applications and suspicious transactions in real time" },
-  { Icon: TrendingUp,   label: "Actuarial Analytics",             desc: "Data infrastructure and reporting layers supporting reserve calculations, claims analysis, and pricing decisions" },
-  { Icon: Users,        label: "Customer Analytics",              desc: "Unified customer profiles with churn prediction, lifetime value modelling, and segmentation across all touchpoints" },
-  { Icon: BarChart3,    label: "Management Reporting & BI",       desc: "Automated management accounts and executive dashboards replacing manual spreadsheet consolidation" },
-];
 
 const faqs = [
   {
@@ -92,160 +61,165 @@ export default function DataPage() {
       <Navbar />
       <main>
 
-        {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
-          <HeroCanvas variant="predictive-analysis" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <BarChart3 className="w-4 h-4" /> Data and AI Intelligence
-            </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Data
-            </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              We design, build, and operate data platforms that go beyond reporting — powering
-              predictive risk models, regulatory compliance pipelines, and actuarial analytics
-              built for institutions where accuracy and auditability are non-negotiable.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["Predictive Risk Analytics", "Compliance Reporting", "Data Governance", "Model Validation"].map((tag) => (
-                <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
-                </span>
-              ))}
+        {/* Hero — image to be added */}
+        <section className="relative overflow-hidden flex flex-col" style={{ height: "100vh", background: "#040d28" }}>
+          <div
+            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+          >
+            <div>
+              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+                Data &amp; AI Intelligence
+              </p>
+              <h1
+                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+                style={{ fontFamily: MF }}
+              >
+                Data
+              </h1>
             </div>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-            >
-              Request a Consultation <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Capability strip */}
-        <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {capabilities.map(({ Icon, label, color, bg, border }) => (
-                <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-white border ${border} flex items-center justify-center shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
-                </div>
-              ))}
+            <div className="mt-auto">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+              >
+                Request a Consultation <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
                 Data as a strategic asset
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                In financial services and regulated industries, the gap between data and
-                structured intelligence carries real cost: compliance exposures from manual
-                reporting, credit decisions made without predictive models, and operational
-                risks that analytics could have surfaced months earlier.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Kulana&apos;s data practice is built around decision science. We architect
-                platforms that power regulatory compliance reporting, predictive risk models,
-                and management intelligence — with data governance, model validation frameworks,
-                and the audit trails that regulators and risk officers require built in from
-                the start.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+                  In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
+                </p>
+                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                  Kulana&apos;s data practice is built around decision science. We architect platforms that power regulatory compliance reporting, predictive risk models, and management intelligence — with data governance, model validation frameworks, and the audit trails that regulators and risk officers require built in from the start.
+                </p>
               </div>
             </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Our Delivery Approach</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,     step: "01", title: "Data Discovery",        desc: "We audit your existing data landscape — sources, quality, ownership, and gaps — and identify the highest-value opportunities to address first." },
-                  { Icon: Database,   step: "02", title: "Platform Design",        desc: "We architect the right data platform for your scale and context — warehouse, lakehouse, or streaming — and design governance structures from day one." },
-                  { Icon: TrendingUp, step: "03", title: "Build & Activate",       desc: "We engineer pipelines, build dashboards, and enable your teams to self-serve insight — then support and evolve the platform as your data needs grow." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap lg:flex-nowrap gap-3">
+              {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (
+                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use cases */}
-        <section className="bg-gray-950 py-20">
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
-              <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
-                We apply data engineering and analytics across industries to solve concrete business problems.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {useCases.map(({ Icon: Ic, label, desc }) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
-                    <Ic className="w-5 h-5 text-blue-400" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1">{label}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Data Discovery",   desc: "We audit your existing data landscape — sources, quality, ownership, and gaps — and identify the highest-value opportunities to address first." },
+                { step: "02", title: "Platform Design",  desc: "We architect the right data platform for your scale and context — warehouse, lakehouse, or streaming — and design governance structures from day one." },
+                { step: "03", title: "Build & Activate", desc: "We engineer pipelines, build dashboards, and enable your teams to self-serve insight — then support and evolve the platform as your data needs grow." },
+                { step: "04", title: "Scale & Govern",   desc: "Continuous data quality monitoring, model revalidation, and governance reviews keep your data platform accurate and compliant as your business grows." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
+                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        {/* Applications */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why It Matters</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                A well-built data capability pays dividends across every function in your organisation —
-                from finance and operations to sales and product.
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Applications</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Real-world use cases
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                We apply data engineering and analytics across industries to solve concrete business problems.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { label: "Regulatory Compliance Reporting", desc: "Automated pipelines that prepare, validate, and format regulatory submissions on schedule — with full data lineage." },
+                { label: "Predictive Risk Modelling",       desc: "Credit risk, default probability, and operational risk models validated against historical data before production deployment." },
+                { label: "Credit Scoring & Fraud Detection",desc: "ML-informed scorecards and anomaly detection models that flag high-risk applications and suspicious transactions in real time." },
+                { label: "Actuarial Analytics",             desc: "Data infrastructure and reporting layers supporting reserve calculations, claims analysis, and pricing decisions." },
+                { label: "Customer Analytics",              desc: "Unified customer profiles with churn prediction, lifetime value modelling, and segmentation across all touchpoints." },
+                { label: "Management Reporting & BI",       desc: "Automated management accounts and executive dashboards replacing manual spreadsheet consolidation." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What We Deliver */}
+        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Data engineering and analytics services
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                A full-spectrum data capability covering engineering, governance, analytics, and compliance — built for scale.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { label: "Data Engineering",      desc: "Pipelines, transformations, and ingestion frameworks that move data from source to analytics-ready at any scale." },
+                { label: "Business Intelligence",  desc: "Dashboards, reports, and self-service analytics layers that put accurate, governed insight in the hands of every team." },
+                { label: "Advanced Analytics",     desc: "Predictive models, clustering, anomaly detection, and statistical analysis applied to your highest-priority business problems." },
+                { label: "Data Governance",        desc: "Ownership frameworks, data catalogues, lineage tracking, and quality standards that make your data trustworthy and auditable." },
+                { label: "Data Quality",           desc: "Automated profiling, validation rules, anomaly detection, and quality scoring built into every stage of the pipeline." },
+                { label: "Real-time Streaming",    desc: "Event-driven data architectures using Apache Kafka and cloud streaming services for real-time decision support." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why It Matters */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Why It Matters</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                What a governed data capability unlocks
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                A well-built data capability pays dividends across every function — from finance and operations to sales and product.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Faster, Better Decisions",      desc: "Replace gut-feel decisions with data-backed insight — giving every team the information they need, in the format they need it, when they need it." },
+                { title: "Operational Efficiency",         desc: "Eliminate manual reporting, reduce reconciliation time, and automate data flows so your people focus on work that matters." },
+                { title: "Risk & Compliance Confidence",   desc: "Governance frameworks, model validation, audit trails, and XAI outputs ensure your models and data meet regulatory requirements — and can be interrogated by auditors." },
+                { title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
+              ].map(({ title, desc }) => (
+                <div key={title} className="p-8 border rounded-xl" style={{ borderColor: "#57D9D4" }}>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -253,63 +227,64 @@ export default function DataPage() {
         </section>
 
         {/* FAQ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">FAQ</p>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-500 text-lg">
-              Common questions about our data engineering and analytics practice.
-            </p>
-          </div>
-          <div className="space-y-3">
-            {faqs.map(({ q, a }) => (
-              <details key={q} className="group border border-gray-200 rounded-2xl overflow-hidden">
-                <summary className="flex items-start justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-gray-900 hover:bg-blue-50 transition-colors">
-                  <span className="flex items-start gap-3">
-                    <BarChart3 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-                    {q}
-                  </span>
-                  <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 group-open:bg-blue-100 flex-shrink-0 transition-colors mt-0.5">
-                    <svg className="w-3.5 h-3.5 text-gray-500 group-open:text-blue-600 group-open:rotate-45 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                  </span>
-                </summary>
-                <div className="px-6 pb-5 pt-2 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pl-14">{a}</div>
-              </details>
-            ))}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Your questions<br />answered
+              </h2>
+              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+                Common questions about our data engineering and analytics practice.
+              </p>
+            </div>
+            <div className="divide-y divide-gray-200">
+              {faqs.map(({ q, a }) => (
+                <details key={q} className="group py-6">
+                  <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
+                    <span className="font-semibold text-gray-900" style={{ fontFamily: MF }}>{q}</span>
+                    <span className="flex-shrink-0 text-xl leading-none text-gray-400 select-none">
+                      <span className="group-open:hidden">+</span>
+                      <span className="hidden group-open:inline">−</span>
+                    </span>
+                  </summary>
+                  <p className="text-gray-500 text-sm leading-relaxed mt-4" style={{ fontFamily: MF }}>{a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Database className="w-8 h-8 text-white" strokeWidth={1.75} />
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
+        <section style={{ background: "#57D9D4" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              <h2
+                className="text-3xl lg:text-4xl font-bold leading-tight lg:w-[42%] flex-shrink-0"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
                 Ready to make your data work for you?
               </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Talk to our data specialists and discover how a well-built data platform
-                can accelerate decisions and drive measurable business outcomes.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-                >
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
-                >
-                  Contact Us
-                </Link>
+              <div className="flex-1">
+                <p className="text-base leading-relaxed mb-8" style={{ fontFamily: MF, color: "#200044", opacity: 0.85 }}>
+                  Talk to our data specialists and discover how a well-built data platform can accelerate decisions and drive measurable business outcomes.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

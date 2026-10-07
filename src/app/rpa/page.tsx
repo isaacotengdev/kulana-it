@@ -1,43 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import HeroCanvas from "@/components/HeroCanvas";
-import {
-  RefreshCw, Search, Bot, Activity, GitMerge, BarChart3,
-  ArrowRight, CheckCircle2, Settings, Zap, TrendingUp, Users,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+
+const MF = "var(--font-manrope), sans-serif";
 
 export const metadata: Metadata = {
   title: "RPA — Robotic Process Automation | Kulana IT Solutions",
   description:
     "Automate repetitive business processes at scale with Robotic Process Automation — process discovery, bot development, and intelligent automation.",
 };
-
-const capabilities = [
-  { Icon: Search,    label: "Process Discovery",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Bot,       label: "Bot Development",       color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
-  { Icon: Activity,  label: "Attended Automation",   color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: RefreshCw, label: "Unattended Automation", color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: GitMerge,  label: "Process Orchestration", color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100"   },
-  { Icon: BarChart3, label: "Analytics and Reporting", color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"   },
-];
-
-const features = [
-  { Icon: Search,    label: "Process Discovery and Mining",     desc: "Map and analyse your current processes using process mining tools to identify the highest-value automation candidates." },
-  { Icon: Activity,  label: "Attended Bot Development",        desc: "Desktop bots that work alongside your staff — triggered by user actions to handle repetitive steps in real time." },
-  { Icon: Bot,       label: "Unattended Bot Development",      desc: "Fully autonomous bots that run on a schedule or trigger — processing thousands of transactions without human intervention." },
-  { Icon: GitMerge,  label: "Intelligent Document Processing", desc: "Combine RPA with OCR and AI to extract, validate, and route data from invoices, forms, and documents automatically." },
-  { Icon: RefreshCw, label: "Exception Handling and Logging",   desc: "Robust exception management, alerting, and audit trails that keep automation reliable and compliant." },
-  { Icon: BarChart3, label: "Orchestration and Monitoring",     desc: "Centralised control rooms to schedule, monitor, and optimise your entire bot fleet in real time." },
-];
-
-const benefits = [
-  { Icon: Zap,       bg: "bg-blue-600",    title: "Significant Cost Savings",  desc: "Bots work 24/7 without breaks, errors, or overtime — dramatically reducing the cost of high-volume processes." },
-  { Icon: TrendingUp,bg: "bg-teal-600",    title: "Near-Zero Error Rates",     desc: "Rules-based automation eliminates the human errors that accumulate across thousands of repetitive transactions." },
-  { Icon: RefreshCw, bg: "bg-cyan-600",    title: "Speed and Scalability",      desc: "Scale capacity up or down instantly — bots handle peak volumes without hiring or training additional staff." },
-  { Icon: Users,     bg: "bg-cyan-500",    title: "Employee Satisfaction",     desc: "Free your teams from tedious, repetitive work so they can focus on creative, high-value tasks." },
-];
 
 const faqs = [
   {
@@ -70,197 +43,171 @@ const faqs = [
   },
 ];
 
-const MF = "var(--font-manrope), sans-serif";
-
 export default function RpaPage() {
   return (
     <>
       <Navbar />
       <main>
 
-        {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
-          <HeroCanvas variant="rpa" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-              <RefreshCw className="w-4 h-4" /> Data and AI Intelligence
-            </span>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Robotic Process Automation
-            </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Automate repetitive, rule-based processes at scale. Free your teams to focus on
-              high-value work while bots handle the rest — accurately, tirelessly, and at speed.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {["Process Discovery", "Attended Bots", "Unattended Bots", "Intelligent Automation"].map((tag) => (
-                <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
-                </span>
-              ))}
+        {/* Hero — image to be added */}
+        <section className="relative overflow-hidden flex flex-col" style={{ height: "100vh", background: "#040d28" }}>
+          <div
+            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+          >
+            <div>
+              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+                Data &amp; AI Intelligence
+              </p>
+              <h1
+                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+                style={{ fontFamily: MF }}
+              >
+                Robotic Process<br />Automation
+              </h1>
             </div>
-            <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
-              Request a Consultation <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Capability strip */}
-        <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {capabilities.map(({ Icon, label, color, bg, border }) => (
-                <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-white border ${border} flex items-center justify-center shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
-                </div>
-              ))}
+            <div className="mt-auto">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+              >
+                Request a Consultation <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
                 Let software robots do the heavy lifting
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Across every industry, organisations spend enormous human effort on high-volume,
-                repetitive tasks — data entry, reconciliation, report generation, form processing.
-                These tasks are perfect candidates for automation — and RPA makes that automation
-                fast to deploy, easy to maintain, and non-invasive to existing systems.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Kulana&apos;s RPA practice combines process expertise with leading automation platforms
-                to identify, design, build, and operate bots that deliver measurable ROI — typically
-                within weeks of deployment.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["UiPath", "Power Automate", "Process Mining", "IDP"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+                  Across every industry, organisations spend enormous human effort on high-volume, repetitive tasks — data entry, reconciliation, report generation, form processing. These tasks are perfect candidates for automation — and RPA makes that automation fast to deploy, easy to maintain, and non-invasive to existing systems.
+                </p>
+                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                  Kulana&apos;s RPA practice combines process expertise with leading automation platforms to identify, design, build, and operate bots that deliver measurable ROI — typically within weeks of deployment.
+                </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,   step: "01", title: "Discover",   desc: "Map processes using process mining to identify automation candidates ranked by ROI and feasibility." },
-                  { Icon: Settings, step: "02", title: "Design",     desc: "Document the process in detail — inputs, decision logic, exceptions, and outputs — as a bot blueprint." },
-                  { Icon: Bot,      step: "03", title: "Build",      desc: "Develop, test, and quality-assure the bot in a controlled environment before promoting to production." },
-                  { Icon: TrendingUp, step: "04", title: "Scale",    desc: "Monitor performance, handle exceptions, and continuously optimise — then scale to more processes." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap lg:flex-nowrap gap-3">
+              {["UiPath", "Power Automate", "Process Mining", "IDP"].map((tag) => (
+                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Dark section — real-world use cases */}
-        <section className="bg-gray-950 py-20">
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
-              <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Discover", desc: "Map processes using process mining to identify automation candidates ranked by ROI and feasibility." },
+                { step: "02", title: "Design",   desc: "Document the process in detail — inputs, decision logic, exceptions, and outputs — as a bot blueprint." },
+                { step: "03", title: "Build",    desc: "Develop, test, and quality-assure the bot in a controlled environment before promoting to production." },
+                { step: "04", title: "Scale",    desc: "Monitor performance, handle exceptions, and continuously optimise — then scale to more processes." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
+                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Applications */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Applications</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Real-world use cases
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 RPA delivers rapid, measurable ROI across industries wherever repetitive digital work exists.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { Icon: BarChart3, label: "Finance and Accounts Payable",  desc: "Automated invoice extraction, 3-way matching, and payment processing with near-zero error rates" },
-                { Icon: Users,     label: "HR Onboarding",                desc: "End-to-end employee onboarding — from system provisioning to document generation and compliance checks" },
-                { Icon: RefreshCw, label: "Data Reconciliation",          desc: "Automated reconciliation across ERP, banking, and operational systems at month-end close" },
-                { Icon: GitMerge,  label: "Claims Processing",            desc: "Insurance claims intake, validation, and routing — reducing cycle time from days to minutes" },
-                { Icon: Activity,  label: "Regulatory Reporting",         desc: "Automated extraction, formatting, and submission of compliance reports to regulatory bodies" },
-                { Icon: Search,    label: "Customer Data Management",     desc: "Synchronisation of customer records across CRM, ERP, and support systems to maintain a single source of truth" },
-              ].map(({ Icon: Ic, label, desc }) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
-                    <Ic className="w-5 h-5 text-blue-400" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1">{label}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-                  </div>
+                { label: "Finance and Accounts Payable",   desc: "Automated invoice extraction, 3-way matching, and payment processing with near-zero error rates." },
+                { label: "HR Onboarding",                  desc: "End-to-end employee onboarding — from system provisioning to document generation and compliance checks." },
+                { label: "Data Reconciliation",            desc: "Automated reconciliation across ERP, banking, and operational systems at month-end close." },
+                { label: "Claims Processing",              desc: "Insurance claims intake, validation, and routing — reducing cycle time from days to minutes." },
+                { label: "Regulatory Reporting",           desc: "Automated extraction, formatting, and submission of compliance reports to regulatory bodies." },
+                { label: "Customer Data Management",       desc: "Synchronisation of customer records across CRM, ERP, and support systems to maintain a single source of truth." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="bg-white py-24">
+        {/* What We Deliver */}
+        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">RPA Services</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                End-to-end automation capability — from process discovery to bot deployment and ongoing managed operations.
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                End-to-end RPA services
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                From process discovery to bot deployment and ongoing managed operations — full-cycle automation capability.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map(({ Icon, label, desc }, i) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <p className="font-bold text-gray-900">{label}</p>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { label: "Process Discovery and Mining",      desc: "Map and analyse your current processes using process mining tools to identify the highest-value automation candidates." },
+                { label: "Attended Bot Development",          desc: "Desktop bots that work alongside your staff — triggered by user actions to handle repetitive steps in real time." },
+                { label: "Unattended Bot Development",        desc: "Fully autonomous bots that run on a schedule or trigger — processing thousands of transactions without human intervention." },
+                { label: "Intelligent Document Processing",   desc: "Combine RPA with OCR and AI to extract, validate, and route data from invoices, forms, and documents automatically." },
+                { label: "Exception Handling and Logging",    desc: "Robust exception management, alerting, and audit trails that keep automation reliable and compliant." },
+                { label: "Orchestration and Monitoring",      desc: "Centralised control rooms to schedule, monitor, and optimise your entire bot fleet in real time." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        {/* Why It Matters */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Automate</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Why It Matters</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                The business case for automation
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 RPA delivers fast, measurable impact on cost, quality, and employee experience.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Significant Cost Savings",  desc: "Bots work 24/7 without breaks, errors, or overtime — dramatically reducing the cost of high-volume processes." },
+                { title: "Near-Zero Error Rates",     desc: "Rules-based automation eliminates the human errors that accumulate across thousands of repetitive transactions." },
+                { title: "Speed and Scalability",     desc: "Scale capacity up or down instantly — bots handle peak volumes without hiring or training additional staff." },
+                { title: "Employee Satisfaction",     desc: "Free your teams from tedious, repetitive work so they can focus on creative, high-value tasks." },
+              ].map(({ title, desc }) => (
+                <div key={title} className="p-8 border rounded-xl" style={{ borderColor: "#57D9D4" }}>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -297,30 +244,30 @@ export default function RpaPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section style={{ background: "#57D9D4" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
-                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
+                className="text-3xl lg:text-4xl font-bold leading-tight lg:w-[42%] flex-shrink-0"
                 style={{ fontFamily: MF, color: "#200044" }}
               >
                 Ready to automate your processes?
               </h2>
               <div className="flex-1">
-                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                <p className="text-base leading-relaxed mb-8" style={{ fontFamily: MF, color: "#200044", opacity: 0.85 }}>
                   Talk to our automation specialists and discover which processes to automate first for the fastest ROI.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90"
                     style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold border transition-all hover:bg-white/20"
                     style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />

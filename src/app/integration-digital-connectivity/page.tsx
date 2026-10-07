@@ -3,9 +3,8 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Network, Plug, Layers, Cpu,
-  ArrowRight, CheckCircle2,
-  Zap, Building2, Globe, GitBranch, Settings, Search,
+  ArrowRight,
+  Search,
 } from "lucide-react";
 
 const MF = "var(--font-manrope), sans-serif";
@@ -21,32 +20,26 @@ export const metadata: Metadata = {
 
 const scenarios = [
   {
-    Icon: Building2,
     label: "Unlocking Legacy Core Banking",
     desc: "Wrap a legacy core banking system with a managed API layer so mobile apps, fintech partners, and new digital products can consume its data and functions — without touching the core or risking a migration",
   },
   {
-    Icon: Globe,
     label: "Open Banking and Ecosystem Integration",
     desc: "Connect to third-party fintech providers, payment rails, credit bureaus, and regulatory reporting platforms through a single API gateway with standardised authentication, rate limiting, and audit trails",
   },
   {
-    Icon: GitBranch,
     label: "ERP and CRM Unification",
     desc: "Synchronise financial, operational, and customer data across ERP and CRM platforms in real time — eliminating the manual reconciliation and data lag that slows reporting and decision-making",
   },
   {
-    Icon: Zap,
     label: "Digital Product Launch in Weeks",
     desc: "Accelerate new digital channel launches by composing existing back-end capabilities through APIs — customer onboarding, account enquiry, transaction processing — rather than rebuilding each integration from scratch",
   },
   {
-    Icon: Cpu,
     label: "AI Products Built on Your Integration Layer",
     desc: "Once your systems are API-connected, AI capabilities can be layered on top — document processing, intelligent search, automated reporting — using your own data without rebuilding integration plumbing for each use case",
   },
   {
-    Icon: Settings,
     label: "Integration Governance and Rationalisation",
     desc: "Audit and rationalise an estate of undocumented point-to-point integrations, replacing them with a governed API fabric that is versioned, monitored, and owned — reducing operational risk and change management overhead",
   },
@@ -150,32 +143,6 @@ export default function IntegrationDigitalConnectivityPage() {
           </div>
         </section>
 
-        {/* Scenarios — dark section */}
-        <section className="bg-gray-950 py-20">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">In Practice</p>
-              <h2 className="text-3xl font-extrabold text-white mb-3">What Integration Enables</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
-                API-first connectivity is not a technical end in itself — it is what unlocks these outcomes.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {scenarios.map(({ Icon: Ic, label, desc }) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-cyan-800/50 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-600/40 transition-colors">
-                    <Ic className="w-5 h-5 text-cyan-400" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1">{label}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* What We Deliver */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,34 +223,59 @@ export default function IntegrationDigitalConnectivityPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Network className="w-8 h-8 text-white" strokeWidth={1.75} />
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-                Stop letting integration slow you down
+        {/* In Practice */}
+        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>In Practice</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                What Integration Enables
               </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Talk to our integration architects and discover how an API-first connectivity
-                layer can accelerate your transformation — and de-risk the legacy systems
-                that are holding it back.
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                API-first connectivity is not a technical end in itself — it is what unlocks these outcomes.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-                >
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
-                >
-                  Contact Us
-                </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {scenarios.map(({ label, desc }) => (
+                <div key={label} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-base font-bold mb-3" style={{ fontFamily: MF, color: "#200044" }}>{label}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section style={{ background: "#57D9D4" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              <h2
+                className="text-3xl lg:text-4xl font-bold leading-tight lg:w-[42%] flex-shrink-0"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
+                Stop letting integration slow you down.
+              </h2>
+              <div className="flex-1">
+                <p className="text-base leading-relaxed mb-8" style={{ fontFamily: MF, color: "#200044", opacity: 0.85 }}>
+                  Talk to our integration architects and discover how an API-first connectivity layer can accelerate your transformation — and de-risk the legacy systems that are holding it back.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
