@@ -283,25 +283,39 @@ export default function InfrastructurePage() {
         </section>
 
         {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Modernise</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                A well-designed infrastructure foundation reduces risk, cuts cost, and enables every
-                part of your business to move faster.
+            <p
+              className="text-xs tracking-[0.18em] uppercase mb-8"
+              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
+            >
+              Why Modernise
+            </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2
+                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
+                style={{ fontFamily: MF }}
+              >
+                Benefits
+              </h2>
+              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+                A well-designed infrastructure foundation reduces risk, cuts cost, and enables every part of your business to move faster.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { title: "High Availability",   desc: "Engineered uptime with redundant power, cooling, and network paths." },
+                { title: "Scalability",          desc: "Infrastructure that grows with your business without costly redesigns." },
+                { title: "Cost Optimisation",   desc: "Right-size your environment and eliminate waste with continuous optimisation." },
+                { title: "Risk Mitigation",      desc: "Tested DR plans and hardened security that keep your operations running." },
+              ].map(({ title, desc }) => (
+                <div
+                  key={title}
+                  className="rounded-xl p-6"
+                  style={{ border: "1.5px solid #57D9D4" }}
+                >
+                  <p className="font-semibold mb-2" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
