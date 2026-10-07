@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Network, Plug, Layers, Cpu,
-  ArrowRight, CheckCircle2, Rocket, ShieldCheck,
-  Zap, Building2, Globe, GitBranch, Settings, TrendingUp, Search,
+  ArrowRight, CheckCircle2,
+  Zap, Building2, Globe, GitBranch, Settings, Search,
 } from "lucide-react";
 
 const MF = "var(--font-manrope), sans-serif";
@@ -53,32 +53,6 @@ const subServices = [
   },
 ];
 
-const strategicThemes = [
-  {
-    Icon: Rocket,
-    color: "text-cyan-600",
-    bg: "bg-cyan-50",
-    border: "border-cyan-100",
-    title: "Speed-to-Market",
-    body: "When integration is managed infrastructure, new digital products compose existing capabilities through APIs instead of re-plumbing every connection. Time-to-integrate drops from months to weeks — and the business gets to market faster.",
-  },
-  {
-    Icon: ShieldCheck,
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    border: "border-blue-100",
-    title: "De-Risking Legacy Integration",
-    body: "Core banking systems, ERPs, and legacy platforms are too valuable to replace and too fragile to touch directly. An API layer wraps them in a governed interface — exposing their data and functions to modern systems without modifying core code.",
-  },
-  {
-    Icon: TrendingUp,
-    color: "text-teal-600",
-    bg: "bg-teal-50",
-    border: "border-teal-100",
-    title: "Transformation Velocity",
-    body: "Organisations with API-first architectures respond to market change faster. New partners, channels, and digital products connect to an existing API fabric rather than triggering a new integration project — compressing the time between decision and deployment.",
-  },
-];
 
 const scenarios = [
   {
@@ -159,25 +133,6 @@ export default function IntegrationDigitalConnectivityPage() {
               >
                 Request a Consultation <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Strategic themes strip */}
-        <section className="bg-white border-b border-gray-100 py-12">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-6">
-              {strategicThemes.map(({ Icon, color, bg, border, title, body }) => (
-                <div key={title} className={`flex gap-4 p-6 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-11 h-11 rounded-xl bg-white border ${border} flex items-center justify-center flex-shrink-0 shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 mb-1.5">{title}</p>
-                    <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
