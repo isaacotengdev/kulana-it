@@ -215,7 +215,7 @@ export default function CoreBankingPage() {
                 <p className="text-gray-600 leading-relaxed mb-8" style={{ fontFamily: MF }}>
                   Kulana is a certified Temenos implementation partner. Temenos powers over 3,000 financial institutions across 150 countries — including some of the world&apos;s largest retail, corporate, and digital banks.
                 </p>
-                <Image src="/logos/temenos.png" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
+                <Image src="/images/Service_Core & Enterprise Systems/core_banking/Temenos logo.svg" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
               </div>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
