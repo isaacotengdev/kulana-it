@@ -62,8 +62,20 @@ export default function DataPage() {
       <Navbar />
       <main>
 
-        {/* Hero — image to be added */}
-        <section className="relative overflow-hidden flex flex-col" style={{ height: "100vh", background: "#040d28" }}>
+        {/* Hero */}
+        <section className="relative overflow-hidden" style={{ height: "100vh" }}>
+          <Image
+            src="/images/Data_AI_Intelligence/Hero image_Data_2560×1440px.webp"
+            alt="Data Engineering and Analytics"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.72) 0%, rgba(8,0,32,0.52) 45%, rgba(8,0,32,0.22) 75%, rgba(8,0,32,0.06) 100%)" }}
+          />
           <div
             className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
             style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
