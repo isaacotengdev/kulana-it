@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ShieldCheck, Eye, Bug, AlertTriangle, FileCheck, Lock,
-  ArrowRight, CheckCircle2, Search, Zap, TrendingUp, RefreshCw,
+  ArrowRight, Zap,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -120,60 +120,49 @@ export default function CybersecurityPage() {
         </section>
 
         {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
                 Security that never sleeps
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                The threat landscape is evolving faster than ever. Organisations across Africa and beyond
-                face sophisticated attacks targeting financial systems, customer data, and operational
-                continuity. Kulana&apos;s cybersecurity practice delivers the people, processes, and
-                technology to detect, respond to, and prevent security incidents at every layer.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Certified under ISO 27001, our security operations follow internationally recognised
-                frameworks — giving you confidence that your environment meets the highest standards
-                of information security management.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["SOC", "SIEM", "Zero Trust", "ISO 27001"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+                  The threat landscape is evolving faster than ever. Organisations across Africa and beyond face sophisticated attacks targeting financial systems, customer data, and operational continuity. Kulana&apos;s cybersecurity practice delivers the people, processes, and technology to detect, respond to, and prevent security incidents at every layer.
+                </p>
+                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                  Certified under ISO 27001, our security operations follow internationally recognised frameworks — giving you confidence that your environment meets the highest standards of information security management.
+                </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
+            <div className="flex flex-wrap lg:flex-nowrap gap-3">
+              {["SOC", "SIEM", "Zero Trust", "ISO 27001"].map((tag) => (
+                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Assess",  desc: "Understand your current risk posture with a comprehensive security assessment and gap analysis." },
+                { step: "02", title: "Protect", desc: "Implement preventative controls — firewalls, endpoint protection, identity management, encryption." },
+                { step: "03", title: "Detect",  desc: "Deploy SIEM and threat intelligence tooling with 24/7 SOC monitoring to catch threats early." },
+                { step: "04", title: "Respond", desc: "Activate tested incident response playbooks to contain, investigate, and recover from incidents." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
+                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,    step: "01", title: "Assess",   desc: "Understand your current risk posture with a comprehensive security assessment and gap analysis." },
-                  { Icon: ShieldCheck, step: "02", title: "Protect", desc: "Implement preventative controls — firewalls, endpoint protection, identity management, encryption." },
-                  { Icon: Eye,       step: "03", title: "Detect",   desc: "Deploy SIEM and threat intelligence tooling with 24/7 SOC monitoring to catch threats early." },
-                  { Icon: RefreshCw, step: "04", title: "Respond",  desc: "Activate tested incident response playbooks to contain, investigate, and recover from incidents." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
