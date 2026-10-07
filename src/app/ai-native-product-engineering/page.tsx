@@ -99,6 +99,8 @@ const faqs = [
   },
 ];
 
+const MF = "var(--font-manrope), sans-serif";
+
 export default function AiNativeProductEngineeringPage() {
   return (
     <>
@@ -325,57 +327,64 @@ export default function AiNativeProductEngineeringPage() {
         </section>
 
         {/* FAQ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">FAQ</p>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-500 text-lg">
-              Common questions about our AI-native product engineering practice.
-            </p>
-          </div>
-          <div className="space-y-3">
-            {faqs.map(({ q, a }) => (
-              <details key={q} className="group border border-gray-200 rounded-2xl overflow-hidden">
-                <summary className="flex items-start justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-gray-900 hover:bg-blue-50 transition-colors">
-                  <span className="flex items-start gap-3">
-                    <Cpu className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-                    {q}
-                  </span>
-                  <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 group-open:bg-blue-100 flex-shrink-0 transition-colors mt-0.5">
-                    <svg className="w-3.5 h-3.5 text-gray-500 group-open:text-blue-600 group-open:rotate-45 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                  </span>
-                </summary>
-                <div className="px-6 pb-5 pt-2 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pl-14">{a}</div>
-              </details>
-            ))}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Your questions<br />answered
+              </h2>
+              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+                Common questions about our AI-native product engineering practice.
+              </p>
+            </div>
+            <div className="divide-y divide-gray-200">
+              {faqs.map(({ q, a }) => (
+                <details key={q} className="group py-6">
+                  <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
+                    <span className="font-semibold text-gray-900" style={{ fontFamily: MF }}>{q}</span>
+                    <span className="flex-shrink-0 text-xl leading-none text-gray-400 select-none">
+                      <span className="group-open:hidden">+</span>
+                      <span className="hidden group-open:inline">−</span>
+                    </span>
+                  </summary>
+                  <p className="text-gray-500 text-sm leading-relaxed mt-4" style={{ fontFamily: MF }}>{a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Cpu className="w-8 h-8 text-white" strokeWidth={1.75} />
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              <h2
+                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
                 Ready to build AI into your product?
               </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Talk to our AI engineering team — we will help you identify the right use case,
-                validate feasibility, and build a system that is production-ready from day one.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
-                  Contact Us
-                </Link>
+              <div className="flex-1">
+                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                  Talk to our AI engineering team — we will help you identify the right use case, validate feasibility, and build a system that is production-ready from day one.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

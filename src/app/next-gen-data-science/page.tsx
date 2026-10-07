@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import HeroCanvas from "@/components/HeroCanvas";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -84,6 +85,8 @@ const tracks = [
     ],
   },
 ];
+
+const MF = "var(--font-manrope), sans-serif";
 
 export default function NextGenDataSciencePage() {
   return (
@@ -185,20 +188,37 @@ export default function NextGenDataSciencePage() {
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
-        <section className="gradient-primary py-20 text-white text-center">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-              Ready to unlock the power of data science?
-            </h2>
-            <p className="text-blue-100 text-lg mb-8">
-              Contact us to register your interest or find out more about the Next-Gen Data Science programme.
-            </p>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-            >
-              Get in Touch
-            </Link>
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              <h2
+                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
+                Ready to unlock the power of data science?
+              </h2>
+              <div className="flex-1">
+                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                  Contact us to register your interest or find out more about the Next-Gen Data Science programme.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
