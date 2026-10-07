@@ -202,7 +202,7 @@ export default function ErpCrmPage() {
 
               {/* Microsoft Dynamics 365 */}
               <div className="border border-gray-100 rounded-2xl p-8 bg-white">
-                <Image src="/logos/microsoft.svg" alt="Microsoft" width={120} height={40} className="h-8 w-auto object-contain mb-6" />
+                <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={120} height={40} className="h-8 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-[0.15em] uppercase font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>ERP Platform</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>Microsoft Dynamics 365</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6" style={{ fontFamily: MF }}>
@@ -221,7 +221,7 @@ export default function ErpCrmPage() {
 
               {/* HubSpot */}
               <div className="border border-gray-100 rounded-2xl p-8 bg-white">
-                <Image src="/logos/hubspot.svg" alt="HubSpot" width={120} height={40} className="h-8 w-auto object-contain mb-6" />
+                <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={120} height={40} className="h-8 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-[0.15em] uppercase font-bold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>CRM Platform</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: MF }}>HubSpot CRM</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6" style={{ fontFamily: MF }}>
