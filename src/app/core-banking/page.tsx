@@ -157,60 +157,48 @@ export default function CoreBankingPage() {
         </section>
 
 
-        {/* ── What is Core Banking ─────────────────────────────────────── */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                What is Core Banking Practice?
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Core banking refers to the centralised processing and management of banking transactions,
-                customer accounts, and financial products. It integrates account opening, deposits, loans,
-                and payments into a single, cohesive platform.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                The practice helps financial institutions — from retail banks and credit unions to
-                digital challengers — modernise their systems using the latest technologies and industry
-                best practices to stay competitive and compliant.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Retail Banking", "Digital Channels", "Open Banking", "Payments"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
-              </div>
+        {/* ── Overview ─────────────────────────────────────────────────── */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              What is Core Banking Practice?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              We help financial institutions modernise and manage the systems at the heart of their banking operations — from customer accounts and deposits to loans, payments and financial products. Our core banking solutions bring these critical functions together into a secure, integrated and scalable platform.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              Working with retail banks, credit unions and digital challengers, we combine deep industry expertise with modern technology and proven best practices to improve efficiency, enhance customer experiences and help institutions stay competitive, resilient and compliant.
+            </p>
+            <div className="flex gap-3 w-full">
+              {["Retail Banking", "Digital Channels", "Open Banking", "Payments"].map((tag) => (
+                <span key={tag} className="flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-semibold text-gray-800 text-center"
+                  style={{ fontFamily: MF, border: "1.5px solid #57D9D4" }}>
+                  {tag}
+                </span>
+              ))}
             </div>
+          </div>
+        </section>
 
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
+        {/* ── How to Get Started ───────────────────────────────────────── */}
+        <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff" }}>
+              How to Get Started
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+              {[
+                { step: "01", title: "Assessment",     desc: "We assess your current systems, processes, and infrastructure to understand where you are today." },
+                { step: "02", title: "Strategy",       desc: "Our consultants align business objectives, customer needs, regulatory requirements, and your technology landscape into a tailored core banking strategy." },
+                { step: "03", title: "Implementation", desc: "Using agile methodologies, industry-leading platforms, and proven frameworks, we deliver collaboratively, iteratively, and transparently." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl lg:text-6xl font-light mb-3 leading-none" style={{ fontFamily: MF, color: "#a198af" }}>{step}</p>
+                  <p className="text-xl lg:text-2xl font-semibold mb-4" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "rgba(255,255,255,0.75)" }}>{desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,    step: "01", title: "Assessment",      desc: "We assess your current systems, processes, and infrastructure to understand where you are today." },
-                  { Icon: BarChart3, step: "02", title: "Strategy",        desc: "Our consultants align business objectives, customer needs, regulatory requirements, and your technology landscape into a tailored core banking strategy." },
-                  { Icon: Zap,       step: "03", title: "Implementation",  desc: "Using agile methodologies, industry-leading platforms, and proven frameworks, we deliver collaboratively, iteratively, and transparently." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
