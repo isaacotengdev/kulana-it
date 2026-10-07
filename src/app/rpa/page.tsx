@@ -81,20 +81,16 @@ export default function RpaPage() {
         {/* Overview */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                Let software robots do the heavy lifting
-              </h2>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-                  Across every industry, organisations spend enormous human effort on high-volume, repetitive tasks — data entry, reconciliation, report generation, form processing. These tasks are perfect candidates for automation — and RPA makes that automation fast to deploy, easy to maintain, and non-invasive to existing systems.
-                </p>
-                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
-                  Kulana&apos;s RPA practice combines process expertise with leading automation platforms to identify, design, build, and operate bots that deliver measurable ROI — typically within weeks of deployment.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              Let software robots do the heavy lifting
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              Across every industry, organisations spend enormous human effort on high-volume, repetitive tasks — data entry, reconciliation, report generation, form processing. These tasks are perfect candidates for automation — and RPA makes that automation fast to deploy, easy to maintain, and non-invasive to existing systems.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              Kulana&apos;s RPA practice combines process expertise with leading automation platforms to identify, design, build, and operate bots that deliver measurable ROI — typically within weeks of deployment.
+            </p>
             <div className="flex flex-wrap lg:flex-nowrap gap-3">
               {["UiPath", "Power Automate", "Process Mining", "IDP"].map((tag) => (
                 <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>

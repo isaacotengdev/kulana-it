@@ -51,20 +51,16 @@ export default function DataAiIntelligencePage() {
         {/* The Problem We Solve */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                Most organisations have data but not intelligence
-              </h2>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-                  In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
-                </p>
-                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
-                  Kulana&apos;s Data and AI Intelligence practice is built around decision science — not dashboards. We architect platforms that power regulatory compliance reporting, predictive risk models, and intelligent automation, with data governance and audit trails that regulators and risk officers require built in from the start.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              Most organisations have data but not intelligence
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              Kulana&apos;s Data and AI Intelligence practice is built around decision science — not dashboards. We architect platforms that power regulatory compliance reporting, predictive risk models, and intelligent automation, with data governance and audit trails that regulators and risk officers require built in from the start.
+            </p>
             <div className="flex flex-wrap lg:flex-nowrap gap-3">
               {["Predictive Analytics", "AI Governance", "Compliance Reporting", "MLOps"].map((tag) => (
                 <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>

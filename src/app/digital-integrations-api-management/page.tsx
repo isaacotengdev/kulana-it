@@ -89,20 +89,16 @@ export default function DigitalIntegrationsPage() {
         {/* Overview */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                What is a middleware and integration practice?
-              </h2>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-                  Businesses depend on multiple software systems for operations and data management. The challenge lies in ensuring these systems communicate effectively across different technologies, formats, and protocols.
-                </p>
-                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
-                  Kulana&apos;s middleware and integration practice bridges gaps between software applications, databases, and platforms — whether connecting legacy systems with modern cloud solutions or linking enterprise applications. We provide solutions customised to your specific business requirements, built on WSO2 and leading integration platforms.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              What is a middleware and integration practice?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              Businesses depend on multiple software systems for operations and data management. The challenge lies in ensuring these systems communicate effectively across different technologies, formats, and protocols.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              Kulana&apos;s middleware and integration practice bridges gaps between software applications, databases, and platforms — whether connecting legacy systems with modern cloud solutions or linking enterprise applications. We provide solutions customised to your specific business requirements, built on WSO2 and leading integration platforms.
+            </p>
             <div className="flex flex-wrap lg:flex-nowrap gap-3">
               {["WSO2", "REST & GraphQL", "Event-Driven", "API Gateway"].map((tag) => (
                 <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>

@@ -85,20 +85,16 @@ export default function AiNativeProductEngineeringPage() {
         {/* Overview */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                Intelligence as architecture, not a feature
-              </h2>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-                  Most teams encounter AI as a feature request. AI-native engineering starts from a different premise: the intelligent system is the product. That changes how you design your data model, your APIs, your infrastructure, and your feedback loops — because prompts are code, inference latency is a UX constraint, and model quality needs its own test discipline.
-                </p>
-                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
-                  Kulana&apos;s AI-native practice delivers the full engineering stack — LLM orchestration and agentic system design, RAG architectures grounded in your proprietary data, MLOps pipelines that keep models accurate over time, and responsible AI governance. We integrate these directly into the enterprise systems our other practices implement, so AI capabilities connect to the workflows where decisions are actually made.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              Intelligence as architecture, not a feature
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              Most teams encounter AI as a feature request. AI-native engineering starts from a different premise: the intelligent system is the product. That changes how you design your data model, your APIs, your infrastructure, and your feedback loops — because prompts are code, inference latency is a UX constraint, and model quality needs its own test discipline.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              Kulana&apos;s AI-native practice delivers the full engineering stack — LLM orchestration and agentic system design, RAG architectures grounded in your proprietary data, MLOps pipelines that keep models accurate over time, and responsible AI governance. We integrate these directly into the enterprise systems our other practices implement, so AI capabilities connect to the workflows where decisions are actually made.
+            </p>
             <div className="flex flex-wrap lg:flex-nowrap gap-3">
               {["LLM Orchestration", "Agentic Systems", "MLOps & LLMOps", "Responsible AI"].map((tag) => (
                 <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>

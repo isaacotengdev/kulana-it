@@ -98,20 +98,16 @@ export default function IntegrationDigitalConnectivityPage() {
         {/* The Problem We Solve */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                Integration is where transformation programmes fail
-              </h2>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-                  Most enterprises reach a point where their technology estate works against them. Core banking, ERP, CRM, and operational systems each hold critical data — but none of them talk to each other without custom, undocumented point-to-point connections. Every new initiative triggers another integration project. The backlog grows faster than the business can ship.
-                </p>
-                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
-                  API-first connectivity changes this equation. A managed integration layer transforms your existing systems into composable services — wrapped in governed, versioned APIs that new products, partners, and AI capabilities can connect to without re-plumbing every time. Transformation then moves at the speed of business logic, not integration engineering.
-                </p>
-              </div>
-            </div>
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              Integration is where transformation programmes fail
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              Most enterprises reach a point where their technology estate works against them. Core banking, ERP, CRM, and operational systems each hold critical data — but none of them talk to each other without custom, undocumented point-to-point connections. Every new initiative triggers another integration project. The backlog grows faster than the business can ship.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              API-first connectivity changes this equation. A managed integration layer transforms your existing systems into composable services — wrapped in governed, versioned APIs that new products, partners, and AI capabilities can connect to without re-plumbing every time. Transformation then moves at the speed of business logic, not integration engineering.
+            </p>
             <div className="flex flex-wrap lg:flex-nowrap gap-3">
               {["WSO2", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
                 <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
