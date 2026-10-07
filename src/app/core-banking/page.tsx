@@ -156,21 +156,6 @@ export default function CoreBankingPage() {
           </div>
         </section>
 
-        {/* ── Capability strip ─────────────────────────────────────────── */}
-        <section className="bg-white border-b border-gray-100 py-10">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {capabilities.map(({ Icon, label, color, bg, border }) => (
-                <div key={label} className={`flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl border ${border} ${bg}`}>
-                  <div className={`w-10 h-10 rounded-xl bg-white border ${border} flex items-center justify-center shadow-sm`}>
-                    <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
-                  </div>
-                  <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ── What is Core Banking ─────────────────────────────────────── */}
         <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -279,6 +264,7 @@ export default function CoreBankingPage() {
             </div>
           </div>
         </section>
+
 
         {/* ── Platform Modules ─────────────────────────────────────────── */}
         <section className="bg-white py-24">
