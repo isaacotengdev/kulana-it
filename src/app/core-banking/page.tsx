@@ -203,83 +203,54 @@ export default function CoreBankingPage() {
           </div>
         </section>
 
-        {/* ── Platform: Temenos ────────────────────────────────────────── */}
-        <section className="bg-gray-950 py-20">
+        {/* ── Powered By ───────────────────────────────────────────────── */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Powered By</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Built on the World&apos;s Leading Core Banking Platform
+              </h2>
               <div>
-                <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Powered By</p>
-                <h2 className="text-3xl font-extrabold text-white mb-5">
-                  Built on the World&apos;s Leading Core Banking Platform
-                </h2>
-                <p className="text-gray-400 leading-relaxed mb-8">
-                  Kulana is a certified Temenos implementation partner. Temenos powers over 3,000
-                  financial institutions across 150 countries — including some of the world&apos;s largest
-                  retail, corporate, and digital banks.
+                <p className="text-gray-600 leading-relaxed mb-8" style={{ fontFamily: MF }}>
+                  Kulana is a certified Temenos implementation partner. Temenos powers over 3,000 financial institutions across 150 countries — including some of the world&apos;s largest retail, corporate, and digital banks.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { value: "3,000+", label: "Financial Institutions" },
-                    { value: "150",    label: "Countries" },
-                    { value: "1B+",    label: "People Banked" },
-                    { value: "Top 10", label: "Global Banks" },
-                  ].map(({ value, label }) => (
-                    <div key={label} className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
-                      <p className="text-2xl font-extrabold text-white">{value}</p>
-                      <p className="text-gray-400 text-sm mt-0.5">{label}</p>
-                    </div>
-                  ))}
-                </div>
+                <Image src="/logos/temenos.png" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
               </div>
-              <div className="flex flex-col items-center justify-center gap-8">
-                <div className="bg-white rounded-3xl p-10 shadow-2xl flex items-center justify-center">
-                  <Image
-                    src="/logos/temenos.png"
-                    alt="Temenos"
-                    width={220}
-                    height={80}
-                    className="h-16 w-auto object-contain"
-                  />
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
+              {[
+                { value: "3,000+", label: "Financial Institutions" },
+                { value: "150",    label: "Countries" },
+                { value: "1B+",    label: "People Banked" },
+                { value: "Top 10", label: "Global Banks" },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: MF }}>{value}</p>
+                  <p className="text-sm text-gray-500" style={{ fontFamily: MF }}>{label}</p>
                 </div>
-                <div className="flex gap-3 flex-wrap justify-center">
-                  {["Certified Partner", "Implementation", "Support & Managed Services"].map((b) => (
-                    <span key={b} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-white">
-                      <CheckCircle2 className="w-3 h-3 text-cyan-400" /> {b}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-
         {/* ── Platform Modules ─────────────────────────────────────────── */}
-        <section className="bg-white py-24">
+        <section className="py-16 lg:py-20" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Platform</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-                Core Modules We Deliver
+            <p className="text-xs tracking-[0.18em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Platform</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Core Modules<br />We Deliver
               </h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                Every module is configurable to your institution&apos;s requirements — from a single-module
-                deployment to a full platform transformation.
+              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+                Every module is configurable to your institution&apos;s requirements — from a single-module deployment to a full platform transformation.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {modules.map(({ Icon, label, desc }, i) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <p className="font-bold text-gray-900">{label}</p>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {modules.map(({ label, desc }) => (
+                <div key={label} className="bg-white rounded-xl p-6 border border-gray-100">
+                  <p className="font-semibold text-gray-900 mb-2" style={{ fontFamily: MF }}>{label}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
