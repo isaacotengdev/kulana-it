@@ -182,65 +182,50 @@ export default function IntegrationDigitalConnectivityPage() {
           </div>
         </section>
 
-        {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">The Problem We Solve</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+        {/* The Problem We Solve */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-10">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
                 Integration is where transformation programmes fail
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Most enterprises reach a point where their technology estate works against
-                them. Core banking, ERP, CRM, and operational systems each hold critical
-                data — but none of them talk to each other without custom, undocumented
-                point-to-point connections. Every new initiative triggers another integration
-                project. The backlog grows faster than the business can ship.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                API-first connectivity changes this equation. A managed integration layer
-                transforms your existing systems into composable services — wrapped in
-                governed, versioned APIs that new products, partners, and AI capabilities
-                can connect to without re-plumbing every time. Transformation then moves at
-                the speed of business logic, not integration engineering.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["WSO2", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+                  Most enterprises reach a point where their technology estate works against them. Core banking, ERP, CRM, and operational systems each hold critical data — but none of them talk to each other without custom, undocumented point-to-point connections. Every new initiative triggers another integration project. The backlog grows faster than the business can ship.
+                </p>
+                <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                  API-first connectivity changes this equation. A managed integration layer transforms your existing systems into composable services — wrapped in governed, versioned APIs that new products, partners, and AI capabilities can connect to without re-plumbing every time. Transformation then moves at the speed of business logic, not integration engineering.
+                </p>
               </div>
             </div>
+            <div className="flex flex-wrap lg:flex-nowrap gap-3">
+              {["WSO2", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
+                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Integration Audit",    desc: "Map your current integration estate — every system, connection, and data flow — to identify fragility, duplication, and the highest-priority gaps." },
+                { step: "02", title: "Architecture Design",  desc: "Define the target integration architecture: API gateway strategy, event streaming approach, data ownership, and governance standards." },
+                { step: "03", title: "Platform Deployment",  desc: "Implement and configure the integration platform — migrating critical integrations from point-to-point to managed, monitored API connections." },
+                { step: "04", title: "Enable and Scale",     desc: "Onboard internal teams and external partners to the API fabric, and iterate as new use cases — including AI products — are built on top." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
+                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,   step: "01", title: "Integration Audit",    desc: "Map your current integration estate — every system, connection, and data flow — to identify fragility, duplication, and the highest-priority gaps." },
-                  { Icon: Layers,   step: "02", title: "Architecture Design",   desc: "Define the target integration architecture: API gateway strategy, event streaming approach, data ownership, and governance standards." },
-                  { Icon: Plug,     step: "03", title: "Platform Deployment",   desc: "Implement and configure the integration platform — migrating critical integrations from point-to-point to managed, monitored API connections." },
-                  { Icon: TrendingUp, step: "04", title: "Enable and Scale",   desc: "Onboard internal teams and external partners to the API fabric, and iterate as new use cases — including AI products — are built on top." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
