@@ -112,7 +112,7 @@ export default function CoreBankingPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden flex flex-col justify-end" style={{ height: "100vh" }}>
+        <section className="relative overflow-hidden" style={{ height: "100vh" }}>
           <Image
             src="/images/Service_Core & Enterprise Systems/core_banking/Hero image Core banking_2560×1440px.webp"
             alt="Core Banking"
@@ -120,31 +120,39 @@ export default function CoreBankingPage() {
             className="object-cover object-center"
             sizes="100vw"
             priority
+            style={{ filter: "brightness(1.5)" }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.85) 0%, rgba(8,0,32,0.68) 45%, rgba(8,0,32,0.28) 75%, rgba(8,0,32,0.10) 100%)" }}
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.68) 0%, rgba(8,0,32,0.50) 45%, rgba(8,0,32,0.20) 75%, rgba(8,0,32,0.06) 100%)" }}
           />
-          <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
-            <p
-              className="text-xs tracking-[0.22em] uppercase mb-4"
-              style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
-            >
-              Core &amp; Enterprise Systems
-            </p>
-            <h1
-              className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white mb-10 leading-[1.0]"
-              style={{ fontFamily: MF }}
-            >
-              Core Banking
-            </h1>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
-              style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
-            >
-              Request a Consultation <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div
+            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+          >
+            <div>
+              <p
+                className="text-xs tracking-[0.22em] uppercase mb-4"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
+              >
+                Core &amp; Enterprise Systems
+              </p>
+              <h1
+                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+                style={{ fontFamily: MF }}
+              >
+                Core Banking
+              </h1>
+            </div>
+            <div className="mt-auto">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+              >
+                Request a Consultation <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
