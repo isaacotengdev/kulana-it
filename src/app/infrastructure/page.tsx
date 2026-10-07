@@ -127,6 +127,43 @@ export default function InfrastructurePage() {
           </div>
         </section>
 
+        {/* Overview */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p
+              className="text-xs tracking-[0.18em] uppercase mb-6"
+              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
+            >
+              Overview
+            </p>
+            <h2
+              className="text-3xl lg:text-4xl font-light text-gray-900 mb-6 max-w-2xl"
+              style={{ fontFamily: MF }}
+            >
+              The foundation your business runs on
+            </h2>
+            <div className="max-w-3xl">
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-10">
+                Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center px-6 py-2.5 rounded-lg text-sm font-semibold text-gray-800"
+                  style={{ fontFamily: MF, border: "1.5px solid #57D9D4" }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Capability strip */}
         <section className="bg-white border-b border-gray-100 py-10">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,64 +176,6 @@ export default function InfrastructurePage() {
                   <span className="text-xs font-semibold text-gray-700 leading-tight">{label}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                The foundation your business runs on
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Modern enterprises depend on IT infrastructure that is resilient, secure, and
-                adaptable. Whether you are running a traditional data center, migrating to the cloud,
-                or operating a hybrid environment, Kulana delivers the expertise to design, deploy,
-                and manage every layer of your infrastructure stack.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Backed by our partnership with Dell Technologies and certified under ISO 9001 and
-                ISO 27001, we bring global standards and African operational experience together.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,   step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
-                  { Icon: Settings, step: "02", title: "Design",     desc: "Produce a detailed architecture design aligned to your business requirements, budget, and growth plans." },
-                  { Icon: Zap,      step: "03", title: "Deploy",     desc: "Implement and configure infrastructure using best-practice methodologies with minimal disruption." },
-                  { Icon: MonitorCheck, step: "04", title: "Operate", desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
