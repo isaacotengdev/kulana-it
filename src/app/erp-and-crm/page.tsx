@@ -279,7 +279,7 @@ export default function ErpCrmPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map(({ title, desc }) => (
                 <div key={title} className="border rounded-2xl p-8" style={{ borderColor: "#57D9D4" }}>
-                  <h3 className="font-semibold text-lg mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 mb-3" style={{ fontFamily: MF }}>{title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
