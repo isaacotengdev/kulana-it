@@ -319,25 +319,35 @@ export default function CybersecurityPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <ShieldCheck className="w-8 h-8 text-white" strokeWidth={1.75} />
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+              <h2
+                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
                 Ready to secure your organisation?
               </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Speak to our security specialists and get a risk assessment tailored to your environment.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5">
-                  Request a Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/contact-us" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
-                  Contact Us
-                </Link>
+              <div className="flex-1">
+                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                  Speak to our security specialists and get a risk assessment tailored to your environment.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                  >
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Contact us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
