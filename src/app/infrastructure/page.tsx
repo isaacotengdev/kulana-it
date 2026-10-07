@@ -178,6 +178,47 @@ export default function InfrastructurePage() {
           </div>
         </section>
 
+        {/* How to Get Started */}
+        <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p
+              className="text-xs tracking-[0.18em] uppercase mb-14"
+              style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff" }}
+            >
+              How to Get Started
+            </p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+              {[
+                { step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
+                { step: "02", title: "Design",     desc: "Produce a detailed architecture design aligned to your business requirements, budget, and growth plans." },
+                { step: "03", title: "Deploy",     desc: "Implement and configure infrastructure using best-practice methodologies with minimal disruption." },
+                { step: "04", title: "Operate",    desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p
+                    className="text-5xl lg:text-6xl font-light mb-3 leading-none"
+                    style={{ fontFamily: MF, color: "#a198af" }}
+                  >
+                    {step}
+                  </p>
+                  <p
+                    className="text-xl lg:text-2xl font-semibold mb-4"
+                    style={{ fontFamily: MF, color: "#57D9D4" }}
+                  >
+                    {title}
+                  </p>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ fontFamily: MF, color: "rgba(255,255,255,0.75)" }}
+                  >
+                    {desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Partner: Dell */}
         <section className="bg-gray-950 py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
