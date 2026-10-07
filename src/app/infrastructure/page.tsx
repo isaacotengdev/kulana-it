@@ -204,45 +204,42 @@ export default function InfrastructurePage() {
         </section>
 
         {/* Partner: Dell */}
-        <section className="bg-gray-950 py-20">
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <p
+              className="text-xs tracking-[0.18em] uppercase mb-10"
+              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
+            >
+              Powered By
+            </p>
+            {/* Heading left · description + logo right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
+              <h2
+                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
+                style={{ fontFamily: MF }}
+              >
+                Delivered on World-Class Hardware
+              </h2>
               <div>
-                <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Powered By</p>
-                <h2 className="text-3xl font-extrabold text-white mb-5">
-                  Delivered on World-Class Hardware
-                </h2>
-                <p className="text-gray-400 leading-relaxed mb-8">
-                  As a Dell Technologies partner, Kulana designs and deploys infrastructure on proven,
-                  enterprise-grade hardware — from PowerEdge servers and PowerStore arrays to
-                  networking and hyper-converged solutions.
+                <p className="text-gray-600 leading-relaxed mb-8" style={{ fontFamily: MF }}>
+                  As a Dell Technologies partner, Kulana designs and deploys infrastructure on proven, enterprise-grade hardware — from PowerEdge servers and PowerStore arrays to networking and hyper-converged solutions.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { value: "#1",   label: "Server Vendor Worldwide" },
-                    { value: "150+", label: "Countries" },
-                    { value: "HCI",  label: "Hyper-Converged Leader" },
-                    { value: "End-to-End", label: "Solutions Portfolio" },
-                  ].map(({ value, label }) => (
-                    <div key={label} className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
-                      <p className="text-2xl font-extrabold text-white">{value}</p>
-                      <p className="text-gray-400 text-sm mt-0.5">{label}</p>
-                    </div>
-                  ))}
-                </div>
+                <Image src="/logos/dell.svg" alt="Dell Technologies" width={120} height={40} className="h-9 w-auto object-contain" />
               </div>
-              <div className="flex flex-col items-center justify-center gap-6">
-                <div className="bg-white rounded-3xl p-10 shadow-2xl flex items-center justify-center w-full">
-                  <Image src="/logos/dell.svg" alt="Dell Technologies" width={180} height={60} className="h-14 w-auto object-contain" />
+            </div>
+            {/* Stats row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
+              {[
+                { value: "#1",         label: "Server Vendor Worldwide" },
+                { value: "150+",       label: "Countries" },
+                { value: "HCI",        label: "Hyper-Converged Leader" },
+                { value: "End-to-End", label: "Solutions Portfolio" },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: MF }}>{value}</p>
+                  <p className="text-sm text-gray-500" style={{ fontFamily: MF }}>{label}</p>
                 </div>
-                <div className="flex gap-3 flex-wrap justify-center">
-                  {["Certified Partner", "Hardware Supply", "Managed Services"].map((b) => (
-                    <span key={b} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-white">
-                      <CheckCircle2 className="w-3 h-3 text-cyan-400" /> {b}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
