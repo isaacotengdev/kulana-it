@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -225,16 +226,24 @@ export default function DataPage() {
         {/* FAQ */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
-                Your questions<br />answered
-              </h2>
-              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
-                Common questions about our data engineering and analytics practice.
-              </p>
+            <div className="flex items-center gap-6 mb-12">
+              <p className="text-xs tracking-[0.18em] uppercase flex-shrink-0" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
+              <div className="flex-1 h-px bg-gray-200" />
             </div>
-            <div className="divide-y divide-gray-200">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8" style={{ fontFamily: MF }}>
+                  Your questions<br />answered
+                </h2>
+                <div className="relative w-full max-w-xs aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
+                  <Image src="/images/integration_digital_connectivity/Integration.webp" alt="Data Engineering" fill className="object-cover object-center" sizes="320px" />
+                </div>
+              </div>
+              <div>
+                <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+                  Common questions about our data engineering and analytics practice.
+                </p>
+                <div className="divide-y divide-gray-200">
               {faqs.map(({ q, a }) => (
                 <details key={q} className="group py-6">
                   <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
@@ -247,6 +256,8 @@ export default function DataPage() {
                   <p className="text-gray-500 text-sm leading-relaxed mt-4" style={{ fontFamily: MF }}>{a}</p>
                 </details>
               ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
