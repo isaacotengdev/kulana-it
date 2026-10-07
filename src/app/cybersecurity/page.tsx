@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 
 const features = [
-  { Icon: Eye,          label: "Security Operations Centre (SOC)", desc: "24/7 monitoring, detection, and response across your entire digital environment." },
-  { Icon: Bug,          label: "Threat Intelligence",              desc: "Proactive threat hunting using global intelligence feeds and behavioural analytics." },
-  { Icon: AlertTriangle,label: "Vulnerability Assessment",         desc: "Regular scanning, prioritisation, and remediation guidance across your attack surface." },
-  { Icon: ShieldCheck,  label: "Penetration Testing",              desc: "Simulated adversarial attacks to identify and remediate exploitable weaknesses before attackers do." },
-  { Icon: FileCheck,    label: "Compliance and Audit Readiness",    desc: "Frameworks mapped to ISO 27001, GDPR, PCI-DSS, and local regulatory requirements." },
-  { Icon: Lock,         label: "Incident Response and Recovery",    desc: "Rapid containment, forensic investigation, and recovery plans tested and ready to activate." },
+  { Icon: Eye,          label: "SOC Monitoring",          desc: "24/7 monitoring, detection, and response." },
+  { Icon: Bug,          label: "Threat Intelligence",     desc: "Threat hunting powered by global intelligence feeds." },
+  { Icon: AlertTriangle,label: "Vulnerability Assessment",desc: "Scanning, prioritisation, and remediation guidance." },
+  { Icon: ShieldCheck,  label: "Penetration Testing",     desc: "Simulated attacks to uncover exploitable weaknesses." },
+  { Icon: FileCheck,    label: "Compliance & Audit",      desc: "ISO 27001, GDPR, PCI-DSS, and regulatory readiness." },
+  { Icon: Lock,         label: "Incident Response",       desc: "Rapid containment, forensic investigation, and recovery." },
 ];
 
 const benefits = [
@@ -167,87 +167,76 @@ export default function CybersecurityPage() {
           </div>
         </section>
 
-        {/* Dark section — real-world applications */}
-        <section className="bg-gray-950 py-20">
+        {/* Applications */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Applications</p>
-              <h2 className="text-3xl font-extrabold text-white mb-3">Real-World Use Cases</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Applications</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Real-World Use Cases
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 Our cybersecurity practice protects organisations across industries facing evolving threats.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { Icon: Eye,          label: "Financial Services SOC",      desc: "24/7 threat monitoring for banks and payment processors handling high-value transactions" },
-                { Icon: FileCheck,    label: "Regulatory Compliance",       desc: "ISO 27001, PCI-DSS, and GDPR audit readiness for regulated industries" },
-                { Icon: AlertTriangle,label: "Ransomware Defense",          desc: "Layered controls and tested IR playbooks to prevent and rapidly recover from ransomware" },
-                { Icon: Bug,          label: "Red Team Exercises",          desc: "Simulated adversarial attacks to validate security controls across enterprise environments" },
-                { Icon: Lock,         label: "Cloud Security Posture",      desc: "Configuration review, CSPM, and identity hardening for cloud-first organisations" },
-                { Icon: ShieldCheck,  label: "Supply Chain Security",       desc: "Third-party risk assessments and vendor security controls to protect your ecosystem" },
-              ].map(({ Icon: Ic, label, desc }) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-800 bg-gray-900 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/40 transition-colors">
-                    <Ic className="w-5 h-5 text-blue-400" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white mb-1">{label}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
-                  </div>
+                { label: "Financial Services SOC",  desc: "24/7 threat monitoring for banks and payment providers." },
+                { label: "Regulatory Compliance",   desc: "ISO 27001, PCI-DSS, and GDPR audit readiness." },
+                { label: "Ransomware Defense",      desc: "Layered protection and rapid ransomware recovery." },
+                { label: "Red Team Exercises",      desc: "Simulated attacks to test security controls." },
+                { label: "Cloud Security Posture",  desc: "Cloud configuration review and identity hardening." },
+                { label: "Supply Chain Security",   desc: "Third-party risk assessment and vendor security controls." },
+              ].map(({ label, desc }) => (
+                <div key={label} className="bg-gray-50 rounded-2xl p-6">
+                  <h3 className="font-semibold text-gray-900 mb-2" style={{ fontFamily: MF }}>{label}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="bg-white py-24">
+        {/* What We Deliver */}
+        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Security Services</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Security Services
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 A full-spectrum cybersecurity offering covering prevention, detection, response, and compliance.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map(({ Icon, label, desc }, i) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <p className="font-bold text-gray-900">{label}</p>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map(({ label, desc }) => (
+                <div key={label} className="bg-white border border-gray-100 rounded-2xl p-6">
+                  <h3 className="font-semibold text-gray-900 mb-2" style={{ fontFamily: MF }}>{label}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        {/* Why It Matters */}
+        <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why It Matters</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Why It Matters</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Benefits
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
                 A proactive cybersecurity posture protects your revenue, reputation, and regulatory standing.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map(({ Icon, bg, title, desc }) => (
-                <div key={title} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`w-12 h-12 rounded-2xl ${bg} mb-5 flex items-center justify-center shadow-md`}>
-                    <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {benefits.map(({ title, desc }) => (
+                <div key={title} className="border rounded-2xl p-8" style={{ borderColor: "#57D9D4" }}>
+                  <h3 className="font-semibold text-lg mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
