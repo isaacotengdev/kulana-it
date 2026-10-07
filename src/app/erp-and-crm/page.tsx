@@ -140,61 +140,48 @@ export default function ErpCrmPage() {
         </section>
 
 
-        {/* ── What is ERP and CRM? ─────────────────────────────────────── */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                What is ERP and CRM?
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Enterprise resource planning and customer relationship management represent critical
-                software tools enabling organisations to handle internal workflows and customer
-                connections effectively. ERP systems consolidate business functions including finance,
-                human resources, procurement, and day-to-day operations.
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                As a certified partner of Microsoft Dynamics 365 and HubSpot, we bring expertise and
-                experience to every ERP and CRM project — helping you implement and customise these
-                platforms to your exact organisational requirements.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Finance & Ops", "Sales Automation", "Marketing Hub", "Customer Service"].map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                    <CheckCircle2 className="w-3 h-3" /> {tag}
-                  </span>
-                ))}
-              </div>
+        {/* ── Overview ─────────────────────────────────────────────────── */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>Overview</p>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+              What is ERP and CRM?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
+              We help organisations streamline internal operations and strengthen customer relationships by implementing integrated ERP and CRM solutions. Our solutions bring together critical business functions — including finance, human resources, procurement, operations and customer management — to improve efficiency and provide greater visibility across the organisation.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
+              As a certified partner of Microsoft Dynamics 365 and HubSpot, we combine platform expertise with a deep understanding of business needs to implement and customise solutions that fit each organisation&apos;s processes, goals and requirements.
+            </p>
+            <div className="flex gap-3 w-full">
+              {["Finance & Ops", "Sales Automation", "Marketing Hub", "Customer Service"].map((tag) => (
+                <span key={tag} className="flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-semibold text-gray-800 text-center"
+                  style={{ fontFamily: MF, border: "1.5px solid #57D9D4" }}>
+                  {tag}
+                </span>
+              ))}
             </div>
+          </div>
+        </section>
 
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <ArrowRight className="w-5 h-5 text-white" />
+        {/* ── How to Get Started ───────────────────────────────────────── */}
+        <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff" }}>
+              How to Get Started
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+              {[
+                { step: "01", title: "Assessment",     desc: "Experienced consultants conduct thorough analysis of current systems, workflows, and pain points to identify improvement opportunities." },
+                { step: "02", title: "Strategy",       desc: "A customised implementation roadmap aligns with your business objectives, budget constraints, and timeline requirements." },
+                { step: "03", title: "Implementation", desc: "Configuration, customisation, and integration occur through stakeholder engagement and iterative approaches, with training and ongoing support provided." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="text-5xl lg:text-6xl font-light mb-3 leading-none" style={{ fontFamily: MF, color: "#a198af" }}>{step}</p>
+                  <p className="text-xl lg:text-2xl font-semibold mb-4" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
+                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "rgba(255,255,255,0.75)" }}>{desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">How to Get Started</h3>
-              </div>
-              <div className="space-y-5">
-                {[
-                  { Icon: Search,   step: "01", title: "Assessment",               desc: "Experienced consultants conduct thorough analysis of current systems, workflows, and pain points to identify improvement opportunities." },
-                  { Icon: BarChart3, step: "02", title: "Strategy Development",     desc: "A customised implementation roadmap aligns with your business objectives, budget constraints, and timeline requirements." },
-                  { Icon: Settings,  step: "03", title: "Collaborative Implementation", desc: "Configuration, customisation, and integration occur through stakeholder engagement and iterative approaches, with training and ongoing support provided." },
-                ].map(({ Icon: StepIcon, step, title, desc }) => (
-                  <div key={step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                      <StepIcon className="w-4 h-4 text-white" strokeWidth={1.75} />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{step}</span>
-                        <span className="font-semibold text-gray-900">{title}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
