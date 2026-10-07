@@ -17,41 +17,6 @@ export const metadata: Metadata = {
     "API-first integration architecture that accelerates time-to-market and de-risks legacy connectivity — so transformation programmes move at business speed, not plumbing speed.",
 };
 
-const subServices = [
-  {
-    Icon: Plug,
-    title: "Integration",
-    href: "/digital-integrations-api-management",
-    tag: "API & Middleware",
-    gradient: "from-cyan-500 to-blue-600",
-    iconBg: "bg-cyan-600",
-    tagColor: "bg-cyan-50 text-cyan-700 border-cyan-100",
-    desc: "Replace fragile point-to-point connections with a governed integration layer. We implement WSO2 and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
-    highlights: ["API Management & Gateway", "Middleware & ESB", "Event Streaming", "Legacy System Wrapping"],
-  },
-  {
-    Icon: Layers,
-    title: "Enterprise Architecture",
-    href: "/enterprise-architecture",
-    tag: "Architecture",
-    gradient: "from-teal-500 to-teal-700",
-    iconBg: "bg-teal-600",
-    tagColor: "bg-teal-50 text-teal-700 border-teal-100",
-    desc: "Integration without architecture is just more complexity. Our enterprise architects define the blueprints, API standards, and governance frameworks that ensure your integration investments compound rather than accumulate technical debt.",
-    highlights: ["TOGAF-aligned Frameworks", "API Standards & Governance", "Technology Roadmapping", "Cloud and Hybrid Strategy"],
-  },
-  {
-    Icon: Cpu,
-    title: "AI-Native Product Engineering",
-    href: "/ai-native-product-engineering",
-    tag: "AI Engineering",
-    gradient: "from-blue-500 to-teal-600",
-    iconBg: "bg-blue-600",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-100",
-    desc: "A well-integrated enterprise unlocks the next layer: AI-native products that compose your existing capabilities through APIs rather than rebuilding them. We engineer agentic systems, LLM orchestration, and intelligent automation directly on top of your integration layer.",
-    highlights: ["LLM Orchestration & Agents", "RAG and Knowledge Systems", "MLOps and Model Evaluation", "Enterprise AI Integration"],
-  },
-];
 
 
 const scenarios = [
@@ -211,56 +176,69 @@ export default function IntegrationDigitalConnectivityPage() {
           </div>
         </section>
 
-        {/* Sub-services */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Three Disciplines. One Connected Enterprise.
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Integration, architecture, and AI engineering work together — each layer enabling
-              the next, from connectivity foundation through to intelligent product capabilities.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {subServices.map(({ Icon, title, href, tag, gradient, iconBg, tagColor, desc, highlights }) => (
-              <div
-                key={title}
-                className="group bg-white rounded-3xl border border-gray-100 hover:border-blue-100 hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
-              >
-                <div className={`h-1.5 bg-gradient-to-r ${gradient}`} />
-                <div className="p-8 flex flex-col flex-1">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-2xl ${iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-7 h-7 text-white" strokeWidth={1.75} />
+        {/* What We Deliver */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.18em] uppercase mb-10" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug" style={{ fontFamily: MF }}>
+                Three Disciplines. One Connected Enterprise.
+              </h2>
+              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>
+                Integration, architecture, and AI engineering work together — each layer enabling the next, from connectivity foundation through to intelligent product capabilities.
+              </p>
+            </div>
+            <div className="space-y-20">
+              {[
+                {
+                  num: "01", tag: "API & MIDDLEWARE", title: "Integration",
+                  href: "/digital-integrations-api-management",
+                  desc: "Replace fragile point-to-point connections with a governed integration layer. We implement WSO2 and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
+                  highlights: ["API Management & Gateway", "Middleware & ESB", "Event Streaming", "Legacy System Wrapping"],
+                  img: "/images/integration_digital_connectivity/Integration.webp",
+                },
+                {
+                  num: "02", tag: "ARCHITECTURE", title: "Enterprise Architecture",
+                  href: "/enterprise-architecture",
+                  desc: "Integration without architecture is just more complexity. Our enterprise architects define the blueprints, API standards, and governance frameworks that ensure your integration investments compound rather than accumulate technical debt.",
+                  highlights: ["TOGAF-aligned Frameworks", "API Standards & Governance", "Technology Roadmapping", "Cloud and Hybrid Strategy"],
+                  img: "/images/integration_digital_connectivity/Enterprise Architecture.webp",
+                },
+                {
+                  num: "03", tag: "AI ENGINEERING", title: "AI-Native Product Engineering",
+                  href: "/ai-native-product-engineering",
+                  desc: "A well-integrated enterprise unlocks the next layer: AI-native products that compose your existing capabilities through APIs rather than rebuilding them. We engineer agentic systems, LLM orchestration, and intelligent automation directly on top of your integration layer.",
+                  highlights: ["LLM Orchestration & Agents", "RAG and Knowledge Systems", "MLOps and Model Evaluation", "Enterprise AI Integration"],
+                  img: "/images/integration_digital_connectivity/AI-Native Product Engineering.webp",
+                },
+              ].map(({ num, tag, title, href, desc, highlights, img }) => (
+                <div key={title} className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <p className="text-xs tracking-[0.15em] uppercase font-bold mb-4" style={{ fontFamily: MF, color: "#57D9D4" }}>{num} — {tag}</p>
+                    <h3 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</h3>
+                    <p className="text-gray-600 leading-relaxed mb-6" style={{ fontFamily: MF }}>{desc}</p>
+                    <div className="space-y-2 mb-8">
+                      {highlights.map((h) => (
+                        <div key={h} className="flex items-center gap-2">
+                          <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
+                          <span className="text-sm text-gray-600" style={{ fontFamily: MF }}>{h}</span>
+                        </div>
+                      ))}
                     </div>
-                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${tagColor}`}>
-                      {tag}
-                    </span>
+                    <Link
+                      href={href}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
+                      style={{ fontFamily: MF, background: "#57D9D4", color: "#040d28" }}
+                    >
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
-                  <h2 className="text-xl font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {title}
-                  </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">{desc}</p>
-                  <div className="space-y-2 mb-6">
-                    {highlights.map((h) => (
-                      <div key={h} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#03B2EE] flex-shrink-0" />
-                        <span className="text-xs font-medium text-gray-600">{h}</span>
-                      </div>
-                    ))}
+                  <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden">
+                    <Image src={img} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                   </div>
-                  <Link
-                    href={href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors group/link"
-                  >
-                    Learn more <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
