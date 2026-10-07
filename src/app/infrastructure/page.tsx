@@ -245,28 +245,37 @@ export default function InfrastructurePage() {
         </section>
 
         {/* Features */}
-        <section className="bg-white py-24">
+        <section className="py-16 lg:py-20" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Deliver</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Services We Provide</h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p
+              className="text-xs tracking-[0.18em] uppercase mb-8"
+              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
+            >
+              What We Deliver
+            </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
+              <h2
+                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
+                style={{ fontFamily: MF }}
+              >
+                Services<br />We Provide
+              </h2>
+              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
                 From initial design to ongoing managed operations, we cover the full infrastructure lifecycle.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map(({ Icon, label, desc }, i) => (
-                <div key={label} className="group flex gap-4 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <p className="font-bold text-gray-900">{label}</p>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: "Data Center & Co-location",   desc: "Design, build, and manage resilient data centres." },
+                { title: "Hybrid & Multi-Cloud",         desc: "Extend infrastructure across AWS, Azure, and Google Cloud." },
+                { title: "Network & SD-WAN",             desc: "Resilient networks built to scale with your business." },
+                { title: "Virtualisation & HCI",         desc: "Reduce hardware sprawl with virtualised infrastructure." },
+                { title: "Backup & Disaster Recovery",   desc: "Automated backup, replication, and disaster recovery." },
+                { title: "Infrastructure Monitoring",    desc: "24/7 monitoring, proactive alerts, and capacity planning." },
+              ].map(({ title, desc }) => (
+                <div key={title} className="bg-white rounded-xl p-6 border border-gray-100">
+                  <p className="font-semibold text-gray-900 mb-2" style={{ fontFamily: MF }}>{title}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
