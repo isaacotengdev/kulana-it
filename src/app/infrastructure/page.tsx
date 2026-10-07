@@ -137,24 +137,22 @@ export default function InfrastructurePage() {
               Overview
             </p>
             <h2
-              className="text-3xl lg:text-4xl font-light text-gray-900 mb-6 max-w-2xl"
+              className="text-3xl lg:text-4xl font-light text-gray-900 mb-6"
               style={{ fontFamily: MF }}
             >
               The foundation your business runs on
             </h2>
-            <div className="max-w-3xl">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-10">
-                Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-10">
+              Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
+            </p>
+            <div className="flex gap-3 w-full">
               {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center px-6 py-2.5 rounded-lg text-sm font-semibold text-gray-800"
+                  className="flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-semibold text-gray-800 text-center"
                   style={{ fontFamily: MF, border: "1.5px solid #57D9D4" }}
                 >
                   {tag}
