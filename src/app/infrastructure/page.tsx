@@ -325,9 +325,9 @@ export default function InfrastructurePage() {
         {/* FAQ */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-6 mb-12">
-              <p className="text-xs tracking-[0.18em] uppercase flex-shrink-0 leading-none" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
-              <div className="flex-1 h-px bg-gray-200" />
+            <div className="mb-12">
+              <p className="text-xs tracking-[0.18em] uppercase leading-none mb-4" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
+              <div className="h-px bg-gray-200 w-full" />
             </div>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
