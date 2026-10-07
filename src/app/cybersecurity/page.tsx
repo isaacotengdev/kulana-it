@@ -85,7 +85,7 @@ export default function CybersecurityPage() {
         {/* Hero */}
         <section className="relative overflow-hidden" style={{ height: "100vh" }}>
           <Image
-            src="/images/Service_Core & Enterprise Systems/Cybersecurity_image.webp"
+            src="/images/Service_Core & Enterprise Systems/Cybersecurity/Hero image_Cybersecurity_2560×1440px.webp"
             alt="Cybersecurity"
             fill
             className="object-cover object-center"
