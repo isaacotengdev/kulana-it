@@ -74,21 +74,18 @@ export default function AboutUsPage() {
           />
           <div
             className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+            style={{ paddingTop: "calc(5rem + 14vh)", paddingBottom: "5rem" }}
           >
-            <div>
-              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
-                Kulana IT Solutions
+            <div className="max-w-2xl">
+              <p className="text-xs tracking-[0.22em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+                About Us
               </p>
-              <h1
-                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+              <blockquote
+                className="text-3xl sm:text-4xl lg:text-5xl font-light text-white leading-[1.2]"
                 style={{ fontFamily: MF }}
               >
-                About Us
-              </h1>
-              <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed" style={{ fontFamily: MF }}>
-                Innovative Solutions, Unique Value — Empowering Your Business to Thrive in the Digital Age.
-              </p>
+                &ldquo;By contracting Kulana&apos;s services, you&apos;ll be able to improve company dynamics, gain access to resources, keep up with competition and more.&rdquo;
+              </blockquote>
             </div>
             <div className="mt-auto">
               <Link
@@ -100,14 +97,6 @@ export default function AboutUsPage() {
               </Link>
             </div>
           </div>
-        </section>
-
-        {/* ── Intro quote ──────────────────────────────────────────────── */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <blockquote className="text-xl lg:text-2xl text-gray-700 font-medium leading-relaxed">
-            &ldquo;By contracting Kulana&apos;s services, you&apos;ll be able to improve company dynamics,
-            gain access to resources, keep up with competition and more.&rdquo;
-          </blockquote>
         </section>
 
         {/* ── Company entities ─────────────────────────────────────────── */}
