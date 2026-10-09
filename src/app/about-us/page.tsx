@@ -73,27 +73,27 @@ export default function AboutUsPage() {
             style={{ background: "linear-gradient(to right, rgba(8,0,32,0.80) 0%, rgba(8,0,32,0.55) 45%, rgba(8,0,32,0.25) 75%, rgba(8,0,32,0.08) 100%)" }}
           />
           <div
-            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(5rem + 14vh)", paddingBottom: "5rem" }}
+            className="relative z-10 flex flex-col justify-between w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "5rem", paddingBottom: "4rem" }}
           >
-            <div className="max-w-2xl">
-              <p className="text-xs tracking-[0.22em] uppercase mb-8" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
-                About Us
-              </p>
+            {/* top spacer — pushes quote to vertical centre */}
+            <div className="flex-1" />
+            <div className="max-w-xl lg:max-w-2xl">
               <blockquote
-                className="text-3xl sm:text-4xl lg:text-5xl font-light text-white leading-[1.2]"
+                className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-[1.3]"
                 style={{ fontFamily: MF }}
               >
                 &ldquo;By contracting Kulana&apos;s services, you&apos;ll be able to improve company dynamics, gain access to resources, keep up with competition and more.&rdquo;
               </blockquote>
             </div>
-            <div className="mt-auto">
+            <div className="flex-1" />
+            <div>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
                 style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
               >
-                Request a Consultation
+                Request a Consultation →
               </Link>
             </div>
           </div>
