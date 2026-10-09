@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import HeroCanvas from "@/components/HeroCanvas";
 import type { Metadata } from "next";
+
+const MF = "var(--font-manrope), sans-serif";
 
 export const metadata: Metadata = {
   title: "About Us | Kulana IT Solutions",
@@ -15,19 +16,19 @@ const entities = [
   {
     name: "Kulana Ghana Ltd",
     desc: "Established in 2019 in Ghana by experienced professionals with a deep understanding of digital transformation drivers. The company expanded with Kulana Services Ltd established October 31, 2022, in Mauritius, emphasising system optimisation and process automation to reduce staffing expenses.",
-    image: "/images/about/company-1.jpg",
+    image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
     alt: "Kulana Ghana office and team",
   },
   {
     name: "Kulana Holdings Ltd",
     desc: "A Global Business License Company established October 31, 2022, in Mauritius, managing equity portfolios primarily in the technology sector while remaining open to diversification. It provides software sales, consultative guidance, implementation, and advisory services.",
-    image: "/images/about/company-2.jpg",
+    image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
     alt: "Kulana Holdings operations",
   },
   {
     name: "Kulana Services Ltd",
     desc: "Established October 31, 2022, in Mauritius. The entity focuses on operational efficiencies and workflow automation, offering software sales, comprehensive solutions, consulting expertise, and implementation services tailored to enterprise needs.",
-    image: "/images/about/company-3.jpg",
+    image: "/images/about/Kulana Services Ltd_image_1600x1000px.webp",
     alt: "Kulana Services team at work",
   },
 ];
@@ -44,41 +45,11 @@ const benefits = [
 ];
 
 const steps = [
-  {
-    num: "01",
-    title: "Needs Assessment",
-    desc: "We scope the required services through a thorough assessment of your current systems, processes, and objectives.",
-    image: "/images/about/step-1-assessment.jpg",
-    alt: "Needs assessment consultation",
-  },
-  {
-    num: "02",
-    title: "Action Plan Creation",
-    desc: "A detailed plan is created with tasks, deadlines, and milestones aligned to your strategic priorities.",
-    image: "/images/about/step-2-planning.jpg",
-    alt: "Action plan and remote work",
-  },
-  {
-    num: "03",
-    title: "Implementation",
-    desc: "We implement agreed changes collaboratively using agile methods, industry best practices, and proven frameworks.",
-    image: "/images/about/step-3-implementation.jpg",
-    alt: "Implementation and team collaboration",
-  },
-  {
-    num: "04",
-    title: "Monitoring and Adjustments",
-    desc: "Ongoing solution monitoring ensures delivery remains on course, with necessary adjustments made in real time.",
-    image: "/images/about/step-4-monitoring.jpg",
-    alt: "Monitoring and adjustments",
-  },
-  {
-    num: "05",
-    title: "Reporting and Optimisation",
-    desc: "We provide transparent reporting and continuous insights on software utilisation to sustain long-term value.",
-    image: "/images/about/step-5-reporting.jpg",
-    alt: "Reporting and software optimisation",
-  },
+  { num: "01", title: "Needs Assessment",        desc: "We scope the required services through a thorough assessment of your current systems, processes, and objectives." },
+  { num: "02", title: "Action Plan Creation",     desc: "A detailed plan is created with tasks, deadlines, and milestones aligned to your strategic priorities." },
+  { num: "03", title: "Implementation",           desc: "We implement agreed changes collaboratively using agile methods, industry best practices, and proven frameworks." },
+  { num: "04", title: "Monitoring and Adjustments", desc: "Ongoing solution monitoring ensures delivery remains on course, with necessary adjustments made in real time." },
+  { num: "05", title: "Reporting and Optimisation", desc: "We provide transparent reporting and continuous insights on software utilisation to sustain long-term value." },
 ];
 
 export default function AboutUsPage() {
@@ -87,14 +58,47 @@ export default function AboutUsPage() {
       <Navbar />
       <main>
 
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden flex items-center text-white" style={{ height: "100vh", paddingTop: "5rem" }}>
-          <HeroCanvas variant="about" />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">About Us</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Innovative Solutions, Unique Value — Empowering Your Business to Thrive in the Digital Age.
-            </p>
+        {/* Hero */}
+        <section className="relative overflow-hidden" style={{ height: "100vh" }}>
+          <Image
+            src="/images/about/Hero image_About us_2560×1440px.webp"
+            alt="About Kulana IT Solutions"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.80) 0%, rgba(8,0,32,0.55) 45%, rgba(8,0,32,0.25) 75%, rgba(8,0,32,0.08) 100%)" }}
+          />
+          <div
+            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+          >
+            <div>
+              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+                Kulana IT Solutions
+              </p>
+              <h1
+                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
+                style={{ fontFamily: MF }}
+              >
+                About Us
+              </h1>
+              <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed" style={{ fontFamily: MF }}>
+                Innovative Solutions, Unique Value — Empowering Your Business to Thrive in the Digital Age.
+              </p>
+            </div>
+            <div className="mt-auto">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+              >
+                Request a Consultation
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -169,7 +173,7 @@ export default function AboutUsPage() {
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
               <Image
-                src="/images/about/iso-stamp.png"
+                src="/images/about/ISO_Kulana_stamp.svg"
                 alt="ISO Certified — Kulana IT Solutions"
                 width={200}
                 height={100}
@@ -198,24 +202,11 @@ export default function AboutUsPage() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-              {steps.map(({ num, title, desc, image, alt }) => (
-                <div key={num} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                  <div className="relative h-44 w-full">
-                    <Image
-                      src={image}
-                      alt={alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 50vw, 20vw"
-                    />
-                    <div className="absolute top-3 left-3 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">{num}</span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
+              {steps.map(({ num, title, desc }) => (
+                <div key={num} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                  <p className="text-4xl font-light mb-4" style={{ fontFamily: MF, color: "rgba(32,0,68,0.18)" }}>{num}</p>
+                  <h3 className="font-bold text-gray-900 mb-2" style={{ fontFamily: MF }}>{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
                 </div>
               ))}
             </div>
