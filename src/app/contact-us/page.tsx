@@ -73,7 +73,7 @@ export default function ContactUsPage() {
       <Navbar />
       <main className="pt-20">
         <section className="py-24 bg-white">
-          <div className="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24">
+          <div className="max-w-8xl mx-auto px-6 sm:px-16 lg:px-36">
 
             {/* Label + rule */}
             <div className="mb-12">
