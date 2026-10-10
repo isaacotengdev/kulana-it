@@ -297,7 +297,7 @@ export default function ContactUsPage() {
 
         {/* Technology Partners */}
         <section style={{ background: "#ffffff" }}>
-          <div className="max-w-8xl mx-auto px-6 sm:px-16 lg:px-36 py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
             <div className="mb-10">
               <span className="text-xs tracking-[0.2em] uppercase"
@@ -320,7 +320,7 @@ export default function ContactUsPage() {
               </p>
             </div>
 
-            <div className="flex items-center justify-between flex-nowrap">
+            <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-10">
               <Image src="/images/Links_homepage/DELL_logo_384x75px.svg" alt="Dell" width={150} height={30}
                 className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
               <Image src="/images/Links_homepage/HubSpot_logo_384x75px.svg" alt="HubSpot" width={170} height={30}
