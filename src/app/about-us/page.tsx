@@ -212,7 +212,6 @@ export default function AboutUsPage() {
                 style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>
                 Our Commitment
               </span>
-              <div className="w-full h-px mt-3" style={{ background: "#200044" }} />
             </div>
 
             <div className="grid lg:grid-cols-3 gap-12 items-center">
