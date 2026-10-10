@@ -164,46 +164,79 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* ── Benefits ─────────────────────────────────────────────────── */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-                Why Partner with Kulana?
+        {/* ── Our Advantage ────────────────────────────────────────────── */}
+        <section className="bg-white py-24">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="mb-12">
+              <span className="text-xs tracking-[0.2em] uppercase"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                Our Advantage
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ fontFamily: MF, color: "#000000" }}>
+                Why Partner<br />with Kulana?
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                We combine deep technical expertise with local market knowledge to deliver
-                solutions that create real, measurable business value — not just technology
-                for technology&apos;s sake.
-              </p>
-              <ul className="space-y-3">
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-3 text-gray-700">
-                    <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <p className="text-base leading-relaxed mb-8"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                  We combine deep technical expertise with local market knowledge to deliver
+                  solutions that create real, measurable business value – not just technology
+                  for technology&apos;s sake.
+                </p>
+                <ul className="space-y-3">
+                  {benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-3 text-sm font-bold"
+                      style={{ fontFamily: MF, color: "#000000" }}>
+                      <span style={{ color: "#57D9D4" }}>→</span>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100">
-              <Image
-                src="/images/about/ISO_Kulana_stamp.svg"
-                alt="ISO Certified — Kulana IT Solutions"
-                width={200}
-                height={100}
-                className="object-contain mb-6"
-              />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">ISO Certified Quality</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Kulana operates under ISO 9001 and ISO 27001 certified quality and information
-                security management systems — ensuring every engagement meets the highest standards
-                of quality, consistency, and data protection.
-              </p>
+
+          </div>
+        </section>
+
+        {/* ── Our Commitment ───────────────────────────────────────────── */}
+        <section style={{ background: "#57D9D4" }} className="py-24">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="mb-12">
+              <span className="text-xs tracking-[0.2em] uppercase"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>
+                Our Commitment
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#200044" }} />
             </div>
+
+            <div className="grid lg:grid-cols-3 gap-12 items-center">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ fontFamily: MF, color: "#200044" }}>
+                ISO Certified<br />Quality
+              </h2>
+              <p className="text-base leading-relaxed"
+                style={{ fontFamily: MF, fontWeight: 400, color: "#200044" }}>
+                Kulana operates under ISO 9001 and ISO 27001 certified management systems,
+                ensuring the highest standards of quality, consistency and information security.
+              </p>
+              <div className="flex justify-center lg:justify-end">
+                <Image
+                  src="/images/about/ISO_Kulana_stamp.svg"
+                  alt="ISO 27001:2022 and ISO 9001:2015 certified"
+                  width={310}
+                  height={144}
+                  className="object-contain w-full max-w-xs"
+                  unoptimized
+                />
+              </div>
+            </div>
+
           </div>
         </section>
 
