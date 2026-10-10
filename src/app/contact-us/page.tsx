@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const LOGO_FILTER = "grayscale(100%) brightness(0) invert(0.65)";
 
@@ -75,7 +76,7 @@ export default function ContactUsPage() {
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-24 bg-white">
+        <section id="contact-form" className="py-24 bg-white">
           <div className="max-w-8xl mx-auto px-6 sm:px-16 lg:px-36">
 
             {/* Label + rule */}
@@ -254,6 +255,42 @@ export default function ContactUsPage() {
                 )}
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Ready to work with us CTA */}
+        <section style={{ background: "#EBF8F8" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-6 sm:px-16 lg:px-36">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <h2
+                className="text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ fontFamily: MF, color: "#200044" }}
+              >
+                Ready to work<br />with us?
+              </h2>
+              <div>
+                <p className="text-base leading-relaxed mb-8"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#200044" }}>
+                  Get in touch to find out how Kulana can help your organisation thrive in the digital age.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-sm transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044" }}
+                  >
+                    Let&apos;s Talk →
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-sm border transition-all hover:bg-white/50"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Explore Our Services →
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
