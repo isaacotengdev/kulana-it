@@ -14,18 +14,21 @@ export const metadata: Metadata = {
 
 const entities = [
   {
+    country: "Ghana",
     name: "Kulana Ghana Ltd",
     desc: "Established in 2019 in Ghana by experienced professionals with a deep understanding of digital transformation drivers. The company expanded with Kulana Services Ltd established October 31, 2022, in Mauritius, emphasising system optimisation and process automation to reduce staffing expenses.",
     image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
     alt: "Kulana Ghana office and team",
   },
   {
+    country: "Mauritius",
     name: "Kulana Holdings Ltd",
     desc: "A Global Business License Company established October 31, 2022, in Mauritius, managing equity portfolios primarily in the technology sector while remaining open to diversification. It provides software sales, consultative guidance, implementation, and advisory services.",
     image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
     alt: "Kulana Holdings operations",
   },
   {
+    country: "Mauritius",
     name: "Kulana Services Ltd",
     desc: "Established October 31, 2022, in Mauritius. The entity focuses on operational efficiencies and workflow automation, offering software sales, comprehensive solutions, consulting expertise, and implementation services tailored to enterprise needs.",
     image: "/images/about/Kulana Services Ltd_image_1600x1000px.webp",
@@ -99,39 +102,65 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* ── Company entities ─────────────────────────────────────────── */}
-        <section className="bg-gray-50 py-24">
+        {/* ── Who We Are ───────────────────────────────────────────────── */}
+        <section className="bg-white py-24">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Who We Are</h2>
-              <p className="text-gray-500 text-lg max-w-3xl mx-auto">
-                Kulana is a group of technology companies dedicated to empowering organisations in
-                Ghana and Mauritius through enterprise-grade IT solutions, consulting, and
+
+            {/* Label + rule */}
+            <div className="mb-12">
+              <span className="text-xs tracking-[0.2em] uppercase"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                Who We Are
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
+            {/* Intro — heading + description */}
+            <div className="grid lg:grid-cols-2 gap-12 mb-20 items-start">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ fontFamily: MF, color: "#000000" }}>
+                Three Companies.<br />A Shared Purpose.
+              </h2>
+              <p className="text-base leading-relaxed lg:pt-1"
+                style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                Kulana is a group of technology companies dedicated to empowering organisations
+                in Ghana and Mauritius through enterprise-grade IT solutions, consulting, and
                 implementation expertise.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {entities.map(({ name, desc, image, alt }) => (
-                <div key={name} className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                  <div className="relative h-48 w-full">
+
+            {/* Entity rows */}
+            <div className="divide-y divide-gray-100">
+              {entities.map(({ country, name, desc, image, alt }) => (
+                <div key={name} className="grid lg:grid-cols-5 gap-10 py-14 items-center">
+                  <div className="lg:col-span-2">
+                    <p className="text-xs uppercase tracking-[0.15em] mb-3"
+                      style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
+                      {country}
+                    </p>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-5"
+                      style={{ fontFamily: MF, color: "#200044" }}>
+                      {name}
+                    </h3>
+                    <p className="text-sm leading-relaxed"
+                      style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                      {desc}
+                    </p>
+                  </div>
+                  <div className="relative lg:col-span-3 w-full overflow-hidden"
+                    style={{ aspectRatio: "16/10" }}>
                     <Image
                       src={image}
                       alt={alt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 1024px) 100vw, 60vw"
                     />
-                  </div>
-                  <div className="p-8">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600 mb-4 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{name}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
