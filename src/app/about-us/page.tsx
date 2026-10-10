@@ -240,44 +240,64 @@ export default function AboutUsPage() {
         </section>
 
         {/* ── Process ──────────────────────────────────────────────────── */}
-        <section className="bg-gray-50 py-24">
+        <section className="bg-white py-24">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+
+            <div className="mb-14">
+              <span className="text-xs tracking-[0.2em] uppercase"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
                 Kulana&apos;s Process, Step by Step
-              </h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                A structured, transparent approach that ensures every engagement delivers
-                measurable value from day one.
-              </p>
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
               {steps.map(({ num, title, desc }) => (
-                <div key={num} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                  <p className="text-4xl font-light mb-4" style={{ fontFamily: MF, color: "rgba(32,0,68,0.18)" }}>{num}</p>
-                  <h3 className="font-bold text-gray-900 mb-2" style={{ fontFamily: MF }}>{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                <div key={num}>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-4xl font-light" style={{ fontFamily: MF, color: "#000000" }}>{num}</span>
+                    <span className="text-lg font-bold" style={{ color: "#57D9D4" }}>›</span>
+                  </div>
+                  <h3 className="font-bold text-sm mb-3" style={{ fontFamily: MF, color: "#000000" }}>{title}</h3>
+                  <p className="text-xs leading-relaxed" style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>{desc}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
-        <section className="gradient-primary py-20 text-white text-center">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-              Ready to work with us?
-            </h2>
-            <p className="text-blue-100 text-lg mb-8">
-              Get in touch to find out how Kulana can help your organisation thrive in the digital age.
-            </p>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D4EE] text-[#040d28] font-semibold rounded-md transition-all shadow-lg hover:bg-[#00BCDA] hover:-translate-y-0.5"
-            >
-              Request a Consultation
-            </Link>
+        <section style={{ background: "#EBF8F8" }} className="py-16 lg:py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ fontFamily: MF, color: "#200044" }}>
+                Ready to work<br />with us?
+              </h2>
+              <div>
+                <p className="text-base leading-relaxed mb-8"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#200044" }}>
+                  Get in touch to find out how Kulana can help your organisation thrive in the digital age.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-sm transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044" }}
+                  >
+                    Let&apos;s Talk →
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-sm border transition-all hover:bg-white/50"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044" }}
+                  >
+                    Explore Our Services →
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
