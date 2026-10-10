@@ -320,7 +320,7 @@ export default function ContactUsPage() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-10">
+            <div className="flex items-center justify-between gap-6 overflow-x-auto">
               <Image src="/images/Links_homepage/DELL_logo_384x75px.svg" alt="Dell" width={150} height={30}
                 className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
               <Image src="/images/Links_homepage/HubSpot_logo_384x75px.svg" alt="HubSpot" width={170} height={30}
