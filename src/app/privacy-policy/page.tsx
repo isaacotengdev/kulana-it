@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
         <section className="gradient-hero relative overflow-hidden py-24 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10">
               <div className="flex-1">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
@@ -162,7 +162,7 @@ export default function PrivacyPolicyPage() {
 
         {/* ── Quick-glance commitment strip ────────────────────────────── */}
         <section className="bg-white border-b border-gray-100 py-8">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
               {[
                 { Icon: Lock,       label: "Data Never Sold"       },
@@ -181,7 +181,7 @@ export default function PrivacyPolicyPage() {
 
         {/* ── Introduction ─────────────────────────────────────────────── */}
         <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-5">
                 <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
@@ -203,7 +203,7 @@ export default function PrivacyPolicyPage() {
 
         {/* ── Policy sections ──────────────────────────────────────────── */}
         <section className="pb-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             {sections.map(({ id, Icon, iconBg, title, content }) => (
               <div key={id} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="flex items-center gap-4 px-8 pt-7 pb-5 border-b border-gray-50">
@@ -220,7 +220,7 @@ export default function PrivacyPolicyPage() {
 
         {/* ── Contact banner ───────────────────────────────────────────── */}
         <section className="py-16 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-8 md:p-10 text-white">
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>

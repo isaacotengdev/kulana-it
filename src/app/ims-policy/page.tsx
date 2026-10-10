@@ -87,7 +87,7 @@ export default function ImsPolicyPage() {
         <section className="gradient-hero relative overflow-hidden py-24 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
@@ -114,7 +114,7 @@ export default function ImsPolicyPage() {
 
         {/* ── IMS overview ─────────────────────────────────────────────── */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Section label */}
             <div className="flex items-center gap-3 mb-10">
@@ -153,7 +153,7 @@ export default function ImsPolicyPage() {
 
         {/* ── ISO standard cards ───────────────────────────────────────── */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             {standards.map(({ code, year, label, Icon, gradient, ringColor, tagBg, iconBg, title, body, commitments }, idx) => (
               <div key={code} className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
 
@@ -215,7 +215,7 @@ export default function ImsPolicyPage() {
 
         {/* ── Certification summary banner ─────────────────────────────── */}
         <section className="py-16 bg-white border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 text-white">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>

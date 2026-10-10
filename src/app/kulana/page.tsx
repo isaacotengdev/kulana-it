@@ -236,7 +236,7 @@ export default function KulanaPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="gradient-primary py-20 text-white text-center">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
               Ready to transform your business?
             </h2>

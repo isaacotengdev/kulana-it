@@ -80,7 +80,7 @@ export default function CookiesPolicyPage() {
         <section className="gradient-hero relative overflow-hidden py-24 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10">
               <div className="flex-1">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
@@ -104,7 +104,7 @@ export default function CookiesPolicyPage() {
 
         {/* ── Key sections ─────────────────────────────────────────────── */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-6">
               {sections.map(({ Icon, iconBg, title, body }) => (
                 <div key={title} className="group flex gap-5 p-7 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-md transition-all duration-300">
@@ -123,7 +123,7 @@ export default function CookiesPolicyPage() {
 
         {/* ── Cookie types ─────────────────────────────────────────────── */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl lg:text-3xl font-extrabold text-gray-900 mb-3">Types of Cookies We Use</h2>
               <p className="text-gray-500 max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export default function CookiesPolicyPage() {
 
         {/* ── Browser settings ─────────────────────────────────────────── */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="flex items-center gap-3 mb-5">

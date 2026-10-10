@@ -47,7 +47,7 @@ export default function LearnMoreFormPage() {
 
         {/* Form */}
         <section className="py-24 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             {submitted ? (
               <div className="flex flex-col items-center justify-center text-center py-20">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-5">
