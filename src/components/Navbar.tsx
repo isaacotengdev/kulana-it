@@ -117,8 +117,8 @@ export default function Navbar() {
               >
                 {link.isMega ? (
                   <button
-                    className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-normal hover:font-semibold transition-colors"
-                    style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+                    className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg font-normal hover:font-semibold transition-colors"
+                    style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "20px" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = ""; }}
                   >
@@ -128,11 +128,12 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-colors ${
+                    className={`nav-link flex items-center gap-1 px-3 py-2 rounded-lg transition-colors ${
                       pathname === link.href ? "font-semibold" : "font-normal hover:font-semibold"
                     }`}
                     style={{
                       fontFamily: "var(--font-manrope), sans-serif",
+                      fontSize: "20px",
                       color: pathname === link.href ? "#57D9D4" : undefined,
                     }}
                     onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
