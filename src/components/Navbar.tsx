@@ -118,9 +118,9 @@ export default function Navbar() {
                 {link.isMega ? (
                   <button
                     className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg font-normal hover:font-semibold transition-colors"
-                    style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "20px" }}
+                    style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "20px", color: "#ffffff" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = ""; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
                   >
                     {link.name}
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180" : ""}`} />
@@ -134,10 +134,10 @@ export default function Navbar() {
                     style={{
                       fontFamily: "var(--font-manrope), sans-serif",
                       fontSize: "20px",
-                      color: pathname === link.href ? "#57D9D4" : undefined,
+                      color: pathname === link.href ? "#57D9D4" : "#ffffff",
                     }}
                     onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
-                    onMouseLeave={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = ""; }}
+                    onMouseLeave={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
                   >
                     {link.name}
                     {link.dropdown && (
