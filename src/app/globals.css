@@ -14,7 +14,7 @@
 }
 
 @theme inline {
-  --max-width-8xl: 89.75rem; /* 1436px */
+  --max-width-8xl: 75rem; /* 1200px */
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
