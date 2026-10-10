@@ -149,7 +149,7 @@ export default function Navbar() {
                 {/* ── Mega-dropdown: Our Services ── */}
                 {"isMega" in link && link.isMega && activeDropdown === link.name && (
                   <div
-                    className="absolute top-full left-0 mt-1 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                    className="absolute top-full left-0 mt-1 bg-white rounded-md shadow-2xl border border-gray-100 overflow-hidden"
                     style={{ width: "780px" }}
                     onMouseEnter={() => openDropdown(link.name)}
                     onMouseLeave={closeDropdown}
@@ -163,14 +163,16 @@ export default function Navbar() {
                               href={pillar.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block text-[11px] font-bold text-[#03B2EE] uppercase tracking-wider mb-3 hover:text-[#0299cc] transition-colors leading-snug"
+                              className="block text-[11px] font-bold uppercase tracking-wider mb-3 transition-colors leading-snug hover:opacity-80"
+                              style={{ fontFamily: "var(--font-manrope), sans-serif", color: "#57d9d4" }}
                             >
                               {pillar.name}
                             </a>
                           ) : (
                             <Link
                               href={pillar.href}
-                              className="block text-[11px] font-bold text-[#03B2EE] uppercase tracking-wider mb-3 hover:text-[#0299cc] transition-colors leading-snug"
+                              className="block text-[11px] font-bold uppercase tracking-wider mb-3 transition-colors leading-snug hover:opacity-80"
+                              style={{ fontFamily: "var(--font-manrope), sans-serif", color: "#57d9d4" }}
                             >
                               {pillar.name}
                             </Link>
@@ -181,9 +183,10 @@ export default function Navbar() {
                               <li key={svc.name}>
                                 <Link
                                   href={svc.href}
-                                  className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                  className="flex items-center gap-2 px-2 py-1.5 text-sm font-semibold transition-colors hover:opacity-70"
+                                  style={{ fontFamily: "var(--font-manrope), sans-serif", color: "#000000" }}
                                 >
-                                  <div className="w-1.5 h-1.5 rounded-full bg-blue-300 flex-shrink-0" />
+                                  <span style={{ color: "#57d9d4" }}>→</span>
                                   {svc.name}
                                 </Link>
                               </li>
@@ -202,7 +205,7 @@ export default function Navbar() {
                 {/* ── Regular dropdown ── */}
                 {"dropdown" in link && link.dropdown && activeDropdown === link.name && (
                   <div
-                    className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden"
+                    className="absolute top-full left-0 mt-1 w-72 bg-white rounded-md shadow-2xl border border-gray-100 overflow-hidden"
                     onMouseEnter={() => openDropdown(link.name)}
                     onMouseLeave={closeDropdown}
                   >
@@ -211,9 +214,10 @@ export default function Navbar() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-blue-50 hover:text-[#03B2EE] transition-colors"
+                          className="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold transition-colors hover:opacity-70"
+                          style={{ fontFamily: "var(--font-manrope), sans-serif", color: "#000000" }}
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                          <span style={{ color: "#57d9d4" }}>→</span>
                           {item.name}
                         </Link>
                       ))}
