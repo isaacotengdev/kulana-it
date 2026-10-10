@@ -204,7 +204,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* ── Our Commitment ───────────────────────────────────────────── */}
-        <section style={{ background: "#57D9D4" }} className="py-16">
+        <section style={{ background: "#57D9D4" }} className="py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-12">
