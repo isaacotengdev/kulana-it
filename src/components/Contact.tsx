@@ -20,15 +20,22 @@ const serviceGroups = [
 
 const MF = "var(--font-manrope), sans-serif";
 
-const inputStyle: React.CSSProperties = {
+const inputClass =
+  "w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-[#57D9D4] focus:ring-1 focus:ring-[#57D9D4]/30 transition-all rounded-sm";
+
+const labelStyle: React.CSSProperties = {
   fontFamily: MF,
   fontWeight: 600,
   color: "#000000",
-  fontSize: "0.875rem",
+  fontSize: "25px",
 };
 
-const inputClass =
-  "w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-[#57D9D4] focus:ring-1 focus:ring-[#57D9D4]/30 text-sm transition-all rounded-sm";
+const inputStyle: React.CSSProperties = {
+  fontFamily: MF,
+  fontWeight: 400,
+  color: "#000000",
+  fontSize: "16px",
+};
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -61,13 +68,6 @@ export default function Contact() {
     }
   };
 
-  const labelStyle: React.CSSProperties = {
-    fontFamily: MF,
-    fontWeight: 600,
-    color: "#000000",
-    fontSize: "0.8125rem",
-  };
-
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,72 +75,71 @@ export default function Contact() {
         {/* Label + rule */}
         <div className="mb-12">
           <span
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}
+            className="tracking-[0.2em] uppercase"
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}
           >
             Get In Touch
           </span>
           <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
           {/* Left — heading + office info */}
           <div>
             <h2
-              className="text-3xl lg:text-5xl leading-tight mb-8 lg:mb-16"
-              style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}
+              className="leading-tight mb-8"
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}
             >
               Let&apos;s Talk About Your<br />Technology Needs
             </h2>
 
-            <div className="space-y-10">
+            <div className="space-y-10 lg:mt-[13.5rem]">
               {/* Ghana */}
               <div>
-                <p className="text-xs uppercase tracking-[0.15em] mb-3"
-                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                <p className="uppercase tracking-[0.1em] mb-3"
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
                   Ghana Office
                 </p>
-                <p className="text-sm leading-relaxed"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                   The Rhombus, HRJ5+J6Q,<br />Kanda, Accra
                 </p>
-                <p className="text-sm mt-2"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                   +233 540 127 400
                 </p>
               </div>
 
               {/* Mauritius */}
               <div>
-                <p className="text-xs uppercase tracking-[0.15em] mb-3"
-                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                <p className="uppercase tracking-[0.1em] mb-3"
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
                   Mauritius Office
                 </p>
-                <p className="text-sm leading-relaxed"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                   Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
                 </p>
-                <p className="text-sm mt-2"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                   +230 46 32 519
                 </p>
               </div>
 
               {/* Email */}
               <div>
-                <p className="text-sm"
-                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000" }}>
+                <a
+                  href="mailto:contact@kulana.net"
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "30px" }}
+                  className="hover:text-[#57D9D4] transition-colors"
+                >
                   contact@kulana.net
-                </p>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Right — description + form */}
           <div>
-            <p className="text-sm leading-relaxed mb-8"
-              style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}>
+            <p className="mb-8"
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
               Tell us about your technology needs or challenges. Our team will get
               in touch to discuss how Kulana can support your business.
             </p>
@@ -264,8 +263,8 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 disabled:opacity-60 rounded-sm transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "0.875rem" }}
+                    className="inline-flex items-center gap-2 px-8 py-3.5 disabled:opacity-60 rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}
                   >
                     {loading ? "Sending…" : "Send Inquiry"}
                     <ArrowRight className="w-4 h-4" />

@@ -3,6 +3,8 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+const MF = "var(--font-manrope), sans-serif";
+
 const pillars = [
   {
     label: "African Expertise",
@@ -34,8 +36,8 @@ export default function About() {
         {/* Section label with line */}
         <div className="mb-10">
           <span
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, color: "#000000" }}
+            className="tracking-[0.2em] uppercase"
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}
           >
             About Kulana IT
           </span>
@@ -44,10 +46,16 @@ export default function About() {
 
         {/* Heading + description row */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <h2
+            className="leading-tight"
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}
+          >
             Driving Digital Transformation<br />Across Africa
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed lg:pt-2">
+          <p
+            className="lg:pt-2"
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}
+          >
             We combine global technology expertise with deep local knowledge to
             help organisations across Africa modernise, connect and grow.
           </p>
@@ -60,10 +68,15 @@ export default function About() {
               <div className="mb-5">
                 <Image src={p.icon} alt={p.label} width={64} height={64} className="w-14 h-14" unoptimized />
               </div>
-              <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#1a0060] mb-2">
+              <p
+                className="tracking-[0.05em] uppercase mb-2"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "25px", lineHeight: "30px", minHeight: "60px", display: "flex", alignItems: "flex-start", justifyContent: "center" }}
+              >
                 {p.label}
               </p>
-              <p className="text-sm text-gray-600 leading-snug">{p.sub}</p>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+                {p.sub}
+              </p>
             </div>
           ))}
         </div>
@@ -71,9 +84,9 @@ export default function About() {
         {/* CTA */}
         <div className="flex justify-center">
           <a
-            href="/kulana"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-sm font-semibold transition-all hover:shadow-lg hover:shadow-[#00D4EE]/40"
-            style={{ background: "#00D4EE", color: "#040d28" }}
+            href="/about-us"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md transition-all hover:opacity-90"
+            style={{ fontFamily: MF, fontWeight: 600, fontSize: "20px", background: "#57d9d4", color: "#200044" }}
           >
             Discover Kulana
             <ArrowRight className="w-4 h-4" />

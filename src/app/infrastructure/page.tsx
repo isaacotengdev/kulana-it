@@ -2,10 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Server, Cloud, Network, Shield, RefreshCw, MonitorCheck,
-  ArrowRight, CheckCircle2, Search, Settings, Zap, TrendingUp,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,31 +10,6 @@ export const metadata: Metadata = {
   description:
     "Design, build, and manage resilient IT infrastructure — data centers, cloud environments, network architecture, and 24/7 operations.",
 };
-
-const capabilities = [
-  { Icon: Server,       label: "Data Center Design",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Cloud,        label: "Cloud Infrastructure",   color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-  { Icon: Network,      label: "Network Architecture",   color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100" },
-  { Icon: MonitorCheck, label: "24/7 Monitoring",        color: "text-teal-600",    bg: "bg-teal-50",    border: "border-teal-100" },
-  { Icon: RefreshCw,    label: "Disaster Recovery",      color: "text-cyan-600",    bg: "bg-cyan-50",    border: "border-cyan-100"  },
-  { Icon: Shield,       label: "Security Hardening",     color: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100" },
-];
-
-const features = [
-  { Icon: Server,       label: "Data Center Build and Co-location", desc: "Design and build high-availability data centers or manage your co-location deployments." },
-  { Icon: Cloud,        label: "Hybrid and Multi-Cloud",           desc: "Seamlessly extend on-premise environments into AWS, Azure, or Google Cloud." },
-  { Icon: Network,      label: "Network and SD-WAN",               desc: "Design resilient, software-defined networks that scale with your business." },
-  { Icon: Zap,          label: "Virtualisation and HCI",           desc: "VMware, Nutanix, and hyper-converged infrastructure to reduce hardware sprawl." },
-  { Icon: RefreshCw,    label: "Backup and Disaster Recovery",     desc: "Automated backup, replication, and tested DR plans to protect critical workloads." },
-  { Icon: MonitorCheck, label: "Infrastructure Monitoring",       desc: "24/7 NOC services, proactive alerting, and capacity planning to prevent downtime." },
-];
-
-const benefits = [
-  { Icon: MonitorCheck, bg: "bg-blue-600",    title: "High Availability",    desc: "Engineered uptime with redundant power, cooling, and network paths." },
-  { Icon: TrendingUp,   bg: "bg-teal-600",    title: "Scalability",          desc: "Infrastructure that grows with your business without costly redesigns." },
-  { Icon: Zap,          bg: "bg-cyan-600",    title: "Cost Optimisation",    desc: "Right-size your environment and eliminate waste with continuous optimisation." },
-  { Icon: Shield,       bg: "bg-cyan-500",    title: "Risk Mitigation",      desc: "Tested DR plans and hardened security that keep your operations running." },
-];
 
 const faqs = [
   {
@@ -82,8 +54,8 @@ export default function InfrastructurePage() {
       <Navbar />
       <main>
 
-        {/* Hero */}
-        <section className="relative overflow-hidden" style={{ height: "100vh" }}>
+        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
           <Image
             src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp"
             alt="Infrastructure"
@@ -98,79 +70,87 @@ export default function InfrastructurePage() {
             style={{ background: "linear-gradient(to right, rgba(8,0,32,0.68) 0%, rgba(8,0,32,0.50) 45%, rgba(8,0,32,0.20) 75%, rgba(8,0,32,0.06) 100%)" }}
           />
           <div
-            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+            className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
           >
             <div>
               <p
-                className="text-xs tracking-[0.22em] uppercase mb-4"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
+                className="inline-block tracking-[0.18em] uppercase mb-6"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
               >
                 Core &amp; Enterprise Systems
               </p>
               <h1
-                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
-                style={{ fontFamily: MF }}
+                className="text-white uppercase leading-tight"
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
               >
                 Infrastructure
               </h1>
             </div>
-            <div className="mt-auto">
+            <div style={{ marginTop: "140px" }}>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
               >
-                Request a Consultation <ArrowRight className="w-4 h-4" />
+                Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Overview */}
+        {/* ── Overview ─────────────────────────────────────────────────── */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p
-              className="text-xs tracking-[0.18em] uppercase mb-6"
-              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
-            >
-              Overview
-            </p>
-            <h2
-              className="text-3xl lg:text-4xl font-light text-gray-900 mb-6"
-              style={{ fontFamily: MF }}
-            >
+
+            {/* Label + black rule */}
+            <div className="mb-10">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                Overview
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
+            {/* Heading */}
+            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
               The foundation your business runs on
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-10">
-              Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
-            </p>
-            <div className="flex gap-3 w-full">
-              {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
-                <span
-                  key={tag}
-                  className="flex-1 flex items-center justify-center py-2.5 rounded-lg text-sm font-semibold text-gray-800 text-center"
-                  style={{ fontFamily: MF, border: "1.5px solid #57D9D4" }}
-                >
-                  {tag}
-                </span>
-              ))}
+
+            {/* 2-col: description left, tags right */}
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+              <div>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                  Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
+                </p>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                  Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 items-end">
+                {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
+                  <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "25px", maxWidth: "340px", width: "100%" }}>
+                    {tag}
+                  </div>
+                ))}
+              </div>
             </div>
+
           </div>
         </section>
 
-        {/* How to Get Started */}
+        {/* ── How to Get Started ───────────────────────────────────────── */}
         <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p
-              className="text-xs tracking-[0.18em] uppercase mb-14"
-              style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff" }}
-            >
-              How to Get Started
-            </p>
+
+            {/* Label + white rule */}
+            <div className="mb-12">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "25px" }}>
+                How to Get Started
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
+            </div>
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
               {[
                 { step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
@@ -179,54 +159,40 @@ export default function InfrastructurePage() {
                 { step: "04", title: "Operate",    desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p
-                    className="text-5xl lg:text-6xl font-light mb-3 leading-none"
-                    style={{ fontFamily: MF, color: "#a198af" }}
-                  >
-                    {step}
-                  </p>
-                  <p
-                    className="text-xl lg:text-2xl font-semibold mb-4"
-                    style={{ fontFamily: MF, color: "#57D9D4" }}
-                  >
-                    {title}
-                  </p>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ fontFamily: MF, color: "rgba(255,255,255,0.75)" }}
-                  >
-                    {desc}
-                  </p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "45px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Partner: Dell */}
+        {/* ── Powered By ───────────────────────────────────────────────── */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p
-              className="text-xs tracking-[0.18em] uppercase mb-10"
-              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
-            >
-              Powered By
-            </p>
+
+            {/* Label + black rule */}
+            <div className="mb-10">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                Powered By
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
             {/* Heading left · description + logo right */}
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2
-                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
-                style={{ fontFamily: MF }}
-              >
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
                 Delivered on World-Class Hardware
               </h2>
               <div>
-                <p className="text-gray-600 leading-relaxed mb-8" style={{ fontFamily: MF }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                   As a Dell Technologies partner, Kulana designs and deploys infrastructure on proven, enterprise-grade hardware — from PowerEdge servers and PowerStore arrays to networking and hyper-converged solutions.
                 </p>
                 <Image src="/logos/dell.svg" alt="Dell Technologies" width={120} height={40} className="h-9 w-auto object-contain" />
               </div>
             </div>
+
             {/* Stats row */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
               {[
@@ -235,32 +201,33 @@ export default function InfrastructurePage() {
                 { value: "HCI",        label: "Hyper-Converged Leader" },
                 { value: "End-to-End", label: "Solutions Portfolio" },
               ].map(({ value, label }) => (
-                <div key={label}>
-                  <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: MF }}>{value}</p>
-                  <p className="text-sm text-gray-500" style={{ fontFamily: MF }}>{label}</p>
+                <div key={label} className="text-center">
+                  <p className="leading-tight mb-1" style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "40px" }}>{value}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px" }}>{label}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
-        {/* Features */}
+        {/* ── What We Deliver ──────────────────────────────────────────── */}
         <section className="py-16 lg:py-20" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p
-              className="text-xs tracking-[0.18em] uppercase mb-8"
-              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
-            >
-              What We Deliver
-            </p>
+
+            {/* Label + black rule */}
+            <div className="mb-10">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                What We Deliver
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2
-                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
-                style={{ fontFamily: MF }}
-              >
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
                 Services<br />We Provide
               </h2>
-              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                 From initial design to ongoing managed operations, we cover the full infrastructure lifecycle.
               </p>
             </div>
@@ -273,32 +240,32 @@ export default function InfrastructurePage() {
                 { title: "Backup & Disaster Recovery",   desc: "Automated backup, replication, and disaster recovery." },
                 { title: "Infrastructure Monitoring",    desc: "24/7 monitoring, proactive alerts, and capacity planning." },
               ].map(({ title, desc }) => (
-                <div key={title} className="bg-white rounded-xl p-6 border border-gray-100">
-                  <p className="font-semibold text-gray-900 mb-2" style={{ fontFamily: MF }}>{title}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                <div key={title} className="bg-white border border-gray-100 rounded-xl p-6">
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* ── Why Modernise ────────────────────────────────────────────── */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p
-              className="text-xs tracking-[0.18em] uppercase mb-8"
-              style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}
-            >
-              Why Modernise
-            </p>
+
+            {/* Label + black rule */}
+            <div className="mb-10">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                Why Modernise
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2
-                className="text-3xl lg:text-4xl font-light text-gray-900 leading-snug"
-                style={{ fontFamily: MF }}
-              >
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
                 Benefits
               </h2>
-              <p className="text-gray-600 leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                 A well-designed infrastructure foundation reduces risk, cuts cost, and enables every part of your business to move faster.
               </p>
             </div>
@@ -309,84 +276,86 @@ export default function InfrastructurePage() {
                 { title: "Cost Optimisation",   desc: "Right-size your environment and eliminate waste with continuous optimisation." },
                 { title: "Risk Mitigation",      desc: "Tested DR plans and hardened security that keep your operations running." },
               ].map(({ title, desc }) => (
-                <div
-                  key={title}
-                  className="rounded-xl p-6"
-                  style={{ border: "1.5px solid #57D9D4" }}
-                >
-                  <p className="font-semibold mb-2" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: MF }}>{desc}</p>
+                <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "35px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* ── FAQ ──────────────────────────────────────────────────────── */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            {/* Label + black rule */}
             <div className="mb-12">
-              <p className="text-xs tracking-[0.18em] uppercase leading-none mb-4" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>FAQ</p>
-              <div className="h-px bg-gray-200 w-full" />
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>FAQ</span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
+
+            {/* Row 1: heading left | description right */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+                Your questions<br />answered
+              </h2>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                Find answers to common questions about our infrastructure services and approach.
+              </p>
+            </div>
+
+            {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8" style={{ fontFamily: MF }}>
-                  Your questions<br />answered
-                </h2>
-                <div className="relative w-full max-w-xs aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
-                  <Image src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp" alt="Infrastructure" fill className="object-cover object-center" sizes="320px" />
-                </div>
+              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-24" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
+                <Image src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp" alt="Infrastructure" fill className="object-cover object-center" sizes="320px" />
               </div>
-              <div>
-                <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
-                  Find answers to common questions about our infrastructure services and approach.
-                </p>
-                <div className="divide-y divide-gray-200">
-              {faqs.map(({ q, a }) => (
-                <details key={q} className="group py-6">
-                  <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                    <span className="font-semibold text-gray-900" style={{ fontFamily: MF }}>{q}</span>
-                    <span className="flex-shrink-0 text-xl leading-none text-gray-400 select-none">
-                      <span className="group-open:hidden">+</span>
-                      <span className="hidden group-open:inline">−</span>
-                    </span>
-                  </summary>
-                  <p className="text-gray-500 text-sm leading-relaxed mt-4" style={{ fontFamily: MF }}>{a}</p>
-                </details>
-              ))}
-                </div>
+
+              <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>
+                {faqs.map(({ q, a }) => (
+                  <details key={q} className="group py-5">
+                    <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{q}</span>
+                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
+                        <span className="group-open:hidden">+</span>
+                        <span className="hidden group-open:inline">−</span>
+                      </span>
+                    </summary>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{a}</p>
+                  </details>
+                ))}
               </div>
             </div>
+
           </div>
         </section>
 
-        {/* CTA */}
+        {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section style={{ background: "#57D9D4" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
-                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
-                style={{ fontFamily: MF, color: "#200044" }}
+                className="leading-tight lg:w-[45%] flex-shrink-0"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
               >
                 Ready to build a resilient infrastructure?
               </h2>
               <div className="flex-1">
-                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
                   Talk to our infrastructure specialists and get a tailored design for your environment.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

@@ -20,7 +20,7 @@ export default function DataAiIntelligencePage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden" style={{ height: "100vh" }}>
+        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
           <Image
             src="/images/Data_AI_Intelligence/Hero image_Data & AI Intelligence_2560×1440px.webp"
             alt="Data and AI Intelligence"
@@ -31,31 +31,40 @@ export default function DataAiIntelligencePage() {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.40) 0%, rgba(8,0,32,0.25) 45%, rgba(8,0,32,0.10) 75%, rgba(8,0,32,0.02) 100%)" }}
+            style={{ background: "linear-gradient(to right, rgba(8,0,32,0.72) 0%, rgba(8,0,32,0.52) 45%, rgba(8,0,32,0.22) 75%, rgba(8,0,32,0.06) 100%)" }}
           />
           <div
-            className="relative z-10 flex flex-col w-full h-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(5rem + 28vh)", paddingBottom: "5rem" }}
+            className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
           >
             <div>
-              <p className="text-xs tracking-[0.22em] uppercase mb-4" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
-                Data &amp; AI Intelligence
+              <p
+                className="inline-block tracking-[0.18em] uppercase mb-6"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
+              >
+                Most Organisations Have Data But Not Intelligence
               </p>
               <h1
-                className="text-5xl sm:text-6xl lg:text-8xl font-bold uppercase text-white leading-[1.0]"
-                style={{ fontFamily: MF }}
+                className="text-white uppercase leading-tight"
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
               >
                 Data &amp; AI<br />Intelligence
               </h1>
             </div>
-            <div className="mt-auto">
+            <div style={{ marginTop: "140px" }} className="flex items-end justify-between">
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
               >
-                Request a Consultation <ArrowRight className="w-4 h-4" />
+                Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
+              <p
+                className="hidden lg:block uppercase text-right"
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "30px", lineHeight: "35px" }}
+              >
+                Decision Science.<br />Not Dashboards.
+              </p>
             </div>
           </div>
         </section>
@@ -63,22 +72,35 @@ export default function DataAiIntelligencePage() {
         {/* The Problem We Solve */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>The Problem We Solve</p>
-            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: MF }}>
+
+            <div className="mb-10">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                The Problem We Solve
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
+            </div>
+
+            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
               Most organisations have data but not intelligence
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: MF }}>
-              In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-10" style={{ fontFamily: MF }}>
-              Kulana&apos;s Data and AI Intelligence practice is built around decision science — not dashboards. We architect platforms that power regulatory compliance reporting, predictive risk models, and intelligent automation, with data governance and audit trails that regulators and risk officers require built in from the start.
-            </p>
-            <div className="flex flex-wrap lg:flex-nowrap gap-3">
-              {["Predictive Analytics", "AI Governance", "Compliance Reporting", "MLOps"].map((tag) => (
-                <span key={tag} className="flex-1 text-center py-3 px-4 border rounded-md text-sm font-semibold text-gray-700" style={{ borderColor: "#57D9D4", fontFamily: MF }}>
-                  {tag}
-                </span>
-              ))}
+
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+              <div>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                  In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
+                </p>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                  Kulana&apos;s Data and AI Intelligence practice is built around decision science — not dashboards. We architect platforms that power regulatory compliance reporting, predictive risk models, and intelligent automation, with data governance and audit trails that regulators and risk officers require built in from the start.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 items-end">
+                {["Predictive Analytics", "AI Governance", "Compliance Reporting", "MLOps"].map((tag) => (
+                  <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "25px", maxWidth: "340px", width: "100%" }}>
+                    {tag}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -86,18 +108,25 @@ export default function DataAiIntelligencePage() {
         {/* How to Get Started */}
         <section style={{ background: "#200044" }} className="py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs tracking-[0.18em] uppercase mb-14" style={{ fontFamily: MF, fontWeight: 700, color: "#a198af" }}>How to Get Started</p>
+
+            <div className="mb-12">
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "25px" }}>
+                How to Get Started
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
+            </div>
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
               {[
-                { step: "01", title: "Data & AI Audit",       desc: "Map your current data assets, AI opportunities, and maturity gaps — identifying the highest-value initiatives to address first." },
+                { step: "01", title: "Data & AI Audit",        desc: "Map your current data assets, AI opportunities, and maturity gaps — identifying the highest-value initiatives to address first." },
                 { step: "02", title: "Strategy & Architecture", desc: "Define your data platform, AI roadmap, and governance framework — cloud, lakehouse, or hybrid — matched to your regulatory context." },
-                { step: "03", title: "Build & Deploy",         desc: "Engineer pipelines, train and validate models, deploy automation, and activate your teams to self-serve intelligence from governed data." },
-                { step: "04", title: "Govern & Scale",         desc: "Monitor model performance, maintain audit trails, retrain on new data, and scale automation as new use cases emerge." },
+                { step: "03", title: "Build & Deploy",          desc: "Engineer pipelines, train and validate models, deploy automation, and activate your teams to self-serve intelligence from governed data." },
+                { step: "04", title: "Govern & Scale",          desc: "Monitor model performance, maintain audit trails, retrain on new data, and scale automation as new use cases emerge." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="text-5xl font-light mb-3" style={{ fontFamily: MF, color: "rgba(255,255,255,0.2)" }}>{step}</p>
-                  <p className="text-xl font-semibold mb-3" style={{ fontFamily: MF, color: "#57D9D4" }}>{title}</p>
-                  <p className="text-sm leading-relaxed" style={{ fontFamily: MF, color: "#a198af" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}>{step}</p>
+                  <p className="mb-4 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "35px", minHeight: "90px", display: "flex", alignItems: "flex-start" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -107,74 +136,85 @@ export default function DataAiIntelligencePage() {
         {/* What We Deliver */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <div className="mb-10">
-              <span className="text-sm tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>What We Deliver</span>
+              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+                What We Deliver
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
+
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight" style={{ fontFamily: MF }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
                 Three Disciplines. One Governed Intelligence Layer.
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed lg:pt-2" style={{ fontFamily: MF }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
                 Data, AI, and automation work together — each capability amplifying the next, from governed data foundations through to intelligent decision systems.
               </p>
             </div>
-            <div className="space-y-10">
+
+            <div>
               {[
                 {
                   num: "01", tag: "ANALYTICS & BI", title: "Data",
                   href: "/data",
                   desc: "Build a governed, analytics-ready data platform. From regulatory compliance reporting and predictive risk models to business intelligence and real-time pipelines — with data governance and audit trails built in from the start.",
                   highlights: ["Regulatory Compliance Reporting", "Predictive Risk Modelling", "Data Governance & Audit Trails", "Business Intelligence"],
-                  img: "/images/data_ai_intelligence/Data.webp",
+                  img: "/images/Data_AI_Intelligence/Data_image_1600x1000px.webp",
                 },
                 {
                   num: "02", tag: "ARTIFICIAL INTELLIGENCE", title: "AI",
                   href: "/ai",
                   desc: "Build AI that institutions can trust and regulators can audit. From credit scoring and fraud detection models to generative AI — with model validation, bias testing, and Explainable AI (XAI) built in.",
                   highlights: ["Credit Scoring & Fraud Detection", "Explainable AI (XAI)", "Model Validation & Governance", "Generative AI & LLMs"],
-                  img: "/images/data_ai_intelligence/AI.webp",
+                  img: "/images/Data_AI_Intelligence/AI_image_1600x1000px.webp",
                 },
                 {
                   num: "03", tag: "AUTOMATION", title: "RPA",
                   href: "/rpa",
                   desc: "Automate high-volume regulatory and operational workflows — from compliance data collection and report generation to reconciliations and audit pack assembly — reducing error rates and freeing skilled staff for higher-value work.",
                   highlights: ["Compliance & Audit Automation", "Regulatory Report Generation", "Reconciliation Bots", "Process Monitoring & Optimisation"],
-                  img: "/images/data_ai_intelligence/RPA.webp",
+                  img: "/images/Data_AI_Intelligence/RPA_image_1600x1000px.webp",
                 },
               ].map(({ num, tag, title, href, desc, highlights, img }) => (
-                <div key={title} className="group flex flex-col lg:flex-row bg-white overflow-hidden">
-                  <div className="flex-1 py-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center min-h-[288px]">
-                    <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
-                      {num} — {tag}
-                    </p>
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ fontFamily: MF, color: "#200044" }}>
-                      {title}
-                    </h3>
-                    <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                      <p className="text-gray-500 leading-relaxed text-sm lg:text-base" style={{ fontFamily: MF }}>{desc}</p>
-                      <ul className="space-y-2.5">
-                        {highlights.map((h) => (
-                          <li key={h} className="flex items-center gap-2 text-sm font-semibold text-gray-800" style={{ fontFamily: MF }}>
-                            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
+                <div key={title}>
+                  <div className="group flex flex-col lg:flex-row gap-10 py-10">
+                    <div className="flex-1 flex flex-col">
+                      <p className="tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "25px" }}>
+                        {num} — {tag}
+                      </p>
+                      <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "45px" }}>
+                        {title}
+                      </h3>
+                      <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                        <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                        <ul className="space-y-0">
+                          {highlights.map((h) => (
+                            <li key={h} className="flex items-center gap-3" style={{ lineHeight: "40px" }}>
+                              <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4" }} />
+                              <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px" }}>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Link
+                        href={href}
+                        className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                        style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}
+                      >
+                        Learn more <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
-                    <Link
-                      href={href}
-                      className="self-start inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold transition-all hover:opacity-90"
-                      style={{ fontFamily: MF, background: "#57D9D4", color: "#040d28" }}
-                    >
-                      Learn more <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                    <div className="hidden lg:block flex-shrink-0" style={{ width: "432px" }}>
+                      <div className="relative overflow-hidden" style={{ width: "432px", height: "270px" }}>
+                        <Image src={img} alt={title} fill className="object-cover object-center" sizes="432px" />
+                      </div>
+                    </div>
+                    <div className="relative lg:hidden w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
+                      <Image src={img} alt={title} fill className="object-cover object-center" sizes="100vw" />
+                    </div>
                   </div>
-                  <div className="relative hidden lg:flex w-72 h-72 flex-shrink-0 overflow-hidden bg-gray-100">
-                    <Image src={img} alt={title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" sizes="288px" />
-                  </div>
-                  <div className="relative lg:hidden w-full h-56 overflow-hidden bg-gray-100">
-                    <Image src={img} alt={title} fill className="object-cover object-center" sizes="100vw" />
-                  </div>
+                  <div className="w-full h-px" style={{ background: "#d1d5db" }} />
                 </div>
               ))}
             </div>
@@ -182,31 +222,31 @@ export default function DataAiIntelligencePage() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: "#57D9D4" }} className="py-16 lg:py-20">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
-                className="text-3xl lg:text-4xl font-bold leading-tight lg:w-[42%] flex-shrink-0"
-                style={{ fontFamily: MF, color: "#200044" }}
+                className="leading-tight lg:w-[45%] flex-shrink-0"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
               >
                 Ready to build on governed intelligence?
               </h2>
               <div className="flex-1">
-                <p className="text-base leading-relaxed mb-8" style={{ fontFamily: MF, color: "#200044", opacity: 0.85 }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
                   Talk to our data and AI specialists to discuss your compliance reporting, risk modelling, or automation requirements.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

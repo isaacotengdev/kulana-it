@@ -43,8 +43,6 @@ const servicePillars = [
   },
 ];
 
-const about = [{ name: "Kulana", href: "/kulana" }];
-
 type SimpleItem = { name: string; href: string };
 type NavLink =
   | { name: string; href: string; dropdown?: SimpleItem[]; isMega?: false }
@@ -53,7 +51,7 @@ type NavLink =
 const navLinks: NavLink[] = [
   { name: "Home",        href: "/" },
   { name: "Our Services", href: "/our-services", isMega: true },
-  { name: "About us",    href: "/about-us",    dropdown: about },
+  { name: "About us",    href: "/about-us" },
   { name: "Contact us",  href: "/contact-us" },
 ];
 
@@ -232,8 +230,8 @@ export default function Navbar() {
           <div className="hidden lg:block flex-shrink-0">
             <a
               href={contactHref}
-              className="px-5 py-2.5 text-sm rounded-md transition-all hover:shadow-lg inline-flex items-center gap-1.5"
-              style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, background: "#57D9D4", color: "#040d28" }}
+              className="px-5 py-2.5 rounded-md transition-all hover:shadow-lg inline-flex items-center gap-1.5"
+              style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "20px", background: "#57D9D4", color: "#040d28" }}
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />
@@ -355,7 +353,7 @@ export default function Navbar() {
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-5 py-3 rounded-md transition-colors"
-                style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, background: "#57D9D4", color: "#040d28" }}
+                style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "20px", background: "#57D9D4", color: "#040d28" }}
               >
                 Request a Consultation
               </a>

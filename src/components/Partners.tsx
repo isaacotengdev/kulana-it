@@ -13,8 +13,8 @@ export default function Partners() {
         {/* Label + rule */}
         <div className="mb-10">
           <span
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#000000" }}
+            className="tracking-[0.2em] uppercase"
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}
           >
             Technology Partners
           </span>
@@ -24,14 +24,14 @@ export default function Partners() {
         {/* Heading + description */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
           <h2
-            className="text-4xl lg:text-5xl leading-tight"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}
+            className="leading-tight"
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}
           >
             Powered by World-Class<br />Platforms
           </h2>
           <p
-            className="text-lg leading-relaxed lg:pt-2"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000" }}
+            className="lg:pt-2"
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}
           >
             We hold certified partnerships with leading global technology
             vendors, giving you access to best-in-class solutions backed

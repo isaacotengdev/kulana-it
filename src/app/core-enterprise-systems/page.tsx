@@ -59,11 +59,7 @@ export default function CoreEnterpriseSystemsPage() {
       <main>
 
         {/* Hero */}
-        <section
-          className="relative overflow-hidden flex items-center"
-          style={{ height: "100vh", paddingTop: "5rem" }}
-        >
-          {/* Background image — boosted brightness */}
+        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
           <Image
             src="/images/Links_homepage/1-image_1600x1000px.webp"
             alt=""
@@ -73,50 +69,46 @@ export default function CoreEnterpriseSystemsPage() {
             priority
             style={{ filter: "brightness(1.4)" }}
           />
-          {/* Gradient overlay — darker left for text legibility, opens up on the right */}
           <div
             className="absolute inset-0"
             style={{ background: "linear-gradient(to right, rgba(8,0,32,0.72) 0%, rgba(8,0,32,0.55) 45%, rgba(8,0,32,0.20) 75%, rgba(8,0,32,0.08) 100%)" }}
           />
+          <div
+            className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
+          >
+            {/* Top — label + heading */}
+            <div>
+              <p
+                className="inline-block tracking-[0.18em] uppercase mb-6"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
+              >
+                Keep Your Critical Systems Running
+              </p>
+              <h1
+                className="text-white uppercase leading-tight"
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
+              >
+                Core &amp; Enterprise<br />Systems
+              </h1>
+            </div>
 
-          {/* Content */}
-          <div className="relative w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-end justify-between">
-
-              {/* Left: tagline + heading + button */}
-              <div className="lg:w-[62%]">
-                <p
-                  className="text-xs tracking-[0.22em] uppercase mb-6"
-                  style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
-                >
-                  Keep Your Critical Systems Running
-                </p>
-                <h1
-                  className="text-5xl sm:text-6xl lg:text-7xl leading-[1.0] uppercase text-white mb-12"
-                  style={{ fontFamily: MF, fontWeight: 700 }}
-                >
-                  Core &amp; Enterprise<br />Systems
-                </h1>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full transition-all hover:opacity-90"
-                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "0.9rem" }}
-                >
-                  Request a Consultation
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              {/* Right: caption — bottom-aligned with button */}
-              <div className="hidden lg:block text-right pb-1">
-                <p
-                  className="text-base lg:text-lg uppercase leading-snug"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}
-                >
-                  Stable Systems.<br />Stronger Business.
-                </p>
-              </div>
-
+            {/* Bottom — button left, tagline right */}
+            <div style={{ marginTop: "140px" }} className="flex items-end justify-between">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
+              >
+                Request a Consultation
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <p
+                className="hidden lg:block uppercase text-right"
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "30px", lineHeight: "35px" }}
+              >
+                Stable Systems.<br />Stronger Business.
+              </p>
             </div>
           </div>
         </section>
@@ -124,79 +116,84 @@ export default function CoreEnterpriseSystemsPage() {
         {/* Sub-services */}
         <section className="bg-white py-24">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Label + black rule */}
           <div className="mb-10">
-            <span className="text-sm tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 700, color: "#200044" }}>
+            <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
               What We Deliver
             </span>
+            <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
           </div>
+
+          {/* Heading + description */}
           <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
               Four Disciplines. One Integrated Practice.
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed lg:pt-2">
+            <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
               Our Core and Enterprise Systems practice spans the full spectrum of critical business
               technology — delivered by specialists with deep domain knowledge.
             </p>
           </div>
 
-          <div className="space-y-10">
+          {/* Sub-service cards */}
+          <div>
             {subServices.map(({ number, title, href, tagline, image, desc, highlights }) => (
-              <div
-                key={title}
-                className="group flex flex-col lg:flex-row bg-white overflow-hidden"
-              >
-                {/* Left — content */}
-                <div className="flex-1 py-10 pr-10 lg:pr-16 pl-0 flex flex-col justify-center min-h-[288px]">
-                  <p className="text-xs tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af" }}>
-                    {number} — {tagline}
-                  </p>
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ fontFamily: MF, color: "#200044" }}>
-                    {title}
-                  </h3>
-                  {/* Description + bullets side by side */}
-                  <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                    <p className="text-gray-500 leading-relaxed text-sm lg:text-base">{desc}</p>
-                    <ul className="space-y-2.5">
-                      {highlights.map((h) => (
-                        <li key={h} className="flex items-center gap-2 text-sm font-semibold text-gray-800">
-                          <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#57D9D4" }} />
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
+              <div key={title}>
+                <div className="group flex flex-col lg:flex-row gap-10 py-10">
+                  {/* Left — content */}
+                  <div className="flex-1 flex flex-col">
+                    <p className="tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "25px" }}>
+                      {number} — {tagline}
+                    </p>
+                    <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "45px" }}>
+                      {title}
+                    </h3>
+                    {/* Description + bullets side by side */}
+                    <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                      <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                      <ul className="space-y-0">
+                        {highlights.map((h) => (
+                          <li key={h} className="flex items-center gap-3" style={{ lineHeight: "40px" }}>
+                            <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4" }} />
+                            <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px" }}>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Link
+                      href={href}
+                      className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                      style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}
+                    >
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
-                  <Link
-                    href={href}
-                    className="self-start inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, background: "#57D9D4", color: "#040d28" }}
-                  >
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
 
-                {/* Right — fixed square image */}
-                <div className="relative hidden lg:flex w-72 h-72 flex-shrink-0 overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="288px"
-                  />
+                  {/* Right — 432×270 image, top-aligned */}
+                  <div className="hidden lg:block flex-shrink-0" style={{ width: "432px" }}>
+                    <div className="relative overflow-hidden" style={{ width: "432px", height: "270px" }}>
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="object-cover object-center"
+                        sizes="432px"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Mobile — 16:10 */}
+                  <div className="relative lg:hidden w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
+                    <Image src={image} alt={title} fill className="object-cover object-center" sizes="100vw" />
+                  </div>
                 </div>
-                {/* Mobile — landscape */}
-                <div className="relative lg:hidden w-full h-56 overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover object-center"
-                    sizes="100vw"
-                  />
-                </div>
+                {/* Gray separator */}
+                <div className="w-full h-px" style={{ background: "#d1d5db" }} />
               </div>
             ))}
           </div>
+
         </div>
         </section>
 
@@ -204,30 +201,30 @@ export default function CoreEnterpriseSystemsPage() {
         <section style={{ background: "#57D9D4" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
-              {/* Left — heading (fixed width ~40%) */}
+              {/* Left — heading */}
               <h2
-                className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
-                style={{ fontFamily: MF, color: "#200044" }}
+                className="leading-tight lg:w-[45%] flex-shrink-0"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
               >
-                Ready to strengthen your enterprise systems?
+                Ready to strengthen your Enterprise Systems?
               </h2>
               {/* Right — description + buttons */}
               <div className="flex-1">
-                <p className="text-sm lg:text-base mb-6 leading-relaxed" style={{ fontFamily: MF, color: "#200044" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
                   Speak to our specialists and discover the right technology foundation for your organisation.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, background: "#200044", color: "#ffffff" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, color: "#200044", borderColor: "#200044" }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

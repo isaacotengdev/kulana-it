@@ -11,14 +11,14 @@ const stats = [
 
 export default function ProvenResults() {
   return (
-    <section className="py-16 lg:py-20" style={{ background: "#f1ffff" }}>
+    <section className="py-16 lg:py-20" style={{ background: "#ffffff" }}>
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Label + rule */}
         <div className="mb-10">
           <span
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000" }}
+            className="tracking-[0.2em] uppercase"
+            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000", fontSize: "25px" }}
           >
             Strategic Growth
           </span>
@@ -28,14 +28,14 @@ export default function ProvenResults() {
         {/* Heading + description */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
           <h2
-            className="text-4xl lg:text-5xl leading-tight"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000" }}
+            className="leading-tight"
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "45px" }}
           >
             Proven Results.<br />Real Impact.
           </h2>
           <p
-            className="text-lg leading-relaxed lg:pt-2"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000" }}
+            className="lg:pt-2"
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}
           >
             Your company&apos;s technology is your competitive edge. Kulana takes a
             holistic approach to your organisation&apos;s digital transformation. We
@@ -46,16 +46,15 @@ export default function ProvenResults() {
         {/* Four credentials */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
+            <div key={s.label}>
               <p
-                className="text-sm uppercase tracking-wide mb-2"
-                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000" }}
+                className="uppercase"
+                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000", fontSize: "25px", lineHeight: "30px" }}
               >
                 {s.label}
               </p>
               <p
-                className="text-sm leading-snug"
-                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000" }}
+                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}
               >
                 {s.sub}
               </p>

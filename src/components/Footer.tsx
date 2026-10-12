@@ -71,50 +71,50 @@ export default function Footer() {
       </div>
 
       {/* ── Main grid ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 grid lg:grid-cols-[1.2fr_1fr_1.5fr] gap-12 lg:gap-16">
 
         {/* Col 1 — tagline + offices */}
         <div>
-          <p className="text-sm leading-relaxed mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>
+          <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>
             Technology Value Creators – empowering organisations in Ghana and
             Mauritius through enterprise-grade IT solutions and expert consultancy.
           </p>
 
           {/* Ghana */}
-          <div className="mb-7">
-            <p className="text-xs tracking-[0.18em] uppercase mb-2" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>Ghana</p>
-            <p className="text-sm mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>The Rhombus, HRJ5+J6Q, Kanda, Accra</p>
-            <a href="tel:+233540127400" className="block text-sm hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}>+233 540 127 400</a>
-            <a href="mailto:contact@kulana.net" className="block text-sm hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}>contact@kulana.net</a>
+          <div className="mb-8">
+            <p className="tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}>Ghana</p>
+            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>The Rhombus, HRJ5+J6Q, Kanda, Accra</p>
+            <a href="tel:+233540127400" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "25px", lineHeight: "30px" }}>+233 540 127 400</a>
+            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "25px", lineHeight: "30px" }}>contact@kulana.net</a>
           </div>
 
           {/* Mauritius */}
           <div>
-            <p className="text-xs tracking-[0.18em] uppercase mb-2" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>Mauritius</p>
-            <p className="text-sm mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>
+            <p className="tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}>Mauritius</p>
+            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>
               Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
             </p>
-            <a href="tel:+23046325190" className="block text-sm hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}>+230 46 32 519</a>
-            <a href="mailto:contact@kulana.net" className="block text-sm hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4" }}>contact@kulana.net</a>
+            <a href="tel:+23046325190" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "25px", lineHeight: "30px" }}>+230 46 32 519</a>
+            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "25px", lineHeight: "30px" }}>contact@kulana.net</a>
           </div>
         </div>
 
         {/* Col 2 — Quick Links */}
-        <div>
-          <p className="text-xs tracking-[0.18em] uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>Quick Links</p>
-          <ul className="space-y-3">
+        <div className="lg:pl-8">
+          <p className="tracking-[0.18em] uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}>Quick Links</p>
+          <ul className="space-y-0">
             {quickLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.name} style={{ lineHeight: "30px", marginBottom: "8px" }}>
                 {"external" in link && link.external ? (
                   <a href={link.href} target="_blank" rel="noopener noreferrer"
-                    className="text-sm hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>
+                    className="hover:opacity-70 transition-opacity"
+                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px" }}>
                     {link.name}
                   </a>
                 ) : (
                   <Link href={link.href}
-                    className="text-sm hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>
+                    className="hover:opacity-70 transition-opacity"
+                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px" }}>
                     {link.name}
                   </Link>
                 )}
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Col 3 — Our Services accordion */}
         <div>
-          <p className="text-xs tracking-[0.18em] uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>Our Services</p>
+          <p className="tracking-[0.18em] uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}>Our Services</p>
           <ul className="space-y-1">
             {servicePillars.map((pillar) => {
               const isOpen = openPillar === pillar.name;
@@ -133,19 +133,19 @@ export default function Footer() {
                 <li key={pillar.name}>
                   <button
                     onClick={() => setOpenPillar(isOpen ? null : pillar.name)}
-                    className="w-full text-left flex items-center justify-between py-2 text-sm hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}
+                    className="w-full text-left flex items-center justify-between py-2 hover:opacity-70 transition-opacity"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}
                   >
                     <span>{pillar.name}</span>
-                    <span className="text-base leading-none" style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s" }}>›</span>
+                    <span style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s", fontSize: "20px" }}>›</span>
                   </button>
                   {isOpen && pillar.subs.length > 0 && (
-                    <ul className="mt-1 mb-2 space-y-2 pl-2 border-l border-white/10">
+                    <ul className="mt-1 mb-2 space-y-2 pl-3 border-l border-white/10">
                       {pillar.subs.map((sub) => (
                         <li key={sub.name}>
                           <Link href={sub.href}
-                            className="text-sm hover:opacity-70 transition-opacity"
-                            style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff" }}>
+                            className="hover:opacity-70 transition-opacity"
+                            style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>
                             {sub.name}
                           </Link>
                         </li>
@@ -164,7 +164,7 @@ export default function Footer() {
 
         {/* Large tagline */}
         <p className="text-3xl lg:text-4xl leading-tight" style={{ fontFamily: MF, fontWeight: 500, color: "#ffffff" }}>
-          Technology<br />Value creators.
+          Technology<br />Value Creators.
         </p>
 
         {/* Social icons + copyright */}
@@ -188,7 +188,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="text-xs" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4" }}>
+          <p style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px", lineHeight: "30px" }}>
             &copy; 2026 Kulana – Technology Value Creators. All rights reserved.
           </p>
         </div>
