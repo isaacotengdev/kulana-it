@@ -32,7 +32,7 @@ export default function ContactUsPage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
-                    href="#contact-form"
+                    href="#contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
                     style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
