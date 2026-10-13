@@ -13,7 +13,7 @@ export default function ContactUsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-8">
+      <main className="pt-20">
         <Contact />
 
         {/* Ready to work with us CTA */}
