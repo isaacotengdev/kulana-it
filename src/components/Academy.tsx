@@ -62,8 +62,11 @@ export default function Academy() {
               the skills they need for a rapidly changing digital world.
             </p>
 
-            {/* Row 2 right — button */}
-            <div className="flex justify-end">
+            {/* Row 2 right — button aligned under Kulana Academy text */}
+            <div className="flex items-start gap-5 justify-end">
+              {/* invisible spacers matching icon (w-20) + bar (w-[5px]) so button left aligns with text */}
+              <div className="w-20 flex-shrink-0 invisible h-0" />
+              <span className="w-[5px] flex-shrink-0 invisible h-0" />
               <a
                 href="https://www.kulana.academy/"
                 target="_blank"
