@@ -94,7 +94,7 @@ export default function Contact() {
               Let&apos;s Talk About Your<br />Technology Needs
             </h2>
 
-            <div className="space-y-10 lg:mt-[4.25rem]">
+            <div className="space-y-10 lg:mt-[6.5rem]">
               {/* Ghana */}
               <div>
                 <p className="uppercase tracking-normal mb-3"
