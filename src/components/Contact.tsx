@@ -101,10 +101,10 @@ export default function Contact() {
                   style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                   Ghana Office
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   The Rhombus, HRJ5+J6Q,<br />Kanda, Accra
                 </p>
-                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   +233 540 127 400
                 </p>
               </div>
@@ -115,10 +115,10 @@ export default function Contact() {
                   style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                   Mauritius Office
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
                 </p>
-                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   +230 46 32 519
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
               <div>
                 <a
                   href="mailto:contact@kulana.net"
-                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}
                   className="hover:text-[#57D9D4] transition-colors"
                 >
                   contact@kulana.net
