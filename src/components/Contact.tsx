@@ -171,6 +171,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text" required
+                      placeholder="e.g. Kwame"
                       value={form.firstName}
                       onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                       className={inputClass}
@@ -183,6 +184,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text" required
+                      placeholder="e.g. Mensah"
                       value={form.lastName}
                       onChange={(e) => setForm({ ...form, lastName: e.target.value })}
                       className={inputClass}
@@ -199,6 +201,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="email" required
+                      placeholder="you@company.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className={inputClass}
@@ -209,6 +212,7 @@ export default function Contact() {
                     <label className="block mb-1.5" style={labelStyle}>Phone Number</label>
                     <input
                       type="tel"
+                      placeholder="+233 XXX XXX XXX"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className={inputClass}
@@ -229,7 +233,7 @@ export default function Contact() {
                     className={inputClass}
                     style={inputStyle}
                   >
-                    <option value=""></option>
+                    <option value="" disabled>Select a service…</option>
                     {serviceGroups.map((group) => (
                       <optgroup key={group.label} label={group.label}>
                         {group.options.map((opt) => (
@@ -248,6 +252,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     required rows={5}
+                    placeholder="Tell us about your technology challenge or project…"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className={`${inputClass} resize-none`}
