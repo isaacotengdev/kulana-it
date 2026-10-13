@@ -171,7 +171,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text" required
-                      placeholder="e.g. Kwame"
+                      placeholder="e.g. John"
                       value={form.firstName}
                       onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                       className={inputClass}
@@ -184,7 +184,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text" required
-                      placeholder="e.g. Mensah"
+                      placeholder="e.g. Doe"
                       value={form.lastName}
                       onChange={(e) => setForm({ ...form, lastName: e.target.value })}
                       className={inputClass}
