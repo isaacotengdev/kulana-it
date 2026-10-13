@@ -31,10 +31,10 @@ export default function LearnMoreFormPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-8">
 
         {/* Hero */}
-        <section className="gradient-hero relative overflow-hidden py-28 text-white">
+        <section className="gradient-hero relative overflow-hidden py-10 text-white">
           <HeroCanvas variant="learn-more" />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Learn More</h1>
@@ -46,10 +46,10 @@ export default function LearnMoreFormPage() {
         </section>
 
         {/* Form */}
-        <section className="py-24 bg-white">
+        <section className="py-9 bg-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center text-center py-20">
+              <div className="flex flex-col items-center justify-center text-center py-12">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-5">
                   <CheckCircle className="w-8 h-8 text-emerald-600" />
                 </div>

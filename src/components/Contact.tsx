@@ -27,14 +27,14 @@ const labelStyle: React.CSSProperties = {
   fontFamily: MF,
   fontWeight: 600,
   color: "#000000",
-  fontSize: "20px",
+  fontSize: "clamp(13px, 1vw, 14px)",
 };
 
 const inputStyle: React.CSSProperties = {
   fontFamily: MF,
   fontWeight: 400,
   color: "#000000",
-  fontSize: "16px",
+  fontSize: "13px",
 };
 
 export default function Contact() {
@@ -69,27 +69,27 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-9 bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Label + rule */}
-        <div className="mb-12">
+        <div className="mb-8">
           <span
             className="tracking-normal uppercase"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}
           >
             Get In Touch
           </span>
           <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
 
           {/* Left — heading + office info */}
           <div>
             <h2
               className="leading-tight mb-8"
-              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}
             >
               Let&apos;s Talk About Your<br />Technology Needs
             </h2>
@@ -98,13 +98,13 @@ export default function Contact() {
               {/* Ghana */}
               <div>
                 <p className="uppercase tracking-normal mb-3"
-                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                   Ghana Office
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   The Rhombus, HRJ5+J6Q,<br />Kanda, Accra
                 </p>
-                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   +233 540 127 400
                 </p>
               </div>
@@ -112,13 +112,13 @@ export default function Contact() {
               {/* Mauritius */}
               <div>
                 <p className="uppercase tracking-normal mb-3"
-                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                   Mauritius Office
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
                 </p>
-                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   +230 46 32 519
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
               <div>
                 <a
                   href="mailto:contact@kulana.net"
-                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "24px" }}
+                  style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}
                   className="hover:text-[#57D9D4] transition-colors"
                 >
                   contact@kulana.net
@@ -139,13 +139,13 @@ export default function Contact() {
           {/* Right — description + form */}
           <div>
             <p className="mb-8"
-              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
               Tell us about your technology needs or challenges. Our team will get
               in touch to discuss how Kulana can support your business.
             </p>
 
             {submitted ? (
-              <div className="flex flex-col items-center justify-center text-center py-20">
+              <div className="flex flex-col items-center justify-center text-center py-12">
                 <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-full flex items-center justify-center mb-5">
                   <CheckCircle className="w-8 h-8 text-emerald-500" />
                 </div>
@@ -264,7 +264,7 @@ export default function Contact() {
                     type="submit"
                     disabled={loading}
                     className="inline-flex items-center gap-2 px-8 py-3.5 disabled:opacity-60 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
                   >
                     {loading ? "Sending…" : "Send Inquiry"}
                     <ArrowRight className="w-4 h-4" />

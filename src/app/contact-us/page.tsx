@@ -33,14 +33,14 @@ const inputStyle: React.CSSProperties = {
   fontFamily: MF,
   fontWeight: 400,
   color: "#000000",
-  fontSize: "16px",
+  fontSize: "13px",
 };
 
 const labelStyle: React.CSSProperties = {
   fontFamily: MF,
   fontWeight: 600,
   color: "#000000",
-  fontSize: "20px",
+  fontSize: "clamp(13px, 1vw, 14px)",
 };
 
 export default function ContactUsPage() {
@@ -75,28 +75,28 @@ export default function ContactUsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
-        <section id="contact-form" className="py-24 bg-white">
+      <main className="pt-8">
+        <section id="contact-form" className="py-9 bg-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + rule */}
-            <div className="mb-12">
+            <div className="mb-8">
               <span
                 className="tracking-normal uppercase"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}
+                style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}
               >
                 Get In Touch
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10">
 
               {/* Left — heading + offices */}
               <div>
                 <h1
-                  className="leading-tight mb-8 lg:mb-16"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}
+                  className="leading-tight mb-8 lg:mb-6"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}
                 >
                   Let&apos;s Talk About Your<br />Technology Needs
                 </h1>
@@ -104,26 +104,26 @@ export default function ContactUsPage() {
                 <div className="space-y-10 lg:mt-[13.5rem]">
                   <div>
                     <p className="uppercase tracking-normal mb-3"
-                      style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+                      style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                       Ghana Office
                     </p>
-                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                       The Rhombus, HRJ5+J6Q,<br />Kanda, Accra
                     </p>
-                    <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                    <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                       +233 540 127 400
                     </p>
                   </div>
 
                   <div>
                     <p className="uppercase tracking-normal mb-3"
-                      style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+                      style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                       Mauritius Office
                     </p>
-                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                       Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
                     </p>
-                    <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                    <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                       +230 46 32 519
                     </p>
                   </div>
@@ -131,7 +131,7 @@ export default function ContactUsPage() {
                   <div>
                     <a
                       href="mailto:contact@kulana.net"
-                      style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "24px" }}
+                      style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}
                       className="hover:text-[#57D9D4] transition-colors"
                     >
                       contact@kulana.net
@@ -142,13 +142,13 @@ export default function ContactUsPage() {
 
               {/* Right — description + form */}
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Tell us about your technology needs or challenges. Our team will get
                   in touch to discuss how Kulana can support your business.
                 </p>
 
                 {submitted ? (
-                  <div className="flex flex-col items-center justify-center text-center py-20">
+                  <div className="flex flex-col items-center justify-center text-center py-12">
                     <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-full flex items-center justify-center mb-5">
                       <CheckCircle className="w-8 h-8 text-emerald-500" />
                     </div>
@@ -243,7 +243,7 @@ export default function ContactUsPage() {
                         type="submit"
                         disabled={loading}
                         className="inline-flex items-center gap-2 px-8 py-3.5 disabled:opacity-60 rounded-md transition-all hover:opacity-90"
-                        style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                        style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
                       >
                         {loading ? "Sending…" : "Send Inquiry"}
                         <ArrowRight className="w-4 h-4" />
@@ -259,30 +259,30 @@ export default function ContactUsPage() {
 
         {/* Ready to work with us CTA */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
                 Ready to work<br />with us?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Get in touch to find out how Kulana can help your organisation thrive in the digital age.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="#contact-form"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
                     Let&apos;s Talk <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/#services"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "13px" }}
                   >
                     Explore Our Services <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -294,23 +294,23 @@ export default function ContactUsPage() {
 
         {/* Technology Partners */}
         <section style={{ background: "#ffffff" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-            <div className="mb-10">
+            <div className="mb-6">
               <span className="tracking-normal uppercase"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+                style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Technology Partners
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 mb-6 items-start">
               <h2 className="leading-tight"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+                style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Powered by World-Class<br />Platforms
               </h2>
               <p className="lg:pt-2"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 We hold certified partnerships with leading global technology
                 vendors, giving you access to best-in-class solutions backed
                 by proven technologies.

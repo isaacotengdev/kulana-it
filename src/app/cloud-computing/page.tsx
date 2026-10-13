@@ -46,7 +46,7 @@ export default function CloudComputingPage() {
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-cyan-300 font-medium mb-4 uppercase tracking-widest text-sm">Kulana Academy</p>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Cloud Computing</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-6 leading-relaxed">
               Understand how cloud solutions can enhance business scalability, resilience, and security
               through structured learning and certification-backed expertise.
             </p>
@@ -60,8 +60,8 @@ export default function CloudComputingPage() {
         </section>
 
         {/* ── Program Overview ─────────────────────────────────────────── */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
                 Cloud Computing Professional Program
@@ -103,9 +103,9 @@ export default function CloudComputingPage() {
         </section>
 
         {/* ── Course Modules ───────────────────────────────────────────── */}
-        <section className="bg-gray-50 py-24">
+        <section className="bg-gray-50 py-9">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Course Modules</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
                 18 modules covering fundamental concepts, advanced architecture, security, governance,
@@ -126,8 +126,8 @@ export default function CloudComputingPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="text-3xl lg:text-4xl font-extrabold leading-tight lg:w-[40%] flex-shrink-0"
                 style={{ fontFamily: MF, color: "#200044" }}

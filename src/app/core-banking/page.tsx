@@ -112,7 +112,7 @@ export default function CoreBankingPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
+        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
           <Image
             src="/images/Service_Core & Enterprise Systems/core_banking/Hero image Core banking_2560×1440px.webp"
             alt="Core Banking"
@@ -128,27 +128,27 @@ export default function CoreBankingPage() {
           />
           <div
             className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
+            style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
           >
             <div>
               <p
                 className="inline-block tracking-normal uppercase mb-6"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Core &amp; Enterprise Systems
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Core<br />Banking
               </h1>
             </div>
-            <div style={{ marginTop: "140px" }}>
+            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -158,30 +158,30 @@ export default function CoreBankingPage() {
 
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading */}
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
               What is Core Banking Practice?
             </h2>
 
             {/* 2-col: description left, tags right */}
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
               {/* Left — description */}
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   We help financial institutions modernise and manage the systems at the heart of their banking operations — from customer accounts and deposits to loans, payments and financial products. Our core banking solutions bring these critical functions together into a secure, integrated and scalable platform.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Working with retail banks, credit unions and digital challengers, we combine deep industry expertise with modern technology and proven best practices to improve efficiency, enhance customer experiences and help institutions stay competitive, resilient and compliant.
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default function CoreBankingPage() {
               <div className="flex flex-col gap-4 items-end">
                 {["Retail Banking", "Digital Channels", "Open Banking", "Payments"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -201,27 +201,27 @@ export default function CoreBankingPage() {
         </section>
 
         {/* ── How to Get Started ───────────────────────────────────────── */}
-        <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
+        <section className="py-10 lg:py-12" style={{ background: "#200044" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + white rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
               {[
                 { step: "01", title: "Assessment",     desc: "We assess your current systems, processes, and infrastructure to understand where you are today." },
                 { step: "02", title: "Strategy",       desc: "Our consultants align business objectives, customer needs, regulatory requirements, and your technology landscape into a tailored core banking strategy." },
                 { step: "03", title: "Implementation", desc: "Using agile methodologies, industry-leading platforms, and proven frameworks, we deliver collaboratively, iteratively, and transparently." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(18px, 1.8vw, 26px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -229,24 +229,24 @@ export default function CoreBankingPage() {
         </section>
 
         {/* ── Powered By ───────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Powered By
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading + description + logo */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Built on the World&apos;s Leading<br />Core Banking Platform
               </h2>
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Kulana is a certified Temenos implementation partner. Temenos powers over 3,000 financial institutions across 150 countries — including some of the world&apos;s largest retail, corporate, and digital banks.
                 </p>
                 <Image src="/images/Service_Core & Enterprise Systems/core_banking/Temenos logo.svg" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
@@ -254,7 +254,7 @@ export default function CoreBankingPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-6 border-t border-gray-100">
               {[
                 { value: "3,000+", label: "Financial Institutions" },
                 { value: "150",    label: "Countries" },
@@ -262,8 +262,8 @@ export default function CoreBankingPage() {
                 { value: "Top 10", label: "Global Banks" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
-                  <p className="leading-tight mb-1" style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "40px" }}>{value}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px" }}>{label}</p>
+                  <p className="leading-tight mb-1" style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(21px, 2.25vw, 32px)" }}>{value}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>{label}</p>
                 </div>
               ))}
             </div>
@@ -272,23 +272,23 @@ export default function CoreBankingPage() {
         </section>
 
         {/* ── Platform Modules ─────────────────────────────────────────── */}
-        <section className="py-16 lg:py-20" style={{ background: "#f5f5f5" }}>
+        <section className="py-10 lg:py-12" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Platform
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading + description */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Core Modules<br />We Deliver
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Every module is configurable to your institution&apos;s requirements — from a single-module deployment to a full platform transformation.
               </p>
             </div>
@@ -297,8 +297,8 @@ export default function CoreBankingPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {modules.map(({ label, desc }) => (
                 <div key={label} className="bg-white rounded-xl p-6 border border-gray-100">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -307,21 +307,21 @@ export default function CoreBankingPage() {
         </section>
 
         {/* ── Benefits ─────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Why Modernise
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading + description */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>Benefits</h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>Benefits</h2>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Modernising your core banking infrastructure delivers measurable impact across every dimension of your financial operations.
               </p>
             </div>
@@ -330,8 +330,8 @@ export default function CoreBankingPage() {
             <div className="grid md:grid-cols-2 gap-4">
               {benefits.map(({ title, desc }) => (
                 <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "28px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -340,29 +340,29 @@ export default function CoreBankingPage() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>FAQ</span>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Row 1: heading left | description right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 mb-6">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Your questions<br />answered
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Find answers to common questions about our core banking services and approach.
               </p>
             </div>
 
             {/* Row 2: image left | accordion right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               {/* Image */}
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-24" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
+              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
                 <Image
                   src="/images/Service_Core & Enterprise Systems/core_banking/Hero image Core banking_2560×1440px.webp"
                   alt="Core Banking" fill className="object-cover object-center" sizes="320px"
@@ -374,13 +374,13 @@ export default function CoreBankingPage() {
                 {faqs.map(({ q, a }) => (
                   <details key={q} className="group py-5">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{q}</span>
-                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{q}</span>
+                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
                         <span className="group-open:hidden">+</span>
                         <span className="hidden group-open:inline">−</span>
                       </span>
                     </summary>
-                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{a}</p>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{a}</p>
                   </details>
                 ))}
               </div>
@@ -391,30 +391,30 @@ export default function CoreBankingPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
                 Ready to modernise your Core Banking?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Talk to our experts and get a tailored strategy for your institution.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "13px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

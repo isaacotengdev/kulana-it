@@ -81,14 +81,14 @@ export default function ImsPolicyPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-8">
 
         {/* ── Hero header ──────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-24 text-white">
+        <section className="gradient-hero relative overflow-hidden py-9 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
                   <ShieldCheck className="w-4 h-4" /> Legal and Compliance
@@ -113,11 +113,11 @@ export default function ImsPolicyPage() {
         </section>
 
         {/* ── IMS overview ─────────────────────────────────────────────── */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Section label */}
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
@@ -127,7 +127,7 @@ export default function ImsPolicyPage() {
               </div>
             </div>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-12 max-w-3xl">
+            <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-3xl">
               Kulana is committed to implementing a structured Integrated Management System to ensure
               the quality of our service delivery, enhance customer satisfaction, protect business
               information security, prevent service quality degradation during incidents, and maintain
@@ -152,7 +152,7 @@ export default function ImsPolicyPage() {
         </section>
 
         {/* ── ISO standard cards ───────────────────────────────────────── */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             {standards.map(({ code, year, label, Icon, gradient, ringColor, tagBg, iconBg, title, body, commitments }, idx) => (
               <div key={code} className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -214,7 +214,7 @@ export default function ImsPolicyPage() {
         </section>
 
         {/* ── Certification summary banner ─────────────────────────────── */}
-        <section className="py-16 bg-white border-t border-gray-100">
+        <section className="py-10 bg-white border-t border-gray-100">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 text-white">
               <div className="grid md:grid-cols-2 gap-8 items-center">

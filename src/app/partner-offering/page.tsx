@@ -86,11 +86,11 @@ export default function PartnerOfferingPage() {
               <Handshake className="w-4 h-4" /> Kulana Academy
             </span>
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Partner Offering</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-6 leading-relaxed">
               Technology alliances, certification partnerships, and co-delivery programmes
               that extend our training capability across Africa and beyond.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
               {["Arcitura Partner", "Vendor Accredited", "Pan-African Reach", "Co-Delivery"].map((tag) => (
                 <span key={tag} className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" /> {tag}
@@ -120,8 +120,8 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* Overview */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Overview</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
@@ -177,16 +177,16 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* Dark section — technology partners */}
-        <section className="bg-gray-950 py-20">
+        <section className="bg-gray-950 py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Our Strategic Partners</p>
               <h2 className="text-3xl font-extrabold text-white mb-3">Trusted Technology Alliances</h2>
               <p className="text-gray-400 max-w-xl mx-auto">
                 Kulana Academy delivers vendor-accredited training on the world&apos;s leading enterprise platforms.
               </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               {[
                 { name: "Temenos",   src: "/logos/temenos.png",   h: "h-12" },
                 { name: "Dell",      src: "/logos/dell.svg",      h: "h-10" },
@@ -223,9 +223,9 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* Features */}
-        <section className="bg-white py-24">
+        <section className="bg-white py-9">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">What We Offer</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
                 Partnership Capabilities
@@ -254,9 +254,9 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* Benefits */}
-        <section className="bg-gray-50 py-24">
+        <section className="bg-gray-50 py-9">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Why Partner With Us</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Benefits</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -279,8 +279,8 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center mb-14">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+          <div className="text-center mb-8">
             <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">FAQ</p>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
               Frequently Asked Questions
@@ -310,7 +310,7 @@ export default function PartnerOfferingPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
+        <section className="py-12 bg-gray-50 border-t border-gray-100">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-10 md:p-14 text-white text-center">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">

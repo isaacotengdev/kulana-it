@@ -39,14 +39,14 @@ export default function TechChallenge() {
 
           {/* Label */}
           <p
-            className="tracking-normal uppercase mb-6 whitespace-nowrap"
-            style={{ fontFamily: MF, fontWeight: 500, color: "#57D9D4", fontSize: "28px" }}
+            className="tracking-normal uppercase mb-6"
+            style={{ fontFamily: MF, fontWeight: 500, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}
           >
             Have a Technology Challenge?
           </p>
 
           {/* Heading */}
-          <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 700, fontSize: "72px" }}>
+          <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(28px, 3.7vw, 53px)" }}>
             <span style={{ color: "#ffffff" }}>Let&apos;s Solve It</span>
             <br />
             <span style={{ color: "#57D9D4" }}>Together.</span>
@@ -56,7 +56,7 @@ export default function TechChallenge() {
           <a
             href={contactHref}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border transition-all hover:bg-[#57D9D4]/10"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", borderColor: "#57D9D4", fontSize: "16px" }}
+            style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", borderColor: "#57D9D4", fontSize: "13px" }}
           >
             Discuss Your Requirements
             <ArrowRight className="w-4 h-4" style={{ color: "#57D9D4" }} />

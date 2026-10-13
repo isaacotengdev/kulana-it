@@ -75,7 +75,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Project cards */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
           <div className="grid md:grid-cols-2 gap-7">
             {projects.map(({ name, href, Icon, color, iconBg, tag, tagColor, client }) => (
               <Link

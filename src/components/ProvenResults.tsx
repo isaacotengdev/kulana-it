@@ -11,14 +11,14 @@ const stats = [
 
 export default function ProvenResults() {
   return (
-    <section className="py-16 lg:py-20" style={{ background: "#ffffff" }}>
+    <section className="py-10 lg:py-12" style={{ background: "#ffffff" }}>
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Label + rule */}
-        <div className="mb-10">
+        <div className="mb-6">
           <span
             className="tracking-normal uppercase"
-            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000", fontSize: "20px" }}
+            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}
           >
             Strategic Growth
           </span>
@@ -26,16 +26,16 @@ export default function ProvenResults() {
         </div>
 
         {/* Heading + description */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 mb-6 items-start">
           <h2
             className="leading-tight"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "36px" }}
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}
           >
             Proven Results.<br />Real Impact.
           </h2>
           <p
             className="lg:pt-2"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}
           >
             Your company&apos;s technology is your competitive edge. Kulana takes a
             holistic approach to your organisation&apos;s digital transformation. We
@@ -49,12 +49,12 @@ export default function ProvenResults() {
             <div key={s.label} className="text-center">
               <p
                 className="uppercase"
-                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000", fontSize: "20px", lineHeight: "24px" }}
+                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}
               >
                 {s.label}
               </p>
               <p
-                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}
+                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}
               >
                 {s.sub}
               </p>

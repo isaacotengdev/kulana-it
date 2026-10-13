@@ -55,7 +55,7 @@ export default function InfrastructurePage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
+        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
           <Image
             src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp"
             alt="Infrastructure"
@@ -71,27 +71,27 @@ export default function InfrastructurePage() {
           />
           <div
             className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
+            style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
           >
             <div>
               <p
                 className="inline-block tracking-normal uppercase mb-6"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Core &amp; Enterprise Systems
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Infrastructure
               </h1>
             </div>
-            <div style={{ marginTop: "140px" }}>
+            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -100,36 +100,36 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading */}
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
               The foundation your business runs on
             </h2>
 
             {/* 2-col: description left, tags right */}
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Modern enterprises depend on IT infrastructure that is resilient, secure, and adaptable. Whether you are running a traditional data center, migrating to the cloud, or operating a hybrid environment, Kulana delivers the expertise to design, deploy, and manage every layer of your infrastructure stack.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Backed by our partnership with Dell Technologies and certified under ISO 9001 and ISO 27001, we bring global standards and African operational experience together.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
                 {["Data Center", "Hybrid Cloud", "Networking", "HCI"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -140,18 +140,18 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── How to Get Started ───────────────────────────────────────── */}
-        <section className="py-16 lg:py-20" style={{ background: "#200044" }}>
+        <section className="py-10 lg:py-12" style={{ background: "#200044" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + white rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
               {[
                 { step: "01", title: "Assessment", desc: "Audit your current environment — servers, network, storage, cloud spend — and identify gaps and risks." },
                 { step: "02", title: "Design",     desc: "Produce a detailed architecture design aligned to your business requirements, budget, and growth plans." },
@@ -159,9 +159,9 @@ export default function InfrastructurePage() {
                 { step: "04", title: "Operate",    desc: "Provide ongoing 24/7 NOC support, monitoring, patching, and optimisation as a managed service." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(18px, 1.8vw, 26px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -169,24 +169,24 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── Powered By ───────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Powered By
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading left · description + logo right */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Delivered on World-Class Hardware
               </h2>
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   As a Dell Technologies partner, Kulana designs and deploys infrastructure on proven, enterprise-grade hardware — from PowerEdge servers and PowerStore arrays to networking and hyper-converged solutions.
                 </p>
                 <Image src="/logos/dell.svg" alt="Dell Technologies" width={120} height={40} className="h-9 w-auto object-contain" />
@@ -194,7 +194,7 @@ export default function InfrastructurePage() {
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-100">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-6 border-t border-gray-100">
               {[
                 { value: "#1",         label: "Server Vendor Worldwide" },
                 { value: "150+",       label: "Countries" },
@@ -202,8 +202,8 @@ export default function InfrastructurePage() {
                 { value: "End-to-End", label: "Solutions Portfolio" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
-                  <p className="leading-tight mb-1" style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "40px" }}>{value}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px" }}>{label}</p>
+                  <p className="leading-tight mb-1" style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "clamp(21px, 2.25vw, 32px)" }}>{value}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>{label}</p>
                 </div>
               ))}
             </div>
@@ -212,22 +212,22 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── What We Deliver ──────────────────────────────────────────── */}
-        <section className="py-16 lg:py-20" style={{ background: "#f5f5f5" }}>
+        <section className="py-10 lg:py-12" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Services<br />We Provide
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 From initial design to ongoing managed operations, we cover the full infrastructure lifecycle.
               </p>
             </div>
@@ -241,8 +241,8 @@ export default function InfrastructurePage() {
                 { title: "Infrastructure Monitoring",    desc: "24/7 monitoring, proactive alerts, and capacity planning." },
               ].map(({ title, desc }) => (
                 <div key={title} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -250,22 +250,22 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── Why Modernise ────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Why Modernise
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Benefits
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 A well-designed infrastructure foundation reduces risk, cuts cost, and enables every part of your business to move faster.
               </p>
             </div>
@@ -277,8 +277,8 @@ export default function InfrastructurePage() {
                 { title: "Risk Mitigation",      desc: "Tested DR plans and hardened security that keep your operations running." },
               ].map(({ title, desc }) => (
                 <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "28px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -286,28 +286,28 @@ export default function InfrastructurePage() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>FAQ</span>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Row 1: heading left | description right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 mb-6">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Your questions<br />answered
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Find answers to common questions about our infrastructure services and approach.
               </p>
             </div>
 
             {/* Row 2: image left | accordion right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-24" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
                 <Image src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp" alt="Infrastructure" fill className="object-cover object-center" sizes="320px" />
               </div>
 
@@ -315,13 +315,13 @@ export default function InfrastructurePage() {
                 {faqs.map(({ q, a }) => (
                   <details key={q} className="group py-5">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{q}</span>
-                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{q}</span>
+                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
                         <span className="group-open:hidden">+</span>
                         <span className="hidden group-open:inline">−</span>
                       </span>
                     </summary>
-                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{a}</p>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{a}</p>
                   </details>
                 ))}
               </div>
@@ -332,30 +332,30 @@ export default function InfrastructurePage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
                 Ready to build a resilient infrastructure?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Talk to our infrastructure specialists and get a tailored design for your environment.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "13px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

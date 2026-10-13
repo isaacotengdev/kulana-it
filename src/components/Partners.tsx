@@ -8,13 +8,13 @@ const LOGO_FILTER = "grayscale(100%) brightness(0) invert(0.65)";
 export default function Partners() {
   return (
     <section style={{ background: "#ffffff" }}>
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Label + rule */}
-        <div className="mb-10">
+        <div className="mb-6">
           <span
             className="tracking-normal uppercase"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}
           >
             Technology Partners
           </span>
@@ -22,16 +22,16 @@ export default function Partners() {
         </div>
 
         {/* Heading + description */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 mb-6 items-start">
           <h2
             className="leading-tight"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}
           >
             Powered by World-Class<br />Platforms
           </h2>
           <p
             className="lg:pt-2"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}
           >
             We hold certified partnerships with leading global technology
             vendors, giving you access to best-in-class solutions backed

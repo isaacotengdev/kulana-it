@@ -47,7 +47,7 @@ export default function IntegrationDigitalConnectivityPage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
+        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
           <Image
             src="/images/integration_digital_connectivity/Hero image_Integration and Digital Connectivity_2560×1440px.webp"
             alt="Integration and Digital Connectivity"
@@ -62,33 +62,33 @@ export default function IntegrationDigitalConnectivityPage() {
           />
           <div
             className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
+            style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
           >
             <div>
               <p
                 className="inline-block tracking-normal uppercase mb-6"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Integration Is Where Transformation Programmes Fail
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Integration &amp;<br />Digital Connectivity
               </h1>
             </div>
-            <div style={{ marginTop: "140px" }} className="flex items-end justify-between">
+            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }} className="flex items-end justify-between">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
               <p
                 className="hidden lg:block uppercase text-right"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "24px", lineHeight: "28px" }}
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.5" }}
               >
                 Connected Systems.<br />Faster Transformation.
               </p>
@@ -97,33 +97,33 @@ export default function IntegrationDigitalConnectivityPage() {
         </section>
 
         {/* The Problem We Solve */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 The Problem We Solve
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
               Integration is where transformation programmes fail
             </h2>
 
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Most enterprises reach a point where their technology estate works against them. Core banking, ERP, CRM, and operational systems each hold critical data — but none of them talk to each other without custom, undocumented point-to-point connections. Every new initiative triggers another integration project. The backlog grows faster than the business can ship.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   API-first connectivity changes this equation. A managed integration layer transforms your existing systems into composable services — wrapped in governed, versioned APIs that new products, partners, and AI capabilities can connect to without re-plumbing every time. Transformation then moves at the speed of business logic, not integration engineering.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
                 {["WSO2", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -133,11 +133,11 @@ export default function IntegrationDigitalConnectivityPage() {
         </section>
 
         {/* How to Get Started */}
-        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
+        <section style={{ background: "#200044" }} className="py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -151,9 +151,9 @@ export default function IntegrationDigitalConnectivityPage() {
                 { step: "04", title: "Enable and Scale",    desc: "Onboard internal teams and external partners to the API fabric, and iterate as new use cases — including AI products — are built on top." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(18px, 1.8vw, 26px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -161,21 +161,21 @@ export default function IntegrationDigitalConnectivityPage() {
         </section>
 
         {/* What We Deliver */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Three Disciplines. One Connected Enterprise.
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Integration, architecture, and AI engineering work together — each layer enabling the next, from connectivity foundation through to intelligent product capabilities.
               </p>
             </div>
@@ -207,19 +207,19 @@ export default function IntegrationDigitalConnectivityPage() {
                 <div key={title}>
                   <div className="group flex flex-col lg:flex-row gap-10 py-10">
                     <div className="flex-1 flex flex-col">
-                      <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "13px" }}>
+                      <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "11px" }}>
                         {num} — {tag}
                       </p>
-                      <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "36px" }}>
+                      <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                         {title}
                       </h3>
                       <div className="grid lg:grid-cols-2 gap-8 mb-8">
-                        <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                        <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                         <ul className="space-y-0">
                           {highlights.map((h) => (
-                            <li key={h} className="flex items-center gap-3" style={{ lineHeight: "32px" }}>
+                            <li key={h} className="flex items-center gap-3" style={{ lineHeight: "1.4" }}>
                               <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4" }} />
-                              <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px" }}>{h}</span>
+                              <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>{h}</span>
                             </li>
                           ))}
                         </ul>
@@ -227,7 +227,7 @@ export default function IntegrationDigitalConnectivityPage() {
                       <Link
                         href={href}
                         className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                        style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                        style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
                       >
                         Learn more <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -249,21 +249,21 @@ export default function IntegrationDigitalConnectivityPage() {
         </section>
 
         {/* In Practice */}
-        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
+        <section style={{ background: "#f5f5f5" }} className="py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 In Practice
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 What Integration Enables
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 API-first connectivity is not a technical end in itself — it is what unlocks these outcomes.
               </p>
             </div>
@@ -271,8 +271,8 @@ export default function IntegrationDigitalConnectivityPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {scenarios.map(({ label, desc }) => (
                 <div key={label} className="bg-white rounded-xl p-6 border border-gray-100">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -281,30 +281,30 @@ export default function IntegrationDigitalConnectivityPage() {
 
         {/* CTA */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
                 Stop letting integration slow you down.
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Talk to our integration architects and discover how an API-first connectivity layer can accelerate your transformation — and de-risk the legacy systems that are holding it back.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "13px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

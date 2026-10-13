@@ -131,10 +131,10 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-8">
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-24 text-white">
+        <section className="gradient-hero relative overflow-hidden py-9 text-white">
           <div className="absolute inset-0 opacity-10"
             style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
           <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* ── Introduction ─────────────────────────────────────────────── */}
-        <section className="py-16 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-5">
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* ── Policy sections ──────────────────────────────────────────── */}
-        <section className="pb-16 bg-white">
+        <section className="pb-6 bg-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             {sections.map(({ id, Icon, iconBg, title, content }) => (
               <div key={id} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
@@ -219,7 +219,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* ── Contact banner ───────────────────────────────────────────── */}
-        <section className="py-16 bg-gray-50 border-t border-gray-100">
+        <section className="py-10 bg-gray-50 border-t border-gray-100">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-8 md:p-10 text-white">
               <div className="grid md:grid-cols-2 gap-8 items-start">

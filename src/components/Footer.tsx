@@ -52,7 +52,7 @@ export default function Footer() {
     <footer style={{ background: "#200044", fontFamily: MF }}>
 
       {/* ── Top: logo + ISO badge ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 flex flex-wrap items-start justify-between gap-4">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6 flex flex-wrap items-start justify-between gap-4">
         <Link href="/">
           <Image
             src="/logos/logo.svg"
@@ -71,50 +71,50 @@ export default function Footer() {
       </div>
 
       {/* ── Main grid ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 grid lg:grid-cols-[1.2fr_1fr_1.5fr] gap-12 lg:gap-16">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 grid lg:grid-cols-[1.2fr_1fr_1.5fr] gap-12 lg:gap-16">
 
         {/* Col 1 — tagline + offices */}
         <div>
-          <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>
+          <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>
             Technology Value Creators – empowering organisations in Ghana and
             Mauritius through enterprise-grade IT solutions and expert consultancy.
           </p>
 
           {/* Ghana */}
           <div className="mb-8">
-            <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}>Ghana</p>
-            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>The Rhombus, HRJ5+J6Q, Kanda, Accra</p>
-            <a href="tel:+233540127400" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "20px", lineHeight: "24px" }}>+233 540 127 400</a>
-            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "20px", lineHeight: "24px" }}>contact@kulana.net</a>
+            <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "14px" }}>Ghana</p>
+            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>The Rhombus, HRJ5+J6Q, Kanda, Accra</p>
+            <a href="tel:+233540127400" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>+233 540 127 400</a>
+            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>contact@kulana.net</a>
           </div>
 
           {/* Mauritius */}
           <div>
-            <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}>Mauritius</p>
-            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>
+            <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "14px" }}>Mauritius</p>
+            <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>
               Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
             </p>
-            <a href="tel:+23046325190" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "20px", lineHeight: "24px" }}>+230 46 32 519</a>
-            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "20px", lineHeight: "24px" }}>contact@kulana.net</a>
+            <a href="tel:+23046325190" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>+230 46 32 519</a>
+            <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>contact@kulana.net</a>
           </div>
         </div>
 
         {/* Col 2 — Quick Links */}
         <div className="lg:pl-8">
-          <p className="tracking-normal uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}>Quick Links</p>
+          <p className="tracking-normal uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "14px" }}>Quick Links</p>
           <ul className="space-y-0">
             {quickLinks.map((link) => (
-              <li key={link.name} style={{ lineHeight: "24px", marginBottom: "8px" }}>
+              <li key={link.name} style={{ lineHeight: "1.6", marginBottom: "8px" }}>
                 {"external" in link && link.external ? (
                   <a href={link.href} target="_blank" rel="noopener noreferrer"
                     className="hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px" }}>
+                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px" }}>
                     {link.name}
                   </a>
                 ) : (
                   <Link href={link.href}
                     className="hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px" }}>
+                    style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px" }}>
                     {link.name}
                   </Link>
                 )}
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Col 3 — Our Services accordion */}
         <div>
-          <p className="tracking-normal uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}>Our Services</p>
+          <p className="tracking-normal uppercase mb-5" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "14px" }}>Our Services</p>
           <ul className="space-y-1">
             {servicePillars.map((pillar) => {
               const isOpen = openPillar === pillar.name;
@@ -134,10 +134,10 @@ export default function Footer() {
                   <button
                     onClick={() => setOpenPillar(isOpen ? null : pillar.name)}
                     className="w-full text-left flex items-center justify-between py-2 hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}
                   >
                     <span>{pillar.name}</span>
-                    <span style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s", fontSize: "16px" }}>›</span>
+                    <span style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s", fontSize: "13px" }}>›</span>
                   </button>
                   {isOpen && pillar.subs.length > 0 && (
                     <ul className="mt-1 mb-2 space-y-2 pl-3 border-l border-white/10">
@@ -145,7 +145,7 @@ export default function Footer() {
                         <li key={sub.name}>
                           <Link href={sub.href}
                             className="hover:opacity-70 transition-opacity"
-                            style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>
+                            style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>
                             {sub.name}
                           </Link>
                         </li>
@@ -163,7 +163,7 @@ export default function Footer() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-end justify-between gap-6">
 
         {/* Large tagline */}
-        <p className="text-3xl lg:text-4xl leading-tight" style={{ fontFamily: MF, fontWeight: 500, color: "#ffffff" }}>
+        <p className="text-2xl lg:text-3xl leading-tight" style={{ fontFamily: MF, fontWeight: 500, color: "#ffffff" }}>
           Technology<br />Value Creators.
         </p>
 
@@ -188,7 +188,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "20px", lineHeight: "24px" }}>
+          <p style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "12px", lineHeight: "1.6" }}>
             &copy; 2026 Kulana – Technology Value Creators. All rights reserved.
           </p>
         </div>

@@ -74,8 +74,8 @@ export default function KulanaAcademyPage() {
         </section>
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+          <div className="grid lg:grid-cols-2 gap-10 items-center mb-20">
             <div>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
                 Grow your business with Kulana Academy
@@ -125,7 +125,7 @@ export default function KulanaAcademyPage() {
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
-        <section className="gradient-primary py-20 text-white text-center">
+        <section className="gradient-primary py-12 text-white text-center">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
               Ready to upskill your team?

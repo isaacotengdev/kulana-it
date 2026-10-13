@@ -62,18 +62,18 @@ export default function Services() {
     <section id="services" style={{ background: "#ffffff" }}>
 
       {/* ── Intro header ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="mb-10">
-          <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
+        <div className="mb-6">
+          <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
             Our Services
           </span>
           <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
             What Can We Solve<br />for You?
           </h2>
-          <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+          <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
             Four integrated pillars delivering end-to-end technology solutions — from enterprise systems and digital connectivity to data intelligence and capability building.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Services() {
         return isOpen ? (
 
           /* ── EXPANDED ── */
-          <div key={pillar.number} className="relative overflow-hidden min-h-[460px]" style={{ background: "#200044" }}>
+          <div key={pillar.number} className="relative overflow-hidden lg:min-h-[460px]" style={{ background: "#200044" }}>
 
             {/* Image — absolute, covers right 35% */}
             <div className="absolute top-0 right-0 bottom-0 w-[35%] hidden lg:block">
@@ -104,7 +104,7 @@ export default function Services() {
             </div>
 
             {/* Content — container-aligned; number sits just outside the left padding */}
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 relative">
+            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-9 relative">
 
               {/* Number — absolute inside content div, pulled left flush to text start */}
               <span
@@ -114,7 +114,7 @@ export default function Services() {
                   top: "3rem",
                   transform: "translateX(calc(-100% - 12px))",
                   fontFamily: MF, fontWeight: 400, color: "#57D9D4",
-                  fontSize: "56px",
+                  fontSize: "clamp(24px, 2.85vw, 41px)",
                 }}
               >
                 {pillar.number}
@@ -130,12 +130,12 @@ export default function Services() {
 
               {/* Mobile number */}
               <span className="block lg:hidden leading-none select-none mb-4"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "56px" }}>
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(24px, 2.85vw, 41px)" }}>
                 {pillar.number}
               </span>
 
               <p className="tracking-normal uppercase mb-2"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "20px" }}>
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 {pillar.tagline}
               </p>
 
@@ -148,20 +148,20 @@ export default function Services() {
                 <Minus className="w-4 h-4" />
               </button>
               <h2 className="leading-tight text-white mb-6"
-                style={{ fontFamily: MF, fontWeight: 700, fontSize: "36px" }}>
+                style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 {pillar.title}
               </h2>
 
               {/* Description + services */}
-              <div className="flex items-start gap-8 mb-8">
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px", whiteSpace: "pre-line", maxWidth: "48%" }}>
+              <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8 mb-8">
+                <p className="lg:max-w-[48%]" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5", whiteSpace: "pre-line" }}>
                   {pillar.description}
                 </p>
                 {pillar.services.length > 0 && (
                   <ul className="flex-shrink-0">
                     {pillar.services.map((svc) => (
                       <li key={svc} className="flex items-center gap-2"
-                        style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff", fontSize: "20px", lineHeight: "32px" }}>
+                        style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.4" }}>
                         <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4", strokeWidth: 2.5 }} />
                         {svc}
                       </li>
@@ -174,13 +174,13 @@ export default function Services() {
               {"external" in pillar && pillar.external ? (
                 <a href={pillar.href} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-md transition-all hover:opacity-90"
-                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}>
                   Explore {pillar.title} <ArrowRight className="w-4 h-4" />
                 </a>
               ) : (
                 <Link href={pillar.href}
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-md transition-all hover:opacity-90"
-                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}>
                   Explore {pillar.title} <ArrowRight className="w-4 h-4" />
                 </Link>
               )}
@@ -200,7 +200,7 @@ export default function Services() {
                 {/* Number */}
                 <span
                   className="leading-none select-none flex-shrink-0 lg:-ml-16"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}
                 >
                   {pillar.number}
                 </span>
@@ -208,14 +208,14 @@ export default function Services() {
                 {/* Text */}
                 <div>
                   <p className="tracking-normal uppercase mb-1"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "20px" }}>
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "clamp(13px, 1vw, 14px)" }}>
                     {pillar.tagline}
                   </p>
                   <h3 className="leading-tight"
-                    style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "36px", marginBottom: "25px" }}>
+                    style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)", marginBottom: "25px" }}>
                     {pillar.title}
                   </h3>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                     {pillar.description}
                   </p>
                 </div>

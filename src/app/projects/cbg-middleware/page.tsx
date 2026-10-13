@@ -27,7 +27,7 @@ export default function CbgMiddlewarePage() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center py-32 px-4 text-center">
+        <section className="flex flex-col items-center justify-center py-12 px-4 text-center">
           <div className="w-24 h-24 rounded-3xl bg-teal-50 border border-teal-100 flex items-center justify-center mb-8">
             <Hammer className="w-12 h-12 text-teal-600" strokeWidth={1.75} />
           </div>
@@ -35,7 +35,7 @@ export default function CbgMiddlewarePage() {
             <Clock className="w-4 h-4" /> Under Development
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-4">This page is under development</h2>
-          <p className="text-gray-500 text-lg max-w-md leading-relaxed mb-10">
+          <p className="text-gray-500 text-lg max-w-md leading-relaxed mb-6">
             The CBG Middleware Project page is currently being built. Check back soon for full project details,
             milestones, and deliverables.
           </p>

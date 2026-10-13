@@ -51,7 +51,7 @@ export default function RpaPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden" style={{ minHeight: "840px" }}>
+        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
           <Image
             src="/images/Data_AI_Intelligence/Hero image_RPA_2560×1440px.webp"
             alt="RPA and Intelligent Automation"
@@ -66,24 +66,24 @@ export default function RpaPage() {
           />
           <div
             className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
-            style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
+            style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
           >
             <div>
-              <p className="inline-block tracking-normal uppercase mb-6" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}>
+              <p className="inline-block tracking-normal uppercase mb-6" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
                 Data &amp; AI Intelligence
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Robotic Process<br />Automation
               </h1>
             </div>
-            <div style={{ marginTop: "140px" }}>
+            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "13px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -92,36 +92,36 @@ export default function RpaPage() {
         </section>
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading */}
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
               Let software robots do the heavy lifting
             </h2>
 
             {/* 2-col: description left, tags right */}
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Across every industry, organisations spend enormous human effort on high-volume, repetitive tasks — data entry, reconciliation, report generation, form processing. These tasks are perfect candidates for automation — and RPA makes that automation fast to deploy, easy to maintain, and non-invasive to existing systems.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Kulana&apos;s RPA practice combines process expertise with leading automation platforms to identify, design, build, and operate bots that deliver measurable ROI — typically within weeks of deployment.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
                 {["UiPath", "Power Automate", "Process Mining", "IDP"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -132,12 +132,12 @@ export default function RpaPage() {
         </section>
 
         {/* ── How to Get Started ───────────────────────────────────────── */}
-        <section style={{ background: "#200044" }} className="py-16 lg:py-20">
+        <section style={{ background: "#200044" }} className="py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + white rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -151,9 +151,9 @@ export default function RpaPage() {
                 { step: "04", title: "Scale",    desc: "Monitor performance, handle exceptions, and continuously optimise — then scale to more processes." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(18px, 1.8vw, 26px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -161,22 +161,22 @@ export default function RpaPage() {
         </section>
 
         {/* ── Applications ─────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Applications
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Real-world use cases
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 RPA delivers rapid, measurable ROI across industries wherever repetitive digital work exists.
               </p>
             </div>
@@ -190,8 +190,8 @@ export default function RpaPage() {
                 { label: "Customer Data Management",       desc: "Synchronisation of customer records across CRM, ERP, and support systems to maintain a single source of truth." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -199,22 +199,22 @@ export default function RpaPage() {
         </section>
 
         {/* ── What We Deliver ──────────────────────────────────────────── */}
-        <section style={{ background: "#f5f5f5" }} className="py-16 lg:py-20">
+        <section style={{ background: "#f5f5f5" }} className="py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 End-to-end RPA services
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 From process discovery to bot deployment and ongoing managed operations — full-cycle automation capability.
               </p>
             </div>
@@ -228,8 +228,8 @@ export default function RpaPage() {
                 { label: "Orchestration and Monitoring",      desc: "Centralised control rooms to schedule, monitor, and optimise your entire bot fleet in real time." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -237,22 +237,22 @@ export default function RpaPage() {
         </section>
 
         {/* ── Why It Matters ───────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-10">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
+            <div className="mb-6">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
                 Why It Matters
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 The business case for automation
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 RPA delivers fast, measurable impact on cost, quality, and employee experience.
               </p>
             </div>
@@ -264,8 +264,8 @@ export default function RpaPage() {
                 { title: "Employee Satisfaction",     desc: "Free your teams from tedious, repetitive work so they can focus on creative, high-value tasks." },
               ].map(({ title, desc }) => (
                 <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "28px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -273,28 +273,28 @@ export default function RpaPage() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────── */}
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-white py-10 lg:py-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Label + black rule */}
-            <div className="mb-12">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>FAQ</span>
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Row 1: heading left | description right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 mb-6">
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                 Your questions<br />answered
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Everything you need to know about our RPA and intelligent automation practice.
               </p>
             </div>
 
             {/* Row 2: image left | accordion right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-24" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
                 <Image src="/images/integration_digital_connectivity/Integration.webp" alt="RPA and Automation" fill className="object-cover object-center" sizes="320px" />
               </div>
 
@@ -302,13 +302,13 @@ export default function RpaPage() {
                 {faqs.map(({ q, a }) => (
                   <details key={q} className="group py-5">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{q}</span>
-                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{q}</span>
+                      <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
                         <span className="group-open:hidden">+</span>
                         <span className="hidden group-open:inline">−</span>
                       </span>
                     </summary>
-                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{a}</p>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{a}</p>
                   </details>
                 ))}
               </div>
@@ -319,30 +319,30 @@ export default function RpaPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section style={{ background: "#57D9D4" }}>
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-8">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
                 Ready to automate your processes?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   Talk to our automation specialists and discover which processes to automate first for the fastest ROI.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "13px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>
