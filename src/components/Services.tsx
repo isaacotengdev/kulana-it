@@ -35,7 +35,7 @@ const pillars = [
     tagline: "Turn Data Into Business Advantage",
     title: "Data & AI Intelligence",
     description:
-      "Turn your data into insight, automation and measurable impact. We design data strategies and AI solutions that help you make smarter decisions and create new value.",
+      "Turn your data into insight, automation and measurable impact.\nWe design data strategies and AI solutions that help you make smarter decisions and create new value.",
     services: ["Data", "AI", "RPA"],
     href: "/data-ai-intelligence",
     image: "/images/Links_homepage/3-image_1600x1000px.webp",
@@ -59,24 +59,27 @@ export default function Services() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section id="services" style={{ background: "#f1ffff" }}>
+    <section id="services" style={{ background: "#ffffff" }}>
 
       {/* ── Intro header ── */}
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="mb-10">
-          <span className="tracking-[0.2em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+          <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}>
             Our Services
           </span>
           <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+          <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
             What Can We Solve<br />for You?
           </h2>
-          <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+          <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
             Four integrated pillars delivering end-to-end technology solutions — from enterprise systems and digital connectivity to data intelligence and capability building.
           </p>
         </div>
+      </div>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full h-px" style={{ background: "#e5e7eb" }} />
       </div>
 
       {/* ── Pillar rows ── */}
@@ -109,9 +112,9 @@ export default function Services() {
                 style={{
                   left: 0,
                   top: "3rem",
-                  transform: "translateX(calc(-100% + 1.5rem))",
+                  transform: "translateX(calc(-100% - 12px))",
                   fontFamily: MF, fontWeight: 400, color: "#57D9D4",
-                  fontSize: "70px",
+                  fontSize: "56px",
                 }}
               >
                 {pillar.number}
@@ -127,12 +130,12 @@ export default function Services() {
 
               {/* Mobile number */}
               <span className="block lg:hidden leading-none select-none mb-4"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "70px" }}>
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "56px" }}>
                 {pillar.number}
               </span>
 
-              <p className="tracking-[0.18em] uppercase mb-2"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "25px" }}>
+              <p className="tracking-normal uppercase mb-2"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "20px" }}>
                 {pillar.tagline}
               </p>
 
@@ -145,20 +148,20 @@ export default function Services() {
                 <Minus className="w-4 h-4" />
               </button>
               <h2 className="leading-tight text-white mb-6"
-                style={{ fontFamily: MF, fontWeight: 700, fontSize: "45px" }}>
+                style={{ fontFamily: MF, fontWeight: 700, fontSize: "36px" }}>
                 {pillar.title}
               </h2>
 
               {/* Description + services */}
               <div className="flex items-start gap-8 mb-8">
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px", whiteSpace: "pre-line", maxWidth: "55%" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px", whiteSpace: "pre-line", maxWidth: "48%" }}>
                   {pillar.description}
                 </p>
                 {pillar.services.length > 0 && (
                   <ul className="flex-shrink-0">
                     {pillar.services.map((svc) => (
                       <li key={svc} className="flex items-center gap-2"
-                        style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff", fontSize: "25px", lineHeight: "40px" }}>
+                        style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff", fontSize: "20px", lineHeight: "32px" }}>
                         <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4", strokeWidth: 2.5 }} />
                         {svc}
                       </li>
@@ -171,13 +174,13 @@ export default function Services() {
               {"external" in pillar && pillar.external ? (
                 <a href={pillar.href} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-md transition-all hover:opacity-90"
-                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}>
                   Explore {pillar.title} <ArrowRight className="w-4 h-4" />
                 </a>
               ) : (
                 <Link href={pillar.href}
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-md transition-all hover:opacity-90"
-                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}>
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}>
                   Explore {pillar.title} <ArrowRight className="w-4 h-4" />
                 </Link>
               )}
@@ -189,29 +192,30 @@ export default function Services() {
         ) : (
 
           /* ── COLLAPSED ── */
-          <div key={pillar.number} className="mb-2 lg:mb-4 last:mb-0" style={{ background: "#f1ffff" }}>
+          <div key={pillar.number} style={{ background: "#ffffff" }}>
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] gap-4 lg:gap-8 items-start py-6 lg:py-8 lg:pl-16">
+              <div className="w-full h-px" style={{ background: "#e5e7eb" }} />
+              <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] gap-4 lg:gap-8 items-start py-8 lg:py-10 lg:pl-16">
 
                 {/* Number */}
                 <span
-                  className="leading-none select-none flex-shrink-0"
-                  style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}
+                  className="leading-none select-none flex-shrink-0 lg:-ml-16"
+                  style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}
                 >
                   {pillar.number}
                 </span>
 
                 {/* Text */}
                 <div>
-                  <p className="tracking-[0.18em] uppercase mb-1"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "25px" }}>
+                  <p className="tracking-normal uppercase mb-1"
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "20px" }}>
                     {pillar.tagline}
                   </p>
                   <h3 className="leading-tight"
-                    style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "45px", marginBottom: "25px" }}>
+                    style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "36px", marginBottom: "25px" }}>
                     {pillar.title}
                   </h3>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
                     {pillar.description}
                   </p>
                 </div>
@@ -221,7 +225,7 @@ export default function Services() {
                   <button
                     onClick={() => setOpenIndex(i)}
                     className="mt-1 w-9 h-9 flex items-center justify-center transition-all border rounded-full flex-shrink-0"
-                    style={{ borderColor: "#a198af", color: "#a198af", background: "#f1ffff" }}
+                    style={{ borderColor: "#a198af", color: "#a198af", background: "#ffffff" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#57D9D4"; (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#a198af"; (e.currentTarget as HTMLElement).style.color = "#a198af"; }}
                   >
@@ -245,7 +249,7 @@ export default function Services() {
                 <button
                   onClick={() => setOpenIndex(i)}
                   className="lg:hidden col-start-2 flex self-start mt-1 w-9 h-9 items-center justify-center transition-all border rounded-full flex-shrink-0"
-                  style={{ borderColor: "#a198af", color: "#a198af", background: "#f1ffff" }}
+                  style={{ borderColor: "#a198af", color: "#a198af", background: "#ffffff" }}
                 >
                   <Plus className="w-4 h-4" />
                 </button>

@@ -81,12 +81,12 @@ export default function DataPage() {
             style={{ paddingTop: "calc(80px + 90px)", paddingBottom: "90px" }}
           >
             <div>
-              <p className="inline-block tracking-[0.18em] uppercase mb-6" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}>
+              <p className="inline-block tracking-normal uppercase mb-6" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}>
                 Data &amp; AI Intelligence
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
               >
                 Data
               </h1>
@@ -95,7 +95,7 @@ export default function DataPage() {
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -109,31 +109,31 @@ export default function DataPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading */}
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
               Data as a strategic asset
             </h2>
 
             {/* 2-col: description left, tags right */}
             <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                   In financial services and regulated industries, the gap between data and structured intelligence carries real cost: compliance exposures from manual reporting, credit decisions made without predictive models, and operational risks that analytics could have surfaced months earlier.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                   Kulana&apos;s data practice is built around decision science. We architect platforms that power regulatory compliance reporting, predictive risk models, and management intelligence — with data governance, model validation frameworks, and the audit trails that regulators and risk officers require built in from the start.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
                 {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "25px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -149,7 +149,7 @@ export default function DataPage() {
 
             {/* Label + white rule */}
             <div className="mb-12">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -163,9 +163,9 @@ export default function DataPage() {
                 { step: "04", title: "Scale & Govern",   desc: "Continuous data quality monitoring, model revalidation, and governance reviews keep your data platform accurate and compliant as your business grows." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "45px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -178,17 +178,17 @@ export default function DataPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Applications
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Real-world use cases
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 We apply data engineering and analytics across industries to solve concrete business problems.
               </p>
             </div>
@@ -202,8 +202,8 @@ export default function DataPage() {
                 { label: "Management Reporting & BI",       desc: "Automated management accounts and executive dashboards replacing manual spreadsheet consolidation." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -216,17 +216,17 @@ export default function DataPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Data engineering and analytics services
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 A full-spectrum data capability covering engineering, governance, analytics, and compliance — built for scale.
               </p>
             </div>
@@ -240,8 +240,8 @@ export default function DataPage() {
                 { label: "Real-time Streaming",    desc: "Event-driven data architectures using Apache Kafka and cloud streaming services for real-time decision support." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -254,17 +254,17 @@ export default function DataPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Why It Matters
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 What a governed data capability unlocks
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 A well-built data capability pays dividends across every function — from finance and operations to sales and product.
               </p>
             </div>
@@ -276,8 +276,8 @@ export default function DataPage() {
                 { title: "Revenue & Growth Opportunities", desc: "Identify high-value customer segments, forecast demand, and surface cross-sell opportunities hidden inside your existing data." },
               ].map(({ title, desc }) => (
                 <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "35px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "28px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -290,16 +290,16 @@ export default function DataPage() {
 
             {/* Label + black rule */}
             <div className="mb-12">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>FAQ</span>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Row 1: heading left | description right */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Your questions<br />answered
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 Common questions about our data engineering and analytics practice.
               </p>
             </div>
@@ -314,13 +314,13 @@ export default function DataPage() {
                 {faqs.map(({ q, a }) => (
                   <details key={q} className="group py-5">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{q}</span>
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{q}</span>
                       <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
                         <span className="group-open:hidden">+</span>
                         <span className="hidden group-open:inline">−</span>
                       </span>
                     </summary>
-                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{a}</p>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{a}</p>
                   </details>
                 ))}
               </div>
@@ -335,26 +335,26 @@ export default function DataPage() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
               >
                 Ready to make your data work for you?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
                   Talk to our data specialists and discover how a well-built data platform can accelerate decisions and drive measurable business outcomes.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

@@ -17,8 +17,8 @@ export default function ProvenResults() {
         {/* Label + rule */}
         <div className="mb-10">
           <span
-            className="tracking-[0.2em] uppercase"
-            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000", fontSize: "25px" }}
+            className="tracking-normal uppercase"
+            style={{ fontFamily: FONT, fontWeight: 600, color: "#000000", fontSize: "20px" }}
           >
             Strategic Growth
           </span>
@@ -29,13 +29,13 @@ export default function ProvenResults() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
           <h2
             className="leading-tight"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "45px" }}
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "36px" }}
           >
             Proven Results.<br />Real Impact.
           </h2>
           <p
             className="lg:pt-2"
-            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}
+            style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}
           >
             Your company&apos;s technology is your competitive edge. Kulana takes a
             holistic approach to your organisation&apos;s digital transformation. We
@@ -46,15 +46,15 @@ export default function ProvenResults() {
         {/* Four credentials */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="text-center">
               <p
                 className="uppercase"
-                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000", fontSize: "25px", lineHeight: "30px" }}
+                style={{ fontFamily: FONT, fontWeight: 700, color: "#000000", fontSize: "20px", lineHeight: "24px" }}
               >
                 {s.label}
               </p>
               <p
-                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}
+                style={{ fontFamily: FONT, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}
               >
                 {s.sub}
               </p>

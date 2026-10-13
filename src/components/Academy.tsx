@@ -30,7 +30,7 @@ export default function Academy() {
               <div className="w-2 flex-shrink-0 self-stretch my-3" style={{ background: GREEN }} />
               <h2
                 className="leading-tight text-white"
-                style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(36px, 4.5vw, 56px)" }}
+                style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(29px, 3.6vw, 45px)" }}
               >
                 Build the skills to<br />
                 move your business<br />
@@ -57,7 +57,7 @@ export default function Academy() {
             </div>
 
             {/* Row 2 left — description */}
-            <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "30px", paddingLeft: "32px" }}>
+            <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "16px", lineHeight: "24px", paddingLeft: "32px" }}>
               Industry-aligned training designed to equip teams with
               the skills they need for a rapidly changing digital world.
             </p>
@@ -69,7 +69,7 @@ export default function Academy() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-full transition-all hover:opacity-90 whitespace-nowrap"
-                style={{ fontFamily: MF, fontWeight: 600, fontSize: "20px", background: GREEN, color: DARK }}
+                style={{ fontFamily: MF, fontWeight: 600, fontSize: "16px", background: GREEN, color: DARK }}
               >
                 Explore Kulana Academy
               </a>

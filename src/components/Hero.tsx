@@ -26,15 +26,15 @@ export default function Hero() {
       >
         {/* Eyebrow — no border, plain text */}
         <span
-          className="inline-block tracking-[0.18em] uppercase mb-6"
-          style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
+          className="inline-block tracking-normal uppercase mb-6"
+          style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
         >
           Trusted IT Partner&nbsp;&nbsp;|&nbsp;&nbsp;Ghana and Mauritius
         </span>
 
         <h1
           className="text-white uppercase leading-tight"
-          style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
+          style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
         >
           Technology
           <br />
@@ -47,7 +47,7 @@ export default function Hero() {
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-            style={{ fontFamily: MF, fontWeight: 600, fontSize: "20px", background: "#57D9D4", color: "#040d28" }}
+            style={{ fontFamily: MF, fontWeight: 600, fontSize: "16px", background: "#57D9D4", color: "#040d28" }}
           >
             Request a Consultation
             <ArrowRight className="w-5 h-5" />
@@ -55,7 +55,7 @@ export default function Hero() {
           <a
             href="#services"
             className="inline-flex items-center gap-2 px-8 py-4 bg-transparent rounded-md hover:bg-white/10 transition-all border"
-            style={{ fontFamily: MF, fontWeight: 600, fontSize: "20px", color: "#57D9D4", borderColor: "#57D9D4" }}
+            style={{ fontFamily: MF, fontWeight: 600, fontSize: "16px", color: "#57D9D4", borderColor: "#57D9D4" }}
           >
             Explore Services
             <ArrowRight className="w-5 h-5" />

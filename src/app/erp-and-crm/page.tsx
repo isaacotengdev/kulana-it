@@ -106,14 +106,14 @@ export default function ErpCrmPage() {
           >
             <div>
               <p
-                className="inline-block tracking-[0.18em] uppercase mb-6"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
+                className="inline-block tracking-normal uppercase mb-6"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
               >
                 Core &amp; Enterprise Systems
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
               >
                 ERP &amp; CRM
               </h1>
@@ -122,7 +122,7 @@ export default function ErpCrmPage() {
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -136,31 +136,31 @@ export default function ErpCrmPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Heading */}
-            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+            <h2 className="leading-tight mb-10" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
               What is ERP and CRM?
             </h2>
 
             {/* 2-col: description left, tags right */}
             <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-start">
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                   We help organisations streamline internal operations and strengthen customer relationships by implementing integrated ERP and CRM solutions. Our solutions bring together critical business functions — including finance, human resources, procurement, operations and customer management — to improve efficiency and provide greater visibility across the organisation.
                 </p>
-                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                   As a certified partner of Microsoft Dynamics 365 and HubSpot, we combine platform expertise with a deep understanding of business needs to implement and customise solutions that fit each organisation&apos;s processes, goals and requirements.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
                 {["Finance & Ops", "Sales Automation", "Marketing Hub", "Customer Service"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
-                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "25px", maxWidth: "340px", width: "100%" }}>
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "20px", maxWidth: "340px", width: "100%" }}>
                     {tag}
                   </div>
                 ))}
@@ -176,7 +176,7 @@ export default function ErpCrmPage() {
 
             {/* Label + white rule */}
             <div className="mb-12">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "13px" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -189,9 +189,9 @@ export default function ErpCrmPage() {
                 { step: "03", title: "Implementation", desc: "Configuration, customisation, and integration occur through stakeholder engagement and iterative approaches, with training and ongoing support provided." },
               ].map(({ step, title, desc }) => (
                 <div key={step}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}>{step}</p>
-                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "45px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{step}</p>
+                  <p className="mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "36px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -204,17 +204,17 @@ export default function ErpCrmPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Powered By
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 World-Class Platforms
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 We are certified implementation partners for the two most widely adopted ERP and CRM platforms globally.
               </p>
             </div>
@@ -223,9 +223,9 @@ export default function ErpCrmPage() {
               {/* Microsoft Dynamics 365 */}
               <div className="bg-white border border-gray-100 rounded-xl p-8">
                 <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
-                <p className="text-xs tracking-[0.15em] uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>ERP Platform</p>
-                <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>Microsoft Dynamics 365</p>
-                <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="text-xs tracking-normal uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>ERP Platform</p>
+                <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>Microsoft Dynamics 365</p>
+                <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
                   A unified suite of intelligent business applications combining ERP and CRM capabilities
                   with built-in AI, analytics, and seamless Microsoft 365 integration.
                 </p>
@@ -242,9 +242,9 @@ export default function ErpCrmPage() {
               {/* HubSpot */}
               <div className="bg-white border border-gray-100 rounded-xl p-8">
                 <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
-                <p className="text-xs tracking-[0.15em] uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>CRM Platform</p>
-                <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>HubSpot CRM</p>
-                <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="text-xs tracking-normal uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>CRM Platform</p>
+                <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>HubSpot CRM</p>
+                <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
                   An all-in-one inbound marketing, sales, and service platform that helps teams
                   attract visitors, convert leads, and close deals at scale.
                 </p>
@@ -267,25 +267,25 @@ export default function ErpCrmPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Capabilities
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 ERP and CRM Capabilities
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 A unified set of capabilities spanning both Microsoft Dynamics 365 and HubSpot — covering every function from finance to customer success.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {features.map(({ label, desc }) => (
                 <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px" }}>{label}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px" }}>{label}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -298,25 +298,25 @@ export default function ErpCrmPage() {
 
             {/* Label + black rule */}
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Why Modernise
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-14">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Benefits
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 When ERP and CRM work together, every team — from finance to sales — shares a single source of truth and moves faster.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {benefits.map(({ title, desc }) => (
                 <div key={title} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
-                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "35px" }}>{title}</p>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="mb-3" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "28px" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -329,16 +329,16 @@ export default function ErpCrmPage() {
 
             {/* Label + black rule */}
             <div className="mb-12">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>FAQ</span>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             {/* Row 1: heading left | description right */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-10">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Your questions<br />answered
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 Find answers to common questions about our ERP and CRM services and approach.
               </p>
             </div>
@@ -353,13 +353,13 @@ export default function ErpCrmPage() {
                 {faqs.map(({ q, a }) => (
                   <details key={q} className="group py-5">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none">
-                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{q}</span>
+                      <span style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{q}</span>
                       <span className="flex-shrink-0 leading-none select-none" style={{ color: "#000000", fontSize: "22px" }}>
                         <span className="group-open:hidden">+</span>
                         <span className="hidden group-open:inline">−</span>
                       </span>
                     </summary>
-                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{a}</p>
+                    <p className="mt-4" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{a}</p>
                   </details>
                 ))}
               </div>
@@ -374,26 +374,26 @@ export default function ErpCrmPage() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
               >
                 Ready to unify your operations and customer data?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
                   Talk to our certified Microsoft Dynamics 365 and HubSpot experts today.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

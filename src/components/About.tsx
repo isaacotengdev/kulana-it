@@ -36,8 +36,8 @@ export default function About() {
         {/* Section label with line */}
         <div className="mb-10">
           <span
-            className="tracking-[0.2em] uppercase"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}
+            className="tracking-normal uppercase"
+            style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "20px" }}
           >
             About Kulana IT
           </span>
@@ -48,13 +48,13 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
           <h2
             className="leading-tight"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}
           >
             Driving Digital Transformation<br />Across Africa
           </h2>
           <p
             className="lg:pt-2"
-            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}
+            style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}
           >
             We combine global technology expertise with deep local knowledge to
             help organisations across Africa modernise, connect and grow.
@@ -69,12 +69,12 @@ export default function About() {
                 <Image src={p.icon} alt={p.label} width={64} height={64} className="w-14 h-14" unoptimized />
               </div>
               <p
-                className="tracking-[0.05em] uppercase mb-2"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "25px", lineHeight: "30px", minHeight: "60px", display: "flex", alignItems: "flex-start", justifyContent: "center" }}
+                className="tracking-normal uppercase mb-2"
+                style={{ fontFamily: MF, fontWeight: 700, color: "#000000", fontSize: "20px", lineHeight: "24px" }}
               >
                 {p.label}
               </p>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
                 {p.sub}
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function About() {
           <a
             href="/about-us"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md transition-all hover:opacity-90"
-            style={{ fontFamily: MF, fontWeight: 600, fontSize: "20px", background: "#57d9d4", color: "#200044" }}
+            style={{ fontFamily: MF, fontWeight: 600, fontSize: "16px", background: "#57d9d4", color: "#040d28" }}
           >
             Discover Kulana
             <ArrowRight className="w-4 h-4" />

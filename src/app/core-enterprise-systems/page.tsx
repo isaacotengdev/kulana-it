@@ -80,14 +80,14 @@ export default function CoreEnterpriseSystemsPage() {
             {/* Top — label + heading */}
             <div>
               <p
-                className="inline-block tracking-[0.18em] uppercase mb-6"
-                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "30px" }}
+                className="inline-block tracking-normal uppercase mb-6"
+                style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "24px" }}
               >
                 Keep Your Critical Systems Running
               </p>
               <h1
                 className="text-white uppercase leading-tight"
-                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(56px, 7vw, 90px)" }}
+                style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(45px, 5.6vw, 72px)" }}
               >
                 Core &amp; Enterprise<br />Systems
               </h1>
@@ -98,14 +98,14 @@ export default function CoreEnterpriseSystemsPage() {
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
               >
                 Request a Consultation
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <p
                 className="hidden lg:block uppercase text-right"
-                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "30px", lineHeight: "35px" }}
+                style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "24px", lineHeight: "28px" }}
               >
                 Stable Systems.<br />Stronger Business.
               </p>
@@ -119,7 +119,7 @@ export default function CoreEnterpriseSystemsPage() {
 
           {/* Label + black rule */}
           <div className="mb-10">
-            <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+            <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
               What We Deliver
             </span>
             <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -127,10 +127,10 @@ export default function CoreEnterpriseSystemsPage() {
 
           {/* Heading + description */}
           <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-            <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+            <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
               Four Disciplines. One Integrated Practice.
             </h2>
-            <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+            <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
               Our Core and Enterprise Systems practice spans the full spectrum of critical business
               technology — delivered by specialists with deep domain knowledge.
             </p>
@@ -143,20 +143,20 @@ export default function CoreEnterpriseSystemsPage() {
                 <div className="group flex flex-col lg:flex-row gap-10 py-10">
                   {/* Left — content */}
                   <div className="flex-1 flex flex-col">
-                    <p className="tracking-[0.18em] uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "25px" }}>
+                    <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "13px" }}>
                       {number} — {tagline}
                     </p>
-                    <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "45px" }}>
+                    <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "36px" }}>
                       {title}
                     </h3>
                     {/* Description + bullets side by side */}
                     <div className="grid lg:grid-cols-2 gap-8 mb-8">
-                      <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                      <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                       <ul className="space-y-0">
                         {highlights.map((h) => (
-                          <li key={h} className="flex items-center gap-3" style={{ lineHeight: "40px" }}>
+                          <li key={h} className="flex items-center gap-3" style={{ lineHeight: "32px" }}>
                             <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4" }} />
-                            <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px" }}>{h}</span>
+                            <span style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px" }}>{h}</span>
                           </li>
                         ))}
                       </ul>
@@ -164,7 +164,7 @@ export default function CoreEnterpriseSystemsPage() {
                     <Link
                       href={href}
                       className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                      style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#200044", fontSize: "20px" }}
+                      style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
                     >
                       Learn more <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -204,27 +204,27 @@ export default function CoreEnterpriseSystemsPage() {
               {/* Left — heading */}
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
               >
                 Ready to strengthen your Enterprise Systems?
               </h2>
               {/* Right — description + buttons */}
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
                   Speak to our specialists and discover the right technology foundation for your organisation.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
                   >
                     Contact us <ArrowRight className="w-4 h-4" />
                   </Link>

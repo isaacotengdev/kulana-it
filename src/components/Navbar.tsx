@@ -116,7 +116,7 @@ export default function Navbar() {
                 {link.isMega ? (
                   <button
                     className="nav-link flex items-center gap-1 px-3 py-2 rounded-lg font-normal hover:font-semibold transition-colors"
-                    style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "20px", color: "#ffffff" }}
+                    style={{ fontFamily: "var(--font-manrope), sans-serif", fontSize: "16px", color: "#ffffff" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
                   >
@@ -131,7 +131,7 @@ export default function Navbar() {
                     }`}
                     style={{
                       fontFamily: "var(--font-manrope), sans-serif",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       color: pathname === link.href ? "#57D9D4" : "#ffffff",
                     }}
                     onMouseEnter={e => { if (pathname !== link.href) (e.currentTarget as HTMLElement).style.color = "#57D9D4"; }}
@@ -231,7 +231,7 @@ export default function Navbar() {
             <a
               href={contactHref}
               className="px-5 py-2.5 rounded-md transition-all hover:shadow-lg inline-flex items-center gap-1.5"
-              style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "20px", background: "#57D9D4", color: "#040d28" }}
+              style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "16px", background: "#57D9D4", color: "#040d28" }}
             >
               Request a Consultation
               <ArrowRight className="w-3.5 h-3.5" />
@@ -353,7 +353,7 @@ export default function Navbar() {
                 href={contactHref}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-5 py-3 rounded-md transition-colors"
-                style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "20px", background: "#57D9D4", color: "#040d28" }}
+                style={{ fontFamily: "var(--font-manrope), sans-serif", fontWeight: 600, fontSize: "16px", background: "#57D9D4", color: "#040d28" }}
               >
                 Request a Consultation
               </a>

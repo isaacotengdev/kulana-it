@@ -83,7 +83,7 @@ export default function AboutUsPage() {
             <div>
               <blockquote
                 className="text-white leading-[1.3]"
-                style={{ fontFamily: MF, fontWeight: 400, fontSize: "clamp(32px, 4vw, 56px)", maxWidth: "980px" }}
+                style={{ fontFamily: MF, fontWeight: 400, fontSize: "clamp(26px, 3.2vw, 45px)", maxWidth: "980px" }}
               >
                 &ldquo;By contracting Kulana&apos;s services, you&apos;ll be able to improve company dynamics, gain access to resources, keep up with competition and more.&rdquo;
               </blockquote>
@@ -92,7 +92,7 @@ export default function AboutUsPage() {
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
-                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "20px" }}
+                style={{ fontFamily: MF, fontWeight: 600, background: "#57D9D4", color: "#040d28", fontSize: "16px" }}
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </Link>
@@ -105,17 +105,17 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Who We Are
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 mb-16 items-start">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Three Companies.<br />A Shared Purpose.
               </h2>
-              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+              <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                 Kulana is a group of technology companies dedicated to empowering organisations
                 in Ghana and Mauritius through enterprise-grade IT solutions, consulting, and
                 implementation expertise.
@@ -126,14 +126,14 @@ export default function AboutUsPage() {
               {entities.map(({ country, name, desc, image, alt }) => (
                 <div key={name} className="grid lg:grid-cols-5 gap-10 py-14 items-center">
                   <div className="lg:col-span-2">
-                    <p className="uppercase tracking-[0.15em] mb-3"
-                      style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "25px" }}>
+                    <p className="uppercase tracking-normal mb-3"
+                      style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "20px" }}>
                       {country}
                     </p>
-                    <h3 className="mb-5 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "35px" }}>
+                    <h3 className="mb-5 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "28px" }}>
                       {name}
                     </h3>
-                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>
+                    <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>
                       {desc}
                     </p>
                   </div>
@@ -152,25 +152,25 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Our Advantage
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "36px" }}>
                 Why Partner<br />with Kulana?
               </h2>
               <div>
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "30px", lineHeight: "40px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "24px", lineHeight: "32px" }}>
                   We combine deep technical expertise with local market knowledge to deliver
                   solutions that create real, measurable business value – not just technology
                   for technology&apos;s sake.
                 </p>
                 <ul className="space-y-3">
                   {benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-3" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "35px" }}>
+                    <li key={benefit} className="flex items-center gap-3" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "28px" }}>
                       <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4" }} />
                       {benefit}
                     </li>
@@ -187,17 +187,17 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "13px" }}>
                 Our Commitment
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#200044" }} />
             </div>
 
             <div className="grid lg:grid-cols-3 gap-12 items-center">
-              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "45px" }}>
+              <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "36px" }}>
                 ISO Certified<br />Quality
               </h2>
-              <p style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "30px", lineHeight: "40px" }}>
+              <p style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "24px", lineHeight: "32px" }}>
                 Kulana operates under ISO 9001 and ISO 27001 certified management systems,
                 ensuring the highest standards of quality, consistency and information security.
               </p>
@@ -221,7 +221,7 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-10">
-              <span className="tracking-[0.18em] uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "25px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "13px" }}>
                 Kulana&apos;s Process, Step by Step
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -230,9 +230,9 @@ export default function AboutUsPage() {
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
               {steps.map(({ num, title, desc }) => (
                 <div key={num}>
-                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "70px" }}>{num}</p>
-                  <h3 className="mb-3 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "35px", minHeight: "140px", display: "flex", alignItems: "flex-start" }}>{title}</h3>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "25px", lineHeight: "30px" }}>{desc}</p>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "56px" }}>{num}</p>
+                  <h3 className="mb-3 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "28px", minHeight: "110px", display: "flex", alignItems: "flex-start" }}>{title}</h3>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "20px", lineHeight: "24px" }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -246,26 +246,26 @@ export default function AboutUsPage() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20">
               <h2
                 className="leading-tight lg:w-[45%] flex-shrink-0"
-                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "53px" }}
+                style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "42px" }}
               >
                 Ready to work<br />with us?
               </h2>
               <div className="flex-1">
-                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "25px", lineHeight: "30px" }}>
+                <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "20px", lineHeight: "24px" }}>
                   Get in touch to find out how Kulana can help your organisation thrive in the digital age.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
-                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "16px" }}
                   >
                     Let&apos;s Talk <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/#services"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-md border transition-all hover:bg-white/20"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "20px" }}
+                    style={{ fontFamily: MF, fontWeight: 600, color: "#200044", borderColor: "#200044", fontSize: "16px" }}
                   >
                     Explore Our Services <ArrowRight className="w-4 h-4" />
                   </Link>
