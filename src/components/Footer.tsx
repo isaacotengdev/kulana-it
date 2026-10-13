@@ -7,13 +7,10 @@ import Link from "next/link";
 const MF = "var(--font-manrope), sans-serif";
 
 const quickLinks = [
-{ name: "Kulana Academy",         href: "https://www.kulana.academy/", external: true },
+  { name: "Kulana Academy",         href: "https://www.kulana.academy/", external: true },
   { name: "About us",               href: "/about-us" },
   { name: "Contact us",             href: "/contact-us" },
   { name: "Request a Consultation", href: "/contact-us" },
-  { name: "Privacy Policy",         href: "/privacy-policy" },
-  { name: "Cookies Policy",         href: "/cookies-policy" },
-  { name: "IMS Policy",             href: "/ims-policy" },
 ];
 
 const servicePillars = [
@@ -29,7 +26,7 @@ const servicePillars = [
   {
     name: "Integration & Digital Connectivity",
     subs: [
-      { name: "Integration",                  href: "/integration" },
+      { name: "Integration",                  href: "/integration-digital-connectivity" },
       { name: "Enterprise Architecture",       href: "/enterprise-architecture" },
       { name: "AI-Native Product Engineering", href: "/ai-native-product-engineering" },
     ],
@@ -37,12 +34,12 @@ const servicePillars = [
   {
     name: "Data & AI Intelligence",
     subs: [
-      { name: "Data Analytics", href: "/data-analytics" },
-      { name: "AI Solutions",   href: "/ai-solutions" },
-      { name: "RPA",            href: "/rpa" },
+      { name: "Data", href: "/data" },
+      { name: "AI",   href: "/ai" },
+      { name: "RPA",  href: "/rpa" },
     ],
   },
-  { name: "Kulana Academy", subs: [] },
+  { name: "Kulana Academy", href: "https://www.kulana.academy/", external: true, subs: [] },
 ];
 
 export default function Footer() {
@@ -129,16 +126,28 @@ export default function Footer() {
           <ul className="space-y-1">
             {servicePillars.map((pillar) => {
               const isOpen = openPillar === pillar.name;
+              const linkStyle = { fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" };
               return (
                 <li key={pillar.name}>
-                  <button
-                    onClick={() => setOpenPillar(isOpen ? null : pillar.name)}
-                    className="w-full text-left flex items-center justify-between py-2 hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "13px" }}
-                  >
-                    <span>{pillar.name}</span>
-                    <span style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s", fontSize: "13px" }}>›</span>
-                  </button>
+                  {"href" in pillar ? (
+                    <a
+                      href={pillar.href}
+                      target="_blank" rel="noopener noreferrer"
+                      className="block py-2 hover:opacity-70 transition-opacity"
+                      style={linkStyle}
+                    >
+                      {pillar.name}
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => setOpenPillar(isOpen ? null : pillar.name)}
+                      className="w-full text-left flex items-center justify-between py-2 hover:opacity-70 transition-opacity"
+                      style={linkStyle}
+                    >
+                      <span>{pillar.name}</span>
+                      <span style={{ transform: isOpen ? "rotate(90deg)" : "none", display: "inline-block", transition: "transform 0.2s", fontSize: "13px" }}>›</span>
+                    </button>
+                  )}
                   {isOpen && pillar.subs.length > 0 && (
                     <ul className="mt-1 mb-2 space-y-2 pl-3 border-l border-white/10">
                       {pillar.subs.map((sub) => (
