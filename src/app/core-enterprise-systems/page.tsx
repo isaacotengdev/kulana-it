@@ -59,7 +59,7 @@ export default function CoreEnterpriseSystemsPage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/Links_homepage/1-image_1600x1000px.webp"
             alt=""

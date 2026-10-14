@@ -55,7 +55,7 @@ export default function InfrastructurePage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp"
             alt="Infrastructure"

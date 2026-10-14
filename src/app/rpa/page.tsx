@@ -51,7 +51,7 @@ export default function RpaPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/Data_AI_Intelligence/Hero image_RPA_2560×1440px.webp"
             alt="RPA and Intelligent Automation"

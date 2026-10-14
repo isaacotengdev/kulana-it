@@ -26,7 +26,7 @@ const servicePillars = [
   {
     name: "Integration & Digital Connectivity",
     subs: [
-      { name: "Integration",                  href: "/integration-digital-connectivity" },
+      { name: "Integration",                  href: "/integration" },
       { name: "Enterprise Architecture",       href: "/enterprise-architecture" },
       { name: "AI-Native Product Engineering", href: "/ai-native-product-engineering" },
     ],
@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
 
       {/* ── Main grid ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 grid lg:grid-cols-[1.2fr_1fr_1.5fr] gap-12 lg:gap-16">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 grid md:grid-cols-3 lg:grid-cols-[1.2fr_1fr_1.5fr] gap-10 md:gap-8 lg:gap-16">
 
         {/* Col 1 — tagline + offices */}
         <div>

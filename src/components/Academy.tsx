@@ -39,7 +39,7 @@ export default function Academy() {
             </div>
 
             {/* Row 1 right — logo */}
-            <div className="flex items-center gap-5 justify-end mb-6">
+            <div className="flex items-center gap-5 justify-start lg:justify-end mb-6">
               <Image
                 src="/logos/logo-icon.svg"
                 alt="Kulana Academy icon"
@@ -63,7 +63,7 @@ export default function Academy() {
             </p>
 
             {/* Row 2 right — button */}
-            <div className="flex justify-end">
+            <div className="flex justify-start lg:justify-end">
               <a
                 href="https://www.kulana.academy/"
                 target="_blank"

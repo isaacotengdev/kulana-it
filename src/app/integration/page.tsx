@@ -59,7 +59,7 @@ export default function DigitalIntegrationsPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/integration_digital_connectivity/Integration.webp"
             alt="Digital Integrations and API Management"
@@ -84,7 +84,7 @@ export default function DigitalIntegrationsPage() {
                 className="text-white uppercase leading-tight"
                 style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
-                Digital Integrations<br />&amp; API Management
+                Integration
               </h1>
             </div>
             <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>

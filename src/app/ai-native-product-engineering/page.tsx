@@ -55,7 +55,7 @@ export default function AiNativeProductEngineeringPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/integration_digital_connectivity/AI-Native Product Engineering.webp"
             alt="AI-Native Product Engineering"

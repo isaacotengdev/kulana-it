@@ -51,7 +51,7 @@ export default function EnterpriseArchitecturePage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
           <Image
             src="/images/integration_digital_connectivity/Enterprise Architecture.webp"
             alt="Enterprise Architecture"

@@ -92,7 +92,7 @@ export default function KulanaAcademyPage() {
                 professionals at every stage of their digital journey.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {deliveryModes.map(({ title, desc }) => (
                 <div key={title} className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
                   <div className="font-bold text-gray-900 mb-2">{title}</div>

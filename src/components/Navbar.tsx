@@ -21,7 +21,7 @@ const servicePillars = [
     name: "Integration & Digital Connectivity",
     href: "/integration-digital-connectivity",
     services: [
-      { name: "Integration",                   href: "/digital-integrations-api-management" },
+      { name: "Integration",                   href: "/integration" },
       { name: "Enterprise Architecture",        href: "/enterprise-architecture" },
       { name: "AI-Native Product Engineering",  href: "/ai-native-product-engineering" },
     ],
