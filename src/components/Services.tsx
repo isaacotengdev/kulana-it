@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Plus, Minus, ArrowRight } from "lucide-react";
@@ -24,10 +24,11 @@ const pillars = [
     tagline: "Connect Your Digital Ecosystem",
     title: "Integration & Digital Connectivity",
     description:
-      "Connect systems, platforms and people across your organisation. Our integration and architecture expertise helps you unlock new possibilities and accelerate your digital transformation.",
+      "Connect systems, platforms and people across your organisation.\nOur integration and architecture expertise helps you unlock\nnew possibilities and accelerate your digital transformation.",
+    descEl: <>Connect systems, platforms and people across your organisation. Our integration<br />and architecture expertise helps you unlock new possibilities and accelerate your<br />digital transformation.</> as ReactNode,
     services: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
     href: "/integration-digital-connectivity",
-    image: "/images/Links_homepage/2-image_1600x1000px.png",
+    image: "/images/Links_homepage/Integration and Digital Connectivity_image_1600x1000px.webp",
     imageTagline: "Connected for\nWhat's Next.",
   },
   {
@@ -35,7 +36,7 @@ const pillars = [
     tagline: "Turn Data Into Business Advantage",
     title: "Data & AI Intelligence",
     description:
-      "Turn your data into insight, automation and measurable impact.\nWe design data strategies and AI solutions that help you make smarter decisions and create new value.",
+      "Turn your data into insight, automation and measurable impact.\nWe design data strategies and AI solutions that help you make\nsmarter decisions and create new value.",
     services: ["Data", "AI", "RPA"],
     href: "/data-ai-intelligence",
     image: "/images/Links_homepage/3-image_1600x1000px.webp",
@@ -46,7 +47,7 @@ const pillars = [
     tagline: "Build the Skills to Move Forward",
     title: "Kulana Academy",
     description:
-      "People make transformation happen. Our industry-aligned programmes equip your workforce with the skills and confidence to thrive in a digital world.",
+      "People make transformation happen. Our industry-aligned\nprogrammes equip your workforce with the skills and confidence\nto thrive in a digital world.",
     services: [] as string[],
     href: "https://www.kulana.academy/",
     external: true,
@@ -215,8 +216,8 @@ export default function Services() {
                     style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)", marginBottom: "25px" }}>
                     {pillar.title}
                   </h3>
-                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
-                    {pillar.description}
+                  <p className="max-w-xl" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
+                    {"descEl" in pillar ? pillar.descEl : pillar.description}
                   </p>
                 </div>
 

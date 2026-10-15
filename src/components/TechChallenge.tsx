@@ -1,67 +1,27 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-
-const MF = "var(--font-manrope), sans-serif";
+import { usePathname } from "next/navigation";
 
 export default function TechChallenge() {
   const pathname = usePathname();
   const contactHref = pathname === "/" ? "#contact" : "/contact-us";
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Background photo */}
-      <Image
-        src="/images/Links_homepage/CTA_banner_2560×640px.webp"
-        alt=""
-        fill
-        className="object-cover"
-        style={{ objectPosition: "58% 45%" }}
-        sizes="100vw"
-        priority
-      />
-      {/* Gradient overlay — dark purple left, fades to transparent right so globe shows */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, rgba(40,0,100,0.97) 0%, rgba(20,0,60,0.90) 30%, rgba(8,0,32,0.55) 55%, rgba(8,0,32,0.10) 75%, transparent 90%)" }}
-      />
-      {/* Right-edge vignette to cover orange strip at image boundary */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to left, rgba(4,13,40,0.92) 0%, transparent 8%)" }}
-      />
-
-      {/* Text content */}
-      <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
-        <div className="lg:w-[55%]">
-
-          {/* Label */}
-          <p
-            className="tracking-normal uppercase mb-6"
-            style={{ fontFamily: MF, fontWeight: 500, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}
-          >
-            Have a Technology Challenge?
-          </p>
-
-          {/* Heading */}
-          <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(28px, 3.7vw, 53px)" }}>
-            <span style={{ color: "#ffffff" }}>Let&apos;s Solve It</span>
-            <br />
-            <span style={{ color: "#57D9D4" }}>Together.</span>
-          </h2>
-
-          {/* Button */}
-          <a
-            href={contactHref}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border transition-all hover:bg-[#57D9D4]/10"
-            style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", borderColor: "#57D9D4", fontSize: "13px" }}
-          >
-            Discuss Your Requirements
-            <ArrowRight className="w-4 h-4" style={{ color: "#57D9D4" }} />
-          </a>
-        </div>
+    <section className="py-9 bg-white">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href={contactHref} className="block">
+          <Image
+            src="/images/Banner_CTA.webp"
+            alt="Have a Technology Challenge? Let's Solve It Together. Discuss Your Requirements."
+            width={2560}
+            height={640}
+            className="w-full h-auto"
+            sizes="(max-width: 1436px) 100vw, 1436px"
+            priority
+            unoptimized
+          />
+        </a>
       </div>
     </section>
   );

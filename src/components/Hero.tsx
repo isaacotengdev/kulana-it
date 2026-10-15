@@ -33,7 +33,7 @@ export default function Hero() {
         </span>
 
         <h1
-          className="text-white uppercase leading-tight"
+          className="text-white uppercase leading-tight select-none"
           style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
         >
           Technology
@@ -43,7 +43,7 @@ export default function Hero() {
           Your Business.
         </h1>
 
-        <div className="flex flex-wrap gap-4" style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
+        <div className="flex flex-wrap gap-4" style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"

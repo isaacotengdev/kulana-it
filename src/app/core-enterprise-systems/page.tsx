@@ -59,7 +59,7 @@ export default function CoreEnterpriseSystemsPage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden">
           <Image
             src="/images/Links_homepage/1-image_1600x1000px.webp"
             alt=""
@@ -80,13 +80,13 @@ export default function CoreEnterpriseSystemsPage() {
             {/* Top — label + heading */}
             <div>
               <p
-                className="inline-block tracking-normal uppercase mb-6"
+                className="inline-block tracking-normal uppercase mb-6 select-none"
                 style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Keep Your Critical Systems Running
               </p>
               <h1
-                className="text-white uppercase leading-tight"
+                className="text-white uppercase leading-tight select-none"
                 style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Core &amp; Enterprise<br />Systems
@@ -94,7 +94,7 @@ export default function CoreEnterpriseSystemsPage() {
             </div>
 
             {/* Bottom — button left, tagline right */}
-            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }} className="flex items-end justify-between">
+            <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }} className="flex items-end justify-between">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
@@ -119,7 +119,7 @@ export default function CoreEnterpriseSystemsPage() {
 
           {/* Label + black rule */}
           <div className="mb-6">
-            <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+            <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
               What We Deliver
             </span>
             <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -128,7 +128,7 @@ export default function CoreEnterpriseSystemsPage() {
           {/* Heading + description */}
           <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
             <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
-              Four Disciplines. One Integrated Practice.
+              Four Disciplines.<br />One Integrated Practice.
             </h2>
             <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
               Our Core and Enterprise Systems practice spans the full spectrum of critical business
@@ -143,7 +143,7 @@ export default function CoreEnterpriseSystemsPage() {
                 <div className="group flex flex-col lg:flex-row gap-10 py-10">
                   {/* Left — content */}
                   <div className="flex-1 flex flex-col">
-                    <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "11px" }}>
+                    <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "clamp(13px, 1vw, 14px)" }}>
                       {number} — {tagline}
                     </p>
                     <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
@@ -206,7 +206,7 @@ export default function CoreEnterpriseSystemsPage() {
                 className="leading-tight lg:w-[45%] flex-shrink-0"
                 style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
-                Ready to strengthen your Enterprise Systems?
+                Ready to strengthen your<br />Enterprise Systems?
               </h2>
               {/* Right — description + buttons */}
               <div className="flex-1">

@@ -75,7 +75,7 @@ export default function CybersecurityPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden">
           <Image
             src="/images/Service_Core & Enterprise Systems/Cybersecurity/Hero image_Cybersecurity_2560×1440px.webp"
             alt="Cybersecurity"
@@ -95,19 +95,19 @@ export default function CybersecurityPage() {
           >
             <div>
               <p
-                className="inline-block tracking-normal uppercase mb-6"
+                className="inline-block tracking-normal uppercase mb-6 select-none"
                 style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Core &amp; Enterprise Systems
               </p>
               <h1
-                className="text-white uppercase leading-tight"
+                className="text-white uppercase leading-tight select-none"
                 style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Cybersecurity
               </h1>
             </div>
-            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
+            <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
@@ -125,7 +125,7 @@ export default function CybersecurityPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -165,7 +165,7 @@ export default function CybersecurityPage() {
 
             {/* Label + white rule */}
             <div className="mb-8">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -194,7 +194,7 @@ export default function CybersecurityPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Applications
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -232,7 +232,7 @@ export default function CybersecurityPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -263,7 +263,7 @@ export default function CybersecurityPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Why It Matters
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -294,7 +294,7 @@ export default function CybersecurityPage() {
 
             {/* Label + black rule */}
             <div className="mb-8">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>FAQ</span>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
@@ -344,7 +344,7 @@ export default function CybersecurityPage() {
                 className="leading-tight lg:w-[45%] flex-shrink-0"
                 style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
-                Ready to secure your organisation?
+                Ready to secure<br />your organisation?
               </h2>
               <div className="flex-1">
                 <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>

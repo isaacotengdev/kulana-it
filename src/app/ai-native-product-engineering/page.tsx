@@ -55,9 +55,9 @@ export default function AiNativeProductEngineeringPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden">
           <Image
-            src="/images/integration_digital_connectivity/AI-Native Product Engineering.webp"
+            src="/images/integration_digital_connectivity/Hero image_AI-Native Product Engineering_2560×1440px.webp"
             alt="AI-Native Product Engineering"
             fill
             className="object-cover object-center"
@@ -73,17 +73,17 @@ export default function AiNativeProductEngineeringPage() {
             style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
           >
             <div>
-              <p className="inline-block tracking-normal uppercase mb-6" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
+              <p className="inline-block tracking-normal uppercase mb-6 select-none" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}>
                 Integration &amp; Digital Connectivity
               </p>
               <h1
-                className="text-white uppercase leading-tight"
+                className="text-white uppercase leading-tight select-none"
                 style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 AI-Native<br />Product Engineering
               </h1>
             </div>
-            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
+            <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
@@ -101,7 +101,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Overview
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -141,7 +141,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + white rule */}
             <div className="mb-8">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -170,7 +170,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Applications
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -178,7 +178,7 @@ export default function AiNativeProductEngineeringPage() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
               <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
-                Real-world use cases
+                Real-world<br />use cases
               </h2>
               <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 What AI-native engineering looks like when applied to concrete enterprise problems.
@@ -208,7 +208,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -216,7 +216,7 @@ export default function AiNativeProductEngineeringPage() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
               <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
-                AI engineering services
+                AI engineering<br />services
               </h2>
               <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 The full engineering stack — from architecture and orchestration to evaluation, operations, and governance.
@@ -246,7 +246,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + black rule */}
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Why It Matters
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -254,7 +254,7 @@ export default function AiNativeProductEngineeringPage() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
               <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
-                Why AI-native products compound
+                Why AI-native<br />products compound
               </h2>
               <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 AI-native products improve with usage — more interactions generate better training signals. The engineering investment required to reach that point is substantial, and the gap it creates is durable.
@@ -282,7 +282,7 @@ export default function AiNativeProductEngineeringPage() {
 
             {/* Label + black rule */}
             <div className="mb-8">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>FAQ</span>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>FAQ</span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
             </div>
 
@@ -329,7 +329,7 @@ export default function AiNativeProductEngineeringPage() {
                 className="leading-tight lg:w-[45%] flex-shrink-0"
                 style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
-                Ready to build AI into your product?
+                Ready to build AI<br />into your product?
               </h2>
               <div className="flex-1">
                 <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>

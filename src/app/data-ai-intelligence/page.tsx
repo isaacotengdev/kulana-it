@@ -20,7 +20,7 @@ export default function DataAiIntelligencePage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden">
           <Image
             src="/images/Data_AI_Intelligence/Hero image_Data & AI Intelligence_2560×1440px.webp"
             alt="Data and AI Intelligence"
@@ -39,19 +39,19 @@ export default function DataAiIntelligencePage() {
           >
             <div>
               <p
-                className="inline-block tracking-normal uppercase mb-6"
+                className="inline-block tracking-normal uppercase mb-6 select-none"
                 style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
               >
                 Most Organisations Have Data But Not Intelligence
               </p>
               <h1
-                className="text-white uppercase leading-tight"
+                className="text-white uppercase leading-tight select-none"
                 style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
               >
                 Data &amp; AI<br />Intelligence
               </h1>
             </div>
-            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }} className="flex items-end justify-between">
+            <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }} className="flex items-end justify-between">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
@@ -74,7 +74,7 @@ export default function DataAiIntelligencePage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 The Problem We Solve
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -110,7 +110,7 @@ export default function DataAiIntelligencePage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-8">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 How to Get Started
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
@@ -138,7 +138,7 @@ export default function DataAiIntelligencePage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 What We Deliver
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -146,7 +146,7 @@ export default function DataAiIntelligencePage() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
               <h2 className="leading-tight" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
-                Three Disciplines. One Governed Intelligence Layer.
+                Three Disciplines.<br />One Governed Intelligence Layer.
               </h2>
               <p className="lg:pt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                 Data, AI, and automation work together — each capability amplifying the next, from governed data foundations through to intelligent decision systems.
@@ -180,7 +180,7 @@ export default function DataAiIntelligencePage() {
                 <div key={title}>
                   <div className="group flex flex-col lg:flex-row gap-10 py-10">
                     <div className="flex-1 flex flex-col">
-                      <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "11px" }}>
+                      <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "clamp(13px, 1vw, 14px)" }}>
                         {num} — {tag}
                       </p>
                       <h3 className="mb-6 leading-tight" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
@@ -229,7 +229,7 @@ export default function DataAiIntelligencePage() {
                 className="leading-tight lg:w-[45%] flex-shrink-0"
                 style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}
               >
-                Ready to build on governed intelligence?
+                Ready to build on governed<br />intelligence?
               </h2>
               <div className="flex-1">
                 <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>

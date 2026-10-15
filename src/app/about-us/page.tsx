@@ -63,7 +63,7 @@ export default function AboutUsPage() {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden min-h-[480px] md:min-h-[620px] lg:min-h-[840px]">
+        <section className="relative overflow-hidden">
           <Image
             src="/images/about/Hero image_About us_2560×1440px.webp"
             alt="About Kulana IT Solutions"
@@ -82,13 +82,13 @@ export default function AboutUsPage() {
           >
             <div>
               <blockquote
-                className="text-white leading-[1.3]"
+                className="text-white leading-[1.3] select-none"
                 style={{ fontFamily: MF, fontWeight: 400, fontSize: "clamp(19px, 2.35vw, 32px)", maxWidth: "980px" }}
               >
-                &ldquo;By contracting Kulana&apos;s services, you&apos;ll be able to improve company dynamics, gain access to resources, keep up with competition and more.&rdquo;
+                &ldquo;By contracting Kulana&apos;s services,<br />you&apos;ll be able to improve company dynamics,<br />gain access to resources, keep up with<br />competition and more.&rdquo;
               </blockquote>
             </div>
-            <div style={{ marginTop: "clamp(48px, 10vw, 140px)" }}>
+            <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"
@@ -105,7 +105,7 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Who We Are
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -124,21 +124,26 @@ export default function AboutUsPage() {
 
             <div className="divide-y divide-gray-100">
               {entities.map(({ country, name, desc, image, alt }) => (
-                <div key={name} className="grid lg:grid-cols-5 gap-10 py-9 items-center">
-                  <div className="lg:col-span-2">
+                <div key={name} className="group flex flex-col lg:flex-row gap-10 py-9">
+                  <div className="flex-1 flex flex-col">
                     <p className="uppercase tracking-normal mb-3"
                       style={{ fontFamily: MF, fontWeight: 600, color: "#a198af", fontSize: "clamp(13px, 1vw, 14px)" }}>
                       {country}
                     </p>
-                    <h3 className="mb-5 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "clamp(14px, 1.45vw, 21px)" }}>
+                    <h3 className="mb-5 leading-tight" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "clamp(18px, 1.8vw, 26px)" }}>
                       {name}
                     </h3>
                     <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                       {desc}
                     </p>
                   </div>
-                  <div className="relative lg:col-span-3 w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
-                    <Image src={image} alt={alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
+                  <div className="hidden lg:block flex-shrink-0" style={{ width: "432px" }}>
+                    <div className="relative overflow-hidden" style={{ width: "432px", height: "270px" }}>
+                      <Image src={image} alt={alt} fill className="object-cover object-center" sizes="432px" />
+                    </div>
+                  </div>
+                  <div className="relative lg:hidden w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
+                    <Image src={image} alt={alt} fill className="object-cover object-center" sizes="100vw" />
                   </div>
                 </div>
               ))}
@@ -152,7 +157,7 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Our Advantage
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
@@ -187,7 +192,7 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Our Commitment
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#200044" }} />
@@ -221,7 +226,7 @@ export default function AboutUsPage() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-6">
-              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "11px" }}>
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)" }}>
                 Kulana&apos;s Process, Step by Step
               </span>
               <div className="w-full h-px mt-3" style={{ background: "#000000" }} />
