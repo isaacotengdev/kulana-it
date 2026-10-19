@@ -29,7 +29,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.62)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.3)" }} />
 
       <div
         className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
