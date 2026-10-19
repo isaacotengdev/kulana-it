@@ -308,7 +308,7 @@ export default function InfrastructurePage() {
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/Service_Core & Enterprise Systems/infrastructure/Hero image_Infrastructure_2560×1440px.webp" alt="Infrastructure" fill className="object-cover object-center" sizes="320px" />
+                <Image src="/images/Service_Core & Enterprise Systems/FAQ_Banners/Infrastructure_400x500px_banner.webp" alt="Infrastructure" fill className="object-cover object-center" sizes="320px" />
               </div>
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>

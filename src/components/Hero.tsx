@@ -8,7 +8,7 @@ const MF = "var(--font-manrope), sans-serif";
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* Background image */}
+      {/* Fallback image — shown until the video loads, or if WebM is unsupported */}
       <Image
         src="/images/Links_homepage/Hero image_2560×1440px.webp"
         alt=""
@@ -16,6 +16,17 @@ export default function Hero() {
         className="object-cover object-center"
         sizes="100vw"
         priority
+      />
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        src="/images/globe-hero.webm"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.62)" }} />

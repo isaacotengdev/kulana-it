@@ -299,7 +299,7 @@ export default function AiNativeProductEngineeringPage() {
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/integration_digital_connectivity/AI-Native Product Engineering.webp" alt="AI Native Product Engineering" fill className="object-cover object-center" sizes="320px" />
+                <Image src="/images/Service_Core & Enterprise Systems/FAQ_Banners/AI Native Product Engineering_400x500px_banner.webp" alt="AI Native Product Engineering" fill className="object-cover object-center" sizes="320px" />
               </div>
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>
