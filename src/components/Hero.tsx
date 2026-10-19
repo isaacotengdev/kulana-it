@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover object-center"
-        src="/images/globe-hero.webm"
+        src="/images/Service_Core & Enterprise Systems/globe-2-aurora.mp4"
         autoPlay
         muted
         loop
