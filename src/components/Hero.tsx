@@ -1,26 +1,24 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 const MF = "var(--font-manrope), sans-serif";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
-      {/* Fallback image — shown until the video loads, or if WebM is unsupported */}
-      <Image
-        src="/images/Links_homepage/Hero image_2560×1440px.webp"
-        alt=""
-        fill
-        className="object-cover object-center"
-        sizes="100vw"
-        priority
-      />
-      {/* Background video */}
+    <section
+      id="home"
+      className="relative overflow-hidden"
+      style={{ background: "linear-gradient(to bottom, #051224, #03070f)" }}
+    >
+      {/* Background video — contained on the right so the whole globe shows, edges faded into the background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        src="/images/Service_Core & Enterprise Systems/globe-2-aurora.mp4"
+        className="absolute inset-y-0 right-0 lg:right-[8%] w-full lg:w-[60%] h-full object-contain object-center"
+        style={{
+          maskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
+          WebkitMaskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
+        }}
+        src="/images/globe-hero.webm"
         autoPlay
         muted
         loop
@@ -29,7 +27,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.3)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.15)" }} />
 
       <div
         className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
