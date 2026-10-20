@@ -13,7 +13,7 @@ export default function Hero() {
     >
       {/* Background video — contained on the right so the whole globe shows, edges faded into the background */}
       <video
-        className="absolute inset-y-0 right-0 lg:right-[8%] w-full lg:w-[60%] h-full object-contain object-center"
+        className="absolute inset-y-0 right-0 lg:right-[14%] w-full lg:w-[60%] h-full object-contain object-center"
         style={{
           maskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
           WebkitMaskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
