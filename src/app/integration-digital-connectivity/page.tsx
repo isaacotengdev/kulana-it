@@ -184,7 +184,7 @@ export default function IntegrationDigitalConnectivityPage() {
               {[
                 {
                   num: "01", tag: "API & MIDDLEWARE", title: "Integration",
-                  href: "/digital-integrations-api-management",
+                  href: "/integration",
                   desc: "Replace fragile point-to-point connections with a governed integration layer. We implement WSO2 and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
                   highlights: ["API Management & Gateway", "Middleware & ESB", "Event Streaming", "Legacy System Wrapping"],
                   img: "/images/integration_digital_connectivity/Integration.webp",

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const entities = [
   {
     country: "Ghana",
-    name: "Kulana Limited",
+    name: "Kulana Ltd",
     desc: "Established in 2019 in Ghana by experienced professionals with a deep understanding of digital transformation drivers. The company expanded with Kulana Services Ltd established October 31, 2022, in Mauritius, emphasising system optimisation and process automation to reduce staffing expenses.",
     image: "/images/about/40+ Accra Night Stock Photos and Royalty-Free Pictures - iStock.png",
     alt: "Accra skyline at night",
@@ -85,7 +85,7 @@ export default function AboutUsPage() {
                 className="text-white leading-[1.3] select-none"
                 style={{ fontFamily: MF, fontWeight: 400, fontSize: "clamp(19px, 2.35vw, 32px)", maxWidth: "980px" }}
               >
-                &ldquo;By contracting Kulana&apos;s services,<br />you&apos;ll be able to improve company dynamics,<br />gain access to resources, keep up with<br />competition and more.&rdquo;
+                By contracting Kulana&apos;s services,<br />you&apos;ll be able to improve company dynamics,<br />gain access to resources, keep up with<br />competition and more.
               </blockquote>
             </div>
             <div style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>

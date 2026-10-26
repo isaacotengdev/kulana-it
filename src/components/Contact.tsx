@@ -140,8 +140,9 @@ export default function Contact() {
           <div>
             <p className="mb-8"
               style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
-              Tell us about your technology needs or challenges. Our team will get
-              in touch to discuss how Kulana can support your business.
+              Looking to improve your business with technology? Tell us about your goals,
+              challenges, or upcoming projects. Our team will work with you to explore how
+              Kulana can help.
             </p>
 
             {submitted ? (

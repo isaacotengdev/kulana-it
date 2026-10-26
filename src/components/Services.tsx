@@ -14,7 +14,12 @@ const pillars = [
     title: "Core & Enterprise Systems",
     description:
       "Mission-critical systems that power financial institutions\nand enterprises with reliability, security, and performance\nat scale. We help you modernise, integrate and manage your\ncore systems so you can focus on what matters most\n– your business.",
-    services: ["Core Banking", "ERP & CRM", "Infrastructure", "Cybersecurity"],
+    services: [
+      { name: "Core Banking",  href: "/core-banking" },
+      { name: "ERP & CRM",     href: "/erp-and-crm" },
+      { name: "Infrastructure", href: "/infrastructure" },
+      { name: "Cybersecurity", href: "/cybersecurity" },
+    ],
     href: "/core-enterprise-systems",
     image: "/images/Links_homepage/1-image_1600x1000px.webp",
     imageTagline: "STABLE SYSTEMS.\nSTRONGER BUSINESS.",
@@ -26,7 +31,11 @@ const pillars = [
     description:
       "Connect systems, platforms and people across your organisation.\nOur integration and architecture expertise helps you unlock\nnew possibilities and accelerate your digital transformation.",
     descEl: <>Connect systems, platforms and people across your organisation. Our integration<br />and architecture expertise helps you unlock new possibilities and accelerate your<br />digital transformation.</> as ReactNode,
-    services: ["Integration", "Enterprise Architecture", "AI-Native Product Engineering"],
+    services: [
+      { name: "Integration",                   href: "/integration" },
+      { name: "Enterprise Architecture",       href: "/enterprise-architecture" },
+      { name: "AI-Native Product Engineering", href: "/ai-native-product-engineering" },
+    ],
     href: "/integration-digital-connectivity",
     image: "/images/Links_homepage/Integration and Digital Connectivity_image_1600x1000px.webp",
     imageTagline: "Connected for\nWhat's Next.",
@@ -37,7 +46,11 @@ const pillars = [
     title: "Data & AI Intelligence",
     description:
       "Turn your data into insight, automation and measurable impact.\nWe design data strategies and AI solutions that help you make\nsmarter decisions and create new value.",
-    services: ["Data", "AI", "RPA"],
+    services: [
+      { name: "Data", href: "/data" },
+      { name: "AI",   href: "/ai" },
+      { name: "RPA",  href: "/rpa" },
+    ],
     href: "/data-ai-intelligence",
     image: "/images/Links_homepage/3-image_1600x1000px.webp",
     imageTagline: "Data Today.\nOpportunities Tomorrow.",
@@ -48,7 +61,7 @@ const pillars = [
     title: "Kulana Academy",
     description:
       "People make transformation happen. Our industry-aligned\nprogrammes equip your workforce with the skills and confidence\nto thrive in a digital world.",
-    services: [] as string[],
+    services: [] as { name: string; href: string }[],
     href: "https://www.kulana.academy/",
     external: true,
     image: "/images/Links_homepage/4-image_1600x1000px.webp",
@@ -159,12 +172,14 @@ export default function Services() {
                   {pillar.description}
                 </p>
                 {pillar.services.length > 0 && (
-                  <ul className="flex-shrink-0">
+                  <ul className="flex-shrink-0 text-white">
                     {pillar.services.map((svc) => (
-                      <li key={svc} className="flex items-center gap-2"
-                        style={{ fontFamily: MF, fontWeight: 700, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.4" }}>
-                        <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: "#57D9D4", strokeWidth: 2.5 }} />
-                        {svc}
+                      <li key={svc.name}>
+                        <Link href={svc.href} className="group/svc flex items-center gap-2 hover:text-[#57D9D4] transition-colors"
+                          style={{ fontFamily: MF, fontWeight: 700, fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.4" }}>
+                          <ArrowRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover/svc:translate-x-0.5" style={{ color: "#57D9D4", strokeWidth: 2.5 }} />
+                          <span className="underline-offset-4 group-hover/svc:underline">{svc.name}</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>

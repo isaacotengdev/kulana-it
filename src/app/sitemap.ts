@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/cybersecurity`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
     // ── Integration sub-services ──────────────────────────────
-    { url: `${BASE}/digital-integrations-api-management`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/integration`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/enterprise-architecture`,             lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/ai-native-product-engineering`,       lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 

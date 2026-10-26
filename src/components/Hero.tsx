@@ -1,33 +1,27 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import HeroNetwork from "./HeroNetwork";
 
 const MF = "var(--font-manrope), sans-serif";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden"
-      style={{ background: "linear-gradient(to bottom, #051224, #03070f)" }}
-    >
-      {/* Background video — contained on the right so the whole globe shows, edges faded into the background */}
-      <video
-        className="absolute inset-y-0 right-0 lg:right-[14%] w-full lg:w-[60%] h-full object-contain object-center"
-        style={{
-          maskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
-          WebkitMaskImage: "radial-gradient(circle at 67% 50%, black 36%, transparent 50%)",
-        }}
-        src="/images/globe-hero.webm"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden="true"
+    <section id="home" className="relative overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/images/Links_homepage/Hero image_2560×1440px.webp"
+        alt=""
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+        priority
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.15)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(8, 0, 32, 0.62)" }} />
+      {/* Animated network */}
+      <HeroNetwork />
 
       <div
         className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -35,15 +29,15 @@ export default function Hero() {
       >
         {/* Eyebrow — no border, plain text */}
         <span
-          className="inline-block tracking-normal uppercase mb-6"
+          className="hero-rise inline-block tracking-normal uppercase mb-6"
           style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
         >
-          Trusted IT Partner&nbsp;&nbsp;|&nbsp;&nbsp;Ghana and Mauritius
+          Your reliable and strategic technology partner
         </span>
 
         <h1
-          className="text-white uppercase leading-tight select-none"
-          style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
+          className="hero-rise text-white uppercase leading-tight select-none"
+          style={{ animationDelay: "150ms", fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
         >
           Technology
           <br />
@@ -52,7 +46,7 @@ export default function Hero() {
           Your Business.
         </h1>
 
-        <div className="flex flex-wrap gap-4" style={{ marginTop: "clamp(40px, 6vw, 90px)" }}>
+        <div className="hero-rise flex flex-wrap gap-4" style={{ animationDelay: "300ms", marginTop: "clamp(40px, 6vw, 90px)" }}>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-md transition-all shadow-lg hover:-translate-y-0.5"

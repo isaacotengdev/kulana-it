@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const LOGO_FILTER = "grayscale(100%) brightness(0) invert(0.65)";
 
 const MF = "var(--font-manrope), sans-serif";
 
@@ -77,16 +76,16 @@ export default function ContactUsPage() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-10">
-              <Image src="/images/Links_homepage/DELL_logo_384x75px.svg" alt="Dell" width={150} height={30}
-                className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
-              <Image src="/images/Links_homepage/HubSpot_logo_384x75px.svg" alt="HubSpot" width={170} height={30}
-                className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
-              <Image src="/images/Links_homepage/Microsoft_logo_384x75px.svg" alt="Microsoft" width={190} height={30}
-                className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
-              <Image src="/images/Links_homepage/Temenos_logo_384x75px.svg" alt="Temenos" width={190} height={30}
-                className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
-              <Image src="/images/Links_homepage/WSO2_logo_384x75px.svg" alt="WSO2" width={150} height={30}
-                className="object-contain h-11 w-auto" style={{ filter: LOGO_FILTER }} unoptimized />
+              <Image src="/images/Service_Core & Enterprise Systems/infrastructure/DELL_logo_color.svg" alt="Dell" width={150} height={30}
+                className="object-contain h-14 w-auto" unoptimized />
+              <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={170} height={30}
+                className="object-contain h-11 w-auto" unoptimized />
+              <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={190} height={30}
+                className="object-contain h-10 w-auto" unoptimized />
+              <Image src="/images/Service_Core & Enterprise Systems/core_banking/Temenos logo.svg" alt="Temenos" width={190} height={30}
+                className="object-contain h-9 w-auto" unoptimized />
+              <Image src="/images/Links_homepage/WSO2_logo_color.svg" alt="WSO2" width={150} height={30}
+                className="object-contain h-11 w-auto" unoptimized />
             </div>
 
           </div>

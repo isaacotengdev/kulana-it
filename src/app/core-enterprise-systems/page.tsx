@@ -197,6 +197,34 @@ export default function CoreEnterpriseSystemsPage() {
         </div>
         </section>
 
+        {/* How to Get Started */}
+        <section style={{ background: "#200044" }} className="py-10 lg:py-12">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="mb-8">
+              <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)" }}>
+                How to Get Started
+              </span>
+              <div className="w-full h-px mt-3" style={{ background: "#ffffff" }} />
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+              {[
+                { step: "01", title: "Systems Assessment",         desc: "Review your core banking, ERP, CRM, infrastructure, and security estate to identify risks, gaps, and the highest-priority modernisation needs." },
+                { step: "02", title: "Solution Design",            desc: "Define target platforms, migration approach, integrations, and security controls — aligned to your operations and regulatory obligations." },
+                { step: "03", title: "Implementation & Migration", desc: "Deploy, configure, and migrate with minimal disruption — using proven platforms such as Temenos, Microsoft Dynamics 365, and HubSpot." },
+                { step: "04", title: "Support & Optimise",         desc: "Ongoing support, monitoring, and continuous improvement so your systems stay secure, compliant, and performing as your business grows." },
+              ].map(({ step, title, desc }) => (
+                <div key={step}>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>{step}</p>
+                  <p className="mb-4 leading-tight lg:min-h-[60px] flex items-start" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{ background: "#57D9D4" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">

@@ -75,8 +75,8 @@ export default function Footer() {
         {/* Col 1 — tagline + offices */}
         <div>
           <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>
-            Technology Value Creators – empowering organisations in Ghana and
-            Mauritius through enterprise-grade IT solutions and expert consultancy.
+            Technology Value Creators – empowering organisations across Africa and
+            the world at large through enterprise-grade IT solutions and expert consultancy.
           </p>
 
           {/* Ghana */}
@@ -182,7 +182,7 @@ export default function Footer() {
         <div className="flex flex-col items-end gap-4">
           <div className="flex items-center gap-2">
             {/* Facebook */}
-            <a href="https://www.facebook.com/kulana.net" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.facebook.com/share/19eD9euhyE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               style={{ background: "#57D9D4", borderRadius: 4 }}>
               <svg className="w-4 h-4" fill="#200044" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ export default function Footer() {
               </svg>
             </a>
             {/* LinkedIn */}
-            <a href="https://www.linkedin.com/company/kulana-it-solutions" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/company/kulanaltd/posts/?feedView=all&viewAsMember=true" target="_blank" rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               style={{ background: "#57D9D4", borderRadius: 4 }}>
               <svg className="w-4 h-4" fill="#200044" viewBox="0 0 24 24">

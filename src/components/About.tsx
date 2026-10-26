@@ -8,7 +8,7 @@ const MF = "var(--font-manrope), sans-serif";
 const pillars = [
   {
     label: "African Expertise",
-    sub: "Ghana & Mauritius",
+    sub: "Built in Africa, Made for the World",
     icon: "/images/Links_homepage/Map_icon_64x64px.svg",
   },
   {
