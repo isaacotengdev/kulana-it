@@ -18,15 +18,20 @@ const entities = [
     country: "Ghana",
     name: "Kulana Ltd",
     desc: "Established in 2019 in Ghana by experienced professionals with a deep understanding of digital transformation drivers. The company expanded with Kulana Services Ltd established October 31, 2022, in Mauritius, emphasising system optimisation and process automation to reduce staffing expenses.",
-    image: "/images/about/40+ Accra Night Stock Photos and Royalty-Free Pictures - iStock.png",
-    alt: "Accra skyline at night",
+    image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
+    alt: "Aerial view of office towers in Accra",
   },
   {
     country: "Mauritius",
     name: "Kulana Holdings Ltd",
     desc: "A Global Business License Company established October 31, 2022, in Mauritius, managing equity portfolios primarily in the technology sector while remaining open to diversification. It provides software sales, consultative guidance, implementation, and advisory services.",
-    image: "/images/about/Kulana Ghana Ltd_image_1600x1000px.webp",
-    alt: "Kulana Holdings operations",
+    image: "/images/about/Ebene_Mauritius_1100x688px.jpg",
+    alt: "Office towers in Ebene Cybercity, Mauritius",
+    // CC BY-SA 4.0 requires visible attribution
+    credit: {
+      text: "Photo: Starts / Wikipedia, CC BY-SA 4.0",
+      href: "https://en.wikipedia.org/wiki/File:View_of_Ebene.jpg",
+    },
   },
   {
     country: "Mauritius",
@@ -55,6 +60,17 @@ const steps = [
   { num: "04", title: "Monitoring and Adjustments", desc: "Ongoing solution monitoring ensures delivery remains on course, with necessary adjustments made in real time." },
   { num: "05", title: "Reporting and Optimisation", desc: "We provide transparent reporting and continuous insights on software utilisation to sustain long-term value." },
 ];
+
+function PhotoCredit({ text, href }: { text: string; href: string }) {
+  return (
+    <p className="mt-2 text-right">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="hover:underline"
+        style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "11px" }}>
+        {text}
+      </a>
+    </p>
+  );
+}
 
 export default function AboutUsPage() {
   return (
@@ -123,7 +139,7 @@ export default function AboutUsPage() {
             </div>
 
             <div className="divide-y divide-gray-100">
-              {entities.map(({ country, name, desc, image, alt }) => (
+              {entities.map(({ country, name, desc, image, alt, credit }) => (
                 <div key={name} className="group flex flex-col lg:flex-row gap-10 py-9">
                   <div className="flex-1 flex flex-col">
                     <p className="uppercase tracking-normal mb-3"
@@ -141,9 +157,13 @@ export default function AboutUsPage() {
                     <div className="relative overflow-hidden" style={{ width: "432px", height: "270px" }}>
                       <Image src={image} alt={alt} fill className="object-cover object-center" sizes="432px" />
                     </div>
+                    {credit && <PhotoCredit {...credit} />}
                   </div>
-                  <div className="relative lg:hidden w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
-                    <Image src={image} alt={alt} fill className="object-cover object-center" sizes="100vw" />
+                  <div className="lg:hidden w-full">
+                    <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/10" }}>
+                      <Image src={image} alt={alt} fill className="object-cover object-center" sizes="100vw" />
+                    </div>
+                    {credit && <PhotoCredit {...credit} />}
                   </div>
                 </div>
               ))}

@@ -195,6 +195,8 @@ export default function HeroNetwork() {
     };
 
     const draw = () => {
+      // Canvas can be 0×0 while hidden or mid-navigation; drawImage throws on an empty source
+      if (!board.width || !board.height) return;
       ctx.clearRect(0, 0, width, height);
       ctx.drawImage(board, 0, 0, width, height);
 

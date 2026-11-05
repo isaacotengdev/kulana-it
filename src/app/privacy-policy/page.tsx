@@ -1,9 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {
-  ShieldCheck, FileText, Database, Lock,
-  BarChart2, RefreshCw, Mail, Phone, MapPin, Eye,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,247 +10,243 @@ export const metadata: Metadata = {
     "Kulana is committed to ensuring that your privacy is protected. Read our privacy policy to understand how we handle your personal information.",
 };
 
-const sections = [
-  {
-    id: "what-we-collect",
-    Icon: Database,
-    iconBg: "bg-blue-600",
-    title: "Information We Collect",
-    content: (
-      <>
-        <p className="text-gray-500 leading-relaxed mb-4">
-          We may collect the following information when you interact with our website or services:
-        </p>
-        <ul className="space-y-2">
-          {[
-            "Name and job title",
-            "Contact information including email address and telephone number",
-            "Demographic information such as postcode, preferences, and interests",
-            "Other information relevant to customer surveys and service delivery",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-2.5 text-gray-500 text-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-1.5" />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="text-gray-500 leading-relaxed mt-4 text-sm">
-          We also collect browser data through Log Data, capturing your IP address, browser type and
-          version, the pages you visit, the time and date of your visit, and time spent on each page.
-          Third-party analytics tools such as Google Analytics assist in monitoring this information.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "how-we-use",
-    Icon: Eye,
-    iconBg: "bg-blue-600",
-    title: "How We Use Your Information",
-    content: (
-      <>
-        <p className="text-gray-500 leading-relaxed mb-4">
-          We require this information to understand your needs and provide you with a better service:
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { label: "Internal Records",    desc: "Maintaining accurate records of your interactions and preferences." },
-            { label: "Service Improvement", desc: "Analysing usage to continually improve our products and services." },
-            { label: "Communications",      desc: "Sending updates about new services, offers, or relevant information." },
-            { label: "Market Research",     desc: "Occasionally contacting you for feedback to shape future offerings." },
-          ].map(({ label, desc }) => (
-            <div key={label} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <p className="font-semibold text-gray-900 text-sm mb-1">{label}</p>
-              <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </>
-    ),
-  },
-  {
-    id: "security",
-    Icon: Lock,
-    iconBg: "bg-emerald-600",
-    title: "Security",
-    content: (
-      <>
-        <p className="text-gray-500 leading-relaxed mb-4">
-          We are committed to ensuring that your information is secure. In order to prevent unauthorised
-          access or disclosure, we have put in place suitable administrative, technical, electronic, and
-          physical security measures to safeguard and secure the information we collect online.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          {["Administrative Controls", "Technical Safeguards", "Electronic Security", "Physical Measures"].map((m) => (
-            <span key={m} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-100 rounded-full text-xs font-semibold text-emerald-700">
-              <ShieldCheck className="w-3.5 h-3.5" /> {m}
-            </span>
-          ))}
-        </div>
-        <p className="text-gray-400 text-xs leading-relaxed mt-4">
-          Please note that despite our best efforts, no security measure is entirely infallible. We
-          will not be held liable for unauthorised interception or misuse of your data by third parties.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "analytics",
-    Icon: BarChart2,
-    iconBg: "bg-cyan-600",
-    title: "Analytics & Third Parties",
-    content: (
-      <p className="text-gray-500 leading-relaxed">
-        We use Google Analytics and similar third-party tools to monitor website performance and
-        understand visitor behaviour. These services may place their own cookies on your device and
-        collect data in accordance with their own privacy policies. We do not sell or rent your
-        personal information to third parties.
-      </p>
-    ),
-  },
-  {
-    id: "changes",
-    Icon: RefreshCw,
-    iconBg: "bg-cyan-600",
-    title: "Changes to This Policy",
-    content: (
-      <p className="text-gray-500 leading-relaxed">
-        Kulana Limited reserves the right to modify this privacy policy at any time. This policy
-        became effective on <strong className="text-gray-700">31 March 2022</strong>. Changes will
-        take effect immediately upon posting to this page. We encourage you to check this page
-        periodically to remain informed. Continued use of this website after any modifications
-        constitutes your acceptance of the revised policy.
-      </p>
-    ),
-  },
+const MF = "var(--font-manrope), sans-serif";
+
+// Keep in sync with the contact forms, /api/contact and CookieConsent
+const collected = [
+  { label: "Contact Details",       desc: "Your first name, last name, email address and, if you choose to give it, your telephone number." },
+  { label: "Your Enquiry",          desc: "The service you are interested in, your message, which form you used and when you sent it." },
+  { label: "Analytics Data",        desc: "Only if you accept analytics cookies: pages visited, referring website, browser and device type, and approximate location derived from your IP address, collected by HubSpot." },
+  { label: "Your Cookie Choice",    desc: "Whether you accepted or declined analytics cookies, stored in your own browser so we don't ask again." },
 ];
+
+const uses = [
+  { label: "Responding to You",       desc: "Replying to your enquiry and discussing the services you asked about." },
+  { label: "Keeping a Record",        desc: "Recording your enquiry in our CRM so any of our team can follow up consistently." },
+  { label: "Improving the Website",   desc: "Understanding which pages are useful, only if you have accepted analytics cookies." },
+  { label: "Protecting the Website",  desc: "Blocking spam and abusive or repeated form submissions." },
+];
+
+const safeguards = ["Encrypted Connections", "Restricted Access", "Spam & Abuse Protection", "Consent-Based Tracking"];
+
+const contacts = [
+  { label: "Email",     value: "contact@kulana.net",               href: "mailto:contact@kulana.net" },
+  { label: "Ghana",     value: "+233 540 127 400",                 href: "tel:+233540127400" },
+  { label: "Mauritius", value: "+230 46 32 519",                   href: "tel:+23046325190" },
+  { label: "Address",   value: "The Rhombus, Kanda, Accra, Ghana", href: undefined },
+];
+
+function SectionLabel({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  const color = light ? "#ffffff" : "#000000";
+  return (
+    <div className="mb-6">
+      <span className="tracking-normal uppercase" style={{ fontFamily: MF, fontWeight: 600, color, fontSize: "clamp(13px, 1vw, 14px)" }}>
+        {children}
+      </span>
+      <div className="w-full h-px mt-3" style={{ background: color }} />
+    </div>
+  );
+}
+
+const h2Style = { fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(18px, 1.8vw, 26px)" };
+const leadStyle = { fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" };
+const bodyStyle = { fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" };
+const cardTitleStyle = { fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" };
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-8">
+      <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="gradient-hero relative overflow-hidden py-9 text-white">
-          <div className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10">
-              <div className="flex-1">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-cyan-300 mb-5">
-                  <FileText className="w-4 h-4" /> Legal and Compliance
-                </span>
-                <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">Privacy Policy</h1>
-                <p className="text-blue-100 text-lg leading-relaxed max-w-xl">
-                  Kulana is committed to ensuring that your privacy is protected. This policy explains
-                  what data we collect, how we use it, and the steps we take to keep it safe.
+        <section className="relative overflow-hidden" style={{ background: "#200044" }}>
+          <div
+            className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            style={{ paddingTop: "calc(80px + clamp(32px, 6vw, 90px))", paddingBottom: "clamp(40px, 6vw, 90px)" }}
+          >
+            <p
+              className="inline-block tracking-normal uppercase mb-6 select-none"
+              style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "clamp(13px, 1.2vw, 18px)" }}
+            >
+              Legal &amp; Compliance
+            </p>
+            <h1
+              className="text-white uppercase leading-tight select-none"
+              style={{ fontFamily: MF, fontWeight: 500, fontSize: "clamp(32px, 4vw, 53px)" }}
+            >
+              Privacy Policy
+            </h1>
+            <p className="mt-6" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(13px, 1vw, 14px)" }}>
+              Effective date: 31 March 2022
+            </p>
+          </div>
+        </section>
+
+        {/* ── Introduction ─────────────────────────────────────────────── */}
+        <section className="bg-white py-10 lg:py-12">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionLabel>Introduction</SectionLabel>
+            <h2 className="leading-tight mb-6" style={h2Style}>Your privacy is protected</h2>
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
+              <div>
+                <p className="mb-8" style={leadStyle}>
+                  Kulana is committed to ensuring that your privacy is protected. This policy explains what
+                  data we collect, how we use it, and the steps we take to keep it safe.
                 </p>
-                <p className="text-blue-200 text-sm mt-4">Effective date: 31 March 2022</p>
+                <p style={leadStyle}>
+                  It applies to personal information Kulana Limited receives through this website. By using
+                  this website you confirm your acceptance of the terms set out in this policy.
+                </p>
               </div>
-              {/* Shield icon */}
-              <div className="flex-shrink-0 flex items-center justify-center">
-                <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <ShieldCheck className="w-20 h-20 text-cyan-300" strokeWidth={1.25} />
-                </div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:flex lg:flex-col lg:items-end">
+                {["Data Never Sold", "Secure Storage", "Transparent Usage", "Analytics Only With Consent"].map((tag) => (
+                  <div key={tag} className="flex items-center justify-center px-3 py-4 rounded-lg text-center w-full lg:max-w-[340px]"
+                    style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)" }}>
+                    {tag}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Quick-glance commitment strip ────────────────────────────── */}
-        <section className="bg-white border-b border-gray-100 py-8">
+        {/* ── Information We Collect ───────────────────────────────────── */}
+        <section className="py-10 lg:py-12" style={{ background: "#f5f5f5" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
-              {[
-                { Icon: Lock,       label: "Data Never Sold"       },
-                { Icon: ShieldCheck,label: "Secure Storage"        },
-                { Icon: Eye,        label: "Transparent Usage"     },
-                { Icon: RefreshCw,  label: "Regularly Updated"     },
-              ].map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2.5 px-4 py-2.5 bg-blue-50 border border-blue-100 rounded-xl">
-                  <Icon className="w-4 h-4 text-blue-600" strokeWidth={1.75} />
-                  <span className="text-sm font-semibold text-blue-800">{label}</span>
+            <SectionLabel>Information We Collect</SectionLabel>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={h2Style}>What we collect</h2>
+              <p className="lg:pt-2" style={leadStyle}>
+                We only collect what you submit through our contact forms and, with your consent, basic
+                analytics about how the site is used.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {collected.map(({ label, desc }) => (
+                <div key={label} className="bg-white border border-gray-100 rounded-xl p-6">
+                  <p className="mb-3" style={cardTitleStyle}>{label}</p>
+                  <p style={bodyStyle}>{desc}</p>
+                </div>
+              ))}
+            </div>
+            <p style={bodyStyle}>
+              Form submissions are stored in our secure database and in our HubSpot CRM so our team can
+              respond to you. When you submit a form, your IP address is used briefly to block spam and
+              repeated submissions; it is not saved with your enquiry. Our hosting provider may also keep
+              standard technical logs, such as IP address and request time, for security and reliability.
+            </p>
+          </div>
+        </section>
+
+        {/* ── How We Use Your Information ──────────────────────────────── */}
+        <section className="bg-white py-10 lg:py-12">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionLabel>How We Use Your Information</SectionLabel>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+              <h2 className="leading-tight" style={h2Style}>Why we need it</h2>
+              <p className="lg:pt-2" style={leadStyle}>
+                We use your information only for the purposes below. We do not add you to marketing lists
+                without your agreement.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {uses.map(({ label, desc }) => (
+                <div key={label} className="rounded-xl p-6" style={{ border: "1.5px solid #57D9D4", background: "#f1ffff" }}>
+                  <p className="mb-3" style={{ ...cardTitleStyle, fontWeight: 400, color: "#57D9D4" }}>{label}</p>
+                  <p style={bodyStyle}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Introduction ─────────────────────────────────────────────── */}
-        <section className="py-10 bg-white">
+        {/* ── Security ─────────────────────────────────────────────────── */}
+        <section className="py-10 lg:py-12" style={{ background: "#200044" }}>
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-3xl p-8 md:p-10">
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
-                  <FileText className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-extrabold text-gray-900 mb-3">Introduction</h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    Kulana Limited outlines how it handles personal information from website visitors and
-                    clients. By using this website you confirm your acceptance of the terms set out in
-                    this policy. We may change this policy from time to time by updating this page — you
-                    should check back periodically to ensure you are happy with any changes.
+            <SectionLabel light>Security</SectionLabel>
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-10">
+              <h2 className="leading-tight" style={{ ...h2Style, color: "#57D9D4" }}>Keeping your information secure</h2>
+              <p className="lg:pt-2" style={{ ...leadStyle, color: "#ffffff" }}>
+                All traffic to this website is encrypted, access to submitted information is limited to our
+                team, and forms are protected against spam and abuse. Analytics tracking never runs without
+                your consent.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 sm:gap-10 mb-10">
+              {safeguards.map((title, i) => (
+                <div key={title}>
+                  <p className="leading-none mb-4" style={{ fontFamily: MF, fontWeight: 400, color: "#a198af", fontSize: "clamp(24px, 2.85vw, 41px)" }}>
+                    {String(i + 1).padStart(2, "0")}
                   </p>
+                  <p style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "clamp(14px, 1.45vw, 21px)" }}>{title}</p>
                 </div>
+              ))}
+            </div>
+            <p style={{ ...bodyStyle, color: "#a198af" }}>
+              Please note that despite our best efforts, no security measure is entirely infallible. We will
+              not be held liable for unauthorised interception or misuse of your data by third parties.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Analytics & Changes ──────────────────────────────────────── */}
+        <section className="bg-white py-10 lg:py-12">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionLabel>Analytics &amp; Policy Changes</SectionLabel>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white border border-gray-100 rounded-xl p-6">
+                <p className="mb-3" style={cardTitleStyle}>Analytics &amp; Third Parties</p>
+                <p style={bodyStyle}>
+                  We use HubSpot to manage enquiries and, if you accept analytics cookies, to understand how
+                  visitors use the site. HubSpot&apos;s tracking only loads after you give consent, and it places
+                  its own cookies in line with HubSpot&apos;s privacy policy. If you decline, no analytics cookies are
+                  set. We do not sell or rent your personal information to third parties.
+                </p>
+              </div>
+              <div className="bg-white border border-gray-100 rounded-xl p-6">
+                <p className="mb-3" style={cardTitleStyle}>Changes to This Policy</p>
+                <p style={bodyStyle}>
+                  Kulana Limited may update this privacy policy at any time. Changes take effect when they are
+                  posted on this page, and the effective date at the top of the page will be updated. Continued
+                  use of this website after a change constitutes your acceptance of the revised policy.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Policy sections ──────────────────────────────────────────── */}
-        <section className="pb-6 bg-white">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            {sections.map(({ id, Icon, iconBg, title, content }) => (
-              <div key={id} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                <div className="flex items-center gap-4 px-8 pt-7 pb-5 border-b border-gray-50">
-                  <div className={`w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0 shadow-sm`}>
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-                  <h2 className="text-lg font-extrabold text-gray-900">{title}</h2>
-                </div>
-                <div className="px-8 py-6">{content}</div>
+        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        <section style={{ background: "#57D9D4" }}>
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-8">
+              <div className="lg:w-[45%] flex-shrink-0">
+                <h2 className="leading-tight mb-6" style={{ fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(20px, 2.1vw, 31px)" }}>
+                  Questions about<br />your privacy?
+                </h2>
+                <p className="mb-8" style={{ ...bodyStyle, color: "#200044" }}>
+                  If you have any questions about this privacy policy or how we handle your data, please do
+                  not hesitate to get in touch with our team.
+                </p>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all hover:opacity-90"
+                  style={{ fontFamily: MF, fontWeight: 600, background: "#200044", color: "#ffffff", fontSize: "13px" }}
+                >
+                  Contact us <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Contact banner ───────────────────────────────────────────── */}
-        <section className="py-10 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-8 md:p-10 text-white">
-              <div className="grid md:grid-cols-2 gap-8 items-start">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-white" />
-                    </div>
-                    <h2 className="text-xl font-extrabold">Questions About Your Privacy?</h2>
+              <div className="flex-1 grid sm:grid-cols-2 gap-6">
+                {contacts.map(({ label, value, href }) => (
+                  <div key={label}>
+                    <p className="uppercase mb-1" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "12px", opacity: 0.7 }}>{label}</p>
+                    {href ? (
+                      <a href={href} className="hover:underline" style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "clamp(13px, 1.2vw, 18px)" }}>{value}</a>
+                    ) : (
+                      <p style={{ fontFamily: MF, fontWeight: 600, color: "#200044", fontSize: "clamp(13px, 1.2vw, 18px)" }}>{value}</p>
+                    )}
                   </div>
-                  <p className="text-blue-100 leading-relaxed">
-                    If you have any questions about this privacy policy or how we handle your data,
-                    please do not hesitate to get in touch with our team.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    { Icon: Mail,  label: "Email",     value: "contact@kulana.net",  href: "mailto:contact@kulana.net" },
-                    { Icon: Phone, label: "Ghana",     value: "+233 540 127 400",     href: "tel:+233540127400" },
-                    { Icon: Phone, label: "Mauritius", value: "+230 46 32 519",       href: "tel:+23046325190" },
-                    { Icon: MapPin,label: "Address",   value: "The Rhombus, Kanda, Accra, Ghana", href: "#" },
-                  ].map(({ Icon: Ic, label, value, href }) => (
-                    <div key={label} className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Ic className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-blue-200 text-xs font-semibold uppercase tracking-wide">{label}</p>
-                        <a href={href} className="text-white font-medium text-sm hover:text-blue-100 transition-colors">{value}</a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
           </div>

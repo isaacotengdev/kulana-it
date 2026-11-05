@@ -32,6 +32,20 @@ const LIMITS = {
 
 const clean = (v: unknown): string => (typeof v === "string" ? v.trim() : "");
 
+const MAX_BODY_BYTES = 20_000;
+const SOURCE_RE = /^[a-z0-9-]+$/;
+
+// Only accept submissions sent from our own pages (blocks cross-site form posts)
+function isSameOrigin(request: NextRequest): boolean {
+  const origin = request.headers.get("origin");
+  if (!origin) return false;
+  try {
+    return new URL(origin).host === request.headers.get("host");
+  } catch {
+    return false;
+  }
+}
+
 // ── Table initialisation (once per instance) ──────────────────────────────────
 let tableReady = false;
 
@@ -116,7 +130,7 @@ async function upsertHubSpotContact(
 
   if (archivedRes.ok) {
     // Contact was deleted — respect the deletion, do not resurrect
-    console.log(`HubSpot: ${email} is archived/deleted, skipping sync`);
+    console.log("HubSpot: contact is archived/deleted, skipping sync");
     return null;
   }
 
@@ -176,7 +190,17 @@ async function patchHubSpotCustomProps(
 
 // ── Route handler ─────────────────────────────────────────────────────────────
 export async function POST(request: NextRequest) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+  if (!isSameOrigin(request)) {
+    return NextResponse.json({ error: "Forbidden." }, { status: 403 });
+  }
+  if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 415 });
+  }
+
+  const ip =
+    request.headers.get("x-real-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    "unknown";
   if (process.env.NODE_ENV !== "development" && isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
@@ -186,9 +210,20 @@ export async function POST(request: NextRequest) {
 
   let body: Record<string, unknown>;
   try {
-    body = await request.json();
+    const raw = await request.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Request too large." }, { status: 413 });
+    }
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error();
+    body = parsed as Record<string, unknown>;
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
+  // Honeypot: real users never fill the hidden "website" field. Pretend success so bots don't adapt.
+  if (clean(body.website)) {
+    return NextResponse.json({ success: true });
   }
 
   const firstName = clean(body.firstName);
@@ -201,6 +236,9 @@ export async function POST(request: NextRequest) {
 
   if (!firstName || !lastName || !email || !service || !message) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  }
+  if (!SOURCE_RE.test(source)) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
   if (!EMAIL_RE.test(email) || email.length > LIMITS.email) {
     return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });

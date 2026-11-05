@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import FaqBanner from "@/components/FaqBanner";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -119,7 +120,7 @@ export default function AiPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
-                {["TensorFlow", "PyTorch", "Azure OpenAI", "MLOps"].map((tag) => (
+                {["Machine Learning", "AI Governance", "Responsible AI", "MLOps"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
                     style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
@@ -294,9 +295,12 @@ export default function AiPage() {
 
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/integration_digital_connectivity/AI-Native Product Engineering.webp" alt="AI" fill className="object-cover object-center" sizes="320px" />
-              </div>
+              <FaqBanner
+                image="/images/Data_AI_Intelligence/AI_image_1600x1000px.webp"
+                title="Intelligence at Scale"
+                text="Turn data into decisions with enterprise AI that is secure, governed and built for impact."
+                points={["Assess", "Build", "Operate"]}
+              />
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>
                 {faqs.map(({ q, a }) => (

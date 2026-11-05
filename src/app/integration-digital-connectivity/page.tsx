@@ -187,21 +187,21 @@ export default function IntegrationDigitalConnectivityPage() {
                   href: "/integration",
                   desc: "Replace fragile point-to-point connections with a governed integration layer. We implement WSO2 and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
                   highlights: ["API Management & Gateway", "Middleware & ESB", "Event Streaming", "Legacy System Wrapping"],
-                  img: "/images/integration_digital_connectivity/Integration.webp",
+                  img: "/images/integration_digital_connectivity/Hero image_Integration_2560×1440px.webp",
                 },
                 {
                   num: "02", tag: "ARCHITECTURE", title: "Enterprise Architecture",
                   href: "/enterprise-architecture",
                   desc: "Integration without architecture is just more complexity. Our enterprise architects define the blueprints, API standards, and governance frameworks that ensure your integration investments compound rather than accumulate technical debt.",
                   highlights: ["TOGAF-aligned Frameworks", "API Standards & Governance", "Technology Roadmapping", "Cloud and Hybrid Strategy"],
-                  img: "/images/integration_digital_connectivity/Enterprise Architecture.webp",
+                  img: "/images/integration_digital_connectivity/Hero image_Enterprise Architecture_2560×1440px.webp",
                 },
                 {
                   num: "03", tag: "AI ENGINEERING", title: "AI-Native Product Engineering",
                   href: "/ai-native-product-engineering",
                   desc: "A well-integrated enterprise unlocks the next layer: AI-native products that compose your existing capabilities through APIs rather than rebuilding them. We engineer agentic systems, LLM orchestration, and intelligent automation directly on top of your integration layer.",
                   highlights: ["LLM Orchestration & Agents", "RAG and Knowledge Systems", "MLOps and Model Evaluation", "Enterprise AI Integration"],
-                  img: "/images/integration_digital_connectivity/AI-Native Product Engineering.webp",
+                  img: "/images/integration_digital_connectivity/Hero image_AI-Native Product Engineering_2560×1440px.webp",
                 },
               ].map(({ num, tag, title, href, desc, highlights, img }) => (
                 <div key={title}>

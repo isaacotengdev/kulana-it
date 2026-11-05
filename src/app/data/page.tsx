@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import FaqBanner from "@/components/FaqBanner";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -131,7 +132,7 @@ export default function DataPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
-                {["Azure Synapse", "Power BI", "dbt", "Apache Kafka"].map((tag) => (
+                {["SQL", "Power BI", "Data Engineering", "Data Modeling"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
                     style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
@@ -306,9 +307,12 @@ export default function DataPage() {
 
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/integration_digital_connectivity/Integration.webp" alt="Data Engineering" fill className="object-cover object-center" sizes="320px" />
-              </div>
+              <FaqBanner
+                image="/images/Data_AI_Intelligence/Data_image_1600x1000px.webp"
+                title="Data-Driven Decisions"
+                text="Unify, govern and activate your data to power confident, insight-led decisions."
+                points={["Unify", "Analyse", "Activate"]}
+              />
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>
                 {faqs.map(({ q, a }) => (

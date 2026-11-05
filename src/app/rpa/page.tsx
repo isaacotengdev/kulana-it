@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import FaqBanner from "@/components/FaqBanner";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -294,9 +295,12 @@ export default function RpaPage() {
 
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-              <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/integration_digital_connectivity/Integration.webp" alt="RPA and Automation" fill className="object-cover object-center" sizes="320px" />
-              </div>
+              <FaqBanner
+                image="/images/Data_AI_Intelligence/RPA_image_1600x1000px.webp"
+                title="Automation That Delivers"
+                text="Let software robots handle repetitive work so your people can focus on what matters."
+                points={["Discover", "Automate", "Scale"]}
+              />
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>
                 {faqs.map(({ q, a }) => (
