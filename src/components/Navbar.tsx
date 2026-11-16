@@ -39,7 +39,9 @@ const servicePillars = [
     name: "Kulana Academy",
     href: "https://www.kulana.academy/",
     external: true,
-    services: [],
+    services: [
+      { name: "Technology Enablement Solutions", href: "https://www.kulana.academy/" },
+    ],
   },
 ];
 
@@ -181,6 +183,7 @@ export default function Navbar() {
                               <li key={svc.name}>
                                 <Link
                                   href={svc.href}
+                                  {...("external" in pillar && pillar.external && { target: "_blank", rel: "noopener noreferrer" })}
                                   className="flex items-center gap-2 px-2 py-1.5 text-sm font-semibold transition-colors hover:opacity-70"
                                   style={{ fontFamily: "var(--font-manrope), sans-serif", color: "#000000" }}
                                 >
@@ -311,6 +314,7 @@ export default function Navbar() {
                             <Link
                               key={svc.name}
                               href={svc.href}
+                              {...("external" in pillar && pillar.external && { target: "_blank", rel: "noopener noreferrer" })}
                               onClick={() => setIsOpen(false)}
                               className="block px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                             >

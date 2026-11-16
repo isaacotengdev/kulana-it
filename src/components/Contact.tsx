@@ -117,7 +117,7 @@ export default function Contact() {
                   Mauritius Office
                 </p>
                 <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
-                  Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
+                  Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity, Ebene
                 </p>
                 <p className="mt-2" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
                   +230 46 32 519

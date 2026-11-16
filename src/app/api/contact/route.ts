@@ -10,17 +10,22 @@ const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 10 * 60_000;
 const hits = new Map<string, number[]>();
 
+// Only saved submissions count, so typos and blocked retries don't extend a lockout
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
-  recent.push(now);
   hits.set(ip, recent);
+  return recent.length >= RATE_LIMIT_MAX;
+}
+
+function recordHit(ip: string) {
+  const now = Date.now();
+  hits.set(ip, [...(hits.get(ip) ?? []), now]);
   if (hits.size > 5_000) {
     for (const [k, v] of hits) {
       if (v.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) hits.delete(k);
     }
   }
-  return recent.length > RATE_LIMIT_MAX;
 }
 
 // ── Validation ────────────────────────────────────────────────────────────────
@@ -197,11 +202,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 415 });
   }
 
+  // Without a client IP every visitor would share one bucket, so only limit when we have one
   const ip =
     request.headers.get("x-real-ip") ??
     request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
-    "unknown";
-  if (process.env.NODE_ENV !== "development" && isRateLimited(ip)) {
+    null;
+  const limitIp = process.env.NODE_ENV !== "development" ? ip : null;
+  if (limitIp && isRateLimited(limitIp)) {
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       { status: 429 },
@@ -276,6 +283,7 @@ export async function POST(request: NextRequest) {
       RETURNING id
     `;
     rowId = row.id;
+    if (limitIp) recordHit(limitIp);
   } catch (err) {
     console.error("DB insert error:", err);
     return NextResponse.json(

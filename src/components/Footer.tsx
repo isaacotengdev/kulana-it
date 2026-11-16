@@ -91,7 +91,7 @@ export default function Footer() {
           <div>
             <p className="tracking-normal uppercase mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#57D9D4", fontSize: "14px" }}>Mauritius</p>
             <p className="mb-2" style={{ fontFamily: MF, fontWeight: 400, color: "#ffffff", fontSize: "13px", lineHeight: "1.6" }}>
-              Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity Ebene
+              Ground Floor Nexsky Building,<br />Hotel Avenue, Cybercity, Ebene
             </p>
             <a href="tel:+23046325190" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>+230 46 32 519</a>
             <a href="mailto:contact@kulana.net" className="block hover:opacity-80 transition-opacity" style={{ fontFamily: MF, fontWeight: 400, color: "#57D9D4", fontSize: "13px", lineHeight: "1.6" }}>contact@kulana.net</a>
