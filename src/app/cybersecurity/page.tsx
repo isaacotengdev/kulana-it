@@ -77,7 +77,7 @@ export default function CybersecurityPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative overflow-hidden">
           <Image
-            src="/images/Service_Core & Enterprise Systems/Cybersecurity/Hero image_Cybersecurity_2560×1440px.webp"
+            src="/images/Service_Core_Enterprise_Systems/Cybersecurity/Hero image_Cybersecurity_2560×1440px.webp"
             alt="Cybersecurity"
             fill
             className="object-cover object-center"
@@ -312,7 +312,7 @@ export default function CybersecurityPage() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
                 <Image
-                  src="/images/Service_Core & Enterprise Systems/FAQ_Banners/Cybersecurity_400x500px_banner.webp"
+                  src="/images/Service_Core_Enterprise_Systems/FAQ_Banners/Cybersecurity_400x500px_banner.webp"
                   alt="Cybersecurity" fill className="object-cover object-center" sizes="320px"
                 />
               </div>

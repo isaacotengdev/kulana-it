@@ -28,7 +28,7 @@ const capabilities = [
 const features = [
   { Icon: Award,         label: "Arcitura Education Partnership",   desc: "Globally recognised certifications in cloud, SOA, microservices, and big data — delivered as an authorised Arcitura training centre." },
   { Icon: Building2,     label: "Corporate Training Design",        desc: "Bespoke training programmes designed around your technology stack, your people, and your strategic learning objectives." },
-  { Icon: BookOpen,      label: "Vendor-Accredited Training",       desc: "Accredited courses on Temenos, Microsoft Dynamics 365, HubSpot, WSO2, and other platforms your teams rely on." },
+  { Icon: BookOpen,      label: "Vendor-Accredited Training",       desc: "Accredited courses on Temenos, Microsoft Dynamics 365, HubSpot, Choreo Labs (formerly WSO2), and other platforms your teams rely on." },
   { Icon: Globe,         label: "Pan-African Delivery Network",     desc: "Training delivered across 20+ African and Middle East countries — onsite, virtually, or in certified learning centres." },
   { Icon: Laptop,        label: "Blended and Virtual Learning",      desc: "Flexible delivery combining instructor-led sessions, e-learning, labs, and mentoring to suit diverse team schedules." },
   { Icon: GraduationCap, label: "Learning Outcome Tracking",        desc: "Structured assessments, certification tracking, and reporting to demonstrate ROI and measure learner progress." },
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "What vendor training programmes are available?",
-    a: "We deliver accredited training on Temenos (core banking), Microsoft Dynamics 365 (ERP/CRM), HubSpot (CRM and marketing), WSO2 (integration and API management), and Dell Technologies (infrastructure). All courses are aligned to vendor certification pathways.",
+    a: "We deliver accredited training on Temenos (core banking), Microsoft Dynamics 365 (ERP/CRM), HubSpot (CRM and marketing), Choreo Labs (formerly WSO2) for integration and API management, and Dell Technologies (infrastructure). All courses are aligned to vendor certification pathways.",
   },
   {
     q: "In which countries can Kulana Academy deliver training?",
@@ -192,10 +192,10 @@ export default function PartnerOfferingPage() {
                 { name: "Dell",      src: "/logos/dell.svg",      h: "h-10" },
                 { name: "Microsoft", src: "/logos/microsoft.svg", h: "h-10" },
                 { name: "HubSpot",   src: "/logos/hubspot.svg",   h: "h-10" },
-                { name: "WSO2",      src: "/logos/wso2.png",      h: "h-12" },
+                { name: "Choreo Labs (formerly WSO2)", src: "/logos/choreo-labs-navy-mark-400-extractpics.webp", h: "h-10" },
               ].map(({ name, src, h }) => (
                 <div key={name} className="flex items-center justify-center bg-white rounded-2xl px-4 py-6 hover:shadow-lg transition-all">
-                  <Image src={src} alt={name} width={140} height={56} className={`${h} w-auto object-contain`} />
+                  <Image src={src} alt={name} width={140} height={56} className={`${h} w-auto max-w-full object-contain`} />
                 </div>
               ))}
             </div>
@@ -204,7 +204,7 @@ export default function PartnerOfferingPage() {
                 { Icon: Award,         label: "Arcitura Education",    desc: "Globally recognised cloud, SOA, and big data certifications across Africa and the Middle East" },
                 { Icon: Building2,     label: "Microsoft Partner",     desc: "Accredited Dynamics 365 and Azure training for enterprise clients and their teams" },
                 { Icon: GraduationCap, label: "Temenos Training",      desc: "Platform training for Temenos implementation teams and banking professionals" },
-                { Icon: BookOpen,      label: "WSO2 Training",         desc: "Integration platform and API management training for technical and architecture teams" },
+                { Icon: BookOpen,      label: "Choreo Labs (formerly WSO2) Training",         desc: "Integration platform and API management training for technical and architecture teams" },
                 { Icon: Handshake,     label: "HubSpot Certification", desc: "Sales, marketing, and service hub training aligned to HubSpot certification pathways" },
                 { Icon: MapPin,        label: "Dell Technologies",     desc: "Infrastructure training on storage, compute, and networking for IT operations teams" },
               ].map(({ Icon: Ic, label, desc }) => (

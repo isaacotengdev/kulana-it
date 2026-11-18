@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/`,           lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
 { url: `${BASE}/about-us`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact-us`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/kulana`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
     // ── Service pillars ───────────────────────────────────────
     { url: `${BASE}/core-enterprise-systems`,       lastModified: now, changeFrequency: "monthly", priority: 0.9 },

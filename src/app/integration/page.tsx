@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What should we consider when selecting an integration platform?",
-    a: "The most important factors are: the protocols and standards your existing systems use (REST, SOAP, AMQP, etc.), the volume and latency requirements of your data flows, whether you need an event-driven or request-driven architecture, the vendor's support model and long-term roadmap, and total cost of ownership including licensing, implementation, and maintenance. WSO2, for example, is well-suited to enterprise API management and high-volume event streaming — but the right platform depends on your specific landscape. Kulana runs an assessment before recommending any tooling.",
+    a: "The most important factors are: the protocols and standards your existing systems use (REST, SOAP, AMQP, etc.), the volume and latency requirements of your data flows, whether you need an event-driven or request-driven architecture, the vendor's support model and long-term roadmap, and total cost of ownership including licensing, implementation, and maintenance. Choreo Labs (formerly WSO2), for example, is well-suited to enterprise API management and high-volume event streaming — but the right platform depends on your specific landscape. Kulana runs an assessment before recommending any tooling.",
   },
   {
     q: "What role does middleware play in digital transformation?",
@@ -123,11 +123,11 @@ export default function DigitalIntegrationsPage() {
                   Businesses depend on multiple software systems for operations and data management. The challenge lies in ensuring these systems communicate effectively across different technologies, formats, and protocols.
                 </p>
                 <p style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
-                  Kulana&apos;s middleware and integration practice bridges gaps between software applications, databases, and platforms — whether connecting legacy systems with modern cloud solutions or linking enterprise applications. We provide solutions customised to your specific business requirements, built on WSO2 and leading integration platforms.
+                  Kulana&apos;s middleware and integration practice bridges gaps between software applications, databases, and platforms — whether connecting legacy systems with modern cloud solutions or linking enterprise applications. We provide solutions customised to your specific business requirements, built on Choreo Labs (formerly WSO2) and leading integration platforms.
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
-                {["WSO2", "REST & GraphQL", "Event-Driven", "API Gateway"].map((tag) => (
+                {["Choreo Labs (formerly WSO2)", "REST & GraphQL", "Event-Driven", "API Gateway"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
                     style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
@@ -229,7 +229,7 @@ export default function DigitalIntegrationsPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { label: "API Gateway",           desc: "Centralised gateway for routing, rate limiting, authentication, and monitoring of all API traffic." },
-                { label: "Event Streaming",        desc: "Real-time event pipelines using Apache Kafka and WSO2 Streaming Integrator for decoupled, scalable architectures." },
+                { label: "Event Streaming",        desc: "Real-time event pipelines using Apache Kafka and Choreo Labs (formerly WSO2) streaming integration for decoupled, scalable architectures." },
                 { label: "Data Integration",       desc: "Reliable data movement between source systems, data warehouses, and analytics platforms with transformation and validation." },
                 { label: "API Security",           desc: "OAuth2, JWT, mTLS, and API key management to protect every endpoint from unauthorised access." },
                 { label: "Microservices",          desc: "Service mesh and microservice integration patterns that enable independent deployment and horizontal scaling." },
@@ -303,7 +303,7 @@ export default function DigitalIntegrationsPage() {
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/Service_Core & Enterprise Systems/FAQ_Banners/Integration_400x500px_banner.webp" alt="Digital Integration" fill className="object-cover object-center" sizes="320px" />
+                <Image src="/images/Service_Core_Enterprise_Systems/FAQ_Banners/Integration_400x500px_banner.webp" alt="Digital Integration" fill className="object-cover object-center" sizes="320px" />
               </div>
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>

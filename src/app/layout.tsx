@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kulana.net"),
   title: {
     default: "Kulana IT Solutions | Technology Value Creators",
-    template: "%s | Kulana IT Solutions",
+    // Page titles already include the brand
+    template: "%s",
   },
   description:
     "End-to-end IT solutions and consultancy for enterprises, with offices in Ghana and Mauritius. Core Banking, ERP & CRM, Cybersecurity, Integration, Data & AI, and corporate training.",
@@ -37,13 +38,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Kulana IT Solutions", url: "https://kulana.net" }],
   creator: "Kulana IT Solutions",
   publisher: "Kulana IT Solutions",
+  // "./" resolves per page, so each page is its own canonical rather than pointing at the homepage
   alternates: {
-    canonical: "https://kulana.net",
+    canonical: "./",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kulana.net",
+    url: "./",
     siteName: "Kulana IT Solutions",
     title: "Kulana IT Solutions | Technology Value Creators",
     description:
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
       {
         url: "/images/kulana/hero.jpg",
         width: 1200,
-        height: 630,
+        height: 600,
         alt: "Kulana IT Solutions — Technology Value Creators",
       },
     ],

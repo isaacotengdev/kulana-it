@@ -22,7 +22,7 @@ export default function DataAiIntelligencePage() {
         {/* Hero */}
         <section className="relative overflow-hidden">
           <Image
-            src="/images/Data_AI_Intelligence/Hero image_Data & AI Intelligence_2560×1440px.webp"
+            src="/images/Data_AI_Intelligence/Hero image_Data_AI_Intelligence_2560×1440px.webp"
             alt="Data and AI Intelligence"
             fill
             className="object-cover object-center"

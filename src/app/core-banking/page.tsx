@@ -114,7 +114,7 @@ export default function CoreBankingPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative overflow-hidden">
           <Image
-            src="/images/Service_Core & Enterprise Systems/core_banking/Hero image Core banking_2560×1440px.webp"
+            src="/images/Service_Core_Enterprise_Systems/core_banking/Hero image Core banking_2560×1440px.webp"
             alt="Core Banking"
             fill
             className="object-cover object-center"
@@ -249,7 +249,7 @@ export default function CoreBankingPage() {
                 <p className="mb-8" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1.2vw, 18px)", lineHeight: "1.4" }}>
                   Kulana is a certified Temenos implementation partner. Temenos powers over 3,000 financial institutions across 150 countries — including some of the world&apos;s largest retail, corporate, and digital banks.
                 </p>
-                <Image src="/images/Service_Core & Enterprise Systems/core_banking/Temenos logo.svg" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
+                <Image src="/images/Service_Core_Enterprise_Systems/core_banking/Temenos logo.svg" alt="Temenos" width={160} height={48} className="h-10 w-auto object-contain" />
               </div>
             </div>
 
@@ -364,7 +364,7 @@ export default function CoreBankingPage() {
               {/* Image */}
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
                 <Image
-                  src="/images/Service_Core & Enterprise Systems/FAQ_Banners/Core Banking_400x500px_banner.webp"
+                  src="/images/Service_Core_Enterprise_Systems/FAQ_Banners/Core Banking_400x500px_banner.webp"
                   alt="Core Banking" fill className="object-cover object-center" sizes="320px"
                 />
               </div>

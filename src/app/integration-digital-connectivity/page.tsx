@@ -121,7 +121,7 @@ export default function IntegrationDigitalConnectivityPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 items-end">
-                {["WSO2", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
+                {["Choreo Labs (formerly WSO2)", "REST & GraphQL", "Event-Driven", "TOGAF"].map((tag) => (
                   <div key={tag} className="flex items-center justify-center py-4 rounded-lg text-center"
                     style={{ border: "1.5px solid #57D9D4", fontFamily: MF, fontWeight: 700, color: "#200044", fontSize: "clamp(13px, 1vw, 14px)", maxWidth: "340px", width: "100%" }}>
                     {tag}
@@ -185,7 +185,7 @@ export default function IntegrationDigitalConnectivityPage() {
                 {
                   num: "01", tag: "API & MIDDLEWARE", title: "Integration",
                   href: "/integration",
-                  desc: "Replace fragile point-to-point connections with a governed integration layer. We implement WSO2 and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
+                  desc: "Replace fragile point-to-point connections with a governed integration layer. We implement Choreo Labs (formerly WSO2) and leading middleware platforms so every system in your estate connects through a managed, versioned, documented API fabric — not a web of undocumented custom code.",
                   highlights: ["API Management & Gateway", "Middleware & ESB", "Event Streaming", "Legacy System Wrapping"],
                   img: "/images/integration_digital_connectivity/Hero image_Integration_2560×1440px.webp",
                 },

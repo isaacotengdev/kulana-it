@@ -88,7 +88,7 @@ export default function ErpCrmPage() {
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative overflow-hidden">
           <Image
-            src="/images/Service_Core & Enterprise Systems/ERP_CRM/Hero image_ERP and CRM_2560×1440px.webp"
+            src="/images/Service_Core_Enterprise_Systems/ERP_CRM/Hero image_ERP and CRM_2560×1440px.webp"
             alt="ERP & CRM"
             fill
             className="object-cover object-center"
@@ -222,7 +222,7 @@ export default function ErpCrmPage() {
 
               {/* Microsoft Dynamics 365 */}
               <div className="bg-white border border-gray-100 rounded-xl p-8">
-                <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
+                <Image src="/images/Service_Core_Enterprise_Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-normal uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>ERP Platform</p>
                 <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>Microsoft Dynamics 365</p>
                 <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
@@ -241,7 +241,7 @@ export default function ErpCrmPage() {
 
               {/* HubSpot */}
               <div className="bg-white border border-gray-100 rounded-xl p-8">
-                <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
+                <Image src="/images/Service_Core_Enterprise_Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={140} height={48} className="h-10 w-auto object-contain mb-6" />
                 <p className="text-xs tracking-normal uppercase font-bold text-gray-400 mb-3" style={{ fontFamily: MF }}>CRM Platform</p>
                 <p className="mb-3" style={{ fontFamily: MF, fontWeight: 600, color: "#000000", fontSize: "clamp(14px, 1.45vw, 21px)" }}>HubSpot CRM</p>
                 <p className="mb-6" style={{ fontFamily: MF, fontWeight: 400, color: "#000000", fontSize: "clamp(13px, 1vw, 14px)", lineHeight: "1.5" }}>
@@ -346,7 +346,7 @@ export default function ErpCrmPage() {
             {/* Row 2: image left | accordion right */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
               <div className="relative w-full rounded-2xl overflow-hidden lg:mt-14" style={{ aspectRatio: "4/5", maxWidth: "320px" }}>
-                <Image src="/images/Service_Core & Enterprise Systems/FAQ_Banners/ERP & CRM_400x500px_banner.webp" alt="ERP and CRM" fill className="object-cover object-center" sizes="320px" />
+                <Image src="/images/Service_Core_Enterprise_Systems/FAQ_Banners/ERP_CRM_400x500px_banner.webp" alt="ERP and CRM" fill className="object-cover object-center" sizes="320px" />
               </div>
 
               <div className="divide-y" style={{ borderColor: "#e5e7eb" }}>

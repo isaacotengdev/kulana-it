@@ -41,20 +41,20 @@ export default function Partners() {
         {/* Partner logos — flat row, original vendor colours */}
         <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-10">
 
-          <Image src="/images/Service_Core & Enterprise Systems/infrastructure/DELL_logo_color.svg" alt="Dell" width={150} height={30}
+          <Image src="/images/Service_Core_Enterprise_Systems/infrastructure/DELL_logo_color.svg" alt="Dell" width={150} height={30}
             className="object-contain h-14 w-auto" unoptimized />
 
-          <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={170} height={30}
+          <Image src="/images/Service_Core_Enterprise_Systems/ERP_CRM/HubSpot_Logo.svg" alt="HubSpot" width={170} height={30}
             className="object-contain h-11 w-auto" unoptimized />
 
-          <Image src="/images/Service_Core & Enterprise Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={190} height={30}
+          <Image src="/images/Service_Core_Enterprise_Systems/ERP_CRM/Microsoft_logo_color.svg" alt="Microsoft" width={190} height={30}
             className="object-contain h-10 w-auto" unoptimized />
 
-          <Image src="/images/Service_Core & Enterprise Systems/core_banking/Temenos logo.svg" alt="Temenos" width={190} height={30}
+          <Image src="/images/Service_Core_Enterprise_Systems/core_banking/Temenos logo.svg" alt="Temenos" width={190} height={30}
             className="object-contain h-9 w-auto" unoptimized />
 
-          <Image src="/images/Links_homepage/WSO2_logo_color.svg" alt="WSO2" width={150} height={30}
-            className="object-contain h-11 w-auto" unoptimized />
+          <Image src="/logos/choreo-labs-navy-mark-400-extractpics.webp" alt="Choreo Labs (formerly WSO2)" width={400} height={74}
+            className="object-contain h-10 w-auto" unoptimized />
 
         </div>
 
