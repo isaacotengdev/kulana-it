@@ -52,7 +52,7 @@ type NavLink =
 
 const navLinks: NavLink[] = [
   { name: "Home",        href: "/" },
-  { name: "Our Services", href: "/our-services", isMega: true },
+  { name: "Our Services", href: "/#services", isMega: true },
   { name: "About us",    href: "/about-us" },
   { name: "Contact us",  href: "/contact-us" },
 ];

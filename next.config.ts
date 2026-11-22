@@ -51,8 +51,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/request-quote", destination: "/#contact", permanent: true },
-      { source: "/data-center-security-operations-centre", destination: "/our-services", permanent: true },
-      { source: "/project-management-consulting", destination: "/our-services", permanent: true },
+      { source: "/data-center-security-operations-centre", destination: "/#services", permanent: true },
+      { source: "/project-management-consulting", destination: "/#services", permanent: true },
       { source: "/ai-cloud-ai", destination: "/ai", permanent: true },
     ];
   },

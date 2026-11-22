@@ -1,35 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Script from "next/script";
 import Link from "next/link";
 import { Cookie } from "lucide-react";
 
 const CONSENT_KEY = "kulana_cookie_consent";
 
+type Consent = "accepted" | "declined" | null;
+
+// localStorage throws when site data is blocked; treat that as "no choice yet"
+function readConsent(): Consent {
+  try {
+    const v = localStorage.getItem(CONSENT_KEY);
+    return v === "accepted" || v === "declined" ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveConsent(v: "accepted" | "declined") {
+  try {
+    localStorage.setItem(CONSENT_KEY, v);
+  } catch {
+    // Choice still applies for this page view
+  }
+}
+
+const subscribe = (cb: () => void) => {
+  window.addEventListener("storage", cb);
+  return () => window.removeEventListener("storage", cb);
+};
+
 export default function CookieConsent() {
-  const [consent, setConsent] = useState<"accepted" | "declined" | null>(null);
+  // undefined on the server, so nothing renders until the stored choice is known
+  const stored = useSyncExternalStore<Consent | undefined>(subscribe, readConsent, () => undefined);
+  const [choice, setChoice] = useState<Consent>(null);
   const [visible, setVisible] = useState(false);
+  const consent = choice ?? stored;
 
   useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY) as "accepted" | "declined" | null;
-    if (stored) {
-      setConsent(stored);
-    } else {
-      const t = setTimeout(() => setVisible(true), 800);
-      return () => clearTimeout(t);
-    }
-  }, []);
+    if (consent !== null) return;
+    const t = setTimeout(() => setVisible(true), 800);
+    return () => clearTimeout(t);
+  }, [consent]);
 
   const accept = () => {
-    localStorage.setItem(CONSENT_KEY, "accepted");
-    setConsent("accepted");
+    saveConsent("accepted");
+    setChoice("accepted");
     setVisible(false);
   };
 
   const decline = () => {
-    localStorage.setItem(CONSENT_KEY, "declined");
-    setConsent("declined");
+    saveConsent("declined");
+    setChoice("declined");
     setVisible(false);
   };
 
